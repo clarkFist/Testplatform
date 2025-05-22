@@ -1,0 +1,15 @@
+*.pyc
+*.log
+.git
+log/
+*/log/
+*/Log/
+*/LOG/
+Log_Log/
+RUT/input/
+RUT/dump/
+RUT/update/
+RUT/CPU_A/
+RUT/CPU_B/
+venv/Lib/
+venv/Scripts/

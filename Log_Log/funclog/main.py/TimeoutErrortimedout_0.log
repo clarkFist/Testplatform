@@ -1,0 +1,136 @@
+2021-11-03 11:28:17 main.py 127 <module> __init__     form = udp_loglib.TestPlatForm(18125, 18125, set_client=False)\n (18125, 18125) {'set_client': False}
+2021-11-03 11:28:17 udp_loglib.py 1508 __init__ spawn         gevent.spawn(gevent.empty)   (<class 'udp_loglib.myGevent'>, <function myGevent.empty >) {}
+2021-11-03 11:28:17 main.py 141 <module> copyImage_fromVM     form.vmtool.copyImage_fromVM(cmd_type, dstpath=normal_path)\n ('mvcu',) {'dstpath': 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\normal_image'}
+2021-11-03 11:28:17 vmtcp.py 480 copyImage_fromVM _send_cmd         self._send_cmd(func, args)\n ('copy_image', ('mvcu', 'F:/testplaatform1025/Master/testplatform/case_test/normal_image')) {}
+2021-11-03 11:28:17 vmtcp.py 419 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "copy_image", "args": ["mvcu", "F:/testplaatform1025/Master/testplatform/case_test/normal_image"]}',) {}
+2021-11-03 11:28:17 vmtcp.py 399 send set_VM_path             self.set_VM_path()\n () {}
+2021-11-03 11:28:17 vmtcp.py 515 set_VM_path _send_cmd         self._send_cmd(func, args)\n ('set_VM_path', ([('C:\\Users\\test2\\Desktop', 'F:'), ('C:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform', 'F:\\testplaatform1025\\Master\\testplatform')],)) {}
+2021-11-03 11:28:17 vmtcp.py 419 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "set_VM_path", "args": [[["C:\\\\Users\\\\test2\\\\Desktop", "F:"], ["C:\\\\Users\\\\test2\\\\Desktop\\\\testplaatform1025\\\\Master\\\\testplatform", "F:\\\\testplaatform1025\\\\Master\\\\testplatform"]]]}',) {}
+2021-11-03 11:28:17 vmtcp.py 426 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'set_VM_path_15d2a92721da5eb30f92195b8b3255ac') {}
+2021-11-03 11:28:17 vmtcp.py 430 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "set_VM_path", "args": [[["C:\\\\Users\\\\test2\\\\Desktop", "F:"], ["C:\\\\Users\\\\test2\\\\Desktop\\\\testplaatform1025\\\\Master\\\\testplatform", "F:\\\\testplaatform1025\\\\Master\\\\testplatform"]]]}',) {}
+2021-11-03 11:28:18 vmtcp.py 521 set_VM_path print_func         VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', '') {}
+2021-11-03 11:28:19 vmtcp.py 426 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'copy_image_mvcu,F:/testplaatform1025/Master/testplatform/case_test/normal_image') {}
+2021-11-03 11:28:19 vmtcp.py 430 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["mvcu", "F:/testplaatform1025/Master/testplatform/case_test/normal_image"]}',) {}
+2021-11-03 11:28:20 vmtcp.py 486 copyImage_fromVM print_func         VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', 'C:\\Users\\MSTEP\\Desktop\\VMtools\\VCU_DEV_MVCU\\build/out to F:/testplaatform1025/Master/testplatform/case_test/normal_image') {}
+2021-11-03 11:28:20 vmtcp.py 490 copyImage_fromVM print_func         VMConfig.print_func('image_path: %s ' % dstpath)\n (<class 'vmtcp.VMConfig'>, 'image_path: C:/Users/test2/Desktop/testplaatform1025/Master/testplatform/case_test/normal_image ') {}
+2021-11-03 11:28:20 main.py 143 <module> copyImage_fromVM     form.vmtool.copyImage_fromVM(cmd_type, dstpath=normal_path)\n ('svcu',) {'dstpath': 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\normal_image'}
+2021-11-03 11:28:20 vmtcp.py 480 copyImage_fromVM _send_cmd         self._send_cmd(func, args)\n ('copy_image', ('svcu', 'F:/testplaatform1025/Master/testplatform/case_test/normal_image')) {}
+2021-11-03 11:28:20 vmtcp.py 419 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "copy_image", "args": ["svcu", "F:/testplaatform1025/Master/testplatform/case_test/normal_image"]}',) {}
+2021-11-03 11:28:21 vmtcp.py 426 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'copy_image_svcu,F:/testplaatform1025/Master/testplatform/case_test/normal_image') {}
+2021-11-03 11:28:21 vmtcp.py 430 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["svcu", "F:/testplaatform1025/Master/testplatform/case_test/normal_image"]}',) {}
+2021-11-03 11:28:22 vmtcp.py 486 copyImage_fromVM print_func         VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', 'C:\\Users\\MSTEP\\Desktop\\VMtools\\VCU_DEV\\build/out to F:/testplaatform1025/Master/testplatform/case_test/normal_image') {}
+2021-11-03 11:28:22 vmtcp.py 490 copyImage_fromVM print_func         VMConfig.print_func('image_path: %s ' % dstpath)\n (<class 'vmtcp.VMConfig'>, 'image_path: C:/Users/test2/Desktop/testplaatform1025/Master/testplatform/case_test/normal_image ') {}
+2021-11-03 11:28:22 main.py 148 main funclog.write         udp_loglib.funclog.wirte(cases)\n (['Cfg2_SwRTC_SVCU_0051.py', 'Cfg2_SwRTC_SVCU_0052.py', 'Cfg2_SwRTC_SVCU_0053.py', 'Cfg2_SwRTC_SVCU_0054.py'],) {}
+2021-11-03 11:28:22 main.py 149 main path_set         Log.path_set(os.path.dirname(__file__) + '/Log/default')\n (<class 'udp_loglib.Log'>, 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test/Log/default') {}
+2021-11-03 11:28:22 udp_loglib.py 1366 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\Log\\default/',) {}
+2021-11-03 11:28:22 main.py 152 main mPrint             Public.mPrint('start %s' % case)\n ('start Cfg2_SwRTC_SVCU_0051.py',) {}
+2021-11-03 11:28:22 Sw_SVCU/Cfg2_SwRTC_SVCU_0051.py 24 LogPath_set path_set     Log.path_set(dir_path)\n (<class 'udp_loglib.Log'>, 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU/Log/Cfg2_SwRTC_SVCU_0051/default') {}
+2021-11-03 11:28:22 udp_loglib.py 1366 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg2_SwRTC_SVCU_0051\\default/',) {}
+2021-11-03 11:28:23 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 udp_loglib.py 1914 gevent_join spawn         gevent.spawn(form._log_recv, *(form.clientP, )),   (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._log_recv of <udp_loglib.TestPlatForm object >>, <udp_loglib.UdpClient object >) {}
+2021-11-03 11:28:23 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 udp_loglib.py 1915 gevent_join spawn         gevent.spawn(form._log_recv, *(form.clientS, )),   (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._log_recv of <udp_loglib.TestPlatForm object >>, <udp_loglib.UdpClient object >) {}
+2021-11-03 11:28:23 udp_loglib.py 1916 gevent_join spawn         gevent.spawn(form._serial_recv),\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._serial_recv of <udp_loglib.TestPlatForm object >>) {}
+2021-11-03 11:28:23 udp_loglib.py 1917 gevent_join spawn         gevent.spawn(form._mib_recv),\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._mib_recv of <udp_loglib.TestPlatForm object >>) {}
+2021-11-03 11:28:23 udp_loglib.py 1918 gevent_join spawn         gevent.spawn(form._wireshark_recv)]\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._wireshark_recv of <udp_loglib.TestPlatForm object >>) {}
+2021-11-03 11:28:23 udp_loglib.py 1921 gevent_join joinall     gevent.joinall(default_list)\n (<class 'udp_loglib.myGevent'>, [<Greenlet >>(<bound method TestPlatForm._log_recv of <udp_logli, [''], [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._log_recv of <udp_logli, [''], [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._serial_recv of <udp_lo, [''], [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._mib_recv of <udp_logli, [''], [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._wireshark_recv of <udp, [''], [FrameInfo(frame=<frame >]) {}
+2021-11-03 11:28:23 udp_loglib.py 334 run _log_recv             rt_val[0] = func(*args, **kwargs)\n (<udp_loglib.UdpClient object >,) {}
+2021-11-03 11:28:23 udp_loglib.py 1766 _log_recv mPrint         mPrint('recv start %s,%s' % client.remote)\n ('recv start 20.2.1.10,18125',) {}
+2021-11-03 11:28:23 udp_loglib.py 334 run _log_recv             rt_val[0] = func(*args, **kwargs)\n (<udp_loglib.UdpClient object >,) {}
+2021-11-03 11:28:23 udp_loglib.py 1766 _log_recv mPrint         mPrint('recv start %s,%s' % client.remote)\n ('recv start 20.1.1.10,18125',) {}
+2021-11-03 11:28:23 serialread.py 77 open_all funclog.write             funclog.wirte(port, outfile)\n ('COM15', None) {}
+2021-11-03 11:28:23 serialread.py 77 open_all funclog.write             funclog.wirte(port, outfile)\n ('COM22', None) {}
+2021-11-03 11:28:23 udp_loglib.py 1810 _serial_recv mPrint                     mPrint('start listen', self._SerialRead.queue_dict.keys())\n ('start listen', dict_keys(['COM15', 'COM22'])) {}
+2021-11-03 11:28:23 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 udp_loglib.py 1881 _wireshark_recv start                 p_new = self.wireShark.start(outfile='wireshark_recv.pcapng', block=False)\n () {'outfile': 'wireshark_recv.pcapng', 'block': False}
+2021-11-03 11:28:23 wireShark.py 103 start mPrint             self.print('%s' % self.get_path(outfile))\n ('c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg2_SwRTC_SVCU_0051\\default//wireshark_recv.pcapng',) {}
+2021-11-03 11:28:23 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 wireShark.py 73 __find_Conn mPrint             self.print('“‘Ã´Õ¯  ≈‰∆˜: %s' % self._Conn)\n ('“‘Ã´Õ¯  ≈‰∆˜: “‘Ã´Õ¯',) {}
+2021-11-03 11:28:23 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:23 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:24 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:24 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:24 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:24 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:24 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:24 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:24 udp_loglib.py 1621 _set_client mPrint                 mPrint('use mvcu p')\n ('use mvcu p',) {}
+2021-11-03 11:28:24 udp_loglib.py 1209 _set __init__         frame = UdpSendFrame()\n () {}
+2021-11-03 11:28:24 udp_loglib.py 1629 _set_client tst_set             self.tst_set(dst_svcu, Conf.serialFlagSet(1))           \n ('5', <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 11:28:24 udp_loglib.py 1755 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 11:28:24 udp_loglib.py 1761 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2021-11-03 11:28:25 udp_loglib.py 871 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff10320f0000000000000100018764') {}
+2021-11-03 11:28:25 udp_loglib.py 707 respondCheck mPrint                 Public.mPrint('set success')\n ('set success',) {}
+2021-11-03 11:28:25 udp_loglib.py 1209 _set __init__         frame = UdpSendFrame()\n () {}
+2021-11-03 11:28:25 main.py 97 case_start tst_set     form.tst_set(active_mvcu, Conf.allFlagSet(1)) ('2', <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 11:28:25 udp_loglib.py 1755 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 11:28:25 udp_loglib.py 1761 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2021-11-03 11:28:26 udp_loglib.py 871 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff02320f000000000300010001f5c4') {}
+2021-11-03 11:28:26 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:26 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:26 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:26 udp_loglib.py 707 respondCheck mPrint                 Public.mPrint('set success')\n ('set success',) {}
+2021-11-03 11:28:26 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:26 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:26 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:26 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 11:28:37 main.py 182 thead_start program_end             Public.program_end(e)\n (<class 'udp_loglib.Public'>, TimeoutError('timed out')) {}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('Traceback (most recent call last):\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\main.py", line 180, in thead_start\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('    main()\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\main.py", line 155, in main\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('    case_start(mod)\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\main.py", line 98, in case_start\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('    form.get_eventlog(active_mvcu)\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\udp_loglib.py", line 1550, in get_eventlog\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('    event = viv.get_eventlog(cpu)\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\udp_loglib.py", line 1038, in get_eventlog\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('    rt_list += self.get_eventlog(cpu, seq = seq + 1)\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\udp_loglib.py", line 1038, in get_eventlog\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('    rt_list += self.get_eventlog(cpu, seq = seq + 1)\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\udp_loglib.py", line 1023, in get_eventlog\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('    raise e\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\udp_loglib.py", line 1019, in get_eventlog\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('    data = self._CommandMemRead(cpu)\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\udp_loglib.py", line 989, in _CommandMemRead\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('    data = self.client.read_request(*_cmd[cpu], srcfilename=dstfile)\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\py_lib\\tftpclient.py", line 61, in read_request\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('    recvData, recvAddr = self.socketClient.recvfrom(1024)\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\venv\\lib\\site-packages\\gevent\\_socketcommon.py", line 673, in recvfrom\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('    self._wait(self._read_event)\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "src\\\\gevent\\\\_hub_primitives.py", line 317, in gevent._gevent_c_hub_primitives.wait_on_socket\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "src\\\\gevent\\\\_hub_primitives.py", line 322, in gevent._gevent_c_hub_primitives.wait_on_socket\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "src\\\\gevent\\\\_hub_primitives.py", line 313, in gevent._gevent_c_hub_primitives._primitive_wait\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "src\\\\gevent\\\\_hub_primitives.py", line 314, in gevent._gevent_c_hub_primitives._primitive_wait\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "src\\\\gevent\\\\_hub_primitives.py", line 46, in gevent._gevent_c_hub_primitives.WaitOperationsGreenlet.wait\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "src\\\\gevent\\\\_hub_primitives.py", line 46, in gevent._gevent_c_hub_primitives.WaitOperationsGreenlet.wait\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "src\\\\gevent\\\\_hub_primitives.py", line 55, in gevent._gevent_c_hub_primitives.WaitOperationsGreenlet.wait\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "src\\\\gevent\\\\_waiter.py", line 154, in gevent._gevent_c_waiter.Waiter.get\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "src\\\\gevent\\\\_greenlet_primitives.py", line 61, in gevent._gevent_c_greenlet_primitives.SwitchOutGreenletWithLoop.switch\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "src\\\\gevent\\\\_greenlet_primitives.py", line 61, in gevent._gevent_c_greenlet_primitives.SwitchOutGreenletWithLoop.switch\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "src\\\\gevent\\\\_greenlet_primitives.py", line 65, in gevent._gevent_c_greenlet_primitives.SwitchOutGreenletWithLoop.switch\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "src\\\\gevent\\\\_gevent_c_greenlet_primitives.pxd", line 35, in gevent._gevent_c_greenlet_primitives._greenlet_switch\n',) {'mode': 2}
+2021-11-03 11:28:38 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('TimeoutError: timed out\n',) {'mode': 2}

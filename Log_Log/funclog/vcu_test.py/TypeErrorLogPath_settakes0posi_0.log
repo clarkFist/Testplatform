@@ -1,0 +1,34 @@
+2021-11-18 15:30:23 vcu_test.py 45 <module> __init__     form = TestPlatForm(18125, 18125, set_client=False)   (18125, 18125) {'set_client': False}
+2021-11-18 15:30:23 udp_loglib.py 1522 __init__ spawn         gevent.spawn(gevent.empty)   (<class 'udp_loglib.myGevent'>, <function myGevent.empty >) {}
+2021-11-18 15:30:23 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-18 15:30:23 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-18 15:30:23 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-18 15:30:23 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-18 15:30:23 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-18 15:30:25 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-18 15:30:25 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-18 15:30:25 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-18 15:30:25 udp_loglib.py 1635 _set_client mPrint                 mPrint('use mvcu p')\n ('use mvcu p',) {}
+2021-11-18 15:30:25 udp_loglib.py 1917 gevent_join spawn         greenlet_list = [gevent.spawn(greenlet_list)]\n (<class 'udp_loglib.myGevent'>, <function confSet >) {}
+2021-11-18 15:30:25 udp_loglib.py 1924 gevent_join spawn         gevent.spawn(form._log_recv, *(form.clientP, )),   (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._log_recv of <udp_loglib.TestPlatForm object >>, <udp_loglib.UdpClient object >) {}
+2021-11-18 15:30:25 udp_loglib.py 1925 gevent_join spawn         gevent.spawn(form._log_recv, *(form.clientS, )),   (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._log_recv of <udp_loglib.TestPlatForm object >>, <udp_loglib.UdpClient object >) {}
+2021-11-18 15:30:25 udp_loglib.py 1926 gevent_join spawn         gevent.spawn(form._serial_recv),\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._serial_recv of <udp_loglib.TestPlatForm object >>) {}
+2021-11-18 15:30:25 udp_loglib.py 1927 gevent_join spawn         gevent.spawn(form._mib_recv),\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._mib_recv of <udp_loglib.TestPlatForm object >>) {}
+2021-11-18 15:30:25 udp_loglib.py 1928 gevent_join spawn         gevent.spawn(form._wireshark_recv)]\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._wireshark_recv of <udp_loglib.TestPlatForm object >>) {}
+2021-11-18 15:30:25 udp_loglib.py 1931 gevent_join joinall     gevent.joinall(default_list)\n (<class 'udp_loglib.myGevent'>, [<Greenlet >>(<bound method TestPlatForm._log_recv of <udp_logli, [''], [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._log_recv of <udp_logli, [''], [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._serial_recv of <udp_lo, [''], [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._mib_recv of <udp_logli, [''], [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._wireshark_recv of <udp, [''], [FrameInfo(frame=<frame >, <Greenlet >>(<function confSet >, [''], [FrameInfo(frame=<frame >]) {}
+2021-11-18 15:30:25 udp_loglib.py 338 run program_end             Public.program_end(e)\n (<class 'udp_loglib.Public'>, TypeError('LogPath_set() takes 0 positional arguments but 1 was given')) {}
+2021-11-18 15:30:25 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('Traceback (most recent call last):\n',) {'mode': 2}
+2021-11-18 15:30:25 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\udp_loglib.py", line 336, in run\n',) {'mode': 2}
+2021-11-18 15:30:25 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('    rt_val[0] = func(*args, **kwargs)\n',) {'mode': 2}
+2021-11-18 15:30:25 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\vcu_test.py", line 51, in confSet\n',) {'mode': 2}
+2021-11-18 15:30:25 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('    LogPath_set(2)\n',) {'mode': 2}
+2021-11-18 15:30:25 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('TypeError: LogPath_set() takes 0 positional arguments but 1 was given\n',) {'mode': 2}
+2021-11-18 15:30:25 udp_loglib.py 336 run _log_recv             rt_val[0] = func(*args, **kwargs)\n (<udp_loglib.UdpClient object >,) {}
+2021-11-18 15:30:25 udp_loglib.py 1776 _log_recv mPrint         mPrint('recv start %s,%s' % client.remote)\n ('recv start 20.2.1.10,18125',) {}
+2021-11-18 15:30:25 udp_loglib.py 336 run _log_recv             rt_val[0] = func(*args, **kwargs)\n (<udp_loglib.UdpClient object >,) {}
+2021-11-18 15:30:25 udp_loglib.py 1776 _log_recv mPrint         mPrint('recv start %s,%s' % client.remote)\n ('recv start 20.1.1.10,18125',) {}
+2021-11-18 15:30:25 serialread.py 77 open_all funclog.write             funclog.wirte(port, outfile)\n ('COM15', None) {}
+2021-11-18 15:30:25 serialread.py 77 open_all funclog.write             funclog.wirte(port, outfile)\n ('COM22', None) {}
+2021-11-18 15:30:25 udp_loglib.py 1820 _serial_recv mPrint                     mPrint('start listen', self._SerialRead.queue_dict.keys())\n ('start listen', dict_keys(['COM15', 'COM22'])) {}
+2021-11-18 15:30:25 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-18 15:30:25 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}

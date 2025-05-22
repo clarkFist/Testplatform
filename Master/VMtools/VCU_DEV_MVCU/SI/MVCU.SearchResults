@@ -1,0 +1,5 @@
+---- _0006 Æ¥Åä (4 in 2 ÎÄ¼þ) ----
+Can_safety.c (can):        if(TRUE == IsTagOpen(VCU_SyRTC_0006003))
+Can_safety.c (can):        	 if(TRUE == IsTagOpen(VCU_SyRTC_0004001)||TRUE == IsTagOpen(VCU_SyRTC_0005001)||TRUE == IsTagOpen(VCU_SyRTC_0006001))
+Tstswitch.h (tst):	VCU_SyRTC_0006001 = 0x000601,
+Tstswitch.h (tst):	VCU_SyRTC_0006003 = 0x000603,

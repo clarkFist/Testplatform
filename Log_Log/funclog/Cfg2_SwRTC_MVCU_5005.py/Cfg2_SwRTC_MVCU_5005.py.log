@@ -1,0 +1,239 @@
+2022-11-04 20:12:26 Cfg2_SwRTC_MVCU_5005.py 52 <module> __init__     form = TestPlatForm(18125, 18125)\n (18125, 18125) {}
+2022-11-04 20:12:26 udp_loglib.py 1562 __init__ spawn         gevent.spawn(gevent.empty)   (<class 'udp_loglib.myGevent'>, <function myGevent.empty >) {}
+2022-11-04 20:12:26 udp_loglib.py 2001 _set_client mPrint             mPrint('use 2 mvcu')\n ('use 2 mvcu',) {}
+2022-11-04 20:12:26 udp_loglib.py 2012 gevent_join spawn         greenlet_list = [gevent.spawn(greenlet_list)]\n (<class 'udp_loglib.myGevent'>, <function confSet >) {}
+2022-11-04 20:12:26 udp_loglib.py 2019 gevent_join spawn         gevent.spawn(form._log_recv, *(form.clientP, )),   (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._log_recv of <udp_loglib.TestPlatForm object >>, <udp_loglib.UdpClient object >) {}
+2022-11-04 20:12:26 udp_loglib.py 2020 gevent_join spawn         gevent.spawn(form._log_recv, *(form.clientS, )),   (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._log_recv of <udp_loglib.TestPlatForm object >>, <udp_loglib.UdpClient object >) {}
+2022-11-04 20:12:26 udp_loglib.py 2021 gevent_join spawn         gevent.spawn(form._serial_recv),\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._serial_recv of <udp_loglib.TestPlatForm object >>) {}
+2022-11-04 20:12:26 udp_loglib.py 2022 gevent_join spawn         gevent.spawn(form._mib_recv),\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._mib_recv of <udp_loglib.TestPlatForm object >>) {}
+2022-11-04 20:12:26 udp_loglib.py 2023 gevent_join spawn         gevent.spawn(form._wireshark_recv)]\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._wireshark_recv of <udp_loglib.TestPlatForm object >>) {}
+2022-11-04 20:12:26 udp_loglib.py 2026 gevent_join joinall     gevent.joinall(default_list)\n (<class 'udp_loglib.myGevent'>, [<Greenlet >>(<bound method TestPlatForm._log_recv of <udp_logli, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._log_recv of <udp_logli, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._serial_recv of <udp_lo, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._mib_recv of <udp_logli, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._wireshark_recv of <udp, [FrameInfo(frame=<frame >, <Greenlet >>(<function confSet >, [FrameInfo(frame=<frame >]) {}
+2022-11-04 20:12:26 Cfg2_SwRTC_MVCU_5005.py 56 confSet respondCheck         FrameLib.respondCheck()   (<class 'udp_loglib.FrameLib'>,) {}
+2022-11-04 20:12:26 udp_loglib.py 667 respondCheck mPrint                 Public.mPrint('set success TP Ver-3.0.5')\n ('set success TP Ver-3.0.5',) {}
+2022-11-04 20:12:26 udp_loglib.py 378 run _log_recv             rt_val = func(*args, **kwargs)\n (<udp_loglib.UdpClient object >,) {}
+2022-11-04 20:12:26 udp_loglib.py 1820 _log_recv mPrint         mPrint('recv start %s,%s' % client.remote)\n ('recv start 20.2.1.10,18125',) {}
+2022-11-04 20:12:26 udp_loglib.py 378 run _log_recv             rt_val = func(*args, **kwargs)\n (<udp_loglib.UdpClient object >,) {}
+2022-11-04 20:12:26 udp_loglib.py 1820 _log_recv mPrint         mPrint('recv start %s,%s' % client.remote)\n ('recv start 20.1.1.10,18125',) {}
+2022-11-04 20:12:26 udp_loglib.py 1933 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-11-04 20:12:26 caseFunc.py 196 vm_build_update copySrc_toVM     vmtool.copySrc_toVM(cmd_type)\n ('mvcu',) {}
+2022-11-04 20:12:26 vmtcp.py 533 copySrc_toVM _send_cmd         self._send_cmd(func, args)\n ('copy_src', ('mvcu',)) {}
+2022-11-04 20:12:26 vmtcp.py 432 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "copy_src", "args": ["mvcu"]}',) {}
+2022-11-04 20:12:26 vmtcp.py 412 send set_VM_path             self.set_VM_path()\n () {}
+2022-11-04 20:12:26 vmtcp.py 553 set_VM_path _send_cmd         self._send_cmd(func, args)\n ('set_VM_path', ([('C:\\Users\\user\\Desktop', 'E:'), ('F:\\Testplatform\\Master\\testplatform', 'H:\\Master\\testplatform')],)) {}
+2022-11-04 20:12:26 vmtcp.py 432 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "set_VM_path", "args": [[["C:\\\\Users\\\\user\\\\Desktop", "E:"], ["F:\\\\Testplatform\\\\Master\\\\testplatform", "H:\\\\Master\\\\testplatform"]]]}',) {}
+2022-11-04 20:12:26 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2022-11-04 20:12:26 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.10'}
+2022-11-04 20:12:27 udp_loglib.py 1915 _wireshark_recv start                 p_new = self.wireShark.start(outfile='wireshark_recv.pcapng', block=False)\n () {'outfile': 'wireshark_recv.pcapng', 'block': False}
+2022-11-04 20:12:27 wireShark.py 103 start mPrint             self.print('%s' % self.get_path(outfile))\n ('Log_Log/default/wireshark_recv.pcapng',) {}
+2022-11-04 20:12:27 vmtcp.py 439 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'set_VM_path_b52892723d4f845ba0b40281465ee116') {}
+2022-11-04 20:12:27 wireShark.py 73 __find_Conn mPrint             self.print('“‘Ã´Õ¯  ≈‰∆˜: %s' % self._Conn)\n ('“‘Ã´Õ¯  ≈‰∆˜: blue',) {}
+2022-11-04 20:12:27 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 30) {'snmpip': '20.2.1.10'}
+2022-11-04 20:12:27 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 30) {'snmpip': '20.1.1.10'}
+2022-11-04 20:12:28 serialread.py 121 open_all funclog.write             funclog.wirte(port, outfile)\n ('COM11', None) {}
+2022-11-04 20:12:28 serialread.py 121 open_all funclog.write             funclog.wirte(port, outfile)\n ('COM6', None) {}
+2022-11-04 20:12:28 udp_loglib.py 1853 _serial_recv mPrint                     mPrint('start listen', self._SerialRead.queue_dict.keys())\n ('start listen', dict_keys(['COM11', 'COM6'])) {}
+2022-11-04 20:12:28 serialread.py 149 port_open mPrint             self.print('port %s cannot open' % port )\n ('port COM6 cannot open',) {}
+2022-11-04 20:12:28 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "set_VM_path", "args": [[["C:\\\\Users\\\\user\\\\Desktop", "E:"], ["F:\\\\Testplatform\\\\Master\\\\testplatform", "H:\\\\Master\\\\testplatform"]]]}',) {}
+2022-11-04 20:12:28 vmtcp.py 565 set_VM_path print_func         VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', '') {}
+2022-11-04 20:12:29 vmtcp.py 439 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'copy_src_mvcu') {}
+2022-11-04 20:12:30 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_src", "args": ["mvcu"]}',) {}
+2022-11-04 20:12:32 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (2, 1.12434983253479) {}
+2022-11-04 20:12:32 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 2, 1.12) {}
+2022-11-04 20:12:32 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_src", "args": ["mvcu"]}',) {}
+2022-11-04 20:12:33 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_src", "args": ["mvcu"]}',) {}
+2022-11-04 20:12:38 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (6, 4.6417460441589355) {}
+2022-11-04 20:12:38 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 6, 4.64) {}
+2022-11-04 20:12:38 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_src", "args": ["mvcu"]}',) {}
+2022-11-04 20:12:50 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (2, 12.125688076019287) {}
+2022-11-04 20:12:50 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 2, 12.13) {}
+2022-11-04 20:12:50 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_src", "args": ["mvcu"]}',) {}
+2022-11-04 20:12:50 vmtcp.py 545 copySrc_toVM print_func         VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', ' F:  to C:\\Users\\MSTEP\\Desktop\\VMtools\\VCU_DEV_MVCU\\src ') {}
+2022-11-04 20:12:50 caseFunc.py 198 vm_build_update openTagInit         vmtool.openTagInit(cmd_type, open_initTag)\n ('mvcu', 'VCU_MVCU_SwRTC_5005002') {}
+2022-11-04 20:12:50 vmtcp.py 463 openTagInit _send_cmd         self._send_cmd(func, args)\n ('openTagInit', ('mvcu', ['VCU_MVCU_SwRTC_5005002'])) {}
+2022-11-04 20:12:50 vmtcp.py 432 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "openTagInit", "args": ["mvcu", ["VCU_MVCU_SwRTC_5005002"]]}',) {}
+2022-11-04 20:12:51 vmtcp.py 439 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'openTagInit_["mvcu", ["VCU_MVCU_SwRTC_5005002"]]') {}
+2022-11-04 20:12:51 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "openTagInit", "args": ["mvcu", ["VCU_MVCU_SwRTC_5005002"]]}',) {}
+2022-11-04 20:12:53 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "openTagInit", "args": ["mvcu", ["VCU_MVCU_SwRTC_5005002"]]}',) {}
+2022-11-04 20:12:53 vmtcp.py 476 openTagInit print_func         VMConfig.print_func(state, Tag_list)\n (<class 'vmtcp.VMConfig'>, 'success', ['VCU_MVCU_SwRTC_5005002']) {}
+2022-11-04 20:12:54 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.1228294372558594) {}
+2022-11-04 20:12:54 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.12) {}
+2022-11-04 20:12:56 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (2, 1.781766653060913) {}
+2022-11-04 20:12:56 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 2, 1.78) {}
+2022-11-04 20:12:56 caseFunc.py 200 vm_build_update build     vmtool.build(cmd_type)\n ('mvcu',) {}
+2022-11-04 20:12:56 vmtcp.py 482 build _send_cmd         self._send_cmd(func, args)\n ('build', ('mvcu',)) {}
+2022-11-04 20:12:56 vmtcp.py 432 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:12:56 vmtcp.py 439 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'build_mvcu') {}
+2022-11-04 20:12:58 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.905120611190796) {}
+2022-11-04 20:12:58 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.91) {}
+2022-11-04 20:12:58 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:00 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:02 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (3, 1.550145149230957) {}
+2022-11-04 20:13:02 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 3, 1.55) {}
+2022-11-04 20:13:02 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:04 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:05 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (3, 1.212622880935669) {}
+2022-11-04 20:13:05 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 3, 1.21) {}
+2022-11-04 20:13:06 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:08 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:10 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:12 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:14 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:17 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:19 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:20 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (7, 1.6103973388671875) {}
+2022-11-04 20:13:20 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 7, 1.61) {}
+2022-11-04 20:13:21 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:23 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:26 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (1, 1.1246380805969238) {}
+2022-11-04 20:13:26 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 1, 1.12) {}
+2022-11-04 20:13:26 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:28 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:28 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.2202718257904053) {}
+2022-11-04 20:13:28 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.22) {}
+2022-11-04 20:13:30 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (5, 2.101853370666504) {}
+2022-11-04 20:13:30 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 5, 2.1) {}
+2022-11-04 20:13:30 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:32 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:35 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:36 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (7, 2.127676486968994) {}
+2022-11-04 20:13:36 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 7, 2.13) {}
+2022-11-04 20:13:37 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:39 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:41 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:43 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (6, 2.1071505546569824) {}
+2022-11-04 20:13:43 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 6, 2.11) {}
+2022-11-04 20:13:43 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:45 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:47 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:50 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (3, 1.5999014377593994) {}
+2022-11-04 20:13:50 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 3, 1.6) {}
+2022-11-04 20:13:50 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:52 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:54 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:56 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:13:59 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (7, 2.367774486541748) {}
+2022-11-04 20:13:59 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 7, 2.37) {}
+2022-11-04 20:13:59 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:01 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:02 udp_loglib.py 1933 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-11-04 20:14:02 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2022-11-04 20:14:03 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 30) {'snmpip': '20.2.1.10'}
+2022-11-04 20:14:05 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (1, 1.7216603755950928) {}
+2022-11-04 20:14:05 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 1, 1.72) {}
+2022-11-04 20:14:05 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:07 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:08 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (2, 1.2199897766113281) {}
+2022-11-04 20:14:08 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 2, 1.22) {}
+2022-11-04 20:14:09 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:11 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:13 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (8, 1.5508618354797363) {}
+2022-11-04 20:14:13 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 8, 1.55) {}
+2022-11-04 20:14:13 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:15 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:17 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:20 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:22 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:23 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.7891113758087158) {}
+2022-11-04 20:14:23 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.79) {}
+2022-11-04 20:14:24 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:26 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:28 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:29 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (8, 1.5840473175048828) {}
+2022-11-04 20:14:29 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 8, 1.58) {}
+2022-11-04 20:14:30 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:32 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.0150418281555176) {}
+2022-11-04 20:14:32 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.02) {}
+2022-11-04 20:14:32 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:34 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:36 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:38 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:40 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:43 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:45 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:47 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:47 vmtcp.py 495 build print_func         VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', 'err 0 warning 2318 time 109 s ') {}
+2022-11-04 20:14:47 caseFunc.py 201 vm_build_update copyImage_fromVM     vmtool.copyImage_fromVM(cmd_type)\n ('mvcu',) {}
+2022-11-04 20:14:47 vmtcp.py 505 copyImage_fromVM _send_cmd         self._send_cmd(func, args)\n ('copy_image', ('mvcu',)) {}
+2022-11-04 20:14:47 vmtcp.py 432 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "copy_image", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:48 vmtcp.py 439 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'copy_image_mvcu') {}
+2022-11-04 20:14:48 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:51 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.8414356708526611) {}
+2022-11-04 20:14:51 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.84) {}
+2022-11-04 20:14:51 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:52 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:53 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:54 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.1619558334350586) {}
+2022-11-04 20:14:54 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.16) {}
+2022-11-04 20:14:54 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:55 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:56 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:57 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:58 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["mvcu"]}',) {}
+2022-11-04 20:14:59 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.0307822227478027) {}
+2022-11-04 20:14:59 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.03) {}
+2022-11-04 20:14:59 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["mvcu"]}',) {}
+2022-11-04 20:15:01 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["mvcu"]}',) {}
+2022-11-04 20:15:02 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["mvcu"]}',) {}
+2022-11-04 20:15:02 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.0873889923095703) {}
+2022-11-04 20:15:02 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.09) {}
+2022-11-04 20:15:03 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["mvcu"]}',) {}
+2022-11-04 20:15:04 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["mvcu"]}',) {}
+2022-11-04 20:15:04 vmtcp.py 518 copyImage_fromVM print_func         VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', 'C:\\Users\\MSTEP\\Desktop\\VMtools\\VCU_DEV_MVCU\\build/out to H:\\Master\\testplatform\\RUT') {}
+2022-11-04 20:15:04 vmtcp.py 522 copyImage_fromVM print_func         VMConfig.print_func('image_path: %s ' % dstpath)\n (<class 'vmtcp.VMConfig'>, 'image_path: F:/Testplatform/Master/testplatform/RUT ') {}
+2022-11-04 20:15:14 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (5, 1.6868503093719482) {}
+2022-11-04 20:15:14 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 5, 1.69) {}
+2022-11-04 20:15:15 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.194631814956665) {}
+2022-11-04 20:15:15 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.19) {}
+2022-11-04 20:15:15 udp_loglib.py 1933 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-11-04 20:15:15 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2022-11-04 20:15:16 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 30) {'snmpip': '20.2.1.10'}
+2022-11-04 20:15:17 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.1145813465118408) {}
+2022-11-04 20:15:17 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.11) {}
+2022-11-04 20:15:18 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.0739409923553467) {}
+2022-11-04 20:15:18 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.07) {}
+2022-11-04 20:15:19 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.1751041412353516) {}
+2022-11-04 20:15:19 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.18) {}
+2022-11-04 20:15:21 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.0286567211151123) {}
+2022-11-04 20:15:21 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.03) {}
+2022-11-04 20:15:23 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.0472486019134521) {}
+2022-11-04 20:15:23 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.05) {}
+2022-11-04 20:15:37 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.0169966220855713) {}
+2022-11-04 20:15:37 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.02) {}
+2022-11-04 20:15:38 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.144869089126587) {}
+2022-11-04 20:15:38 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.14) {}
+2022-11-04 20:15:42 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (6, 1.502861499786377) {}
+2022-11-04 20:15:42 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 6, 1.5) {}
+2022-11-04 20:15:43 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (6, 1.5313746929168701) {}
+2022-11-04 20:15:43 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 6, 1.53) {}
+2022-11-04 20:15:45 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (3, 1.0289316177368164) {}
+2022-11-04 20:15:45 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 3, 1.03) {}
+2022-11-04 20:16:04 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (7, 1.5185039043426514) {}
+2022-11-04 20:16:04 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 7, 1.52) {}
+2022-11-04 20:16:27 udp_loglib.py 1933 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-11-04 20:16:27 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2022-11-04 20:16:28 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 30) {'snmpip': '20.2.1.10'}
+2022-11-04 20:16:30 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.0394105911254883) {}
+2022-11-04 20:16:30 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.04) {}
+2022-11-04 20:16:31 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.0179743766784668) {}
+2022-11-04 20:16:31 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.02) {}
+2022-11-04 20:16:35 Cfg2_SwRTC_MVCU_5005.py 24 LogPath_set path_set     Log.path_set(dir_path)\n (<class 'udp_loglib.Log'>, 'f:\\Testplatform\\Master\\testplatform\\case_test\\testcase\\Sw_MVCU/Log/Cfg2_SwRTC_MVCU_5005/02') {}
+2022-11-04 20:16:35 udp_loglib.py 1479 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to f:\\Testplatform\\Master\\testplatform\\case_test\\testcase\\Sw_MVCU\\Log\\Cfg2_SwRTC_MVCU_5005\\02/',) {}
+2022-11-04 20:16:35 udp_loglib.py 1933 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-11-04 20:16:35 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2022-11-04 20:16:35 udp_loglib.py 1915 _wireshark_recv start                 p_new = self.wireShark.start(outfile='wireshark_recv.pcapng', block=False)\n () {'outfile': 'wireshark_recv.pcapng', 'block': False}
+2022-11-04 20:16:35 wireShark.py 103 start mPrint             self.print('%s' % self.get_path(outfile))\n ('f:\\Testplatform\\Master\\testplatform\\case_test\\testcase\\Sw_MVCU\\Log\\Cfg2_SwRTC_MVCU_5005\\02/wireshark_recv.pcapng',) {}
+2022-11-04 20:16:35 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 30) {'snmpip': '20.2.1.10'}
+2022-11-04 20:16:37 udp_loglib.py 1917 _wireshark_recv spawn                     gevent.spawn(kill_p_old, p_old)\n (<class 'udp_loglib.myGevent'>, <function TestPlatForm._wireshark_recv.<locals>.kill_p_old >, <Popen >) {}
+2022-11-04 20:17:20 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.0804643630981445) {}
+2022-11-04 20:17:20 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.08) {}
+2022-11-04 20:17:45 udp_loglib.py 1933 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-11-04 20:17:45 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2022-11-04 20:17:46 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 30) {'snmpip': '20.2.1.10'}
+2022-11-04 20:17:49 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (3, 1.1077899932861328) {}
+2022-11-04 20:17:49 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 3, 1.11) {}
+2022-11-04 20:18:57 udp_loglib.py 1933 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-11-04 20:18:57 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2022-11-04 20:18:58 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 30) {'snmpip': '20.2.1.10'}
+2022-11-04 20:19:55 Cfg2_SwRTC_MVCU_5005.py 60 confSet normal_end         Public.normal_end()\n (<class 'udp_loglib.Public'>,) {}
+2022-11-04 20:19:55 udp_loglib.py 89 normal_end mPrint         cls.mPrint('normal end')\n ('normal end',) {}
+2022-11-04 20:19:55 Cfg2_SwRTC_MVCU_5005.py 61 confSet mPrint         Public.mPrint('exit')\n ('exit',) {}

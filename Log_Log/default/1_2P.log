@@ -1,0 +1,23 @@
+2023-05-23 09:58:36 1_2P 93 CPUA ACK_Icmp.c:118>Succeed to send ping response 
+2023-05-23 09:58:36 1_2P 94 CPUA TACK_Cop.c:129>GM_PROS_COP: The IP is successfully authorized to communicate with node(IP,node) 14020101,00000004
+2023-05-23 09:58:36 1_2P 95 CPUA TACK_Cop.c:129>GM_PROS_COP: The IP is successfully authorized to communicate with node(IP,node) 14020101,00000002
+2023-05-23 11:05:07 1_2P 348 CPUA ACK_Icmp.c:118>Succeed to send ping response 
+2023-05-23 13:08:26 1_2P 210 CPUA ACK_Icmp.c:118>Succeed to send ping response 
+2023-05-23 13:08:26 1_2P 211 CPUA tst_tsk.c:254> Abe-start 
+2023-05-23 13:08:27 1_2P 212 CPUA TACK_Cop.c:129>GM_PROS_COP: The IP is successfully authorized to communicate with node(IP,node) 14020101,00000004
+2023-05-23 13:08:27 1_2P 213 CPUA TACK_Cop.c:129>GM_PROS_COP: The IP is successfully authorized to communicate with node(IP,node) 14020101,00000002
+2023-05-23 13:08:27 1_2P 214 CPUA viv.c:1530>opening session 57A26828
+2023-05-23 13:08:27 1_2P 215 CPUA Schedule.c:962>main cycle 00018E70
+2023-05-23 13:08:27 1_2P 216 CPUA TACK_Cop.c:153>GM_PROS_COP: The IP is successfully deauthorized to communicate with the node(IP,nod 00000004,14020101
+2023-05-23 13:08:27 1_2P 217 CPUA TACK_Cop.c:153>GM_PROS_COP: The IP is successfully deauthorized to communicate with the node(IP,nod 00000002,14020101
+2023-05-23 13:08:27 1_2P 360 CPUB tst_tsk.c:254> Abe-start 
+2023-05-23 13:13:24 1_2P 233 CPUA ACK_Icmp.c:118>Succeed to send ping response 
+2023-05-23 13:14:50 1_2P 245 CPUA ACK_Icmp.c:118>Succeed to send ping response 
+2023-05-23 13:14:50 1_2P 246 CPUA TACK_Cop.c:129>GM_PROS_COP: The IP is successfully authorized to communicate with node(IP,node) 14020101,00000002
+2023-05-23 13:14:50 1_2P 247 CPUA TACK_Cop.c:129>GM_PROS_COP: The IP is successfully authorized to communicate with node(IP,node) 14020101,00000004
+2023-05-23 13:14:50 1_2P 248 CPUA viv.c:1530>opening session 191B491C
+2023-05-23 13:14:51 1_2P 249 CPUA TACK_Cop.c:153>GM_PROS_COP: The IP is successfully deauthorized to communicate with the node(IP,nod 00000004,14020101
+2023-05-23 13:25:57 1_2P 309 CPUA ACK_Icmp.c:118>Succeed to send ping response 
+2023-05-23 13:34:50 1_2P 368 CPUA ACK_Icmp.c:118>Succeed to send ping response 
+2023-05-23 13:51:38 1_2P 454 CPUA ACK_Icmp.c:118>Succeed to send ping response 
+2023-05-25 13:33:22 1_2P 32 CPUA ACK_Icmp.c:118>Succeed to send ping response 

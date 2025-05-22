@@ -1,0 +1,6 @@
+.metadata
+Project_Settings
+RAM
+FLASH_TO_SDRAM
+.S
+.a

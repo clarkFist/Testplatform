@@ -1,0 +1,741 @@
+]0;MINGW32:~
+[32mMSTEP@MSTEP-PC [33m~[0m
+$ cd /C/Users/MSTEP/Desktop/VCU115/mVCU_DEV_GUEST/build/
+]0;MINGW32:/C/Users/MSTEP/Desktop/VCU115/mVCU_DEV_GUEST/build
+[32mMSTEP@MSTEP-PC [33m/C/Users/MSTEP/Desktop/VCU115/mVCU_DEV_GUEST/build[0m
+$ 
+]0;MINGW32:/C/Users/MSTEP/Desktop/VCU115/mVCU_DEV_GUEST/build
+[32mMSTEP@MSTEP-PC [33m/C/Users/MSTEP/Desktop/VCU115/mVCU_DEV_GUEST/build[0m
+$ make.sh
+Compile  ../guest/demo/src/com/com.c
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.h|22|0|1|692|1)
+=}Tst_C_FUNCTIONAL_MODE;  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.h|37|0|1|1104|1)
+=};  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.h|41|0|1|1187|1)
+=};  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.h|94|0|1|2299|1)
+=}Tst_ControlFlag;  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.h|98|0|1|2350|1)
+=}Tst_MaintItems;  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_vcu_stubs.h|220|0|1|7201|1)
+=} TAG_NAME;  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\com.c|120|34|1|2938|1)
+=  TB_writeIOdBData[i].dataId = i+1;  
+>implicit arithmetic conversion from 'int' to 'unsigned int'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\com.c|125|33|1|3052|1)
+=  TB_readIOdBData[i].dataId = i+1;  
+>implicit arithmetic conversion from 'int' to 'unsigned int'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\com.c|269|36|1|8120|1)
+=            OSCPUUsageMin = cpuUsage;  
+>implicit arithmetic conversion from 'unsigned int' to 'unsigned char'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\com.c|324|64|1|10571|1)
+=U_SyRTC_4005001 open ",1, IsTagOpen(VCU_SyRTC_4005001),0,0,0,0,0);   
+>illegal implicit conversion from 'int' to
+>'@enum$330com_c'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\com.c|336|64|1|11061|1)
+=ction when check the physical connection is break",0,0,0,0,0,0,0);   
+>illegal implicit conversion from 'int' to
+>'@enum$330com_c'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\com.c|343|64|1|11544|1)
+=N == 2u)&&(pNetStatus.physicalLayerStatus_R == 2u",0,0,0,0,0,0,0);   
+>illegal implicit conversion from 'int' to
+>'@enum$330com_c'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\com.c|357|64|1|12042|1)
+=Report(4,DTXT_C_LOC,"MVCU call swith A/S function",0,0,0,0,0,0,0);   
+>illegal implicit conversion from 'int' to
+>'@enum$330com_c'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\com.c|364|9|1|12175|1)
+=  i = i/0;  
+>division by 0
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\com.c|151|32|16|3869|16)
+=    MSTEPINC_E_ParamSectorState paramSectorState;  
+>variable / argument 'paramSectorState' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\com.c|146|12|18|3649|18)
+=    BOOLEAN bNewParamAvailable;  
+>variable / argument 'bNewParamAvailable' is not used in function
+Compile  ../guest/demo/src/com/guest.c
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|285|0|7|11254|7)
+=BOOLEAN GUEST_F_ReprogAutho(void)  
+>function has no prototype
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|500|41|1|19164|1)
+=BOOLEAN GUEST_F_Srtt_RxProcess(INT8U EqId, INT8U* pData, INT16U dataSize, INT16U* pOffset)  
+>variable / argument 'EqId' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|500|55|1|19178|1)
+=BOOLEAN GUEST_F_Srtt_RxProcess(INT8U EqId, INT8U* pData, INT16U dataSize, INT16U* pOffset)  
+>variable / argument 'pData' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|500|64|1|19195|1)
+=GUEST_F_Srtt_RxProcess(INT8U EqId, INT8U* pData, INT16U dataSize, INT16U* pOffset)  
+>variable / argument 'dataSize' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|500|64|1|19212|1)
+=ocess(INT8U EqId, INT8U* pData, INT16U dataSize, INT16U* pOffset)  
+>variable / argument 'pOffset' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|505|41|1|19279|1)
+=BOOLEAN GUEST_F_Srtt_TxProcess(INT8U EqId, INT8U* pData, INT16U buffSize, INT16U* pOffset)  
+>variable / argument 'EqId' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|505|55|1|19293|1)
+=BOOLEAN GUEST_F_Srtt_TxProcess(INT8U EqId, INT8U* pData, INT16U buffSize, INT16U* pOffset)  
+>variable / argument 'pData' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|505|64|1|19310|1)
+=GUEST_F_Srtt_TxProcess(INT8U EqId, INT8U* pData, INT16U buffSize, INT16U* pOffset)  
+>variable / argument 'buffSize' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|505|64|1|19327|1)
+=ocess(INT8U EqId, INT8U* pData, INT16U buffSize, INT16U* pOffset)  
+>variable / argument 'pOffset' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|510|33|1|19387|1)
+=void GUEST_F_TxProcess(INT8U EqId, const INT8U* pData, INT16U dataSize)  
+>variable / argument 'EqId' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|510|53|1|19407|1)
+=void GUEST_F_TxProcess(INT8U EqId, const INT8U* pData, INT16U dataSize)  
+>variable / argument 'pData' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|510|64|1|19424|1)
+=UEST_F_TxProcess(INT8U EqId, const INT8U* pData, INT16U dataSize)  
+>variable / argument 'dataSize' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|515|37|1|19482|1)
+=INT32U GUEST_F_GetSrttTime(INT8U EqId)  
+>variable / argument 'EqId' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|522|41|1|19640|1)
+=INT32U GUEST_F_GetNetLapseTime(INT8U EqId)  
+>variable / argument 'EqId' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|538|36|1|19901|1)
+=void GUEST_F_FSFB2_RxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)  
+>variable / argument 'EqId' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|538|62|1|19927|1)
+=void GUEST_F_FSFB2_RxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)  
+>variable / argument 'pData' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|538|64|1|19944|1)
+=FB2_RxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)  
+>variable / argument 'dataSize' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|543|36|1|20108|1)
+=void GUEST_F_FSFB2_TxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)  
+>variable / argument 'EqId' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|543|62|1|20134|1)
+=void GUEST_F_FSFB2_TxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)  
+>variable / argument 'pData' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|543|64|1|20151|1)
+=FB2_TxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)  
+>variable / argument 'dataSize' is not used in function
+Compile  ../guest/demo/src/tst/tst.c
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\Tst.h|22|0|1|692|1)
+=}Tst_C_FUNCTIONAL_MODE;  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\Tst.h|37|0|1|1104|1)
+=};  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\Tst.h|41|0|1|1187|1)
+=};  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\Tst.h|94|0|1|2299|1)
+=}Tst_ControlFlag;  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\Tst.h|98|0|1|2350|1)
+=}Tst_MaintItems;  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_vcu_stubs.h|220|0|1|7201|1)
+=} TAG_NAME;  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.c|78|0|6|2912|6)
+=INT16U Tst_F_Crc16(const char *buf,int len)  
+>function has no prototype
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.c|87|17|1|3101|1)
+=   temp = *buf<<8;  
+>implicit arithmetic conversion from 'int' to 'unsigned short'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.c|163|30|1|5599|1)
+= for(i=0; locString[i]!=0;i++); //                  STD_F_VSnprintf               
+>possible unwanted ';'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.c|169|28|1|5796|1)
+= for(i=0; String[i] !=0;i++);  
+>possible unwanted ';'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.c|306|49|1|9783|1)
+= for(size_Str = 0 ;Str[size_Str] !=0 ;size_Str++);  
+>possible unwanted ';'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.c|315|49|1|10092|1)
+= for(size_Str = 0 ;Str[size_Str] !=0 ;size_Str++);  
+>possible unwanted ';'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.c|329|64|1|10618|1)
+=(3u,DTXT_C_LOC,"udp pos err",0u,pos+4, sizeof(data.data),0,0,0,0);  
+>illegal implicit conversion from 'unsigned int' to
+>'@enum$419tst_c'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.c|329|64|1|10618|1)
+=(3u,DTXT_C_LOC,"udp pos err",0u,pos+4, sizeof(data.data),0,0,0,0);  
+>implicit arithmetic conversion from 'int' to 'unsigned int'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.c|330|64|1|10705|1)
+=t(3u,DTXT_C_LOC,"udp pos err",2u,pos+4,Tst_UDPDataMaxLen,0,0,0,0);  
+>illegal implicit conversion from 'unsigned int' to
+>'@enum$419tst_c'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.c|330|64|1|10705|1)
+=t(3u,DTXT_C_LOC,"udp pos err",2u,pos+4,Tst_UDPDataMaxLen,0,0,0,0);  
+>implicit arithmetic conversion from 'int' to 'unsigned int'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.c|361|53|1|11670|1)
+= data.dataLen = (INT16U)Tst_F_UDPLenGet(data.dataLen); //                  
+>implicit arithmetic conversion from 'unsigned short' to 'unsigned char'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.c|271|46|1|8625|1)
+=void Tst_F_UDPReport(DTXT_E_ReportType    Type,//store  
+>variable / argument 'Type' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.c|459|0|4|14311|4)
+=void Tst_F_ReportProcess()  
+>function has no prototype
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.c|516|64|1|16122|1)
+=st_type,4u, locString, (const char*)logStr, 0u,0u,0u,0u,0u,0u,0u);  
+>illegal implicit conversion from 'unsigned int' to
+>'@enum$419tst_c'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.c|528|64|1|16449|1)
+=PReport(4u, locString, (const char*)logStr, 0u,0u,0u,0u,0u,0u,0u);  
+>illegal implicit conversion from 'unsigned int' to
+>'@enum$419tst_c'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.c|545|0|4|16798|4)
+=void Tst_F_OnFault(INT8U eventID, INT32U context, const char *pFileName, INT16U line, INT8U taskPrio)  
+>function has no prototype
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.c|555|0|4|17170|4)
+=void Tst_F_SendMaintMsg(INT8U msgType, const char* fmt,...)  
+>function has no prototype
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.c|574|53|1|17860|1)
+= data.dataLen = (INT16U)Tst_F_UDPLenGet(data.dataLen); //                  
+>implicit arithmetic conversion from 'unsigned short' to 'unsigned char'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.c|577|0|5|17934|5)
+=INT8U Tst_F_SendEventLog()  
+>function has no prototype
+Compile  ../guest/demo/src/tst/tst_tsk.c
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.h|22|0|1|692|1)
+=}Tst_C_FUNCTIONAL_MODE;  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.h|37|0|1|1104|1)
+=};  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.h|41|0|1|1187|1)
+=};  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.h|94|0|1|2299|1)
+=}Tst_ControlFlag;  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.h|98|0|1|2350|1)
+=}Tst_MaintItems;  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_vcu_stubs.h|220|0|1|7201|1)
+=} TAG_NAME;  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_tsk.c|36|0|5|1464|5)
+=INT8U Tst_F_ConfPonter(INT8U id, Tst_UDPConfArgs * args)  
+>function has no prototype
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_tsk.c|216|64|1|6562|1)
+=calNodeID_A = ( (boardType[0] -1)*16 + (boardType[1] +1 + 3 ))*2;  
+>implicit arithmetic conversion from 'int' to 'unsigned char'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_tsk.c|321|32|1|9390|12)
+=e.data[1],TstBufferFrame.data[2]);}while(0)
+>illegal implicit conversion from 'unsigned int' to
+>'@enum$419tst_tsk_c'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_tsk.c|365|32|1|11334|12)
+=ufferFrame.dstNodeID,0u,0u,0u,0u);}while(0)
+>illegal implicit conversion from 'unsigned int' to
+>'@enum$419tst_tsk_c'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_tsk.c|375|32|1|11635|12)
+= to ", 2u,dstAddr,0u,0u,0u,0u,0u);}while(0)
+>illegal implicit conversion from 'unsigned int' to
+>'@enum$419tst_tsk_c'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_tsk.c|427|27|1|12727|1)
+=  Tst_Cycle_UDPReport = val;  
+>implicit arithmetic conversion from 'unsigned int' to 'unsigned char'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_tsk.c|429|32|1|12735|12)
+=t_Cycle_UDPReport,0u,0u,0u,0u,0u);}while(0)
+>illegal implicit conversion from 'unsigned int' to
+>'@enum$419tst_tsk_c'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_tsk.c|448|31|1|13159|1)
+=    Tst_Flag_SerialReport = val;  
+>implicit arithmetic conversion from 'unsigned int' to 'unsigned char'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_tsk.c|451|28|1|13223|1)
+=    Tst_Flag_UDPReport = val;  
+>implicit arithmetic conversion from 'unsigned int' to 'unsigned char'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_tsk.c|454|31|1|13291|1)
+=    Tst_Flag_SerialReport = val;  
+>implicit arithmetic conversion from 'unsigned int' to 'unsigned char'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_tsk.c|455|28|1|13322|1)
+=    Tst_Flag_UDPReport = val;  
+>implicit arithmetic conversion from 'unsigned int' to 'unsigned char'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_tsk.c|458|28|1|13386|1)
+=    Tst_Flag_AllReport = val;  
+>implicit arithmetic conversion from 'unsigned int' to 'unsigned char'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_tsk.c|459|28|1|13417|1)
+=    Tst_Flag_UDPReport = val;  
+>implicit arithmetic conversion from 'unsigned int' to 'unsigned char'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_tsk.c|464|29|1|13511|1)
+=     Tst_Flag_AllReport = val;  
+>implicit arithmetic conversion from 'unsigned int' to 'unsigned char'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_tsk.c|465|29|1|13543|1)
+=     Tst_Flag_UDPReport = val;  
+>implicit arithmetic conversion from 'unsigned int' to 'unsigned char'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_tsk.c|471|32|1|13616|12)
+=, Tst_Flag_UDPReport,0u,0u,0u,0u);}while(0)
+>illegal implicit conversion from 'unsigned int' to
+>'@enum$419tst_tsk_c'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_tsk.c|487|31|1|14071|1)
+=  Tst_Control_flags[type] = val;  
+>implicit arithmetic conversion from 'unsigned int' to 'unsigned char'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_tsk.c|525|32|1|14866|12)
+=sg[0],Frame->maint_type,0u,0u,0u);}while(0)
+>illegal implicit conversion from 'unsigned int' to
+>'@enum$419tst_tsk_c'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_tsk.c|528|59|1|15037|1)
+=void Tst_F_MaintTask(ALSTOM_E_FunctionalMode functionalMode)  
+>variable / argument 'functionalMode' is not used in function
+Compile  ../guest/demo/src/tst/tstswitch.c
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.h|22|0|1|692|1)
+=}Tst_C_FUNCTIONAL_MODE;  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.h|37|0|1|1104|1)
+=};  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.h|41|0|1|1187|1)
+=};  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.h|94|0|1|2299|1)
+=}Tst_ControlFlag;  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst.h|98|0|1|2350|1)
+=}Tst_MaintItems;  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tst_vcu_stubs.h|220|0|1|7201|1)
+=} TAG_NAME;  
+>identifier expected
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tstswitch.c|29|0|4|851|4)
+=void Tst_F_TstSwitchInit()  
+>function has no prototype
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tstswitch.c|38|0|6|1013|6)
+=INT32S Tst_F_FindTagTable(TAG_NAME tagName)  
+>function has no prototype
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tstswitch.c|50|0|6|1210|6)
+=INT32S Tst_F_FindStringTableWithName(const char* name)  
+>function has no prototype
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tstswitch.c|62|0|4|1414|4)
+=void Tst_F_OnOpen(const char* name)  
+>function has no prototype
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tstswitch.c|97|11|1|2125|1)
+=  return -1;  
+>implicit arithmetic conversion from 'int' to 'unsigned int'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tstswitch.c|194|40|1|3925|1)
+=   g_switchTable[i].m_CloseCycle = cycle;//  
+>implicit arithmetic conversion from 'unsigned int' to 'int'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tstswitch.c|223|34|1|4529|1)
+= TB_BOOL bOpen = (tagTemp&0xF0)>>4;  
+>implicit arithmetic conversion from 'unsigned int' to 'unsigned char'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tstswitch.c|224|31|1|4563|1)
+= TB_BOOL bSync = (tagTemp&0x0F);  
+>implicit arithmetic conversion from 'unsigned int' to 'unsigned char'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tstswitch.c|236|64|1|4916|1)
+=_LOC,"cpu A,B g_switchTemp sync fail",2u,bOpen,bSync,3u,4u,5u,6u);  
+>illegal implicit conversion from 'unsigned int' to
+>'@enum$419tstswitch_c'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tstswitch.c|237|64|1|5014|1)
+=_LOC,"cpu A,B g_switchTemp sync fail",2u,bOpen,bSync,3u,4u,5u,6u);  
+>illegal implicit conversion from 'unsigned int' to
+>'@enum$419tstswitch_c'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tstswitch.c|245|40|1|5152|1)
+=   GUEST_F_TST_SetTagOpen(tagName, cycle);  
+>illegal implicit conversion from 'unsigned int' to
+>'@enum$474tstswitch_c'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tstswitch.c|245|40|1|5152|1)
+=   GUEST_F_TST_SetTagOpen(tagName, cycle);  
+>implicit arithmetic conversion from 'unsigned int' to 'int'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tstswitch.c|249|32|1|5177|12)
+=,l_OpenedStubIdx, bSync,0u,5u,6u);}while(0)
+>illegal implicit conversion from 'unsigned int' to
+>'@enum$419tstswitch_c'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tstswitch.c|256|36|1|5343|1)
+=  GUEST_F_TST_SetTagClose(tagName, 0);  
+>illegal implicit conversion from 'unsigned int' to
+>'@enum$474tstswitch_c'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tstswitch.c|256|36|1|5343|1)
+=  GUEST_F_TST_SetTagClose(tagName, 0);  
+>implicit arithmetic conversion from 'unsigned int' to 'int'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tstswitch.c|261|0|8|5367|8)
+=unsigned long TB_GetTimeInterval(INT32U sTime, INT32U eTime)  
+>function has no prototype
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tstswitch.c|286|21|1|6042|1)
+=  i = l_OpenedStubIdx;  
+>implicit arithmetic conversion from 'unsigned int' to 'int'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tstswitch.c|296|32|1|6262|12)
+=tchTable[i].m_OpenCycle,0u,5u,6u);}while(0)
+>illegal implicit conversion from 'unsigned int' to
+>'@enum$419tstswitch_c'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tstswitch.c|296|32|1|6262|12)
+=tchTable[i].m_OpenCycle,0u,5u,6u);}while(0)
+>implicit arithmetic conversion from 'int' to 'unsigned int'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tstswitch.c|305|32|1|6728|12)
+=Name,l_OpenedStubIdx, 0,0u,5u,6u);}while(0)
+>illegal implicit conversion from 'unsigned int' to
+>'@enum$419tstswitch_c'
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\VCU115\mVCU_DEV_GUEST\guest\demo\src\tst\tstswitch.c|298|61|1|6436|1)
+=void GUEST_F_TST_SetTagClose( TAG_NAME tagName, INT32U cycle )  
+>variable / argument 'cycle' is not used in function
+---------- CPU_A GUEST_NOETH Done 
+Compile  ../guest/demo/src/com/com.c
+In file included from ../guest/demo/src/com/com.c:14:0:
+../guest/demo/src/tst/tstswitch.h:38:15: warning: redundant redeclaration of 'tst_cycle' [-Wredundant-decls]
+ extern INT32U tst_cycle;
+               ^~~~~~~~~
+In file included from ../guest/demo/src/com/com.c:13:0:
+../guest/demo/src/tst/tst.h:75:15: note: previous declaration of 'tst_cycle' was here
+ extern INT32U tst_cycle;
+               ^~~~~~~~~
+../guest/demo/src/com/com.c: In function 'COM_F_Start':
+../guest/demo/src/com/com.c:109:11: warning: declaration of 'i' shadows a global declaration [-Wshadow]
+     INT8U i = 0;
+           ^
+../guest/demo/src/com/com.c:42:9: note: shadowed declaration is here
+ INT32U  i;
+         ^
+../guest/demo/src/com/com.c: In function 'COM_F_MainLoop':
+../guest/demo/src/com/com.c:154:11: warning: declaration of 'i' shadows a global declaration [-Wshadow]
+     INT8U i = 0;
+           ^
+../guest/demo/src/com/com.c:42:9: note: shadowed declaration is here
+ INT32U  i;
+         ^
+../guest/demo/src/com/com.c:246:26: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
+             if (cpuUsage >= 0u)
+                          ^~
+../guest/demo/src/com/com.c:364:8: warning: division by zero [-Wdiv-by-zero]
+   i = i/0;
+        ^
+../guest/demo/src/com/com.c:157:11: warning: unused variable 'sessionid' [-Wunused-variable]
+     INT8U sessionid = 6;
+           ^~~~~~~~~
+../guest/demo/src/com/com.c:151:33: warning: unused variable 'paramSectorState' [-Wunused-variable]
+     MSTEPINC_E_ParamSectorState paramSectorState;
+                                 ^~~~~~~~~~~~~~~~
+../guest/demo/src/com/com.c:149:12: warning: unused variable 'pSectorBuffer' [-Wunused-variable]
+     INT8U* pSectorBuffer = NULL;  //var4，参数定义有问题???????????????????
+            ^~~~~~~~~~~~~
+../guest/demo/src/com/com.c:148:12: warning: unused variable 'sectorReparamCounter' [-Wunused-variable]
+     INT32U sectorReparamCounter = 0u; //var8
+            ^~~~~~~~~~~~~~~~~~~~
+../guest/demo/src/com/com.c:146:13: warning: unused variable 'bNewParamAvailable' [-Wunused-variable]
+     BOOLEAN bNewParamAvailable;
+             ^~~~~~~~~~~~~~~~~~
+../guest/demo/src/com/com.c:145:11: warning: unused variable 'paramSectorNum' [-Wunused-variable]
+     INT8U paramSectorNum = 0u;
+           ^~~~~~~~~~~~~~
+Compile  ../guest/demo/src/com/guest.c
+../guest/demo/src/com/guest.c: In function 'GUEST_F_Srtt_RxProcess':
+../guest/demo/src/com/guest.c:500:38: warning: unused parameter 'EqId' [-Wunused-parameter]
+ BOOLEAN GUEST_F_Srtt_RxProcess(INT8U EqId, INT8U* pData, INT16U dataSize, INT16U* pOffset)
+                                      ^~~~
+../guest/demo/src/com/guest.c:500:51: warning: unused parameter 'pData' [-Wunused-parameter]
+ BOOLEAN GUEST_F_Srtt_RxProcess(INT8U EqId, INT8U* pData, INT16U dataSize, INT16U* pOffset)
+                                                   ^~~~~
+../guest/demo/src/com/guest.c:500:65: warning: unused parameter 'dataSize' [-Wunused-parameter]
+ BOOLEAN GUEST_F_Srtt_RxProcess(INT8U EqId, INT8U* pData, INT16U dataSize, INT16U* pOffset)
+                                                                 ^~~~~~~~
+../guest/demo/src/com/guest.c:500:83: warning: unused parameter 'pOffset' [-Wunused-parameter]
+ BOOLEAN GUEST_F_Srtt_RxProcess(INT8U EqId, INT8U* pData, INT16U dataSize, INT16U* pOffset)
+                                                                                   ^~~~~~~
+../guest/demo/src/com/guest.c: In function 'GUEST_F_Srtt_TxProcess':
+../guest/demo/src/com/guest.c:505:38: warning: unused parameter 'EqId' [-Wunused-parameter]
+ BOOLEAN GUEST_F_Srtt_TxProcess(INT8U EqId, INT8U* pData, INT16U buffSize, INT16U* pOffset)
+                                      ^~~~
+../guest/demo/src/com/guest.c:505:51: warning: unused parameter 'pData' [-Wunused-parameter]
+ BOOLEAN GUEST_F_Srtt_TxProcess(INT8U EqId, INT8U* pData, INT16U buffSize, INT16U* pOffset)
+                                                   ^~~~~
+../guest/demo/src/com/guest.c:505:65: warning: unused parameter 'buffSize' [-Wunused-parameter]
+ BOOLEAN GUEST_F_Srtt_TxProcess(INT8U EqId, INT8U* pData, INT16U buffSize, INT16U* pOffset)
+                                                                 ^~~~~~~~
+../guest/demo/src/com/guest.c:505:83: warning: unused parameter 'pOffset' [-Wunused-parameter]
+ BOOLEAN GUEST_F_Srtt_TxProcess(INT8U EqId, INT8U* pData, INT16U buffSize, INT16U* pOffset)
+                                                                                   ^~~~~~~
+../guest/demo/src/com/guest.c: In function 'GUEST_F_TxProcess':
+../guest/demo/src/com/guest.c:510:30: warning: unused parameter 'EqId' [-Wunused-parameter]
+ void GUEST_F_TxProcess(INT8U EqId, const INT8U* pData, INT16U dataSize)
+                              ^~~~
+../guest/demo/src/com/guest.c:510:49: warning: unused parameter 'pData' [-Wunused-parameter]
+ void GUEST_F_TxProcess(INT8U EqId, const INT8U* pData, INT16U dataSize)
+                                                 ^~~~~
+../guest/demo/src/com/guest.c:510:63: warning: unused parameter 'dataSize' [-Wunused-parameter]
+ void GUEST_F_TxProcess(INT8U EqId, const INT8U* pData, INT16U dataSize)
+                                                               ^~~~~~~~
+../guest/demo/src/com/guest.c: In function 'GUEST_F_GetSrttTime':
+../guest/demo/src/com/guest.c:515:34: warning: unused parameter 'EqId' [-Wunused-parameter]
+ INT32U GUEST_F_GetSrttTime(INT8U EqId)
+                                  ^~~~
+../guest/demo/src/com/guest.c: In function 'GUEST_F_GetNetLapseTime':
+../guest/demo/src/com/guest.c:522:38: warning: unused parameter 'EqId' [-Wunused-parameter]
+ INT32U GUEST_F_GetNetLapseTime(INT8U EqId)
+                                      ^~~~
+../guest/demo/src/com/guest.c: In function 'GUEST_F_FSFB2_RxData':
+../guest/demo/src/com/guest.c:538:33: warning: unused parameter 'EqId' [-Wunused-parameter]
+ void GUEST_F_FSFB2_RxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)
+                                 ^~~~
+../guest/demo/src/com/guest.c:538:58: warning: unused parameter 'pData' [-Wunused-parameter]
+ void GUEST_F_FSFB2_RxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)
+                                                          ^~~~~
+../guest/demo/src/com/guest.c:538:72: warning: unused parameter 'dataSize' [-Wunused-parameter]
+ void GUEST_F_FSFB2_RxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)
+                                                                        ^~~~~~~~
+../guest/demo/src/com/guest.c: In function 'GUEST_F_FSFB2_TxData':
+../guest/demo/src/com/guest.c:543:33: warning: unused parameter 'EqId' [-Wunused-parameter]
+ void GUEST_F_FSFB2_TxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)
+                                 ^~~~
+../guest/demo/src/com/guest.c:543:58: warning: unused parameter 'pData' [-Wunused-parameter]
+ void GUEST_F_FSFB2_TxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)
+                                                          ^~~~~
+../guest/demo/src/com/guest.c:543:72: warning: unused parameter 'dataSize' [-Wunused-parameter]
+ void GUEST_F_FSFB2_TxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)
+                                                                        ^~~~~~~~
+At top level:
+../guest/demo/src/com/guest.c:243:33: warning: 'GUEST_TFTP_V_CurrentCommand' defined but not used [-Wunused-variable]
+ static GUEST_TFTP_E_CommandType GUEST_TFTP_V_CurrentCommand = GUEST_TFTP_C_CMD_NOTHING;
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../guest/demo/src/com/guest.c:238:14: warning: 'g_SelfTest' defined but not used [-Wunused-variable]
+ static INT8U g_SelfTest = ALSTOM_C_NOT_RUNNING;
+              ^~~~~~~~~~
+../guest/demo/src/com/guest.c:212:28: warning: 'GUEST_V_FF_CB' defined but not used [-Wunused-variable]
+ static GUEST_T_FF_CB       GUEST_V_FF_CB           =
+                            ^~~~~~~~~~~~~
+../guest/demo/src/com/guest.c:129:14: warning: 'GUEST_C_ApplicationSwVersion' defined but not used [-Wunused-variable]
+ static INT8U GUEST_C_ApplicationSwVersion[15];
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Compile  ../guest/demo/src/tst/tst.c
+In file included from ../guest/demo/src/tst/tst.c:2:0:
+../guest/demo/src/tst/Tstswitch.h:38:15: warning: redundant redeclaration of 'tst_cycle' [-Wredundant-decls]
+ extern INT32U tst_cycle;
+               ^~~~~~~~~
+In file included from ../guest/demo/src/tst/tst.c:1:0:
+../guest/demo/src/tst/Tst.h:75:15: note: previous declaration of 'tst_cycle' was here
+ extern INT32U tst_cycle;
+               ^~~~~~~~~
+../guest/demo/src/tst/tst.c: In function 'Tst_F_ReportStore':
+../guest/demo/src/tst/tst.c:145:18: warning: variable 'status' set but not used [-Wunused-but-set-variable]
+  ALSTOM_T_Status status = 0u;
+                  ^~~~~~
+../guest/demo/src/tst/tst.c: In function 'Tst_F_UDPReport':
+../guest/demo/src/tst/tst.c:292:13: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+  if(Numbval <0 || Numbval > 6 || locString == NULL ||String == NULL )
+             ^
+../guest/demo/src/tst/tst.c:271:43: warning: unused parameter 'Type' [-Wunused-parameter]
+ void Tst_F_UDPReport(DTXT_E_ReportType    Type,//store
+                                           ^~~~
+../guest/demo/src/tst/tst.c: In function 'Tst_F_SendEventLog':
+../guest/demo/src/tst/tst.c:579:13: warning: unused variable 'count' [-Wunused-variable]
+  static int count = 0;
+             ^~~~~
+../guest/demo/src/tst/tst.c:581:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../guest/demo/src/tst/tst.c:579:13: warning: 'count' defined but not used [-Wunused-variable]
+  static int count = 0;
+             ^~~~~
+Compile  ../guest/demo/src/tst/tst_tsk.c
+In file included from ../guest/demo/src/tst/tst_tsk.c:3:0:
+../guest/demo/src/tst/tstswitch.h:38:15: warning: redundant redeclaration of 'tst_cycle' [-Wredundant-decls]
+ extern INT32U tst_cycle;
+               ^~~~~~~~~
+In file included from ../guest/demo/src/tst/tst_tsk.h:3:0,
+                 from ../guest/demo/src/tst/tst_tsk.c:1:
+../guest/demo/src/tst/tst.h:75:15: note: previous declaration of 'tst_cycle' was here
+ extern INT32U tst_cycle;
+               ^~~~~~~~~
+../guest/demo/src/tst/tst_tsk.c: In function 'Tst_F_UDPTask':
+../guest/demo/src/tst/tst_tsk.c:293:9: warning: unused variable 'timeout' [-Wunused-variable]
+  INT32U timeout = 0u;
+         ^~~~~~~
+../guest/demo/src/tst/tst_tsk.c: In function 'Tst_F_ReportCycleSet':
+../guest/demo/src/tst/tst_tsk.c:425:9: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
+  if(val >= 0 && val<100)
+         ^~
+../guest/demo/src/tst/tst_tsk.c: In function 'Tst_F_ReportFlagSet':
+../guest/demo/src/tst/tst_tsk.c:445:3: warning: switch missing default case [-Wswitch-default]
+   switch(args->val1)
+   ^~~~~~
+../guest/demo/src/tst/tst_tsk.c: In function 'Tst_F_MaintTask':
+../guest/demo/src/tst/tst_tsk.c:528:46: warning: unused parameter 'functionalMode' [-Wunused-parameter]
+ void Tst_F_MaintTask(ALSTOM_E_FunctionalMode functionalMode)
+                                              ^~~~~~~~~~~~~~
+../guest/demo/src/tst/tst_tsk.c: In function 'Tst_F_ConfPonter':
+../guest/demo/src/tst/tst_tsk.c:48:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../guest/demo/src/tst/tst_tsk.c: In function 'Tst_F_Task':
+../guest/demo/src/tst/tst_tsk.c:288:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Compile  ../guest/demo/src/tst/tstswitch.c
+In file included from ../guest/demo/src/tst/tstswitch.c:1:0:
+../guest/demo/src/tst/tstswitch.h:38:15: warning: redundant redeclaration of 'tst_cycle' [-Wredundant-decls]
+ extern INT32U tst_cycle;
+               ^~~~~~~~~
+In file included from ../guest/demo/src/tst/tstswitch.h:4:0,
+                 from ../guest/demo/src/tst/tstswitch.c:1:
+../guest/demo/src/tst/tst.h:75:15: note: previous declaration of 'tst_cycle' was here
+ extern INT32U tst_cycle;
+               ^~~~~~~~~
+../guest/demo/src/tst/tstswitch.c:25:6: warning: redundant redeclaration of 'GUEST_F_TST_SetTagOpen' [-Wredundant-decls]
+ void GUEST_F_TST_SetTagOpen( TAG_NAME tagName, INT32U );
+      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../guest/demo/src/tst/tstswitch.c:1:0:
+../guest/demo/src/tst/tstswitch.h:60:6: note: previous declaration of 'GUEST_F_TST_SetTagOpen' was here
+ void GUEST_F_TST_SetTagOpen( TAG_NAME tagName, INT32U cycle);
+      ^~~~~~~~~~~~~~~~~~~~~~
+../guest/demo/src/tst/tstswitch.c:26:6: warning: redundant redeclaration of 'GUEST_F_TST_SetTagClose' [-Wredundant-decls]
+ void GUEST_F_TST_SetTagClose( TAG_NAME tagName, INT32U );
+      ^~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../guest/demo/src/tst/tstswitch.c:1:0:
+../guest/demo/src/tst/tstswitch.h:61:6: note: previous declaration of 'GUEST_F_TST_SetTagClose' was here
+ void GUEST_F_TST_SetTagClose( TAG_NAME tagName, INT32U cycle );
+      ^~~~~~~~~~~~~~~~~~~~~~~
+../guest/demo/src/tst/tstswitch.c:27:6: warning: redundant redeclaration of 'GUEST_F_TST_DeleteTag' [-Wredundant-decls]
+ void GUEST_F_TST_DeleteTag( fault_insert_item* pTagBuf, INT32U* idx, TAG_NAME tagName );
+      ^~~~~~~~~~~~~~~~~~~~~
+In file included from ../guest/demo/src/tst/tstswitch.c:1:0:
+../guest/demo/src/tst/tstswitch.h:62:6: note: previous declaration of 'GUEST_F_TST_DeleteTag' was here
+ void GUEST_F_TST_DeleteTag( fault_insert_item* pTagBuf, INT32U* idx, TAG_NAME tagName );
+      ^~~~~~~~~~~~~~~~~~~~~
+../guest/demo/src/tst/tstswitch.c: In function 'Tst_F_FindTagTable':
+../guest/demo/src/tst/tstswitch.c:41:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (i = 0; i < l_OpenedStubIdx; i++)
+                ^
+../guest/demo/src/tst/tstswitch.c: In function 'Tst_F_FindStringTableWithName':
+../guest/demo/src/tst/tstswitch.c:53:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (i = 0; i < l_OpenedStringIdx; i++)
+                ^
+../guest/demo/src/tst/tstswitch.c: In function 'GUEST_F_TST_SetTagClose':
+../guest/demo/src/tst/tstswitch.c:298:56: warning: unused parameter 'cycle' [-Wunused-parameter]
+ void GUEST_F_TST_SetTagClose( TAG_NAME tagName, INT32U cycle )
+                                                        ^~~~~
+---------- CPU_B GUEST_NOETH Done 
+Build CPU_A library CW...
+Build CPU_B library GCC...
+Linking for CPU_A... 
+Linking for CPU_B... 
+Software data identification for CPU_A: 0xada633e9
+Software data identification for CPU_B: 0xcade7ec0
+Generate Bin for CPU_A... 
+Generate S19 for CPU_A... 
+Generate Bin for CPU_B... 
+Generate S19 for CPU_B... 
+*** GUEST_NOETH CPU_A Done ***
+using little bits
+*** Target is in ./out/CPU_A/ ***
+*** GUEST_NOETH CPU_B Done ***
+using little bits
+*** Target is in ./out/CPU_B/ ***
+]0;MINGW32:/C/Users/MSTEP/Desktop/VCU115/mVCU_DEV_GUEST/build
+[32mMSTEP@MSTEP-PC [33m/C/Users/MSTEP/Desktop/VCU115/mVCU_DEV_GUEST/build[0m
+$ logout

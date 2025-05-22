@@ -1,0 +1,14 @@
+Board code:CASCO_EIOCOM2  
+Serial number:00001678901234567855
+Mac address A:00.16.9b.02.40.21
+Mac address B:00.16.9b.02.40.22
+line:504 task_prio:9 id:25 file_crc:0x3e635212 context:25 can_days:0 can_ms:0
+line:2361 task_prio:8 id:79 file_crc:0xd742973f context:0 can_days:0 can_ms:0
+line:1461 task_prio:255 id:25 file_crc:0xfbec9990 context:25 can_days:0 can_ms:0
+line:1461 task_prio:255 id:25 file_crc:0xfbec9990 context:25 can_days:0 can_ms:0
+line:1461 task_prio:255 id:25 file_crc:0xfbec9990 context:25 can_days:0 can_ms:0
+line:1461 task_prio:255 id:25 file_crc:0xfbec9990 context:25 can_days:0 can_ms:0
+line:681 task_prio:1 id:72 file_crc:0x8a00d74a context:11 can_days:0 can_ms:1511630
+line:2361 task_prio:8 id:79 file_crc:0xd742973f context:0 can_days:0 can_ms:0
+line:1461 task_prio:255 id:25 file_crc:0xfbec9990 context:25 can_days:0 can_ms:0
+line:463 task_prio:31 id:255 file_crc:0x59657876 context:2863311530 can_days:0 can_ms:0

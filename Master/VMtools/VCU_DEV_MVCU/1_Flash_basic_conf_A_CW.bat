@@ -1,0 +1,1 @@
+../Flash_basic_conf.bat %~dp0\Flash_basic_conf_A_CW.cfg

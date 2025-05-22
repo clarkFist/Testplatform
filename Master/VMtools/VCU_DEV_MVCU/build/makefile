@@ -1,0 +1,642 @@
+##############################################################################################
+# Copyright 2018 - CASCO SIGNAL, For VCU KERNEL
+##############################################################################################
+#
+#                 ii.                                         ;9ABH,          
+#                SA391,                                    .r9GG35&G          
+#                &#ii13Gh;                               i3X31i;:,rB1         
+#                iMs,:,i5895,                         .5G91:,:;:s1:8A         
+#                 33::::,,;5G5,                     ,58Si,,:::,sHX;iH1        
+#                  Sr.,:;rs13BBX35hh11511h5Shhh5S3GAXS:.,,::,,1AG3i,GG        
+#                  .G51S511sr;;iiiishS8G89Shsrrsh59S;.,,,,,..5A85Si,h8        
+#                 :SB9s:,............................,,,.,,,SASh53h,1G.       
+#              .r18S;..,,,,,,,,,,,,,,,,,,,,,,,,,,,,,....,,.1H315199,rX,       
+#            ;S89s,..,,,,,,,,,,,,,,,,,,,,,,,....,,.......,,,;r1ShS8,;Xi       
+#          i55s:.........,,,,,,,,,,,,,,,,.,,,......,.....,,....r9&5.:X1       
+#         59;.....,.     .,,,,,,,,,,,...        .............,..:1;.:&s       
+#        s8,..;53S5S3s.   .,,,,,,,.,..      i15S5h1:.........,,,..,,:99       
+#        93.:39s:rSGB@A;  ..,,,,.....    .SG3hhh9G&BGi..,,,,,,,,,,,,.,83      
+#        G5.G8  9#@@@@@X. .,,,,,,.....  iA9,.S&B###@@Mr...,,,,,,,,..,.;Xh     
+#        Gs.X8 S@@@@@@@B:..,,,,,,,,,,. rA1 ,A@@@@@@@@@H:........,,,,,,.iX:    
+#       ;9. ,8A#@@@@@@#5,.,,,,,,,,,... 9A. 8@@@@@@@@@@M;    ....,,,,,,,,S8    
+#       X3    iS8XAHH8s.,,,,,,,,,,...,..58hH@@@@@@@@@Hs       ...,,,,,,,:Gs   
+#      r8,        ,,,...,,,,,,,,,,.....  ,h8XABMMHX3r.          .,,,,,,,.rX:  
+#     :9, .    .:,..,:;;;::,.,,,,,..          .,,.               ..,,,,,,.59  
+#    .Si      ,:.i8HBMMMMMB&5,....                    .            .,,,,,.sMr
+#    SS       :: h@@@@@@@@@@#; .                     ...  .         ..,,,,iM5
+#    91  .    ;:.,1&@@@@@@MXs.                            .          .,,:,:&S
+#    hS ....  .:;,,,i3MMS1;..,..... .  .     ...                     ..,:,.99
+#    ,8; ..... .,:,..,8Ms:;,,,...                                     .,::.83
+#     s&: ....  .sS553B@@HX3s;,.    .,;13h.                            .:::&1
+#      SXr  .  ...;s3G99XA&X88Shss11155hi.                             ,;:h&,
+#       iH8:  . ..   ,;iiii;,::,,,,,.                                 .;irHA  
+#        ,8X5;   .     .......                                       ,;iih
+#           1831,                                                 .,;irr
+#             ;5A8r.                                            .:;iii
+#               :X@H3s.......                                .,:;iii
+#                r#h:;,...,,.. .,,:;;;;;:::,...              .:;;;
+#               ,M8 ..,....,.....,,::::::,,...         .     .,;;;
+#               8B;.,,,,,,,.,.....          .           ..   .:;;;;
+#              i@5,:::,,,,,,,,.... .                   . .:::;;;;;i;
+#              9Bi,:,,,,......                        ..r91;;;;;iir;;
+#  
+##############################################################################################
+##!!!!!WARNING  ENSURE YOU ARE USING VERSION 3.81 of MAKE !!!!!!##
+
+# path to Codewarrior compiler
+CW_PATH = C:/Freescale/CW_MCU_v10.4/MCU/ColdFire_Tools/Command_Line_Tools
+
+# path to GCC compiler
+GCC_PATH = C:/GCC/bin
+
+# Path Definition for Compiler
+CW_CC   = $(CW_PATH)/mwccmcf
+GCC_CC   = $(GCC_PATH)/m68k-elf-gcc
+
+CW_AS   = $(CW_PATH)/mwasmmcf
+GCC_AS   = $(GCC_PATH)/m68k-elf-gcc
+
+# Path Definition for linkers
+CW_LK   = $(CW_PATH)/mwldmcf
+#GCC_LK   = $(GCC_PATH)/m68k-elf-gcc
+GCC_LK   = $(GCC_PATH)/m68k-elf-ld
+
+# Path Definition for Objcopy
+CW_OBJCP   = $(CW_PATH)/mwldmcf
+GCC_OBJCP   = $(GCC_PATH)/m68k-elf-objcopy
+
+#Path Definition for AR library maker
+CW_AR  = $(CW_PATH)/mwldmcf
+GCC_AR = $(GCC_PATH)/m68k-elf-ar
+
+# Path Definition for CRC maker
+CRC_FUNC = ./crc_make/crc.exe
+
+# Path Definition for compress
+COMP_FUNC = ./crc_make/sample.exe
+
+# Default to Flash target
+ifndef TYPE
+TYPE = ROM
+endif
+
+#Option for BoardType
+ifndef BOARDTYPE
+BOARDTYPE = SVCU
+endif
+
+#List Module Name
+ifeq ($(BOARDTYPE), MVCU)
+MODULE_NAME = GUEST_INTA
+else
+MODULE_NAME = GUEST_NOETH
+endif
+
+#Target Identification
+TARGET = VCU_$(PREFIX)$(CPU)_$(TYPE)_$(MODULE_NAME)
+
+#Library
+LIB_NAME = $(addprefix $(OBJ_DIR)lib$(PREFIX), kernel.a)
+
+#Linker Scripts
+CW_LINKER_SCRIPT = ../src/Project_Settings/Linker_Files/VCU_CW_LD_AB_$(TYPE).lcf
+GCC_LINKER_SCRIPT = ../src/Project_Settings/Linker_Files/VCU_GCC_LD_$(CPU)_$(TYPE).ld
+
+# Module List
+OS_MODULE = RTOS/ucos \
+RTOS/ReWorksCert/arch/coldfire/include \
+RTOS/ReWorksCert/arch/coldfire/include/arch \
+RTOS/ReWorksCert/arch/coldfire/include/arch/asm \
+RTOS/ReWorksCert/arch/coldfire/include/arch/private \
+RTOS/ReWorksCert/arch/coldfire/src \
+RTOS/ReWorksCert/config \
+RTOS/ReWorksCert/kernel/include/core/private \
+RTOS/ReWorksCert/kernel/include/core \
+RTOS/ReWorksCert/kernel/include \
+RTOS/ReWorksCert/kernel/include/reworks/private \
+RTOS/ReWorksCert/kernel/include/reworks \
+RTOS/ReWorksCert/kernel/src/core \
+RTOS/ReWorksCert/kernel/src/reworks \
+RTOS/ports
+
+GM_MODULE = ProStack
+
+KERNEL_MODULENAME = API BIT CAN CONF FCODE FileSys FLASH GDF Include Public_INC MATH OSW PRINT RECORD SCHED SDB STD VOTE WDG VIV tst
+ifeq ($(BOARDTYPE), MVCU)
+GM_MODULE += FSFB2 RSSP1
+KERNEL_MODULENAME += MIB SC
+endif
+
+APPNAME :=
+
+DRV_MODULE = Drv_Lib/vcu_cau Drv_Lib Drv_Lib/MCF54418
+
+COMMONMODULE = $(addprefix ../src/,$(KERNEL_MODULENAME) $(DRV_MODULE) $(OS_MODULE) $(GM_MODULE))
+
+APP_MODULE = $(addprefix ../src/,$(APPNAME))
+
+ALLMODULE = $(COMMONMODULE) $(APP_MODULE)
+
+# OBJ List
+OBJ_DIR = ./out/$(CPU)/
+
+CRC_SOURCE = $(OBJ_DIR)$(PREFIX)crc_result.S
+FINAL_CRC_SOURCE = ./out/final_crc_result.S
+CRC_OBJ = $(OBJ_DIR)$(PREFIX)crc_result.o
+
+CW_ELFOBJ = $(OBJ_DIR)$(TARGET).elf
+CW_S19OBJ = $(OBJ_DIR)$(TARGET).S19
+CW_MAPOBJ = $(ELFOBJ).xMAP
+CW_BINOBJ = $(OBJ_DIR)$(TARGET).rbin
+CW_LZWOBJ = $(OBJ_DIR)$(TARGET).lzw
+
+GCC_ELFOBJ = $(OBJ_DIR)$(TARGET).elf
+GCC_S19OBJ = $(OBJ_DIR)$(TARGET).S19
+GCC_MAPOBJ = $(OBJ_DIR)$(TARGET).map
+GCC_BINOBJ = $(OBJ_DIR)$(TARGET).bin
+GCC_LZWOBJ = $(OBJ_DIR)$(TARGET).lzw
+##############################################################################################
+# File List include Kernel and All
+
+KERN_CFILES = $(foreach n,$(COMMONMODULE),$(wildcard $(n)/*.c))
+CFILES = $(KERN_CFILES)
+CFILES += $(foreach n,$(APP_MODULE),$(wildcard $(n)/*.c))
+
+KERN_SFILES = $(foreach n,$(COMMONMODULE),$(wildcard $(n)/*.s))
+SFILES = $(KERN_SFILES)
+SFILES += $(foreach n,$(APP_MODULE),$(wildcard $(n)/*.s))
+
+KERN_OPTI_SFILES = $(foreach n,$(COMMONMODULE),$(wildcard $(n)/*.S))
+OPTI_SFILES = $(KERN_OPTI_SFILES)
+OPTI_SFILES += $(foreach n,$(APP_MODULE),$(wildcard $(n)/*.S))
+
+KERN_ALLFILES = $(KERN_SFILES) $(KERN_OPTI_SFILES) $(KERN_CFILES)
+ALLFILES = $(SFILES) $(OPTI_SFILES) $(CFILES)
+
+KERN_OBJECTS = $(addprefix $(OBJ_DIR)$(PREFIX), $(addsuffix .o,$(basename $(notdir $(KERN_ALLFILES)))))
+OBJECTS     = $(join $(dir $(ALLFILES)), $(addprefix $(PREFIX), $(addsuffix .o,$(basename $(notdir $(ALLFILES))))))
+
+# Include DIR
+INCDIR = $(addprefix $(inc_opt) ,$(ALLMODULE))
+
+KERN_OBJS    = $(KERN_OBJECTS)
+
+TARGET_OBJS = $(addprefix $(OBJ_DIR), $(notdir $(OBJECTS)))
+#TARGET_OBJS = $(sort $(addprefix $(OBJ_DIR), $(notdir $(OBJECTS))))
+
+##############################################################################################
+# Calc .Elf size
+
+SIZE_BOOT           = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".boot" |tr -s ' ' |cut -d " " -f4`
+OFFSET_BOOT         = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".boot" |tr -s ' ' |cut -d " " -f7`
+
+# Vector table offset is not an entire sectire. It is only a table located in .boot section. The table
+# start address is BOOT_VECTOR_TO_RAM. The four following variable are used to extract this table address in .ELF files:
+EXT_FLASH_START_VMA = \`$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".boot" |tr -s ' ' |cut -d " " -f6\`
+VECTOR_START_VMA    = \`$(GCC_PATH)/m68k-elf-objdump -t $(ELFOBJ) | grep "BOOT_VECTOR_TO_RAM" | tr -s ' ' | cut -d " " -f1\`
+EXT_FLASH_OFFSET    = \`$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".boot" |tr -s ' ' |cut -d " " -f7\`
+OFFSET_VECTOR       = `VAL=$$((0x$(EXT_FLASH_OFFSET)+0x$(VECTOR_START_VMA)-0x$(EXT_FLASH_START_VMA))) && printf "%x" $$VAL`
+
+#Only for Display
+EXT_FLASH_START_VMA1 = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".boot" |tr -s ' ' |cut -d " " -f6`
+VECTOR_START_VMA1    = `$(GCC_PATH)/m68k-elf-objdump -t $(ELFOBJ) | grep "BOOT_VECTOR_TO_RAM" | tr -s ' ' | cut -d " " -f1`
+EXT_FLASH_OFFSET1    = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".boot" |tr -s ' ' |cut -d " " -f7`
+#end 
+
+SIZE_CODE           = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".code" |tr -s ' ' |cut -d " " -f4`
+OFFSET_CODE         = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".code" |tr -s ' ' |cut -d " " -f7`
+
+SIZE_CODE_SRAM      = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".sram_code" |tr -s ' ' |cut -d " " -f4`
+OFFSET_CODE_SRAM    = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".sram_code" |tr -s ' ' |cut -d " " -f7`
+
+SIZE_DATA_SRAM      = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".initialized_data_sram" |tr -s ' ' |cut -d " " -f4`
+OFFSET_DATA_SRAM    = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".initialized_data_sram" |tr -s ' ' |cut -d " " -f7`
+
+SIZE_CONST_SRAM     = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".initialized_constant_sram" |tr -s ' ' |cut -d " " -f4`
+OFFSET_CONST_SRAM   = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".initialized_constant_sram" |tr -s ' ' |cut -d " " -f7`
+
+SIZE_DATA_EXTRAM    = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".initialized_data_extram" |tr -s ' ' |cut -d " " -f4`
+OFFSET_DATA_EXTRAM  = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".initialized_data_extram" |tr -s ' ' |cut -d " " -f7`
+
+SIZE_CONST_EXTRAM   = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".initialized_constant_extram" |tr -s ' ' |cut -d " " -f4`
+OFFSET_CONST_EXTRAM = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".initialized_constant_extram" |tr -s ' ' |cut -d " " -f7`
+
+##############################################################################################
+
+# C compiler options
+CW_CFLAGS = -sym full -msgstyle parseable -proc 54418 -c -nostdinc -nosyspath -enc ascii $(INCDIR)\
+-DALSTOM_CONFIG_$(CPU) -warn unwanted -warn extended -warn hidevirtual -warn implicitconv -warn impl_int2float \
+-warn unusedarg -warn unusedvar -warn extracomma -warn emptydecl -warn structclass -opt level=0 -opt speed -ipa file \
+-inline on -align coldfire -model farCode -model farData -fp soft -a6 -nocoloring -noscheduling -nopeephole \
+-requireprotos -bool off -Cpp_Exceptions off -RTTI off -enum int -char unsigned -str nopool -str reuse -abi standard
+
+GCC_CFLAGS = -g -mcpu=54418 -Wall -fno-builtin $(INCDIR) -nostdinc -fno-common -fno-guess-branch-probability
+GCC_CFLAGS += -Wswitch-default -Wswitch-enum -Wunused-parameter -Wshadow -Wpointer-arith -Wbad-function-cast -Wnested-externs
+GCC_CFLAGS += -Wredundant-decls -Wpointer-arith -Wshadow -mstrict-align -malign-int
+GCC_CFLAGS += -Wextra -pipe -Winline -DALSTOM_CONFIG_$(CPU)
+GCC_CFLAGS += -O0 -Wno-unknown-pragmas
+ 
+#asm compiler options
+CW_ASFLAGS = -sym full -msgstyle parseable -proc 54418 -nosyspath $(INCDIR) -g
+
+GCC_ASFLAGS = $(GCC_CFLAGS)
+
+#linker options
+CW_LKFLAGS = $(TARGET_OBJS) $(CRC_OBJ) -sym full -msgstyle parseable -proc 54418 -nostdlib $(LINKER_SCRIPT) \
+-m __startup -force_active __BOOT_VECTOR_ROM -application -map -map keep -w on -o $(ELFOBJ)
+
+#GCC_LKFLAGS = $(TARGET_OBJS) $(CRC_OBJ) -nodefaultlibs -nostartfiles -nostdlib -Wl,-T $(LINKER_SCRIPT) -Xlinker -Map=$(MAPOBJ) -o $(ELFOBJ)
+
+GCC_LKFLAGS = $(TARGET_OBJS) $(CRC_OBJ) -nodefaultlibs -nostartfiles -nostdlib --no-accept-unknown-input-arch --fatal-warnings --no-gc-sections
+GCC_LKFLAGS += -Map $(OBJ_DIR)$(TARGET).map --script=$(LINKER_SCRIPT)
+GCC_LKFLAGS += -o $(ELFOBJ)
+
+# objcopy flags
+CW_OBFLAGS = $(TARGET_OBJS) $(CRC_OBJ) -sym full -msgstyle parseable -proc 54418 -nostdlib $(LINKER_SCRIPT) \
+-m __startup -force_active __BOOT_VECTOR_ROM -application -map -map keep -srec -sreclength 252 \
+-sreceol dos -w off -o $(ELFOBJ) && mv $(ELFOBJ).S19 $(S19OBJ)
+
+GCC_OBFLAGS  = --output-target srec $(ELFOBJ) $(S19OBJ)
+
+CW_BIFLAGS = $(TARGET_OBJS) $(CRC_OBJ) -sym full -msgstyle parseable -proc 54418 -nostdlib $(LINKER_SCRIPT) \
+-m __startup -force_active __BOOT_VECTOR_ROM -application -map -map keep -rbin -rbingap 0x10000 \
+-w off -o $(ELFOBJ) && mv $(ELFOBJ).rbin $(BINOBJ)
+
+GCC_BIFLAGS  = --output-target binary $(ELFOBJ) $(BINOBJ)
+
+#AR Flags listing
+CW_ARFLAGS  = -nostdlib -library -o
+GCC_ARFLAGS = -rcs
+
+##############################################################################################
+
+#Specification of compilation option with user choice
+
+ifeq ($(COMP), GCC)
+	COMPILER		= GCC
+	CC			= $(GCC_CC)
+	AS			= $(GCC_AS)
+	AR			= $(GCC_AR)
+	LK			= $(GCC_LK)
+	OBJCP			= $(GCC_OBJCP)
+	CFLAGS			= $(GCC_CFLAGS)
+	ASFLAGS			= $(GCC_ASFLAGS)
+	ARFLAGS			= $(GCC_ARFLAGS)
+	LKFLAGS			= $(GCC_LKFLAGS)
+	OBFLAGS			= $(GCC_OBFLAGS)
+	BIFLAGS			= $(GCC_BIFLAGS)
+	LINKER_SCRIPT		= $(GCC_LINKER_SCRIPT)
+	PREFIX			= GCC_
+	inc_opt			= -I	
+	ELFOBJ			= $(GCC_ELFOBJ)
+	S19OBJ			= $(GCC_S19OBJ)
+	MAPOBJ			= $(GCC_MAPOBJ)
+	BINOBJ			= $(GCC_BINOBJ)
+	LZWOBJ          = $(GCC_LZWOBJ)
+endif
+
+ifeq ($(COMP), CW)
+	COMPILER		= CW
+	CC			= $(CW_CC)
+	AS			= $(CW_AS)
+	AR			= $(CW_AR)
+	LK			= $(CW_LK)
+	OBJCP			= $(CW_OBJCP)
+	CFLAGS			= $(CW_CFLAGS)
+	ASFLAGS			= $(CW_ASFLAGS)
+	ARFLAGS			= $(CW_ARFLAGS)
+	LKFLAGS			= $(CW_LKFLAGS)
+	OBFLAGS			= $(CW_OBFLAGS)
+	BIFLAGS			= $(CW_BIFLAGS)
+	LINKER_SCRIPT		= $(CW_LINKER_SCRIPT)
+	PREFIX			= CW_
+	inc_opt			= -i
+	ELFOBJ			= $(CW_ELFOBJ)
+	S19OBJ			= $(CW_S19OBJ)
+	MAPOBJ			= $(CW_MAPOBJ)
+	BINOBJ			= $(CW_BINOBJ)
+	LZWOBJ          = $(CW_LZWOBJ)
+endif
+
+#Nominal compilation options
+ifeq ($(COMP), )
+	ifeq ($(CPU), CPU_A)
+		COMPILER		= CW
+		CC			= $(CW_CC)
+		AS			= $(CW_AS)
+		AR			= $(CW_AR)
+		LK			= $(CW_LK)
+		OBJCP			= $(CW_OBJCP)
+		CFLAGS			= $(CW_CFLAGS)
+		ASFLAGS			= $(CW_ASFLAGS)
+		ARFLAGS			= $(CW_ARFLAGS)
+		LKFLAGS			= $(CW_LKFLAGS)
+		OBFLAGS			= $(CW_OBFLAGS)
+		BIFLAGS			= $(CW_BIFLAGS)
+		LINKER_SCRIPT		= $(CW_LINKER_SCRIPT)
+		PREFIX			= CW_
+		inc_opt			= -i
+		ELFOBJ			= $(CW_ELFOBJ)
+		S19OBJ			= $(CW_S19OBJ)
+		MAPOBJ			= $(CW_MAPOBJ)
+		BINOBJ			= $(CW_BINOBJ)
+		LZWOBJ          = $(CW_LZWOBJ)
+	endif
+	ifeq ($(CPU), CPU_B)
+		COMPILER		= GCC
+		CC			= $(GCC_CC)
+		AS			= $(GCC_AS)
+		AR			= $(GCC_AR)
+		LK			= $(GCC_LK)
+		OBJCP			= $(GCC_OBJCP)
+		CFLAGS			= $(GCC_CFLAGS)
+		ASFLAGS			= $(GCC_ASFLAGS)
+		ARFLAGS			= $(GCC_ARFLAGS)
+		LKFLAGS			= $(GCC_LKFLAGS)
+		OBFLAGS			= $(GCC_OBFLAGS)
+		BIFLAGS			= $(GCC_BIFLAGS)
+		LINKER_SCRIPT		= $(GCC_LINKER_SCRIPT)
+		PREFIX			= GCC_
+		inc_opt			= -I	
+		ELFOBJ			= $(GCC_ELFOBJ)
+		S19OBJ			= $(GCC_S19OBJ)
+		MAPOBJ			= $(GCC_MAPOBJ)
+		BINOBJ			= $(GCC_BINOBJ)	
+		LZWOBJ          = $(GCC_LZWOBJ)
+	endif
+endif
+
+MAKE_FLAGS := --silent
+##############################################################################################
+.PHONY: all_o all_e all_b all_s all delivery buildlib
+
+all : 
+	@$(MAKE) ${MAKE_FLAGS} -C . buildlib
+	@$(MAKE) ${MAKE_FLAGS} -C . LINK_BOTH
+	@$(MAKE) ${MAKE_FLAGS} done CPU=CPU_A COMPRESS=1
+	@$(MAKE) ${MAKE_FLAGS} done CPU=CPU_B COMPRESS=1
+	
+all_o : $(OBJECTS)
+	@echo "---------- $(CPU) $(MODULE_NAME) Done "
+	@mv $(OBJECTS) $(OBJ_DIR)
+	
+all_e : 
+	@echo "Linking... " $<
+	@$(LK) $(LKFLAGS)
+
+all_b : 
+	@echo "Generate Bin... " $<
+	@$(OBJCP) $(BIFLAGS)
+	
+all_s : 
+	@echo "Generate S19... " $<
+	@$(OBJCP) $(OBFLAGS)
+
+buildlib :
+	@$(MAKE) ${MAKE_FLAGS} -C . all_o CPU=CPU_A
+	@$(MAKE) ${MAKE_FLAGS} -C . all_o CPU=CPU_B 	
+	@$(MAKE) ${MAKE_FLAGS} local_post_build CPU=CPU_A
+	@$(MAKE) ${MAKE_FLAGS} local_post_build CPU=CPU_B
+
+delivery :
+	@$(MAKE) ${MAKE_FLAGS} clean
+	@$(MAKE) ${MAKE_FLAGS} COMP=CW buildlib
+	@$(MAKE) ${MAKE_FLAGS} COMP=GCC buildlib
+	@$(MAKE) ${MAKE_FLAGS} cleanobj	
+	@$(MAKE) ${MAKE_FLAGS} done CPU=CPU_A
+	@$(MAKE) ${MAKE_FLAGS} done CPU=CPU_B
+##############################################################################################
+
+#General rules for compiling/assembling source code
+$(PREFIX)%.o : %.s
+	@echo "Compile " $<
+	@$(AS) -c $(ASFLAGS) -o $@ $< 
+
+$(PREFIX)%.o : %.S
+	@echo "Compile " $<
+	@$(AS) -c $(ASFLAGS) -o $@ $< 
+	
+$(PREFIX)%.o : %.c
+	@echo "Compile " $<
+	@$(CC) -c $(CFLAGS) -o $@ $< 
+
+##############################################################################################	
+#Generic lib
+.PHONY: local_post_build
+
+local_post_build: $(LIB_NAME)
+	@echo "Build $(CPU) library $(COMPILER)..."
+$(LIB_NAME): $(KERN_OBJS)
+	@$(AR) $(ARFLAGS) $(LIB_NAME) $^
+
+##############################################################################################	
+.PHONY: EMPTY_CRC RIGHT_CRC FIRST_LINK FINAL_LINK LINK_BOTH
+
+LINK_BOTH:
+	@$(MAKE) ${MAKE_FLAGS} -C . EMPTY_CRC CPU=CPU_A
+	@$(MAKE) ${MAKE_FLAGS} -C . EMPTY_CRC CPU=CPU_B
+	@$(MAKE) ${MAKE_FLAGS} -C . FIRST_LINK CPU=CPU_A
+	@$(MAKE) ${MAKE_FLAGS} -C . FIRST_LINK CPU=CPU_B
+	@ mkdir -p $(dir $(FINAL_CRC_SOURCE))
+	@cat ./crc_make/basic_crc_result.S > $(FINAL_CRC_SOURCE)	
+	@$(MAKE) ${MAKE_FLAGS} -C . RIGHT_CRC CPU=CPU_A
+	@$(MAKE) ${MAKE_FLAGS} -C . RIGHT_CRC CPU=CPU_B
+	@$(MAKE) ${MAKE_FLAGS} -C . FINAL_LINK CPU=CPU_A
+	@$(MAKE) ${MAKE_FLAGS} -C . FINAL_LINK CPU=CPU_B
+	
+FIRST_LINK: 
+	@$(AS) -c $(ASFLAGS) -o $(CRC_OBJ) $(CRC_SOURCE)
+	@echo "Linking for $(CPU)... " $<
+	@$(LK) $(LKFLAGS)
+
+FINAL_LINK:
+#	@echo "$(CPU) Update... " $<
+	@rm -rf $(ELFOBJ)
+	@rm -rf $(MAPOBJ)
+	@rm -f $(CRC_OBJ)
+	@$(AS) -c $(ASMFLAGS) -o $(CRC_OBJ) $(FINAL_CRC_SOURCE)
+
+#	@echo "Linking... " $<
+	@$(LK) $(LKFLAGS)
+	
+ifeq ($(TYPE), ROM)	
+	@echo "Generate Bin for $(CPU)... " $<
+	@$(OBJCP) $(BIFLAGS)
+
+	@echo "Generate S19 for $(CPU)... " $<
+	@$(OBJCP) $(OBFLAGS)
+else
+	@echo " RAM file only, no bin/S19 Object generated for $(CPU)"
+endif
+	
+EMPTY_CRC:
+	@ mkdir -p $(dir $(CRC_SOURCE))
+	@cat ./crc_make/basic_crc_result.S > $(CRC_SOURCE)
+	@echo "_p_CPU_A_Crc_boot:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_A_Crc_vector:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_A_Crc_code:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_A_Crc_code_sram:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_A_Crc_sram:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_A_Crc_const_sram:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_A_Crc_ext_sdram:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_A_Crc_const_ext_sdram:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+
+	@echo "_p_CPU_B_Crc_boot:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_B_Crc_vector:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_B_Crc_code:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_B_Crc_code_sram:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_B_Crc_sram:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_B_Crc_const_sram:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_B_Crc_ext_sdram:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_B_Crc_const_ext_sdram:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)	
+		
+RIGHT_CRC:
+	@echo "_p_$(CPU)_Crc_boot:" >> $(FINAL_CRC_SOURCE)
+	@$(CRC_FUNC) $(ELFOBJ) $(SIZE_BOOT) $(OFFSET_BOOT) >> $(FINAL_CRC_SOURCE)
+
+	@echo "_p_$(CPU)_Crc_vector:" >> $(FINAL_CRC_SOURCE)
+	@$(CRC_FUNC) $(ELFOBJ) 400 $(OFFSET_VECTOR) >> $(FINAL_CRC_SOURCE)
+
+	@echo "_p_$(CPU)_Crc_code:" >> $(FINAL_CRC_SOURCE)
+	@$(CRC_FUNC) $(ELFOBJ) $(SIZE_CODE) $(OFFSET_CODE) >> $(FINAL_CRC_SOURCE)
+	@echo "_p_$(CPU)_Crc_code_sram:" >> $(FINAL_CRC_SOURCE)
+	@$(CRC_FUNC) $(ELFOBJ) $(SIZE_CODE_SRAM) $(OFFSET_CODE_SRAM) >> $(FINAL_CRC_SOURCE)
+	@echo "_p_$(CPU)_Crc_sram:" >> $(FINAL_CRC_SOURCE)
+	@$(CRC_FUNC) $(ELFOBJ) $(SIZE_DATA_SRAM) $(OFFSET_DATA_SRAM) >> $(FINAL_CRC_SOURCE)
+	@echo "_p_$(CPU)_Crc_const_sram:" >> $(FINAL_CRC_SOURCE)
+	@$(CRC_FUNC) $(ELFOBJ) $(SIZE_CONST_SRAM) $(OFFSET_CONST_SRAM) >> $(FINAL_CRC_SOURCE)
+	@echo "_p_$(CPU)_Crc_ext_sdram:" >> $(FINAL_CRC_SOURCE)
+	@$(CRC_FUNC) $(ELFOBJ) $(SIZE_DATA_EXTRAM) $(OFFSET_DATA_EXTRAM) >> $(FINAL_CRC_SOURCE)
+	@echo "_p_$(CPU)_Crc_const_ext_sdram:" >> $(FINAL_CRC_SOURCE)
+	@$(CRC_FUNC) $(ELFOBJ) $(SIZE_CONST_EXTRAM) $(OFFSET_CONST_EXTRAM) >> $(FINAL_CRC_SOURCE)
+	
+	@echo "Software data identification for "$(CPU)": 0x"$(shell printf "%x" $$((\
+		$(shell $(CRC_FUNC) $(ELFOBJ) $(SIZE_BOOT) $(OFFSET_BOOT) | sed -e "s/.\.long \([0-9]*\).*/\1/") ^\
+		$(shell $(CRC_FUNC) $(ELFOBJ) $(SIZE_CODE) $(OFFSET_CODE) | sed -e "s/.\.long \([0-9]*\).*/\1/") ^\
+		$(shell $(CRC_FUNC) $(ELFOBJ) $(SIZE_CODE_SRAM) $(OFFSET_CODE_SRAM) | sed -e "s/.\.long \([0-9]*\).*/\1/") ^\
+		$(shell $(CRC_FUNC) $(ELFOBJ) $(SIZE_DATA_SRAM) $(OFFSET_DATA_SRAM) | sed -e "s/.\.long \([0-9]*\).*/\1/") ^\
+		$(shell $(CRC_FUNC) $(ELFOBJ) $(SIZE_CONST_SRAM) $(OFFSET_CONST_SRAM) | sed -e "s/.\.long \([0-9]*\).*/\1/") ^\
+		$(shell $(CRC_FUNC) $(ELFOBJ) $(SIZE_DATA_EXTRAM) $(OFFSET_DATA_EXTRAM) | sed -e "s/.\.long \([0-9]*\).*/\1/") ^\
+		$(shell $(CRC_FUNC) $(ELFOBJ) $(SIZE_CONST_EXTRAM) $(OFFSET_CONST_EXTRAM) | sed -e "s/.\.long \([0-9]*\).*/\1/")))) | tee ./out/$(CPU)/software_data_identification_$(CPU).txt	
+		
+##############################################################################################		
+.PHONY: display crc_para
+display:
+	@echo "------------------------------------------------------------------"
+	@echo -e "\033[1;34mCPU\033[0m        	: $(CPU)"
+	@echo -e "\033[1;34mTYPE\033[0m       	: $(TYPE)"
+	@echo -e "\033[1;34mTARGET_DIR\033[0m 	: $(OBJ_DIR)"
+	@echo -e "\033[1;34mMODULE_NAME\033[0m	: $(MODULE_NAME)"
+	@echo -e "\033[1;34mTARGET_OBJS\033[0m	: $(TARGET_OBJS)"
+	@echo -e "\033[1;34mKERN_OBJS\033[0m	: $(KERN_OBJS)"
+	@echo -e "\033[1;34mTARGET_SOURCE\033[0m	: $(ALLMODULE)"
+	@echo -e "\033[1;34mTARGET_FILES\033[0m	: $(ALLFILES)"	
+	@echo "------------------------------------------------------------------"
+	@echo -e "\033[1;34mELFOBJ\033[0m 		: $(ELFOBJ)"
+	@echo -e "\033[1;34mS19OBJ\033[0m 		: $(S19OBJ)"
+	@echo -e "\033[1;34mMAPOBJ\033[0m   	: $(MAPOBJ)"
+	@echo -e "\033[1;34mBINOBJ\033[0m 		: $(BINOBJ)"
+	@echo -e "\033[1;34mLINKER_SCRIPT\033[0m 	: $(LINKER_SCRIPT)"
+	@echo -e "\033[1;34mLIB_NAME\033[0m 	: $(LIB_NAME)"	
+	@echo "------------------------------------------------------------------"
+
+crc_para:	
+
+	@echo "$(CPU)--------------------------SIZE-----OFFSET---------------------"
+	@echo -e "\033[1;34mCrc_boot\033[0m 		: 0x$(SIZE_BOOT) 0x$(OFFSET_BOOT)"
+	@echo -e "\033[1;34mCrc_vector\033[0m 		: 0x400	0x$(OFFSET_VECTOR)"
+	@echo -e "\033[1;31mEXT_FLASH_OFFSET\033[0m 		: 0x$(EXT_FLASH_OFFSET1)"
+	@echo -e "\033[1;31mVECTOR_START_VMA\033[0m 		: 0x$(VECTOR_START_VMA1)"
+	@echo -e "\033[1;31mEXT_FLASH_START_VMA\033[0m 		: 0x$(EXT_FLASH_START_VMA1)"
+	@echo -e "\033[1;34mCrc_code\033[0m   		: 0x$(SIZE_CODE) 0x$(OFFSET_CODE)"
+	@echo -e "\033[1;34mCrc_code_sram\033[0m 		: 0x$(SIZE_CODE_SRAM) 0x$(OFFSET_CODE_SRAM)"
+	@echo -e "\033[1;34mCrc_sram\033[0m 		: 0x$(SIZE_DATA_SRAM) 0x$(OFFSET_DATA_SRAM)"
+	@echo -e "\033[1;34mCrc_const_sram\033[0m   	: 0x$(SIZE_CONST_SRAM) 0x$(OFFSET_CONST_SRAM)"
+	@echo -e "\033[1;34mCrc_ext_sdram\033[0m 		: 0x$(SIZE_DATA_EXTRAM) 0x$(OFFSET_DATA_EXTRAM)"
+	@echo -e "\033[1;34mCrc_const_ext_sdram\033[0m 	: 0x$(SIZE_CONST_EXTRAM) 0x$(OFFSET_CONST_EXTRAM)"
+	@echo "------------------------------------------------------------------"
+	
+##############################################################################################			
+.PHONY: done
+done: 
+
+	@echo "*** $(MODULE_NAME) $(CPU) Done ***"
+ifeq ($(COMPRESS), 1)
+	@$(COMP_FUNC) -c -i $(BINOBJ) -o $(LZWOBJ)
+endif	
+	@echo "*** Target is in $(OBJ_DIR) ***"
+
+##############################################################################################			
+.PHONY:	clean cleanobj
+clean:
+	@mkdir -p ./out/CPU_A
+	@mkdir -p ./out/CPU_B
+	@echo "cleanall..."
+	@rm -rf out/CPU_A/*
+	@ls ./out/CPU_A
+	@rm -rf out/CPU_B/*
+	@ls ./out/CPU_B
+	@rm -rf ./out/final_crc_result.S	
+#Enhance clean
+	@rm -rf ../src/Drv_Lib/CW_crc_result.S
+	@rm -rf ../src/Drv_Lib/GCC_crc_result.S
+	@rm -rf ../src/Drv_Lib/final_crc_result.S
+
+cleanobj:
+	@rm -rf out/CPU_A/*.o
+	@rm -rf out/CPU_B/*.o
+	
+help:
+	@echo "------------------------------------------------------------------"
+	@echo -e "\033[1;34mThe following Rules are available:\033[0m"
+	@echo "all	:Build all objects and link ROM for CPU_A in CW & CPU_B in GCC"
+	@echo "clean	:Remove all objects and generated binaries for all CPU/TYPES"
+	@echo "display	:Display internal variable of the makefile (debug make purpose)"	
+	@echo "delivery	:Launch a delivery for release purpose (only for Dev team)"		
+	@echo -e "\033[1;35mThis are the options:\033[0m"
+	@echo "TYPE=RAM or ROM: Define target build type for forced type."
+	@echo "	Default : target build type is ROM"
+	@echo "COMP=GCC or CW : Force the selection of one compiler."
+	@echo "	Default : CPU_A compiled with CW & CPU_B with GCC"
+	@echo " GCC_PATH= : Force Path to folder where GCC compiler is located (opt)"
+	@echo " CW_PATH= : Force Path to folder where CW compiler is located (opt)"
+	@echo "BOARDTYPE=SVCU or MVCU : Force the board type of application"
+	@echo "	Default : SVCU"
+	@echo "------------------------------------------------------------------"
+	@echo -e "\033[1;34mExamples :\033[0m"
+	@echo "	  make all "
+	@echo "	  make TYPE=RAM all "
+	@echo "	  make COMP=CW TYPE=RAM all "
+	@echo "	  make display CPU=CPU_A"
+	@echo "	  make clean "
+	@echo "	  make BOARDTYPE=MVCU APPNAME=COM all"
+	@echo "	  make BOARDTYPE=SVCU APPNAME=VOOB all"
+	@echo "------------------------------------------------------------------"
+	@echo -e "\033[1;34mExamples make lib only use make.sh:\033[0m"
+	@echo "	  make clean "
+	@echo "	  make BOARDTYPE=SVCU delivery "
+	@echo "	  make BOARDTYPE=MVCU delivery "
+	@echo "------------------------------------------------------------------"
+# 
+# Include the dependency files, should be the last of the makefile
+#
+#-include $(shell mkdir .dep 2> nul) $(wildcard .dep/*)
+
+
+# *** EOF ***

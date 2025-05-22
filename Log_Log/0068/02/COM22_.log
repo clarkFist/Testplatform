@@ -1,0 +1,188 @@
+2021-11-18 16:02:01 COM22_ 1434 chanel1 0x00133EA5 GM_PROSTACK_Icmp.c:118>Succeed to send ping response
+2021-11-18 16:02:02 COM22_ 1435 chanel1 0x00133F2A GM_PROSTACK_Cop.c:129>GM_PROS_COP: The IP is successfully authorized to communicate with node(IP,node) 0x14020164 0x00000002
+2021-11-18 16:02:02 COM22_ 1436 chanel1 0x00134025 viv.c:1530>opening session 0xE5E438DF
+2021-11-18 16:02:02 COM22_ 1437 chanel1 0x00134030 GM_PROSTACK_Icmp.c:118>Succeed to send ping response
+2021-11-18 16:02:04 COM22_ 1438 chanel1 0x00134C4A tst_tsk.c:271> Abe-start
+2021-11-18 16:02:05 COM22_ 1439 chanel2 0x00134C4C ../src/tst/tst_tsk.c:271> Abe-start
+2021-11-18 16:02:05 COM22_ 1440 chanel1 0x00134D77 GM_PROSTACK_Cop.c:153>GM_PROS_COP: The IP is successfully deauthorized to communicate with the node(IP,node) 0x00000002 0x14020164
+2021-11-18 16:02:05 COM22_ 1441 chanel1 0x00134DDC GM_PROSTACK_Cop.c:129>GM_PROS_COP: The IP is successfully authorized to communicate with node(IP,node) 0x14020164 0x00000002
+2021-11-18 16:02:05 COM22_ 1442 chanel1 0x00134E0C Schedule.c:977>main cycle 0x00009470
+2021-11-18 16:02:06 COM22_ 1443 chanel1 0x00134E11 viv.c:1530>opening session 0x57A26828
+2021-11-18 16:02:06 COM22_ 1444 chanel1 0x00134E3E com.c:192> [35mAt: 1922084 Avg: 25 %
+2021-11-18 16:02:06 COM22_ 1445 chanel1 0x00134E3F com.c:197> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000002 0x00000001 0x00000001 0x00000002 0x00000002
+2021-11-18 16:02:06 COM22_ 1446 chanel1 0x00134E41 com.c:198> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000002 0x00000002 0x00000002 0x00000002 0x00000002 0x00000002
+2021-11-18 16:02:07 COM22_ 1447 chanel2 0x00134E40 ../src/COM/com.c:192> [35mAt: 1923351 Avg: 23 %
+2021-11-18 16:02:07 COM22_ 1448 chanel2 0x00134E42 ../src/COM/com.c:197> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000002 0x00000001 0x00000001 0x00000002 0x00000002
+2021-11-18 16:02:07 COM22_ 1449 chanel2 0x00134E43 ../src/COM/com.c:198> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000002 0x00000002 0x00000002 0x00000002 0x00000002 0x00000002
+2021-11-18 16:02:08 COM22_ 1450 chanel1 0x00135A70 GM_PROSTACK_Cop.c:153>GM_PROS_COP: The IP is successfully deauthorized to communicate with the node(IP,node) 0x00000002 0x14020164
+2021-11-18 16:02:30 COM22_ 1467 chanel1 0x0013B01A GM_PROSTACK_Icmp.c:118>Succeed to send ping response
+2021-11-18 16:02:31 COM22_ 1468 chanel1 0x0013B069 GM_PROSTACK_Cop.c:129>GM_PROS_COP: The IP is successfully authorized to communicate with node(IP,node) 0x14020164 0x00000002
+2021-11-18 16:02:31 COM22_ 1469 chanel1 0x0013B09C viv.c:1530>opening session 0xF9794A43
+2021-11-18 16:02:31 COM22_ 1470 chanel1 0x0013B181 GM_PROSTACK_Icmp.c:118>Succeed to send ping response
+2021-11-18 16:02:33 COM22_ 1471 chanel1 0x0013BCFA GM_PROSTACK_Cop.c:153>GM_PROS_COP: The IP is successfully deauthorized to communicate with the node(IP,node) 0x00000002 0x14020164
+2021-11-18 16:02:34 COM22_ 1472 chanel1 0x0013BD5F GM_PROSTACK_Cop.c:129>GM_PROS_COP: The IP is successfully authorized to communicate with node(IP,node) 0x14020164 0x00000002
+2021-11-18 16:02:34 COM22_ 1473 chanel1 0x0013BD93 viv.c:1530>opening session 0x191B491C
+2021-11-18 16:02:34 COM22_ 1474 chanel2 0x0013BF88 ../src/COM/com.c:232> [32mUsage: Min: 14 %, Cur: 23 %, Max: 64 %
+2021-11-18 16:02:34 COM22_ 1475 chanel2 0x0013BF89 ../src/COM/com.c:239> [35mMax Delta seqNb. Ntwk: Norm=0 Redund=0
+2021-11-18 16:02:35 COM22_ 1476 chanel2 0x0013BF8A ../src/COM/com.c:244> [35mMax propagation Delay in ms. Ntwk: Norm=0 Redund=0
+2021-11-18 16:02:35 COM22_ 1477 chanel1 0x0013C17A com.c:232> [32mUsage: Min: 14 %, Cur: 31 %, Max: 80 %
+2021-11-18 16:02:37 COM22_ 1478 chanel1 0x0013C94A com.c:192> [35mAt: 1953584 Avg: 27 %
+2021-11-18 16:02:37 COM22_ 1479 chanel1 0x0013C94B com.c:197> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000002 0x00000001 0x00000001 0x00000002 0x00000002
+2021-11-18 16:02:37 COM22_ 1480 chanel1 0x0013C94C com.c:198> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000002 0x00000002 0x00000002 0x00000002 0x00000002 0x00000002
+2021-11-18 16:02:37 COM22_ 1481 chanel2 0x0013C94C ../src/COM/com.c:192> [35mAt: 1954851 Avg: 26 %
+2021-11-18 16:02:38 COM22_ 1482 chanel1 0x0013C96B GM_PROSTACK_Cop.c:153>GM_PROS_COP: The IP is successfully deauthorized to communicate with the node(IP,node) 0x00000002 0x14020164
+2021-11-18 16:02:38 COM22_ 1483 chanel2 0x0013C94D ../src/COM/com.c:197> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000002 0x00000001 0x00000001 0x00000002 0x00000002
+2021-11-18 16:02:38 COM22_ 1484 chanel2 0x0013C94E ../src/COM/com.c:198> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000002 0x00000002 0x00000002 0x00000002 0x00000002 0x00000002
+2021-11-18 16:02:38 COM22_ 1485 chanel1 0x0013C9D0 GM_PROSTACK_Cop.c:102>GM_PROS_COP: The IP has been authorized to communicate with the node(IP,node) 0x14020164 0x00000003
+2021-11-18 16:02:39 COM22_ 1486 chanel2 0x0013C9EF ../src/VIV/viv.c:1530>opening session 0x57A26828
+2021-11-18 16:02:39 COM22_ 1487 chanel1 0x0013D26B GM_PROSTACK_Cop.c:153>GM_PROS_COP: The IP is successfully deauthorized to communicate with the node(IP,node) 0x00000003 0x14020164
+2021-11-18 16:02:39 COM22_ 1488 chanel1 0x0013D2D1 GM_PROSTACK_Cop.c:129>GM_PROS_COP: The IP is successfully authorized to communicate with node(IP,node) 0x14020164 0x00000003
+2021-11-18 16:02:39 COM22_ 1489 chanel2 0x0013D2D9 ../src/VIV/viv.c:1530>opening session 0xF9794A43
+2021-11-18 16:02:41 COM22_ 1490 chanel1 0x0013DB3B GM_PROSTACK_Cop.c:153>GM_PROS_COP: The IP is successfully deauthorized to communicate with the node(IP,node) 0x00000003 0x14020164
+2021-11-18 16:02:41 COM22_ 1491 chanel1 0x0013DB54 GM_PROSTACK_Icmp.c:118>Succeed to send ping response
+2021-11-18 16:02:42 COM22_ 1492 chanel1 0x0013DC89 GM_PROSTACK_Icmp.c:118>Succeed to send ping response
+2021-11-18 16:02:42 COM22_ 1493 chanel1 0x0013E01F GM_PROSTACK_Icmp.c:118>Succeed to send ping response
+2021-11-18 16:02:43 COM22_ 1494 chanel1 0x0013E14A GM_PROSTACK_Icmp.c:118>Succeed to send ping response
+2021-11-18 16:02:45 COM22_ 1495 chanel1 0x0013E88A tst_tsk.c:322> 0x14020164 0x00000002 0x00000012 0x00000000 0x00000000 0x00000000
+2021-11-18 16:02:45 COM22_ 1496 chanel1 0x0013E88C tst_tsk.c:473>Tst_Flag_SerialReport Tst_Flag_UDPReport 0x00000001 0x00000001
+2021-11-18 16:02:45 COM22_ 1497 chanel1 0x0013E88D tst_tsk.c:152>conf tst 0x00000000 0x00000003 0x00010001
+2021-11-18 16:02:46 COM22_ 1498 chanel2 0x0013E88C ../src/tst/tst_tsk.c:473>Tst_Flag_SerialReport Tst_Flag_UDPReport 0x00000001 0x00000001
+2021-11-18 16:02:46 COM22_ 1499 chanel2 0x0013E88D ../src/tst/tst_tsk.c:152>conf tst 0x00000000 0x00000003 0x00010001
+2021-11-18 16:02:46 COM22_ 1500 chanel1 0x0013E8FE GM_PROSTACK_Icmp.c:118>Succeed to send ping response
+2021-11-18 16:02:46 COM22_ 1501 chanel1 0x0013EA32 GM_PROSTACK_Icmp.c:118>Succeed to send ping response
+2021-11-18 16:02:47 COM22_ 1502 chanel1 0x0013EDDC GM_PROSTACK_Icmp.c:118>Succeed to send ping response
+2021-11-18 16:02:47 COM22_ 1503 chanel1 0x0013EEF5 GM_PROSTACK_Icmp.c:118>Succeed to send ping response
+2021-11-18 16:02:47 COM22_ 1504 chanel1 0x0013F24E com.c:192> [35mAt: 1964084 Avg: 34 %
+2021-11-18 16:02:47 COM22_ 1505 chanel1 0x0013F24F com.c:197> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000002 0x00000001 0x00000001 0x00000002 0x00000002
+2021-11-18 16:02:47 COM22_ 1506 chanel1 0x0013F250 com.c:198> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000002 0x00000002 0x00000002 0x00000002 0x00000002 0x00000002
+2021-11-18 16:02:48 COM22_ 1507 chanel2 0x0013F250 ../src/COM/com.c:192> [35mAt: 1965351 Avg: 27 %
+2021-11-18 16:02:48 COM22_ 1508 chanel2 0x0013F251 ../src/COM/com.c:197> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000002 0x00000001 0x00000001 0x00000002 0x00000002
+2021-11-18 16:02:48 COM22_ 1509 chanel2 0x0013F252 ../src/COM/com.c:198> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000002 0x00000002 0x00000002 0x00000002 0x00000002 0x00000002
+2021-11-18 16:02:48 COM22_ ---------Before received a message whose cobID = 0xfff0u;CAN_F_CanBusActiveChannelGet is 0.--------Before CAN_OPEN_V_MyState[standbyBus].runningStatus is 5
+2021-11-18 16:02:49 COM22_ --------Set CAN_STANDBY is CAN_OPEN_BUS_STATUS_STOP,MVCU should enter into safeStatus!!errCode 37, context 0, fileName can_open.c, lineNumber 1139, threadPrio 4
+2021-11-18 16:02:49 COM22_ FUSE: event 37, crc C0059ED5, line 1139, context 0, taskPrio 4
+2021-11-18 16:02:49 COM22_ Stack nb 0, address= 0x80007758, value= 0x00000000
+2021-11-18 16:02:49 COM22_ Stack nb 1, address= 0x8000775C, value= 0x00000078
+2021-11-18 16:02:49 COM22_ Stack nb 2, address= 0x80007760, value= 0xC0059ED5
+2021-11-18 16:02:49 COM22_ Stack nb 3, address= 0x80007764, value= 0x00000473
+2021-11-18 16:02:49 COM22_ Stack nb 4, address= 0x80007768, value= 0x00000000
+2021-11-18 16:02:49 COM22_ Stack nb 5, address= 0x8000776C, value= 0x00000004
+2021-11-18 16:02:49 COM22_ Stack nb 6, address= 0x80007770, value= 0x800077F4
+2021-11-18 16:02:49 COM22_ Stack nb 7, address= 0x80007774, value= 0x4404B98A
+2021-11-18 16:02:49 COM22_ Stack nb 8, address= 0x80007778, value= 0x440D2625
+2021-11-18 16:02:49 COM22_ Stack nb 9, address= 0x8000777C, value= 0x00000000
+2021-11-18 16:02:49 COM22_ Stack nb 10, address= 0x80007780, value= 0xC0059ED5
+2021-11-18 16:02:49 COM22_ Stack nb 11, address= 0x80007784, value= 0x440D0473
+2021-11-18 16:02:49 COM22_ Stack nb 12, address= 0x80007788, value= 0x00000404
+2021-11-18 16:02:49 COM22_ Stack nb 13, address= 0x8000778C, value= 0x00000004
+2021-11-18 16:02:49 COM22_ Stack nb 14, address= 0x80007790, value= 0x00000100
+2021-11-18 16:02:49 COM22_ Stack nb 15, address= 0x80007794, value= 0x00000000
+2021-11-18 16:02:49 COM22_ Stack nb 16, address= 0x80007798, value= 0xAAAA0057
+2021-11-18 16:02:49 COM22_ Stack nb 17, address= 0x8000779C, value= 0x00000004
+2021-11-18 16:02:50 COM22_ Stack nb 18, address= 0x800077A0, value= 0x001DFA64
+2021-11-18 16:02:50 COM22_ Stack nb 19, address= 0x800077A4, value= 0xEC094007
+2021-11-18 16:02:50 COM22_ Stack nb 20, address= 0x800077A8, value= 0x00000003
+2021-11-18 16:02:50 COM22_ Stack nb 21, address= 0x800077AC, value= 0x00000000
+2021-11-18 16:02:50 COM22_ Stack nb 22, address= 0x800077B0, value= 0x10004000
+2021-11-18 16:02:50 COM22_ Stack nb 23, address= 0x800077B4, value= 0xFC090003
+2021-11-18 16:02:50 COM22_ Stack nb 24, address= 0x800077B8, value= 0x00002704
+2021-11-18 16:02:50 COM22_ Stack nb 25, address= 0x800077BC, value= 0x00000001
+2021-11-18 16:02:50 COM22_ Stack nb 26, address= 0x800077C0, value= 0xEC094007
+2021-11-18 16:02:50 COM22_ Stack nb 27, address= 0x800077C4, value= 0x00002704
+2021-11-18 16:02:50 COM22_ Stack nb 28, address= 0x800077C8, value= 0x00000000
+2021-11-18 16:02:50 COM22_ Stack nb 29, address= 0x800077CC, value= 0x00000000
+2021-11-18 16:02:50 COM22_ Stack nb 30, address= 0x800077D0, value= 0x00002704
+2021-11-18 16:02:50 COM22_ Stack nb 31, address= 0x800077D4, value= 0xEC094003
+2021-11-18 16:02:50 COM22_ Stack nb 32, address= 0x800077D8, value= 0xC0059ED5
+2021-11-18 16:02:50 COM22_ Stack nb 33, address= 0x800077DC, value= 0xC0059ED5
+2021-11-18 16:02:50 COM22_ Stack nb 34, address= 0x800077E0, value= 0x00000473
+2021-11-18 16:02:50 COM22_ Stack nb 35, address= 0x800077E4, value= 0xEC094007
+2021-11-18 16:02:50 COM22_ Stack nb 36, address= 0x800077E8, value= 0x00002704
+2021-11-18 16:02:50 COM22_ Stack nb 37, address= 0x800077EC, value= 0x00002700
+2021-11-18 16:02:50 COM22_ Stack nb 38, address= 0x800077F0, value= 0x00002704
+2021-11-18 16:02:50 COM22_ Stack nb 39, address= 0x800077F4, value= 0x80007814
+2021-11-18 16:02:50 COM22_ Stack nb 40, address= 0x800077F8, value= 0x4404BD82
+2021-11-18 16:02:50 COM22_ Stack nb 41, address= 0x800077FC, value= 0x00000025
+2021-11-18 16:02:50 COM22_ Stack nb 42, address= 0x80007800, value= 0x00000000
+2021-11-18 16:02:51 COM22_ Stack nb 43, address= 0x80007804, value= 0x440D0B4E
+2021-11-18 16:02:51 COM22_ Stack nb 44, address= 0x80007808, value= 0x00000473
+2021-11-18 16:02:51 COM22_ Stack nb 45, address= 0x8000780C, value= 0x04000004
+2021-11-18 16:02:51 COM22_ Stack nb 46, address= 0x80007810, value= 0x00002000
+2021-11-18 16:02:51 COM22_ Stack nb 47, address= 0x80007814, value= 0x80007864
+2021-11-18 16:02:51 COM22_ Stack nb 48, address= 0x80007818, value= 0x440145BC
+2021-11-18 16:02:51 COM22_ Stack nb 49, address= 0x8000781C, value= 0x440D0D25
+2021-11-18 16:02:51 COM22_ Stack nb 50, address= 0x80007820, value= 0x00000000
+2021-11-18 16:02:51 COM22_ Stack nb 51, address= 0x80007824, value= 0x440D0B4E
+2021-11-18 16:02:51 COM22_ Stack nb 52, address= 0x80007828, value= 0x44050473
+2021-11-18 16:02:51 COM22_ Stack nb 53, address= 0x8000782C, value= 0x02060404
+2021-11-18 16:02:51 COM22_ Stack nb 54, address= 0x80007830, value= 0x00000000
+2021-11-18 16:02:51 COM22_ Stack nb 55, address= 0x80007834, value= 0x00000000
+2021-11-18 16:02:51 COM22_ Stack nb 56, address= 0x80007838, value= 0x00000000
+2021-11-18 16:02:51 COM22_ Stack nb 57, address= 0x8000783C, value= 0x00000000
+2021-11-18 16:02:51 COM22_ Stack nb 58, address= 0x80007840, value= 0x00000000
+2021-11-18 16:02:51 COM22_ Stack nb 59, address= 0x80007844, value= 0x01000400
+2021-11-18 16:02:51 COM22_ Stack nb 60, address= 0x80007848, value= 0x00000001
+2021-11-18 16:02:51 COM22_ Stack nb 61, address= 0x8000784C, value= 0x00000001
+2021-11-18 16:02:51 COM22_ Stack nb 62, address= 0x80007850, value= 0x000000FF
+2021-11-18 16:02:51 COM22_ Stack nb 63, address= 0x80007854, value= 0x00000000
+2021-11-18 16:02:51 COM22_ Stack nb 64, address= 0x80007858, value= 0x00000001
+2021-11-18 16:02:51 COM22_ Stack nb 65, address= 0x8000785C, value= 0x00002004
+2021-11-18 16:02:51 COM22_ Stack nb 66, address= 0x80007860, value= 0x00000001
+2021-11-18 16:02:52 COM22_ Stack nb 67, address= 0x80007864, value= 0x80007898
+2021-11-18 16:02:52 COM22_ Stack nb 68, address= 0x80007868, value= 0x4400A33A
+2021-11-18 16:02:52 COM22_ Stack nb 69, address= 0x8000786C, value= 0x00000000
+2021-11-18 16:02:52 COM22_ Stack nb 70, address= 0x80007870, value= 0x00000000
+2021-11-18 16:02:52 COM22_ Stack nb 71, address= 0x80007874, value= 0x440D093E
+2021-11-18 16:02:52 COM22_ Stack nb 72, address= 0x80007878, value= 0x4060B5B4
+2021-11-18 16:02:52 COM22_ Stack nb 73, address= 0x8000787C, value= 0x800078BF
+2021-11-18 16:02:52 COM22_ Stack nb 74, address= 0x80007880, value= 0x04000006
+2021-11-18 16:02:52 COM22_ Stack nb 75, address= 0x80007884, value= 0x00000001
+2021-11-18 16:02:52 COM22_ Stack nb 76, address= 0x80007888, value= 0x00000083
+2021-11-18 16:02:52 COM22_ Stack nb 77, address= 0x8000788C, value= 0x00000000
+2021-11-18 16:02:52 COM22_ Stack nb 78, address= 0x80007890, value= 0x0000000F
+2021-11-18 16:02:52 COM22_ Stack nb 79, address= 0x80007894, value= 0x00000000
+2021-11-18 16:02:52 COM22_ Stack nb 80, address= 0x80007898, value= 0x800078C8
+2021-11-18 16:02:52 COM22_ Stack nb 81, address= 0x8000789C, value= 0x4400A964
+2021-11-18 16:02:52 COM22_ Stack nb 82, address= 0x800078A0, value= 0x8000798C
+2021-11-18 16:02:52 COM22_ Stack nb 83, address= 0x800078A4, value= 0x800078BF
+2021-11-18 16:02:52 COM22_ Stack nb 84, address= 0x800078A8, value= 0x04000006
+2021-11-18 16:02:52 COM22_ Stack nb 85, address= 0x800078AC, value= 0x00000001
+2021-11-18 16:02:52 COM22_ Stack nb 86, address= 0x800078B0, value= 0x00000083
+2021-11-18 16:02:52 COM22_ Stack nb 87, address= 0x800078B4, value= 0x80C978E9
+2021-11-18 16:02:52 COM22_ Stack nb 88, address= 0x800078B8, value= 0x800063CC
+2021-11-18 16:02:52 COM22_ Stack nb 89, address= 0x800078BC, value= 0x00012000
+2021-11-18 16:02:52 COM22_ Stack nb 90, address= 0x800078C0, value= 0x8000798C
+2021-11-18 16:02:53 COM22_ Stack nb 91, address= 0x800078C4, value= 0x8000798C
+2021-11-18 16:02:53 COM22_ Stack nb 92, address= 0x800078C8, value= 0x80007904
+2021-11-18 16:02:53 COM22_ Stack nb 93, address= 0x800078CC, value= 0x4400AC7A
+2021-11-18 16:02:53 COM22_ Stack nb 94, address= 0x800078D0, value= 0x04000006
+2021-11-18 16:02:53 COM22_ Stack nb 95, address= 0x800078D4, value= 0x00000001
+2021-11-18 16:02:53 COM22_ Stack nb 96, address= 0x800078D8, value= 0xD4D4D483
+2021-11-18 16:02:53 COM22_ Stack nb 97, address= 0x800078DC, value= 0x800078E9
+2021-11-18 16:02:53 COM22_ Stack nb 98, address= 0x800078E0, value= 0x800078E9
+2021-11-18 16:02:53 COM22_ Stack nb 99, address= 0x800078E4, value= 0x00002001
+2021-11-18 16:02:53 COM22_ Stack nb 100, address= 0x800078E8, value= 0x00002004
+2021-11-18 16:02:53 COM22_ Stack nb 101, address= 0x800078EC, value= 0x800478F8
+2021-11-18 16:02:53 COM22_ Stack nb 102, address= 0x800078F0, value= 0x00000000
+2021-11-18 16:02:53 COM22_ Stack nb 103, address= 0x800078F4, value= 0x00000000
+2021-11-18 16:02:53 COM22_ Stack nb 104, address= 0x800078F8, value= 0x00000002
+2021-11-18 16:02:53 COM22_ Stack nb 105, address= 0x800078FC, value= 0x00000002
+2021-11-18 16:02:53 COM22_ Stack nb 106, address= 0x80007900, value= 0x00000000
+2021-11-18 16:02:53 COM22_ Stack nb 107, address= 0x80007904, value= 0x80007924
+2021-11-18 16:02:53 COM22_ Stack nb 108, address= 0x80007908, value= 0x4400ADC2
+2021-11-18 16:02:53 COM22_ Stack nb 109, address= 0x8000790C, value= 0x80002464
+2021-11-18 16:02:53 COM22_ Stack nb 110, address= 0x80007910, value= 0xA2A2A2A2
+2021-11-18 16:02:53 COM22_ Stack nb 111, address= 0x80007914, value= 0xA3A3A3A3
+2021-11-18 16:02:53 COM22_ Stack nb 112, address= 0x80007918, value= 0x001DFA38
+2021-11-18 16:02:53 COM22_ Stack nb 113, address= 0x8000791C, value= 0x001D2000
+2021-11-18 16:02:53 COM22_ Stack nb 114, address= 0x80007920, value= 0x001DFA38
+2021-11-18 16:02:54 COM22_ Stack nb 115, address= 0x80007924, value= 0x80007964
+2021-11-18 16:02:54 COM22_ Stack nb 116, address= 0x80007928, value= 0x4405D530
+2021-11-18 16:02:54 COM22_ Stack nb 117, address= 0x8000792C, value= 0x00000000
+2021-11-18 16:02:54 COM22_ Stack nb 118, address= 0x80007930, value= 0x00007530
+2021-11-18 16:02:54 COM22_ Stack nb 119, address= 0x80007934, value= 0xD4D4D4D4
+2021-11-18 16:02:54 COM22_ Start to write info
+2021-11-18 16:02:54 COM22_ write event: addr=0x480060 size=0xC 
+2021-11-18 16:02:54 COM22_ write SRAM memory
+2021-11-18 16:03:34 COM22_ write DDR2 memory 
+2021-11-18 16:05:04 COM22_ End write

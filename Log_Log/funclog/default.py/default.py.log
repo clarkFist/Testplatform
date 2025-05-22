@@ -1,0 +1,9 @@
+2021-11-18 16:07:20 default.py 40 <module> __init__     form = TestPlatForm(18125, 18125)\n (18125, 18125) {}
+2021-11-18 16:07:20 udp_loglib.py 1522 __init__ spawn         gevent.spawn(gevent.empty)   (<class 'udp_loglib.myGevent'>, <function myGevent.empty >) {}
+2021-11-18 16:07:20 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-18 16:07:21 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-18 16:07:21 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-18 16:07:21 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-18 16:07:21 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-18 16:07:23 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-18 16:07:23 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}

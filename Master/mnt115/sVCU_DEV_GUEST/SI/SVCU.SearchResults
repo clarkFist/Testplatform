@@ -1,0 +1,6 @@
+---- GUEST_T_MNT 匹配 (5 in 2 文件) ----
+Guest_public.c (demo\src\voob):    GUEST_T_MNT MNT_Info;
+Guest_public.c (demo\src\voob):    STD_F_Memset((INT8U*)&MNT_Info,0x0u,sizeof(GUEST_T_MNT));
+Guest_public.c (demo\src\voob):    STD_F_Memcpy((INT8U *)&MNT_Pkgs[MessLength * index], sizeof(GUEST_T_MNT), (INT8U *)&MNT_Info, MessLength);
+Guest_public.h (demo\src\voob):#define GUEST_C_MNT_TFTP_BUF_SIZE                      (GUEST_C_MNT_NUM * sizeof(GUEST_T_MNT))               /* 存放TFTP消息的内存大小 */
+Guest_public.h (demo\src\voob):} GUEST_T_MNT;

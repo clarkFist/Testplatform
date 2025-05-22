@@ -1,0 +1,2 @@
+---- VCU_SyRTC_2027_1 Æ¥Åä (1 in 1 ÎÄ¼þ) ----
+Guest.c (demo\src\voob):    if(TRUE == IsTagOpen(VCU_SyRTC_0060_1)||TRUE == IsTagOpen(VCU_SyRTC_0030_1)||TRUE == IsTagOpen(VCU_SyRTC_0062_1)||TRUE == IsTagOpen(VCU_SyRTC_0064_1)||TRUE == IsTagOpen(VCU_SyRTC_0065_1)||TRUE == IsTagOpen(VCU_SyRTC_2027_1))

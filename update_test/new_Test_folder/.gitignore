@@ -1,0 +1,13 @@
+*.pyc
+*.log
+.git
+log/*
+*/log/*
+*/Log/*
+*/LOG/*
+Log_Log/*
+rut/input
+rut/dump
+rut/CPU_A
+rut/CPU_B
+venv

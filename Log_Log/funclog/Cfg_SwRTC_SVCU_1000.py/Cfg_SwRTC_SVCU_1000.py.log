@@ -1,0 +1,216 @@
+2022-01-17 17:41:18 Cfg_SwRTC_SVCU_1000.py 96 <module> __init__     form = TestPlatForm(18125, 18125)\n (18125, 18125) {}
+2022-01-17 17:41:18 udp_loglib.py 1561 __init__ spawn         gevent.spawn(gevent.empty)   (<class 'udp_loglib.myGevent'>, <function myGevent.empty >) {}
+2022-01-17 17:41:18 udp_loglib.py 1998 _set_client mPrint             mPrint('use 2 mvcu')\n ('use 2 mvcu',) {}
+2022-01-17 17:41:18 udp_loglib.py 2009 gevent_join spawn         greenlet_list = [gevent.spawn(greenlet_list)]\n (<class 'udp_loglib.myGevent'>, <function confSet >) {}
+2022-01-17 17:41:18 udp_loglib.py 2016 gevent_join spawn         gevent.spawn(form._log_recv, *(form.clientP, )),   (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._log_recv of <udp_loglib.TestPlatForm object >>, <udp_loglib.UdpClient object >) {}
+2022-01-17 17:41:18 udp_loglib.py 2017 gevent_join spawn         gevent.spawn(form._log_recv, *(form.clientS, )),   (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._log_recv of <udp_loglib.TestPlatForm object >>, <udp_loglib.UdpClient object >) {}
+2022-01-17 17:41:18 udp_loglib.py 2018 gevent_join spawn         gevent.spawn(form._serial_recv),\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._serial_recv of <udp_loglib.TestPlatForm object >>) {}
+2022-01-17 17:41:18 udp_loglib.py 2019 gevent_join spawn         gevent.spawn(form._mib_recv),\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._mib_recv of <udp_loglib.TestPlatForm object >>) {}
+2022-01-17 17:41:18 udp_loglib.py 2020 gevent_join spawn         gevent.spawn(form._wireshark_recv)]\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._wireshark_recv of <udp_loglib.TestPlatForm object >>) {}
+2022-01-17 17:41:18 udp_loglib.py 2023 gevent_join joinall     gevent.joinall(default_list)\n (<class 'udp_loglib.myGevent'>, [<Greenlet >>(<bound method TestPlatForm._log_recv of <udp_logli, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._log_recv of <udp_logli, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._serial_recv of <udp_lo, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._mib_recv of <udp_logli, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._wireshark_recv of <udp, [FrameInfo(frame=<frame >, <Greenlet >>(<function confSet >, [FrameInfo(frame=<frame >]) {}
+2022-01-17 17:41:18 Cfg_SwRTC_SVCU_1000.py 26 LogPath_set path_set     Log.path_set(dir_path)\n (<class 'udp_loglib.Log'>, 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU/Log/Cfg_SwRTC_SVCU_1000/default') {}
+2022-01-17 17:41:18 udp_loglib.py 1478 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg_SwRTC_SVCU_1000\\default/',) {}
+2022-01-17 17:41:18 Cfg_SwRTC_SVCU_1000.py 103 confSet respondCheck         FrameLib.respondCheck()   (<class 'udp_loglib.FrameLib'>,) {}
+2022-01-17 17:41:18 udp_loglib.py 666 respondCheck mPrint                 Public.mPrint('set success')\n ('set success',) {}
+2022-01-17 17:41:18 udp_loglib.py 377 run _log_recv             rt_val = func(*args, **kwargs)\n (<udp_loglib.UdpClient object >,) {}
+2022-01-17 17:41:18 udp_loglib.py 1817 _log_recv mPrint         mPrint('recv start %s,%s' % client.remote)\n ('recv start 20.2.1.11,18125',) {}
+2022-01-17 17:41:18 udp_loglib.py 377 run _log_recv             rt_val = func(*args, **kwargs)\n (<udp_loglib.UdpClient object >,) {}
+2022-01-17 17:41:18 udp_loglib.py 1817 _log_recv mPrint         mPrint('recv start %s,%s' % client.remote)\n ('recv start 20.1.1.11,18125',) {}
+2022-01-17 17:41:18 serialread.py 121 open_all funclog.write             funclog.wirte(port, outfile)\n ('COM23', None) {}
+2022-01-17 17:41:18 serialread.py 121 open_all funclog.write             funclog.wirte(port, outfile)\n ('COM22', None) {}
+2022-01-17 17:41:18 udp_loglib.py 1850 _serial_recv mPrint                     mPrint('start listen', self._SerialRead.queue_dict.keys())\n ('start listen', dict_keys(['COM23', 'COM22'])) {}
+2022-01-17 17:41:18 udp_loglib.py 1930 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-01-17 17:41:18 Cfg_SwRTC_SVCU_1000.py 26 LogPath_set path_set     Log.path_set(dir_path)\n (<class 'udp_loglib.Log'>, 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU/Log/Cfg_SwRTC_SVCU_1000/01') {}
+2022-01-17 17:41:18 udp_loglib.py 1478 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg_SwRTC_SVCU_1000\\01/',) {}
+2022-01-17 17:41:18 udp_loglib.py 1395 tag_send __init__         frame = UdpSendFrame()\n () {}
+2022-01-17 17:41:18 Cfg_SwRTC_SVCU_1000.py 47 step1 tst_set     form.tst_set(svcus, Tag.tag_send('10000111'))\n (3, <udp_loglib.UdpSendFrame object >) {}
+2022-01-17 17:41:18 udp_loglib.py 1350 _set __init__         frame = UdpSendFrame()\n () {}
+2022-01-17 17:41:18 udp_loglib.py 1751 tst_set tst_set             self.tst_set(slots, Conf.allFlagSet(1), False, False)\n (3, <udp_loglib.UdpSendFrame object >, False, False) {}
+2022-01-17 17:41:18 udp_loglib.py 1779 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2022-01-17 17:41:18 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:41:18 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:41:18 udp_loglib.py 1912 _wireshark_recv start                 p_new = self.wireShark.start(outfile='wireshark_recv.pcapng', block=False)\n () {'outfile': 'wireshark_recv.pcapng', 'block': False}
+2022-01-17 17:41:18 wireShark.py 103 start mPrint             self.print('%s' % self.get_path(outfile))\n ('c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg_SwRTC_SVCU_1000\\01/wireshark_recv.pcapng',) {}
+2022-01-17 17:41:18 udp_loglib.py 1779 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2022-01-17 17:41:19 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.2.1.11'}
+2022-01-17 17:41:19 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.1.1.11'}
+2022-01-17 17:41:19 udp_loglib.py 838 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff0c320f00000000030001000171f5') {}
+2022-01-17 17:41:19 udp_loglib.py 1785 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2022-01-17 17:41:19 wireShark.py 73 __find_Conn mPrint             self.print('“‘Ã´Õ¯  ≈‰∆˜: %s' % self._Conn)\n ('“‘Ã´Õ¯  ≈‰∆˜: “‘Ã´Õ¯',) {}
+2022-01-17 17:41:20 udp_loglib.py 1930 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-01-17 17:41:20 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:41:20 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:41:20 udp_loglib.py 838 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff0c300f001000011100000000ce9a') {}
+2022-01-17 17:41:20 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.2.1.11'}
+2022-01-17 17:41:21 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.1.1.11'}
+2022-01-17 17:41:21 udp_loglib.py 666 respondCheck mPrint                 Public.mPrint('set success')\n ('set success',) {}
+2022-01-17 17:42:23 udp_loglib.py 1930 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-01-17 17:42:23 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:42:23 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:42:23 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.2.1.11'}
+2022-01-17 17:42:23 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.1.1.11'}
+2022-01-17 17:43:26 udp_loglib.py 1930 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-01-17 17:43:26 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:43:26 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:43:27 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:43:27 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:44:31 udp_loglib.py 1930 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-01-17 17:44:31 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:44:31 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:44:31 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.2.1.11'}
+2022-01-17 17:44:31 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.1.1.11'}
+2022-01-17 17:45:33 udp_loglib.py 1930 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-01-17 17:45:33 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:45:33 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:45:33 Cfg_SwRTC_SVCU_1000.py 26 LogPath_set path_set     Log.path_set(dir_path)\n (<class 'udp_loglib.Log'>, 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU/Log/Cfg_SwRTC_SVCU_1000/02') {}
+2022-01-17 17:45:33 udp_loglib.py 1478 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg_SwRTC_SVCU_1000\\02/',) {}
+2022-01-17 17:45:33 udp_loglib.py 1395 tag_send __init__         frame = UdpSendFrame()\n () {}
+2022-01-17 17:45:33 Cfg_SwRTC_SVCU_1000.py 56 step2 tst_set     form.tst_set(svcus, Tag.tag_send('10000211'))\n (3, <udp_loglib.UdpSendFrame object >) {}
+2022-01-17 17:45:33 udp_loglib.py 1350 _set __init__         frame = UdpSendFrame()\n () {}
+2022-01-17 17:45:33 udp_loglib.py 1751 tst_set tst_set             self.tst_set(slots, Conf.allFlagSet(1), False, False)\n (3, <udp_loglib.UdpSendFrame object >, False, False) {}
+2022-01-17 17:45:33 udp_loglib.py 1779 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2022-01-17 17:45:33 udp_loglib.py 1779 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2022-01-17 17:45:34 udp_loglib.py 1912 _wireshark_recv start                 p_new = self.wireShark.start(outfile='wireshark_recv.pcapng', block=False)\n () {'outfile': 'wireshark_recv.pcapng', 'block': False}
+2022-01-17 17:45:34 wireShark.py 103 start mPrint             self.print('%s' % self.get_path(outfile))\n ('c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg_SwRTC_SVCU_1000\\02/wireshark_recv.pcapng',) {}
+2022-01-17 17:45:34 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.2.1.11'}
+2022-01-17 17:45:34 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.1.1.11'}
+2022-01-17 17:45:34 udp_loglib.py 838 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff0c320f00000000030001000171f5') {}
+2022-01-17 17:45:34 udp_loglib.py 1526 _reply_Recv mPrint             mPrint('_reply_Recv', time.time() - FrameLib.respond_list[0][1])\n ('_reply_Recv', 253.9059977531433) {}
+2022-01-17 17:45:34 udp_loglib.py 1785 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2022-01-17 17:45:34 udp_loglib.py 405 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.0543766021728516) {}
+2022-01-17 17:45:34 udp_loglib.py 396 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.05) {}
+2022-01-17 17:45:35 udp_loglib.py 838 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff0c300f001000021100000000007a') {}
+2022-01-17 17:45:35 udp_loglib.py 1930 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-01-17 17:45:35 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:45:35 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:45:35 udp_loglib.py 666 respondCheck mPrint                 Public.mPrint('set success')\n ('set success',) {}
+2022-01-17 17:45:35 udp_loglib.py 1914 _wireshark_recv spawn                     gevent.spawn(kill_p_old, p_old)\n (<class 'udp_loglib.myGevent'>, <function TestPlatForm._wireshark_recv.<locals>.kill_p_old >, <Popen >) {}
+2022-01-17 17:45:35 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.2.1.11'}
+2022-01-17 17:45:35 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.1.1.11'}
+2022-01-17 17:46:38 udp_loglib.py 1930 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-01-17 17:46:38 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:46:38 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:46:38 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.2.1.11'}
+2022-01-17 17:46:38 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.1.1.11'}
+2022-01-17 17:47:41 udp_loglib.py 1930 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-01-17 17:47:41 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:47:41 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:47:42 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:47:42 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:48:45 udp_loglib.py 1930 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-01-17 17:48:45 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:48:45 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:48:46 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.2.1.11'}
+2022-01-17 17:48:46 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.1.1.11'}
+2022-01-17 17:49:47 Cfg_SwRTC_SVCU_1000.py 26 LogPath_set path_set     Log.path_set(dir_path)\n (<class 'udp_loglib.Log'>, 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU/Log/Cfg_SwRTC_SVCU_1000/03') {}
+2022-01-17 17:49:47 udp_loglib.py 1478 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg_SwRTC_SVCU_1000\\03/',) {}
+2022-01-17 17:49:47 udp_loglib.py 1395 tag_send __init__         frame = UdpSendFrame()\n () {}
+2022-01-17 17:49:47 Cfg_SwRTC_SVCU_1000.py 65 step3 tst_set     form.tst_set(svcus, Tag.tag_send('10000311'))\n (3, <udp_loglib.UdpSendFrame object >) {}
+2022-01-17 17:49:47 udp_loglib.py 1350 _set __init__         frame = UdpSendFrame()\n () {}
+2022-01-17 17:49:47 udp_loglib.py 1751 tst_set tst_set             self.tst_set(slots, Conf.allFlagSet(1), False, False)\n (3, <udp_loglib.UdpSendFrame object >, False, False) {}
+2022-01-17 17:49:47 udp_loglib.py 1779 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2022-01-17 17:49:47 udp_loglib.py 1779 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2022-01-17 17:49:48 udp_loglib.py 1930 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-01-17 17:49:48 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:49:48 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:49:48 udp_loglib.py 1912 _wireshark_recv start                 p_new = self.wireShark.start(outfile='wireshark_recv.pcapng', block=False)\n () {'outfile': 'wireshark_recv.pcapng', 'block': False}
+2022-01-17 17:49:48 wireShark.py 103 start mPrint             self.print('%s' % self.get_path(outfile))\n ('c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg_SwRTC_SVCU_1000\\03/wireshark_recv.pcapng',) {}
+2022-01-17 17:49:48 udp_loglib.py 1785 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2022-01-17 17:49:48 udp_loglib.py 838 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff0c320f00000000030001000171f5') {}
+2022-01-17 17:49:48 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.2.1.11'}
+2022-01-17 17:49:48 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.1.1.11'}
+2022-01-17 17:49:49 udp_loglib.py 838 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff0c300f00100003110000000045da') {}
+2022-01-17 17:49:49 udp_loglib.py 666 respondCheck mPrint                 Public.mPrint('set success')\n ('set success',) {}
+2022-01-17 17:49:49 udp_loglib.py 1914 _wireshark_recv spawn                     gevent.spawn(kill_p_old, p_old)\n (<class 'udp_loglib.myGevent'>, <function TestPlatForm._wireshark_recv.<locals>.kill_p_old >, <Popen >) {}
+2022-01-17 17:49:50 udp_loglib.py 1930 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-01-17 17:49:50 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:49:50 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:49:50 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.2.1.11'}
+2022-01-17 17:49:50 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.1.1.11'}
+2022-01-17 17:50:52 udp_loglib.py 1930 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-01-17 17:50:52 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:50:52 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:50:53 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.2.1.11'}
+2022-01-17 17:50:53 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.1.1.11'}
+2022-01-17 17:51:55 udp_loglib.py 1930 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-01-17 17:51:55 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:51:55 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:51:57 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:51:57 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:53:00 udp_loglib.py 1930 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-01-17 17:53:00 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:53:00 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:53:00 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.2.1.11'}
+2022-01-17 17:53:00 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.1.1.11'}
+2022-01-17 17:54:01 Cfg_SwRTC_SVCU_1000.py 26 LogPath_set path_set     Log.path_set(dir_path)\n (<class 'udp_loglib.Log'>, 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU/Log/Cfg_SwRTC_SVCU_1000/04') {}
+2022-01-17 17:54:01 udp_loglib.py 1478 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg_SwRTC_SVCU_1000\\04/',) {}
+2022-01-17 17:54:01 udp_loglib.py 1395 tag_send __init__         frame = UdpSendFrame()\n () {}
+2022-01-17 17:54:01 Cfg_SwRTC_SVCU_1000.py 74 step4 tst_set     form.tst_set(svcus, Tag.tag_send('10000411'))\n (3, <udp_loglib.UdpSendFrame object >) {}
+2022-01-17 17:54:01 udp_loglib.py 1350 _set __init__         frame = UdpSendFrame()\n () {}
+2022-01-17 17:54:01 udp_loglib.py 1751 tst_set tst_set             self.tst_set(slots, Conf.allFlagSet(1), False, False)\n (3, <udp_loglib.UdpSendFrame object >, False, False) {}
+2022-01-17 17:54:01 udp_loglib.py 1779 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2022-01-17 17:54:01 udp_loglib.py 1779 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2022-01-17 17:54:01 udp_loglib.py 1930 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-01-17 17:54:01 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:54:01 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:54:02 udp_loglib.py 1785 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2022-01-17 17:54:02 udp_loglib.py 838 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff0c320f00000000030001000171f5') {}
+2022-01-17 17:54:02 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.2.1.11'}
+2022-01-17 17:54:02 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.1.1.11'}
+2022-01-17 17:54:02 udp_loglib.py 1912 _wireshark_recv start                 p_new = self.wireShark.start(outfile='wireshark_recv.pcapng', block=False)\n () {'outfile': 'wireshark_recv.pcapng', 'block': False}
+2022-01-17 17:54:02 wireShark.py 103 start mPrint             self.print('%s' % self.get_path(outfile))\n ('c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg_SwRTC_SVCU_1000\\04/wireshark_recv.pcapng',) {}
+2022-01-17 17:54:03 udp_loglib.py 838 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff0c300f0010000411000000008d9b') {}
+2022-01-17 17:54:03 udp_loglib.py 666 respondCheck mPrint                 Public.mPrint('set success')\n ('set success',) {}
+2022-01-17 17:54:04 udp_loglib.py 1914 _wireshark_recv spawn                     gevent.spawn(kill_p_old, p_old)\n (<class 'udp_loglib.myGevent'>, <function TestPlatForm._wireshark_recv.<locals>.kill_p_old >, <Popen >) {}
+2022-01-17 17:55:04 udp_loglib.py 1930 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-01-17 17:55:04 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:55:05 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:55:05 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.2.1.11'}
+2022-01-17 17:55:05 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.1.1.11'}
+2022-01-17 17:56:07 udp_loglib.py 1930 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-01-17 17:56:07 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:56:07 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:56:09 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:56:09 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:57:11 udp_loglib.py 1930 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-01-17 17:57:11 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:57:11 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:57:12 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.2.1.11'}
+2022-01-17 17:57:12 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.1.1.11'}
+2022-01-17 17:58:14 udp_loglib.py 1930 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-01-17 17:58:14 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:58:14 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:58:14 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.2.1.11'}
+2022-01-17 17:58:14 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.1.1.11'}
+2022-01-17 17:58:15 udp_loglib.py 405 empty buzy                     buzy(count, (cur_time - temp))\n (3, 1.0361480712890625) {}
+2022-01-17 17:58:15 udp_loglib.py 396 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 3, 1.04) {}
+2022-01-17 17:58:15 Cfg_SwRTC_SVCU_1000.py 26 LogPath_set path_set     Log.path_set(dir_path)\n (<class 'udp_loglib.Log'>, 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU/Log/Cfg_SwRTC_SVCU_1000/05') {}
+2022-01-17 17:58:15 udp_loglib.py 1478 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg_SwRTC_SVCU_1000\\05/',) {}
+2022-01-17 17:58:15 udp_loglib.py 1395 tag_send __init__         frame = UdpSendFrame()\n () {}
+2022-01-17 17:58:15 Cfg_SwRTC_SVCU_1000.py 83 step5 tst_set     form.tst_set(svcus, Tag.tag_send('10000511'))\n (3, <udp_loglib.UdpSendFrame object >) {}
+2022-01-17 17:58:15 udp_loglib.py 1350 _set __init__         frame = UdpSendFrame()\n () {}
+2022-01-17 17:58:15 udp_loglib.py 1751 tst_set tst_set             self.tst_set(slots, Conf.allFlagSet(1), False, False)\n (3, <udp_loglib.UdpSendFrame object >, False, False) {}
+2022-01-17 17:58:15 udp_loglib.py 1779 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2022-01-17 17:58:15 udp_loglib.py 1779 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2022-01-17 17:58:15 udp_loglib.py 1912 _wireshark_recv start                 p_new = self.wireShark.start(outfile='wireshark_recv.pcapng', block=False)\n () {'outfile': 'wireshark_recv.pcapng', 'block': False}
+2022-01-17 17:58:15 wireShark.py 103 start mPrint             self.print('%s' % self.get_path(outfile))\n ('c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg_SwRTC_SVCU_1000\\05/wireshark_recv.pcapng',) {}
+2022-01-17 17:58:16 udp_loglib.py 1930 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-01-17 17:58:16 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:58:16 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:58:16 udp_loglib.py 1785 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2022-01-17 17:58:16 udp_loglib.py 838 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff0c320f00000000030001000171f5') {}
+2022-01-17 17:58:16 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.2.1.11'}
+2022-01-17 17:58:16 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.1.1.11'}
+2022-01-17 17:58:17 udp_loglib.py 838 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff0c300f001000051100000000c83b') {}
+2022-01-17 17:58:17 udp_loglib.py 666 respondCheck mPrint                 Public.mPrint('set success')\n ('set success',) {}
+2022-01-17 17:58:17 udp_loglib.py 1914 _wireshark_recv spawn                     gevent.spawn(kill_p_old, p_old)\n (<class 'udp_loglib.myGevent'>, <function TestPlatForm._wireshark_recv.<locals>.kill_p_old >, <Popen >) {}
+2022-01-17 17:58:17 udp_loglib.py 405 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.0454535484313965) {}
+2022-01-17 17:58:17 udp_loglib.py 396 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.05) {}
+2022-01-17 17:59:18 udp_loglib.py 1930 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-01-17 17:59:18 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2022-01-17 17:59:18 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2022-01-17 17:59:19 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.2.1.11'}
+2022-01-17 17:59:19 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 9) {'snmpip': '20.1.1.11'}
+2022-01-17 17:59:57 Cfg_SwRTC_SVCU_1000.py 107 confSet normal_end         Public.normal_end()\n (<class 'udp_loglib.Public'>,) {}
+2022-01-17 17:59:57 udp_loglib.py 88 normal_end mPrint         cls.mPrint('normal end')\n ('normal end',) {}
+2022-01-17 17:59:57 Cfg_SwRTC_SVCU_1000.py 108 confSet mPrint         Public.mPrint('exit')\n ('exit',) {}

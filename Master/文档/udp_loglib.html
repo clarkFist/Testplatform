@@ -1,0 +1,1895 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module udp_loglib</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>udp_loglib</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cliuxintian%5Cdesktop%5Ctestplatform%5Cudp_loglib.py">c:\users\liuxintian\desktop\testplatform\udp_loglib.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;_*_&nbsp;coding:&nbsp;utf-8&nbsp;_*_</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="binascii.html">binascii</a><br>
+<a href="copy.html">copy</a><br>
+<a href="tkinter.filedialog.html">tkinter.filedialog</a><br>
+<a href="gevent._gevent_cgreenlet.html">gevent._gevent_cgreenlet</a><br>
+<a href="json.html">json</a><br>
+</td><td width="25%" valign=top><a href="gevent.monkey.html">gevent.monkey</a><br>
+<a href="os.html">os</a><br>
+<a href="re.html">re</a><br>
+<a href="RUT.light_update.html">RUT.light_update</a><br>
+<a href="gevent.socket.html">gevent.socket</a><br>
+</td><td width="25%" valign=top><a href="struct.html">struct</a><br>
+<a href="gevent.subprocess.html">gevent.subprocess</a><br>
+<a href="sys.html">sys</a><br>
+<a href="gevent.threading.html">gevent.threading</a><br>
+<a href="gevent.threadpool.html">gevent.threadpool</a><br>
+</td><td width="25%" valign=top><a href="gevent.time.html">gevent.time</a><br>
+<a href="tkinter.html">tkinter</a><br>
+<a href="traceback.html">traceback</a><br>
+<a href="tkinter.ttk.html">tkinter.ttk</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="udp_loglib.html#Base_ui">Base_ui</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="udp_loglib.html#input_ui">input_ui</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="udp_loglib.html#Config">Config</a>
+</font></dt><dt><font face="helvetica, arial"><a href="udp_loglib.html#Default">Default</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="udp_loglib.html#Conf">Conf</a>
+</font></dt><dt><font face="helvetica, arial"><a href="udp_loglib.html#Log">Log</a>
+</font></dt><dt><font face="helvetica, arial"><a href="udp_loglib.html#Reply">Reply</a>
+</font></dt><dt><font face="helvetica, arial"><a href="udp_loglib.html#Tag">Tag</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="udp_loglib.html#FrameLib">FrameLib</a>
+</font></dt><dt><font face="helvetica, arial"><a href="udp_loglib.html#HexType">HexType</a>
+</font></dt><dt><font face="helvetica, arial"><a href="udp_loglib.html#Public">Public</a>
+</font></dt><dt><font face="helvetica, arial"><a href="udp_loglib.html#TcpServer">TcpServer</a>
+</font></dt><dt><font face="helvetica, arial"><a href="udp_loglib.html#TestPlatForm">TestPlatForm</a>
+</font></dt><dt><font face="helvetica, arial"><a href="udp_loglib.html#UdpClient">UdpClient</a>
+</font></dt><dt><font face="helvetica, arial"><a href="udp_loglib.html#UdpRecvFrame">UdpRecvFrame</a>
+</font></dt><dt><font face="helvetica, arial"><a href="udp_loglib.html#UdpSendFrame">UdpSendFrame</a>
+</font></dt><dt><font face="helvetica, arial"><a href="udp_loglib.html#VCU">VCU</a>
+</font></dt><dt><font face="helvetica, arial"><a href="udp_loglib.html#VCU_VIV">VCU_VIV</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="gevent._gevent_cgreenlet.html#Greenlet">gevent._gevent_cgreenlet.Greenlet</a>(<a href="greenlet.html#greenlet">greenlet.greenlet</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="udp_loglib.html#myGevent">myGevent</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Base_ui">class <strong>Base_ui</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>#region<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Base_ui-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Base_ui-adaptor"><strong>adaptor</strong></a>(self, fun, **kwds)</dt></dl>
+
+<dl><dt><a name="Base_ui-close"><strong>close</strong></a>(self, *agrs)</dt></dl>
+
+<dl><dt><a name="Base_ui-combo_add"><strong>combo_add</strong></a>(self, name, values, state='readonly')</dt></dl>
+
+<dl><dt><a name="Base_ui-items_add"><strong>items_add</strong></a>(self, name)</dt></dl>
+
+<dl><dt><a name="Base_ui-mainloop"><strong>mainloop</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Base_ui-path_add"><strong>path_add</strong></a>(self, name, values)</dt></dl>
+
+<dl><dt><a name="Base_ui-path_select"><strong>path_select</strong></a>(self, event, name, val)</dt></dl>
+
+<dl><dt><a name="Base_ui-show_msg"><strong>show_msg</strong></a>(self, event, name, val)</dt></dl>
+
+<dl><dt><a name="Base_ui-value_get"><strong>value_get</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Conf">class <strong>Conf</strong></a>(<a href="udp_loglib.html#Default">Default</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>控制消息的类<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="udp_loglib.html#Conf">Conf</a></dd>
+<dd><a href="udp_loglib.html#Default">Default</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="Conf-AllowFaultFifter"><strong>AllowFaultFifter</strong></a>(value=1)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
+
+<dl><dt><a name="Conf-Shutdown"><strong>Shutdown</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
+
+<dl><dt><a name="Conf-TriggerFaultFifter"><strong>TriggerFaultFifter</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
+
+<dl><dt><a name="Conf-allFlagSet"><strong>allFlagSet</strong></a>(val, mode=3)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
+
+<dl><dt><a name="Conf-bothCycleSet"><strong>bothCycleSet</strong></a>(val, mode=3)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
+
+<dl><dt><a name="Conf-notReprogOnDump"><strong>notReprogOnDump</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
+
+<dl><dt><a name="Conf-sendOrRecvCount"><strong>sendOrRecvCount</strong></a>(sendcount, recvcount)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
+
+<dl><dt><a name="Conf-serialFlagSet"><strong>serialFlagSet</strong></a>(val, mode=3)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
+
+<dl><dt><a name="Conf-toStandby"><strong>toStandby</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
+
+<dl><dt><a name="Conf-udpFlagSet"><strong>udpFlagSet</strong></a>(val, mode=3)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
+
+<hr>
+Methods inherited from <a href="udp_loglib.html#Default">Default</a>:<br>
+<dl><dt><a name="Conf-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="udp_loglib.html#Default">Default</a>:<br>
+<dl><dt><a name="Conf-modeSet"><strong>modeSet</strong></a>(val, mode=0, default='FFFF') -&gt; str<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>mode&nbsp;=&nbsp;0&nbsp;将&nbsp;val&nbsp;转换为&nbsp;长度为8&nbsp;的字符串，高位补零<br>
+mode&nbsp;=&nbsp;1:将高四位&nbsp;置为default,低四位为val<br>
+mode&nbsp;=&nbsp;2:将低四位&nbsp;置为default，高四位为val<br>
+mode&nbsp;=&nbsp;3:高四位、低四位均置为&nbsp;val</tt></dd></dl>
+
+<dl><dt><a name="Conf-print"><strong>print</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="udp_loglib.html#Default">Default</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Config">class <strong>Config</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>default_ethdesc</strong> = 'Realtek PCIe GBE Family Controller'</dl>
+
+<dl><dt><strong>local_ip</strong> = {2: '20.2.1.100', 16: '20.1.1.100'}</dl>
+
+<dl><dt><strong>slot_ip</strong> = {2: '20.2.1.10', 16: '20.1.1.10'}</dl>
+
+<dl><dt><strong>wireshark_path</strong> = r'D:\Wireshark'</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Default">class <strong>Default</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>接受或发送的udp消息的基类<br>
+处理接受的udp消息时，若Tst_DataType的类型无消息类型则进入，正常模式不会进入<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Default-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="Default-modeSet"><strong>modeSet</strong></a>(val, mode=0, default='FFFF') -&gt; str<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>mode&nbsp;=&nbsp;0&nbsp;将&nbsp;val&nbsp;转换为&nbsp;长度为8&nbsp;的字符串，高位补零<br>
+mode&nbsp;=&nbsp;1:将高四位&nbsp;置为default,低四位为val<br>
+mode&nbsp;=&nbsp;2:将低四位&nbsp;置为default，高四位为val<br>
+mode&nbsp;=&nbsp;3:高四位、低四位均置为&nbsp;val</tt></dd></dl>
+
+<dl><dt><a name="Default-print"><strong>print</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="FrameLib">class <strong>FrameLib</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Class methods defined here:<br>
+<dl><dt><a name="FrameLib-resigeter"><strong>resigeter</strong></a>(frame, timeout=8.0)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>若某条消息需要目的地址回复确认包，需在此注册，respondCheck&nbsp;若在timeout内未收到回复消息则重发。</tt></dd></dl>
+
+<dl><dt><a name="FrameLib-respondCheck"><strong>respondCheck</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>检查是否收到回复报文，当目前注册消息全部检查完毕后结束，后来的消息需再次调用</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>request_dict</strong> = {}</dl>
+
+<dl><dt><strong>respond_list</strong> = []</dl>
+
+<dl><dt><strong>type_dict_1</strong> = {}</dl>
+
+<dl><dt><strong>type_dict_2</strong> = {'0': 'Tag', '2': 'Conf', 'E': 'Log'}</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="HexType">class <strong>HexType</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#HexType">HexType</a>(val)<br>
+&nbsp;<br>
+<a href="#UdpRecvFrame">UdpRecvFrame</a>&nbsp;里解析struct&nbsp;用到<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="HexType-__init__"><strong>__init__</strong></a>(self, val)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="HexType-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Log">class <strong>Log</strong></a>(<a href="udp_loglib.html#Default">Default</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="udp_loglib.html#Log">Log</a></dd>
+<dd><a href="udp_loglib.html#Default">Default</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Log-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="Log-db_get"><strong>db_get</strong></a>(lru: str) -&gt; logdatabase.DataBase<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
+
+<dl><dt><a name="Log-path_get"><strong>path_get</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
+
+<dl><dt><a name="Log-path_set"><strong>path_set</strong></a>(path)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>更改保存路径</tt></dd></dl>
+
+<dl><dt><strong>src</strong></dt>
+<dd><tt>src&nbsp;nodeID</tt></dd>
+</dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>line_dict</strong> = {}</dl>
+
+<dl><dt><strong>num_dict</strong> = {}</dl>
+
+<dl><dt><strong>show_flag</strong> = True</dl>
+
+<hr>
+Class methods inherited from <a href="udp_loglib.html#Default">Default</a>:<br>
+<dl><dt><a name="Log-modeSet"><strong>modeSet</strong></a>(val, mode=0, default='FFFF') -&gt; str<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>mode&nbsp;=&nbsp;0&nbsp;将&nbsp;val&nbsp;转换为&nbsp;长度为8&nbsp;的字符串，高位补零<br>
+mode&nbsp;=&nbsp;1:将高四位&nbsp;置为default,低四位为val<br>
+mode&nbsp;=&nbsp;2:将低四位&nbsp;置为default，高四位为val<br>
+mode&nbsp;=&nbsp;3:高四位、低四位均置为&nbsp;val</tt></dd></dl>
+
+<dl><dt><a name="Log-print"><strong>print</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="udp_loglib.html#Default">Default</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Public">class <strong>Public</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Class methods defined here:<br>
+<dl><dt><a name="Public-none_func"><strong>none_func</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>global&nbsp;print&nbsp;print&nbsp;=&nbsp;<a href="#Public">Public</a>.none_func</tt></dd></dl>
+
+<dl><dt><a name="Public-normal_end"><strong>normal_end</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>正常结束程序</tt></dd></dl>
+
+<dl><dt><a name="Public-program_end"><strong>program_end</strong></a>(exc: Exception, *args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>程序异常结束执行</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="Public-crc16"><strong>crc16</strong></a>(data: str, leng)</dt><dd><tt>CCITT-FALSE</tt></dd></dl>
+
+<dl><dt><a name="Public-decodeException"><strong>decodeException</strong></a>()</dt></dl>
+
+<dl><dt><a name="Public-int2hex"><strong>int2hex</strong></a>(val: int, width: int) -&gt; str</dt><dd><tt>将整形转换为一个字节码字符串</tt></dd></dl>
+
+<dl><dt><a name="Public-isDebugMode"><strong>isDebugMode</strong></a>()</dt></dl>
+
+<dl><dt><a name="Public-isIPreachable"><strong>isIPreachable</strong></a>(ip, timeout=1.5)</dt><dd><tt>通过ping命令判断ip是否可以通信，ping中文默认编码方式是GBK，<br>
+out&nbsp;内中文为乱码，字母可正常显示</tt></dd></dl>
+
+<dl><dt><a name="Public-mPrint"><strong>mPrint</strong></a>(*args, mode=0, **kwargs)</dt><dd><tt>测试平台的打印<br>
+args:&nbsp;<br>
+&nbsp;&nbsp;mode:int&nbsp;[0,1,2,3]&nbsp;0时两条分割线均打印.&nbsp;1&nbsp;仅打印第一条&nbsp;2：&nbsp;均不打印&nbsp;3：&nbsp;仅打印第三条</tt></dd></dl>
+
+<dl><dt><a name="Public-modify"><strong>modify</strong></a>(string: str, indexs: int, value: str) -&gt; str</dt><dd><tt>修改字符串某几位，<a href="#Public">Public</a>.<a href="#Public-modify">modify</a>(str,range(1,2),'123')<br>
+<a href="#Public">Public</a>.<a href="#Public-modify">modify</a>(str,'1-2','123')<br>
+不包括2，和range&nbsp;用法类似</tt></dd></dl>
+
+<dl><dt><a name="Public-myAssert"><strong>myAssert</strong></a>(ass: bool, *args, **kwargs)</dt><dd><tt>断言函数</tt></dd></dl>
+
+<dl><dt><a name="Public-tuple_len"><strong>tuple_len</strong></a>(arg: tuple)</dt><dd><tt>计算一个元组里的字符数</tt></dd></dl>
+
+<dl><dt><a name="Public-wait_to_ack_ext"><strong>wait_to_ack_ext</strong></a>(msg='please enter key to continue', timeout=120) -&gt; str</dt><dd><tt>给出一句提示，&nbsp;并捕获输入</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>myException</strong> = &lt;class 'udp_loglib.Public.myException'&gt;</dl>
+
+<dl><dt><strong>run_flag</strong> = True</dl>
+
+<dl><dt><strong>thread_flag</strong> = {}</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Reply">class <strong>Reply</strong></a>(<a href="udp_loglib.html#Default">Default</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>#TODO&nbsp;<a href="#Reply">Reply</a>&nbsp;目前未作为常规消息，&nbsp;在UDP&nbsp;接受处特殊处理<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="udp_loglib.html#Reply">Reply</a></dd>
+<dd><a href="udp_loglib.html#Default">Default</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="udp_loglib.html#Default">Default</a>:<br>
+<dl><dt><a name="Reply-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="udp_loglib.html#Default">Default</a>:<br>
+<dl><dt><a name="Reply-modeSet"><strong>modeSet</strong></a>(val, mode=0, default='FFFF') -&gt; str<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>mode&nbsp;=&nbsp;0&nbsp;将&nbsp;val&nbsp;转换为&nbsp;长度为8&nbsp;的字符串，高位补零<br>
+mode&nbsp;=&nbsp;1:将高四位&nbsp;置为default,低四位为val<br>
+mode&nbsp;=&nbsp;2:将低四位&nbsp;置为default，高四位为val<br>
+mode&nbsp;=&nbsp;3:高四位、低四位均置为&nbsp;val</tt></dd></dl>
+
+<dl><dt><a name="Reply-print"><strong>print</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="udp_loglib.html#Default">Default</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Tag">class <strong>Tag</strong></a>(<a href="udp_loglib.html#Default">Default</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="udp_loglib.html#Tag">Tag</a></dd>
+<dd><a href="udp_loglib.html#Default">Default</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="Tag-tag_send"><strong>tag_send</strong></a>(tag: str, tagType='00', cycle=0)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>description:生成向VCU打开桩指令<br>
+&nbsp;<br>
+Attributes:&nbsp;cls,&nbsp;tag,&nbsp;tagType,&nbsp;cycle<br>
+&nbsp;<br>
+Arguments:<br>
+&nbsp;&nbsp;cls:class&nbsp;调用该函数的实例，无需手动赋值<br>
+&nbsp;&nbsp;tag:str&nbsp;格式为&nbsp;[0-9A-Fa-f]{4}[01]{2}<br>
+&nbsp;&nbsp;tagType:str&nbsp;暂未用到<br>
+&nbsp;&nbsp;cycle:bool&nbsp;该桩开始生效的测试周期<br>
+Returns:&nbsp;Type:<a href="#UdpSendFrame">UdpSendFrame</a><br>
+&nbsp;&nbsp;生成的指令</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="udp_loglib.html#Default">Default</a>:<br>
+<dl><dt><a name="Tag-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="udp_loglib.html#Default">Default</a>:<br>
+<dl><dt><a name="Tag-modeSet"><strong>modeSet</strong></a>(val, mode=0, default='FFFF') -&gt; str<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>mode&nbsp;=&nbsp;0&nbsp;将&nbsp;val&nbsp;转换为&nbsp;长度为8&nbsp;的字符串，高位补零<br>
+mode&nbsp;=&nbsp;1:将高四位&nbsp;置为default,低四位为val<br>
+mode&nbsp;=&nbsp;2:将低四位&nbsp;置为default，高四位为val<br>
+mode&nbsp;=&nbsp;3:高四位、低四位均置为&nbsp;val</tt></dd></dl>
+
+<dl><dt><a name="Tag-print"><strong>print</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="udp_loglib.html#Default">Default</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TcpServer">class <strong>TcpServer</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#TcpServer">TcpServer</a>(host,&nbsp;port)<br>
+&nbsp;<br>
+转发VCU消息<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="TcpServer-__init__"><strong>__init__</strong></a>(self, host, port)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="TcpServer-listen"><strong>listen</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="TcpServer-send"><strong>send</strong></a>(self, lru, data: str)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TestPlatForm">class <strong>TestPlatForm</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#TestPlatForm">TestPlatForm</a>(srcPort:&nbsp;int,&nbsp;dstPort:&nbsp;int,&nbsp;set_client=True)<br>
+&nbsp;<br>
+<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="TestPlatForm-__init__"><strong>__init__</strong></a>(self, srcPort: int, dstPort: int, set_client=True)</dt><dd><tt>description:&nbsp;发送测试命令的基本类<br>
+Attributes:&nbsp;<br>
+&nbsp;&nbsp;lru_auto:&nbsp;bool&nbsp;若为&nbsp;True&nbsp;发送l指令时会自动过滤不可用槽道<br>
+&nbsp;&nbsp;Serial_Flag:&nbsp;bool&nbsp;若为True&nbsp;则会自动保存可用的串口消息<br>
+&nbsp;&nbsp;mib:&nbsp;Mib&nbsp;&nbsp;可通过此属性获取mib&nbsp;信息&nbsp;rt&nbsp;=&nbsp;self.<strong>mib</strong>.get_value('LruDefaultCode'，&nbsp;outfile&nbsp;=&nbsp;None)<br>
+&nbsp;&nbsp;wireShark:&nbsp;Wireshark&nbsp;self.<strong>wireshark</strong>.start(...)&nbsp;开始抓包<br>
+&nbsp;&nbsp;update:&nbsp;func&nbsp;在线更新镜像的函数<br>
+&nbsp;&nbsp;update_cfg:&nbsp;func&nbsp;在线更新配置的函数<br>
+&nbsp;&nbsp;vmtool:&nbsp;VMTool&nbsp;与虚拟机交互的实例<br>
+Arguments:<br>
+&nbsp;&nbsp;self:instance&nbsp;调用该函数的实例，无需手动赋值<br>
+&nbsp;&nbsp;srcPort:int&nbsp;本地端口号<br>
+&nbsp;&nbsp;dstPort:int&nbsp;<a href="#VCU">VCU</a>&nbsp;端口号<br>
+&nbsp;&nbsp;set_client：&nbsp;自动设置udp&nbsp;client&nbsp;默认为[]<br>
+Returns:&nbsp;Type:None<br>
+&nbsp;&nbsp;无返回值</tt></dd></dl>
+
+<dl><dt><a name="TestPlatForm-before_dump"><strong>before_dump</strong></a>(self, slots)</dt><dd><tt>在板卡宕机前调用，</tt></dd></dl>
+
+<dl><dt><a name="TestPlatForm-get_active_mvcu"><strong>get_active_mvcu</strong></a>(self) -&gt; int</dt><dd><tt>获取主mvcu&nbsp;的槽道号</tt></dd></dl>
+
+<dl><dt><a name="TestPlatForm-get_dump"><strong>get_dump</strong></a>(self, moudle_3, CPU='AB', outfile_dir='')</dt></dl>
+
+<dl><dt><a name="TestPlatForm-get_eventlog"><strong>get_eventlog</strong></a>(self, moudle_3)</dt><dd><tt>获取&nbsp;vcu&nbsp;eventlog&nbsp;结果自动保存在‘EventLog’&nbsp;文件夹<br>
+moudle_3:&nbsp;str|list&nbsp;目标槽道</tt></dd></dl>
+
+<dl><dt><a name="TestPlatForm-get_funcMode"><strong>get_funcMode</strong></a>(self, slots) -&gt; dict</dt><dd><tt>description:&nbsp;获取功能模式<br>
+Arguments:<br>
+&nbsp;&nbsp;self:instance&nbsp;调用该函数的实例，无需手动赋值<br>
+&nbsp;&nbsp;slots:&nbsp;str|list&nbsp;所需获取的槽道号<br>
+Returns:&nbsp;Type:dict<br>
+&nbsp;&nbsp;dict[slot]&nbsp;=&nbsp;funcmode</tt></dd></dl>
+
+<dl><dt><a name="TestPlatForm-get_standby_mvcu"><strong>get_standby_mvcu</strong></a>(self) -&gt; int</dt><dd><tt>获取备mvcu&nbsp;的槽道号</tt></dd></dl>
+
+<dl><dt><a name="TestPlatForm-tst_set"><strong>tst_set</strong></a>(self, slots: str, frame: udp_loglib.UdpSendFrame, openflag=True, autowait=True) -&gt; None</dt><dd><tt>description:向VCU发送指令<br>
+&nbsp;<br>
+Attributes:&nbsp;self,&nbsp;slot,&nbsp;func,&nbsp;frame,&nbsp;openflag,&nbsp;autowait<br>
+&nbsp;<br>
+Arguments:<br>
+&nbsp;&nbsp;self:instance&nbsp;调用该函数的实例，无需手动赋值<br>
+&nbsp;&nbsp;slot:str&nbsp;格式为'3-8,2.16，9'，-表示连续，[,，.]表示离散，数字为moudleID&nbsp;-&nbsp;3<br>
+&nbsp;&nbsp;frame:<a href="#UdpSendFrame">UdpSendFrame</a>&nbsp;<br>
+&nbsp;&nbsp;openflag:bool&nbsp;如果为真且该&nbsp;func&nbsp;被允许，将自动打开allFlag，默认为TRUE，无需显式赋值<br>
+&nbsp;&nbsp;autowait:nool&nbsp;如果为真则命令发送后会自动调用FrameLib.respondCheck()&nbsp;（检查命令是否发送成功）<br>
+Returns:&nbsp;Type:None<br>
+&nbsp;&nbsp;无返回值</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>lru_auto</strong></dt>
+<dd><tt>为True&nbsp;后&nbsp;会自动过滤掉不可用的槽道，但因mib&nbsp;信息存在延迟，可能会不准，耗时根据配置，最大额外耗时为7秒左右</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="UdpClient">class <strong>UdpClient</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#UdpClient">UdpClient</a>(localAddr,&nbsp;dstAddr)<br>
+&nbsp;<br>
+<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="UdpClient-__init__"><strong>__init__</strong></a>(self, localAddr, dstAddr)</dt><dd><tt>本地或远端ip的值均为(ip,port)的元组类型</tt></dd></dl>
+
+<dl><dt><a name="UdpClient-recv"><strong>recv</strong></a>(self)</dt><dd><tt>接收消息，正常返回值为data,异常时为None</tt></dd></dl>
+
+<dl><dt><a name="UdpClient-send"><strong>send</strong></a>(self, frame)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="UdpRecvFrame">class <strong>UdpRecvFrame</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#UdpRecvFrame">UdpRecvFrame</a>(data,&nbsp;dst=None)<br>
+&nbsp;<br>
+<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="UdpRecvFrame-__init__"><strong>__init__</strong></a>(self, data, dst=None)</dt><dd><tt>若dst不为None&nbsp;则忽略data的类型位，将data解析为指定类型</tt></dd></dl>
+
+<dl><dt><a name="UdpRecvFrame-parse_data"><strong>parse_data</strong></a>(self, name, typeLen, saveType=1, endflag='')</dt><dd><tt>name是保存的名称，会将对应的值储存在对应类的以name为名的变量内。<br>
+typeLen&nbsp;是保存类型的基本长度（若是数组以元素为准）。<br>
+saveType&nbsp;是保存的类型及该位长度。若未给出则默认16进制字符串保存。若显式赋值为整数&nbsp;则以十进制保存。这两个值的大小无意义。<br>
+若为字符串类型，则将其以utf—8解析为字符串。若为数组类型，则将其以固定长的的16进制字符串保存在数组里。这两个的值如'2',[3]等为<br>
+此两项最长大小。若为'',[]，则不限制。<br>
+endflag&nbsp;为数组或字符串的结束标志。若为空则不限</tt></dd></dl>
+
+<dl><dt><a name="UdpRecvFrame-transform"><strong>transform</strong></a>(self, dst_2)</dt></dl>
+
+<hr>
+Readonly properties defined here:<br>
+<dl><dt><strong>data_type</strong></dt>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>udpFrame_struct</strong> = [('destNodeID', 1), ('srcNodeID', 1), ('dataType', 1), ('dataLen', 1), ('tstData', 1, '')]</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="UdpSendFrame">class <strong>UdpSendFrame</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#UdpSendFrame">UdpSendFrame</a>(string='')<br>
+&nbsp;<br>
+<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="UdpSendFrame-__init__"><strong>__init__</strong></a>(self, string='')</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="UdpSendFrame-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="UdpSendFrame-frameSendCallBack"><strong>frameSendCallBack</strong></a>(self, slots)</dt></dl>
+
+<dl><dt><a name="UdpSendFrame-setSendCallBack"><strong>setSendCallBack</strong></a>(self, func)</dt></dl>
+
+<hr>
+Readonly properties defined here:<br>
+<dl><dt><strong>data</strong></dt>
+</dl>
+<dl><dt><strong>len</strong></dt>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>command</strong></dt>
+</dl>
+<dl><dt><strong>crc</strong></dt>
+</dl>
+<dl><dt><strong>dstNodeID</strong></dt>
+</dl>
+<dl><dt><strong>isRecord</strong></dt>
+</dl>
+<dl><dt><strong>mtype</strong></dt>
+</dl>
+<dl><dt><strong>srcNodeID</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="VCU">class <strong>VCU</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Class methods defined here:<br>
+<dl><dt><a name="VCU-moudle_3toNode"><strong>moudle_3toNode</strong></a>(moudle_3)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>将moudleID减三（即槽道号+（机笼号-1）*16）转为nodeID</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="VCU-gettime"><strong>gettime</strong></a>()</dt><dd><tt>fmt:%Y-%m-%d&nbsp;%H:%M:%S</tt></dd></dl>
+
+<dl><dt><a name="VCU-inputsplit"><strong>inputsplit</strong></a>(slot: str, rack=1)</dt><dd><tt>将输入的moudle&nbsp;—&nbsp;3&nbsp;分割成数组<br>
+exmple：<br>
+<a href="#VCU">VCU</a>.<a href="#VCU-inputsplit">inputsplit</a>('2.3,4，5，6-20')&nbsp;-&gt;&nbsp;[2,3,4,5,6,7,...,20]</tt></dd></dl>
+
+<dl><dt><a name="VCU-node2lru"><strong>node2lru</strong></a>(arg, sp={-2: '1_2P', -1: '1_16S', 2: '1_2P', 16: '1_16S'})</dt><dd><tt>将nodeid&nbsp;转换为lru格式,sp:特殊值<br>
+arg:&nbsp;int|str</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>lru_ban</strong> = [1, 15, 17, 31, 33, 47]</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="VCU_VIV">class <strong>VCU_VIV</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#VCU_VIV">VCU_VIV</a>(slot)<br>
+&nbsp;<br>
+<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="VCU_VIV-__init__"><strong>__init__</strong></a>(self, slot)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="VCU_VIV-get_eventlog"><strong>get_eventlog</strong></a>(self, cpu, seq=0, retry=3)</dt></dl>
+
+<dl><dt><a name="VCU_VIV-get_functionmode"><strong>get_functionmode</strong></a>(self, retry=2)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><strong>gevent</strong> = <a name="gevent">class myGevent</a>(<a href="gevent._gevent_cgreenlet.html#Greenlet">gevent._gevent_cgreenlet.Greenlet</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>原协程会在单个协程异常后继续执行，此协程异常会使进程退出<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="udp_loglib.html#myGevent">myGevent</a></dd>
+<dd><a href="gevent._gevent_cgreenlet.html#Greenlet">gevent._gevent_cgreenlet.Greenlet</a></dd>
+<dd><a href="greenlet.html#greenlet">greenlet.greenlet</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="myGevent-joinall"><strong>joinall</strong></a>(greenlets, timeout=None, raise_error=False, count=None)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>等待协程&nbsp;<br>
+greenlets:&nbsp;<a href="#myGevent">myGevent</a>.spawn&nbsp;的返回值构成的一个列表<br>
+If&nbsp;``count``&nbsp;is&nbsp;``None``&nbsp;(the&nbsp;default),&nbsp;wait&nbsp;for&nbsp;all&nbsp;``greenletscts``<br>
+to&nbsp;become&nbsp;ready.<br>
+&nbsp;<br>
+If&nbsp;``count``&nbsp;is&nbsp;a&nbsp;number,&nbsp;wait&nbsp;for&nbsp;(up&nbsp;to)&nbsp;``count``&nbsp;objects&nbsp;to&nbsp;become<br>
+ready.&nbsp;(For&nbsp;example,&nbsp;if&nbsp;count&nbsp;is&nbsp;``1``&nbsp;then&nbsp;the&nbsp;function&nbsp;exits<br>
+when&nbsp;any&nbsp;<a href="builtins.html#object">object</a>&nbsp;in&nbsp;the&nbsp;list&nbsp;is&nbsp;ready).<br>
+&nbsp;<br>
+If&nbsp;``timeout``&nbsp;is&nbsp;provided,&nbsp;it&nbsp;specifies&nbsp;the&nbsp;maximum&nbsp;number&nbsp;of<br>
+seconds&nbsp;``wait()``&nbsp;will&nbsp;block.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-run"><strong>run</strong></a>(func, caller, *args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#gevent-run">run</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="myGevent-sleep"><strong>sleep</strong></a>(sec)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>主动切换协程</tt></dd></dl>
+
+<dl><dt><a name="myGevent-spawn"><strong>spawn</strong></a>(func=None, *args, **kwargs) -&gt; gevent._gevent_cgreenlet.Greenlet<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>开启一个协程</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="myGevent-empty"><strong>empty</strong></a>()</dt><dd><tt>计算空闲时间，count&nbsp;数值越大空闲时间越多，不能检查出某个线程完全阻塞</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>gevent_dict</strong> = {}</dl>
+
+<dl><dt><strong>monkey</strong> = &lt;module 'gevent.monkey' from 'C:\\Users\\LiuXint...rm\\venv\\lib\\site-packages\\gevent\\monkey.py'&gt;<dd><tt>Make&nbsp;the&nbsp;standard&nbsp;library&nbsp;cooperative.<br>
+&nbsp;<br>
+The&nbsp;primary&nbsp;purpose&nbsp;of&nbsp;this&nbsp;module&nbsp;is&nbsp;to&nbsp;carefully&nbsp;patch,&nbsp;in&nbsp;place,<br>
+portions&nbsp;of&nbsp;the&nbsp;standard&nbsp;library&nbsp;with&nbsp;<a href="#gevent">gevent</a>-friendly&nbsp;functions&nbsp;that<br>
+behave&nbsp;in&nbsp;the&nbsp;same&nbsp;way&nbsp;as&nbsp;the&nbsp;original&nbsp;(at&nbsp;least&nbsp;as&nbsp;closely&nbsp;as&nbsp;possible).<br>
+&nbsp;<br>
+The&nbsp;primary&nbsp;interface&nbsp;to&nbsp;this&nbsp;is&nbsp;the&nbsp;:func:`patch_all`&nbsp;function,&nbsp;which<br>
+performs&nbsp;all&nbsp;the&nbsp;available&nbsp;patches.&nbsp;It&nbsp;accepts&nbsp;arguments&nbsp;to&nbsp;limit&nbsp;the<br>
+patching&nbsp;to&nbsp;certain&nbsp;modules,&nbsp;but&nbsp;most&nbsp;programs&nbsp;**should**&nbsp;use&nbsp;the<br>
+default&nbsp;values&nbsp;as&nbsp;they&nbsp;receive&nbsp;the&nbsp;most&nbsp;wide-spread&nbsp;testing,&nbsp;and&nbsp;some&nbsp;monkey<br>
+patches&nbsp;have&nbsp;dependencies&nbsp;on&nbsp;others.<br>
+&nbsp;<br>
+Patching&nbsp;**should&nbsp;be&nbsp;done&nbsp;as&nbsp;early&nbsp;as&nbsp;possible**&nbsp;in&nbsp;the&nbsp;lifecycle&nbsp;of&nbsp;the<br>
+program.&nbsp;For&nbsp;example,&nbsp;the&nbsp;main&nbsp;module&nbsp;(the&nbsp;one&nbsp;that&nbsp;tests&nbsp;against<br>
+``__main__``&nbsp;or&nbsp;is&nbsp;otherwise&nbsp;the&nbsp;first&nbsp;imported)&nbsp;should&nbsp;begin&nbsp;with<br>
+this&nbsp;code,&nbsp;ideally&nbsp;before&nbsp;any&nbsp;other&nbsp;imports::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<a href="#gevent">gevent</a>&nbsp;import&nbsp;monkey<br>
+&nbsp;&nbsp;&nbsp;&nbsp;monkey.patch_all()<br>
+&nbsp;<br>
+A&nbsp;corollary&nbsp;of&nbsp;the&nbsp;above&nbsp;is&nbsp;that&nbsp;patching&nbsp;**should&nbsp;be&nbsp;done&nbsp;on&nbsp;the&nbsp;main<br>
+thread**&nbsp;and&nbsp;**should&nbsp;be&nbsp;done&nbsp;while&nbsp;the&nbsp;program&nbsp;is&nbsp;single-threaded**.<br>
+&nbsp;<br>
+..&nbsp;tip::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Some&nbsp;frameworks,&nbsp;such&nbsp;as&nbsp;gunicorn,&nbsp;handle&nbsp;monkey-patching&nbsp;for&nbsp;you.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Check&nbsp;their&nbsp;documentation&nbsp;to&nbsp;be&nbsp;sure.<br>
+&nbsp;<br>
+..&nbsp;warning::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Patching&nbsp;too&nbsp;late&nbsp;can&nbsp;lead&nbsp;to&nbsp;unreliable&nbsp;behaviour&nbsp;(for&nbsp;example,&nbsp;some<br>
+&nbsp;&nbsp;&nbsp;&nbsp;modules&nbsp;may&nbsp;still&nbsp;use&nbsp;blocking&nbsp;sockets)&nbsp;or&nbsp;even&nbsp;errors.<br>
+&nbsp;<br>
+..&nbsp;tip::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Be&nbsp;sure&nbsp;to&nbsp;read&nbsp;the&nbsp;documentation&nbsp;for&nbsp;each&nbsp;patch&nbsp;function&nbsp;to&nbsp;check&nbsp;for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;known&nbsp;incompatibilities.<br>
+&nbsp;<br>
+Querying<br>
+========<br>
+&nbsp;<br>
+Sometimes&nbsp;it&nbsp;is&nbsp;helpful&nbsp;to&nbsp;know&nbsp;if&nbsp;objects&nbsp;have&nbsp;been&nbsp;monkey-patched,&nbsp;and&nbsp;in<br>
+advanced&nbsp;cases&nbsp;even&nbsp;to&nbsp;have&nbsp;access&nbsp;to&nbsp;the&nbsp;original&nbsp;standard&nbsp;library&nbsp;functions.&nbsp;This<br>
+module&nbsp;provides&nbsp;functions&nbsp;for&nbsp;that&nbsp;purpose.<br>
+&nbsp;<br>
+-&nbsp;:func:`is_module_patched`<br>
+-&nbsp;:func:`is_object_patched`<br>
+-&nbsp;:func:`get_original`<br>
+&nbsp;<br>
+..&nbsp;_plugins:<br>
+&nbsp;<br>
+Plugins&nbsp;and&nbsp;Events<br>
+==================<br>
+&nbsp;<br>
+Beginning&nbsp;in&nbsp;<a href="#gevent">gevent</a>&nbsp;1.3,&nbsp;events&nbsp;are&nbsp;emitted&nbsp;during&nbsp;the&nbsp;monkey&nbsp;patching&nbsp;process.<br>
+These&nbsp;events&nbsp;are&nbsp;delivered&nbsp;first&nbsp;to&nbsp;:mod:`<a href="#gevent">gevent</a>.events`&nbsp;subscribers,&nbsp;and&nbsp;then<br>
+to&nbsp;`setuptools&nbsp;entry&nbsp;points`_.<br>
+&nbsp;<br>
+The&nbsp;following&nbsp;events&nbsp;are&nbsp;defined.&nbsp;They&nbsp;are&nbsp;listed&nbsp;in&nbsp;(roughly)&nbsp;the&nbsp;order<br>
+that&nbsp;a&nbsp;call&nbsp;to&nbsp;:func:`patch_all`&nbsp;will&nbsp;emit&nbsp;them.<br>
+&nbsp;<br>
+-&nbsp;:class:`<a href="#gevent">gevent</a>.events.GeventWillPatchAllEvent`<br>
+-&nbsp;:class:`<a href="#gevent">gevent</a>.events.GeventWillPatchModuleEvent`<br>
+-&nbsp;:class:`<a href="#gevent">gevent</a>.events.GeventDidPatchModuleEvent`<br>
+-&nbsp;:class:`<a href="#gevent">gevent</a>.events.GeventDidPatchBuiltinModulesEvent`<br>
+-&nbsp;:class:`<a href="#gevent">gevent</a>.events.GeventDidPatchAllEvent`<br>
+&nbsp;<br>
+Each&nbsp;event&nbsp;class&nbsp;documents&nbsp;the&nbsp;corresponding&nbsp;setuptools&nbsp;entry&nbsp;point&nbsp;name.&nbsp;The<br>
+entry&nbsp;points&nbsp;will&nbsp;be&nbsp;called&nbsp;with&nbsp;a&nbsp;single&nbsp;argument,&nbsp;the&nbsp;same&nbsp;instance&nbsp;of<br>
+the&nbsp;class&nbsp;that&nbsp;was&nbsp;sent&nbsp;to&nbsp;the&nbsp;subscribers.<br>
+&nbsp;<br>
+You&nbsp;can&nbsp;subscribe&nbsp;to&nbsp;the&nbsp;events&nbsp;to&nbsp;monitor&nbsp;the&nbsp;monkey-patching&nbsp;process&nbsp;and<br>
+to&nbsp;manipulate&nbsp;it,&nbsp;for&nbsp;example&nbsp;by&nbsp;raising&nbsp;:exc:`<a href="#gevent">gevent</a>.events.DoNotPatch`.<br>
+&nbsp;<br>
+You&nbsp;can&nbsp;also&nbsp;subscribe&nbsp;to&nbsp;the&nbsp;events&nbsp;to&nbsp;provide&nbsp;additional&nbsp;patching&nbsp;beyond&nbsp;what<br>
+<a href="#gevent">gevent</a>&nbsp;distributes,&nbsp;either&nbsp;for&nbsp;additional&nbsp;standard&nbsp;library&nbsp;modules,&nbsp;or<br>
+for&nbsp;third-party&nbsp;packages.&nbsp;The&nbsp;suggested&nbsp;time&nbsp;to&nbsp;do&nbsp;this&nbsp;patching&nbsp;is&nbsp;in<br>
+the&nbsp;subscriber&nbsp;for&nbsp;:class:`<a href="#gevent">gevent</a>.events.GeventDidPatchBuiltinModulesEvent`.<br>
+For&nbsp;example,&nbsp;to&nbsp;automatically&nbsp;patch&nbsp;`psycopg2`_&nbsp;using&nbsp;`psycogreen`_<br>
+when&nbsp;the&nbsp;call&nbsp;to&nbsp;:func:`patch_all`&nbsp;is&nbsp;made,&nbsp;you&nbsp;could&nbsp;write&nbsp;code&nbsp;like&nbsp;this::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;mypackage.py<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;patch_psycopg(event):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;psycogreen.<a href="#gevent">gevent</a>&nbsp;import&nbsp;patch_psycopg<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patch_psycopg()<br>
+&nbsp;<br>
+In&nbsp;your&nbsp;``setup.py``&nbsp;you&nbsp;would&nbsp;register&nbsp;it&nbsp;like&nbsp;this::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;setuptools&nbsp;import&nbsp;setup<br>
+&nbsp;&nbsp;&nbsp;&nbsp;setup(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entry_points={<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<a href="#gevent">gevent</a>.plugins.monkey.did_patch_builtins':&nbsp;[<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'psycopg2&nbsp;=&nbsp;mypackage:patch_psycopg',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;)<br>
+&nbsp;<br>
+For&nbsp;more&nbsp;complex&nbsp;patching,&nbsp;<a href="#gevent">gevent</a>&nbsp;provides&nbsp;a&nbsp;helper&nbsp;method<br>
+that&nbsp;you&nbsp;can&nbsp;call&nbsp;to&nbsp;replace&nbsp;attributes&nbsp;of&nbsp;modules&nbsp;with&nbsp;attributes&nbsp;of&nbsp;your<br>
+own&nbsp;modules.&nbsp;This&nbsp;function&nbsp;also&nbsp;takes&nbsp;care&nbsp;of&nbsp;emitting&nbsp;the&nbsp;appropriate&nbsp;events.<br>
+&nbsp;<br>
+-&nbsp;:func:`patch_module`<br>
+&nbsp;<br>
+..&nbsp;_setuptools&nbsp;entry&nbsp;points:&nbsp;<a href="http://setuptools.readthedocs.io/en/latest/setuptools.html#dynamic-discovery-of-services-and-plugins">http://setuptools.readthedocs.io/en/latest/setuptools.html#dynamic-discovery-of-services-and-plugins</a><br>
+..&nbsp;_psycopg2:&nbsp;<a href="https://pypi.python.org/pypi/psycopg2">https://pypi.python.org/pypi/psycopg2</a><br>
+..&nbsp;_psycogreen:&nbsp;<a href="https://pypi.python.org/pypi/psycogreen">https://pypi.python.org/pypi/psycogreen</a><br>
+&nbsp;<br>
+Use&nbsp;as&nbsp;a&nbsp;module<br>
+===============<br>
+&nbsp;<br>
+Sometimes&nbsp;it&nbsp;is&nbsp;useful&nbsp;to&nbsp;run&nbsp;existing&nbsp;python&nbsp;scripts&nbsp;or&nbsp;modules&nbsp;that<br>
+were&nbsp;not&nbsp;built&nbsp;to&nbsp;be&nbsp;<a href="#gevent">gevent</a>&nbsp;aware&nbsp;under&nbsp;<a href="#gevent">gevent</a>.&nbsp;To&nbsp;do&nbsp;so,&nbsp;this&nbsp;module<br>
+can&nbsp;be&nbsp;run&nbsp;as&nbsp;the&nbsp;main&nbsp;module,&nbsp;passing&nbsp;the&nbsp;script&nbsp;and&nbsp;its&nbsp;arguments.<br>
+For&nbsp;details,&nbsp;see&nbsp;the&nbsp;:func:`main`&nbsp;function.<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;1.3b1<br>
+&nbsp;&nbsp;&nbsp;Added&nbsp;support&nbsp;for&nbsp;plugins&nbsp;and&nbsp;began&nbsp;emitting&nbsp;will/did&nbsp;patch&nbsp;events.</tt></dl>
+
+<hr>
+Methods inherited from <a href="gevent._gevent_cgreenlet.html#Greenlet">gevent._gevent_cgreenlet.Greenlet</a>:<br>
+<dl><dt><a name="myGevent-__bool__"><strong>__bool__</strong></a>(self, /)</dt><dd><tt>self&nbsp;!=&nbsp;0</tt></dd></dl>
+
+<dl><dt><a name="myGevent-__enter__"><strong>__enter__</strong></a>(self)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#gevent-__enter__">__enter__</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="myGevent-__exit__"><strong>__exit__</strong></a>(self, t, v, tb)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#gevent-__exit__">__exit__</a>(self,&nbsp;t,&nbsp;v,&nbsp;tb)</tt></dd></dl>
+
+<dl><dt><a name="myGevent-__init__"><strong>__init__</strong></a>(...)</dt><dd><tt>:param&nbsp;args:&nbsp;The&nbsp;arguments&nbsp;passed&nbsp;to&nbsp;the&nbsp;``run``&nbsp;function.<br>
+:param&nbsp;kwargs:&nbsp;The&nbsp;keyword&nbsp;arguments&nbsp;passed&nbsp;to&nbsp;the&nbsp;``run``&nbsp;function.<br>
+:keyword&nbsp;callable&nbsp;run:&nbsp;The&nbsp;callable&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;run.&nbsp;If&nbsp;not&nbsp;given,&nbsp;this&nbsp;<a href="builtins.html#object">object</a>'s<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`_run`&nbsp;method&nbsp;will&nbsp;be&nbsp;invoked&nbsp;(typically&nbsp;defined&nbsp;by&nbsp;subclasses).<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;1.1b1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;``run``&nbsp;argument&nbsp;to&nbsp;the&nbsp;constructor&nbsp;is&nbsp;now&nbsp;verified&nbsp;to&nbsp;be&nbsp;a&nbsp;callable<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="builtins.html#object">object</a>.&nbsp;Previously,&nbsp;passing&nbsp;a&nbsp;non-callable&nbsp;<a href="builtins.html#object">object</a>&nbsp;would&nbsp;fail&nbsp;after&nbsp;the&nbsp;greenlet<br>
+&nbsp;&nbsp;&nbsp;&nbsp;was&nbsp;spawned.<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;1.3b1<br>
+&nbsp;&nbsp;&nbsp;The&nbsp;``GEVENT_TRACK_GREENLET_TREE``&nbsp;configuration&nbsp;value&nbsp;may&nbsp;be&nbsp;set&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;a&nbsp;false&nbsp;value&nbsp;to&nbsp;disable&nbsp;``spawn_tree_locals``,&nbsp;``spawning_greenlet``,<br>
+&nbsp;&nbsp;&nbsp;and&nbsp;``spawning_stack``.&nbsp;The&nbsp;first&nbsp;two&nbsp;will&nbsp;be&nbsp;None&nbsp;in&nbsp;that&nbsp;case,&nbsp;and&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;latter&nbsp;will&nbsp;be&nbsp;empty.<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;1.5<br>
+&nbsp;&nbsp;&nbsp;<a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>&nbsp;objects&nbsp;are&nbsp;now&nbsp;more&nbsp;careful&nbsp;to&nbsp;verify&nbsp;that&nbsp;their&nbsp;``parent``&nbsp;is&nbsp;really<br>
+&nbsp;&nbsp;&nbsp;a&nbsp;<a href="#gevent">gevent</a>&nbsp;hub,&nbsp;raising&nbsp;a&nbsp;``TypeError``&nbsp;earlier&nbsp;instead&nbsp;of&nbsp;an&nbsp;``AttributeError``&nbsp;later.<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;20.12.1<br>
+&nbsp;&nbsp;&nbsp;<a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>&nbsp;objects&nbsp;now&nbsp;function&nbsp;as&nbsp;context&nbsp;managers.&nbsp;Exiting&nbsp;the&nbsp;``with``&nbsp;suite<br>
+&nbsp;&nbsp;&nbsp;ensures&nbsp;that&nbsp;the&nbsp;greenlet&nbsp;has&nbsp;completed&nbsp;by&nbsp;:meth:`joining&nbsp;&lt;join&gt;`<br>
+&nbsp;&nbsp;&nbsp;the&nbsp;greenlet&nbsp;(blocking,&nbsp;with<br>
+&nbsp;&nbsp;&nbsp;no&nbsp;timeout).&nbsp;If&nbsp;the&nbsp;body&nbsp;of&nbsp;the&nbsp;suite&nbsp;raises&nbsp;an&nbsp;exception,&nbsp;the&nbsp;greenlet&nbsp;is<br>
+&nbsp;&nbsp;&nbsp;:meth:`killed&nbsp;&lt;kill&gt;`&nbsp;with&nbsp;the&nbsp;default&nbsp;arguments&nbsp;and&nbsp;not&nbsp;joined&nbsp;in&nbsp;that&nbsp;case.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="myGevent-get"><strong>get</strong></a>(self, block=True, timeout=None)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#gevent-get">get</a>(self,&nbsp;block=True,&nbsp;timeout=None)<br>
+&nbsp;<br>
+<a href="#gevent-get">get</a>(block=True,&nbsp;timeout=None)&nbsp;-&gt;&nbsp;<a href="builtins.html#object">object</a><br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;result&nbsp;the&nbsp;greenlet&nbsp;has&nbsp;returned&nbsp;or&nbsp;re-raise&nbsp;the<br>
+exception&nbsp;it&nbsp;has&nbsp;raised.<br>
+&nbsp;<br>
+If&nbsp;block&nbsp;is&nbsp;``False``,&nbsp;raise&nbsp;:class:`<a href="#gevent">gevent</a>.Timeout`&nbsp;if&nbsp;the<br>
+greenlet&nbsp;is&nbsp;still&nbsp;alive.&nbsp;If&nbsp;block&nbsp;is&nbsp;``True``,&nbsp;unschedule&nbsp;the<br>
+current&nbsp;greenlet&nbsp;until&nbsp;the&nbsp;result&nbsp;is&nbsp;available&nbsp;or&nbsp;the&nbsp;timeout<br>
+expires.&nbsp;In&nbsp;the&nbsp;latter&nbsp;case,&nbsp;:class:`<a href="#gevent">gevent</a>.Timeout`&nbsp;is<br>
+raised.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-has_links"><strong>has_links</strong></a>(self)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#gevent-has_links">has_links</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="myGevent-join"><strong>join</strong></a>(self, timeout=None)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#gevent-join">join</a>(self,&nbsp;timeout=None)<br>
+&nbsp;<br>
+<a href="#gevent-join">join</a>(timeout=None)&nbsp;-&gt;&nbsp;None<br>
+&nbsp;<br>
+Wait&nbsp;until&nbsp;the&nbsp;greenlet&nbsp;finishes&nbsp;or&nbsp;*timeout*&nbsp;expires.&nbsp;Return<br>
+``None``&nbsp;regardless.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-kill"><strong>kill</strong></a>(self, exception=&lt;class 'greenlet.GreenletExit'&gt;, block=True, timeout=None)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#gevent-kill">kill</a>(self,&nbsp;exception=GreenletExit,&nbsp;block=True,&nbsp;timeout=None)<br>
+&nbsp;<br>
+Raise&nbsp;the&nbsp;``exception``&nbsp;in&nbsp;the&nbsp;greenlet.<br>
+&nbsp;<br>
+If&nbsp;``block``&nbsp;is&nbsp;``True``&nbsp;(the&nbsp;default),&nbsp;wait&nbsp;until&nbsp;the&nbsp;greenlet<br>
+dies&nbsp;or&nbsp;the&nbsp;optional&nbsp;timeout&nbsp;expires;&nbsp;this&nbsp;may&nbsp;require&nbsp;switching<br>
+greenlets.<br>
+If&nbsp;block&nbsp;is&nbsp;``False``,&nbsp;the&nbsp;current&nbsp;greenlet&nbsp;is&nbsp;not&nbsp;unscheduled.<br>
+&nbsp;<br>
+This&nbsp;function&nbsp;always&nbsp;returns&nbsp;``None``&nbsp;and&nbsp;never&nbsp;raises&nbsp;an&nbsp;error.&nbsp;It<br>
+may&nbsp;be&nbsp;called&nbsp;multpile&nbsp;times&nbsp;on&nbsp;the&nbsp;same&nbsp;greenlet&nbsp;<a href="builtins.html#object">object</a>,&nbsp;and&nbsp;may&nbsp;be<br>
+called&nbsp;on&nbsp;an&nbsp;unstarted&nbsp;or&nbsp;dead&nbsp;greenlet.<br>
+&nbsp;<br>
+..&nbsp;note::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Depending&nbsp;on&nbsp;what&nbsp;this&nbsp;greenlet&nbsp;is&nbsp;executing&nbsp;and&nbsp;the&nbsp;state<br>
+&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;the&nbsp;event&nbsp;loop,&nbsp;the&nbsp;exception&nbsp;may&nbsp;or&nbsp;may&nbsp;not&nbsp;be&nbsp;raised<br>
+&nbsp;&nbsp;&nbsp;&nbsp;immediately&nbsp;when&nbsp;this&nbsp;greenlet&nbsp;resumes&nbsp;execution.&nbsp;It&nbsp;may<br>
+&nbsp;&nbsp;&nbsp;&nbsp;be&nbsp;raised&nbsp;on&nbsp;a&nbsp;subsequent&nbsp;green&nbsp;call,&nbsp;or,&nbsp;if&nbsp;this&nbsp;greenlet<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exits&nbsp;before&nbsp;making&nbsp;such&nbsp;a&nbsp;call,&nbsp;it&nbsp;may&nbsp;not&nbsp;be&nbsp;raised&nbsp;at<br>
+&nbsp;&nbsp;&nbsp;&nbsp;all.&nbsp;As&nbsp;of&nbsp;1.1,&nbsp;an&nbsp;example&nbsp;where&nbsp;the&nbsp;exception&nbsp;is&nbsp;raised<br>
+&nbsp;&nbsp;&nbsp;&nbsp;later&nbsp;is&nbsp;if&nbsp;this&nbsp;greenlet&nbsp;had&nbsp;called&nbsp;:func:`<a href="#gevent-sleep">sleep</a>(0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<a href="#gevent">gevent</a>.sleep&gt;`;&nbsp;an&nbsp;example&nbsp;where&nbsp;the&nbsp;exception&nbsp;is&nbsp;raised<br>
+&nbsp;&nbsp;&nbsp;&nbsp;immediately&nbsp;is&nbsp;if&nbsp;this&nbsp;greenlet&nbsp;had&nbsp;called<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:func:`<a href="#gevent-sleep">sleep</a>(0.1)&nbsp;&lt;<a href="#gevent">gevent</a>.sleep&gt;`.<br>
+&nbsp;<br>
+..&nbsp;caution::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Use&nbsp;care&nbsp;when&nbsp;killing&nbsp;greenlets.&nbsp;If&nbsp;the&nbsp;code&nbsp;executing&nbsp;is&nbsp;not<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exception&nbsp;safe&nbsp;(e.g.,&nbsp;makes&nbsp;proper&nbsp;use&nbsp;of&nbsp;``finally``)&nbsp;then&nbsp;an<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unexpected&nbsp;exception&nbsp;could&nbsp;result&nbsp;in&nbsp;corrupted&nbsp;state.&nbsp;Using<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;:meth:`link`&nbsp;or&nbsp;:meth:`rawlink`&nbsp;(cheaper)&nbsp;may&nbsp;be&nbsp;a&nbsp;safer&nbsp;way&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;clean&nbsp;up&nbsp;resources.<br>
+&nbsp;<br>
+See&nbsp;also&nbsp;:func:`<a href="#gevent">gevent</a>.kill`&nbsp;and&nbsp;:func:`<a href="#gevent">gevent</a>.killall`.<br>
+&nbsp;<br>
+:keyword&nbsp;type&nbsp;exception:&nbsp;The&nbsp;type&nbsp;of&nbsp;exception&nbsp;to&nbsp;raise&nbsp;in&nbsp;the&nbsp;greenlet.&nbsp;The&nbsp;default<br>
+&nbsp;&nbsp;&nbsp;&nbsp;is&nbsp;:class:`GreenletExit`,&nbsp;which&nbsp;indicates&nbsp;a&nbsp;:meth:`successful`&nbsp;completion<br>
+&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;the&nbsp;greenlet.<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;0.13.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*block*&nbsp;is&nbsp;now&nbsp;``True``&nbsp;by&nbsp;default.<br>
+..&nbsp;versionchanged::&nbsp;1.1a2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;this&nbsp;greenlet&nbsp;had&nbsp;never&nbsp;been&nbsp;switched&nbsp;to,&nbsp;killing&nbsp;it&nbsp;will<br>
+&nbsp;&nbsp;&nbsp;&nbsp;prevent&nbsp;it&nbsp;from&nbsp;*ever*&nbsp;being&nbsp;switched&nbsp;to.&nbsp;Links&nbsp;(:meth:`rawlink`)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;will&nbsp;still&nbsp;be&nbsp;executed,&nbsp;though.<br>
+..&nbsp;versionchanged::&nbsp;20.12.1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;this&nbsp;greenlet&nbsp;is&nbsp;:meth:`ready`,&nbsp;immediately&nbsp;return&nbsp;instead&nbsp;of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;requiring&nbsp;a&nbsp;trip&nbsp;around&nbsp;the&nbsp;event&nbsp;loop.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-link"><strong>link</strong></a>(self, callback, SpawnedLink=&lt;class 'gevent._gevent_cgreenlet.SpawnedLink'&gt;)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#gevent-link">link</a>(self,&nbsp;callback,&nbsp;SpawnedLink=SpawnedLink)<br>
+&nbsp;<br>
+Link&nbsp;greenlet's&nbsp;completion&nbsp;to&nbsp;a&nbsp;callable.<br>
+&nbsp;<br>
+The&nbsp;*callback*&nbsp;will&nbsp;be&nbsp;called&nbsp;with&nbsp;this&nbsp;instance&nbsp;as&nbsp;an<br>
+argument&nbsp;once&nbsp;this&nbsp;greenlet&nbsp;is&nbsp;dead.&nbsp;A&nbsp;callable&nbsp;is&nbsp;called&nbsp;in<br>
+its&nbsp;own&nbsp;:class:`greenlet.greenlet`&nbsp;(*not*&nbsp;a<br>
+:class:`<a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>`).</tt></dd></dl>
+
+<dl><dt><a name="myGevent-link_exception"><strong>link_exception</strong></a>(self, callback, SpawnedLink=&lt;class 'gevent._gevent_cgreenlet.FailureSpawnedLink'&gt;)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#gevent-link_exception">link_exception</a>(self,&nbsp;callback,&nbsp;SpawnedLink=FailureSpawnedLink)<br>
+&nbsp;<br>
+Like&nbsp;:meth:`link`&nbsp;but&nbsp;*callback*&nbsp;is&nbsp;only&nbsp;notified&nbsp;when&nbsp;the<br>
+greenlet&nbsp;dies&nbsp;because&nbsp;of&nbsp;an&nbsp;unhandled&nbsp;exception.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-link_value"><strong>link_value</strong></a>(self, callback, SpawnedLink=&lt;class 'gevent._gevent_cgreenlet.SuccessSpawnedLink'&gt;)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#gevent-link_value">link_value</a>(self,&nbsp;callback,&nbsp;SpawnedLink=SuccessSpawnedLink)<br>
+&nbsp;<br>
+Like&nbsp;:meth:`link`&nbsp;but&nbsp;*callback*&nbsp;is&nbsp;only&nbsp;notified&nbsp;when&nbsp;the&nbsp;greenlet<br>
+has&nbsp;completed&nbsp;successfully.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-name"><strong>name</strong></a>(...)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#gevent-name">name</a>(self)<br>
+&nbsp;<br>
+The&nbsp;greenlet&nbsp;name.&nbsp;By&nbsp;default,&nbsp;a&nbsp;unique&nbsp;name&nbsp;is&nbsp;constructed&nbsp;using<br>
+the&nbsp;:attr:`minimal_ident`.&nbsp;You&nbsp;can&nbsp;assign&nbsp;a&nbsp;string&nbsp;to&nbsp;this<br>
+value&nbsp;to&nbsp;change&nbsp;it.&nbsp;It&nbsp;is&nbsp;shown&nbsp;in&nbsp;the&nbsp;`repr`&nbsp;of&nbsp;this&nbsp;<a href="builtins.html#object">object</a>&nbsp;if&nbsp;it<br>
+has&nbsp;been&nbsp;assigned&nbsp;to&nbsp;or&nbsp;if&nbsp;the&nbsp;`minimal_ident`&nbsp;has&nbsp;already&nbsp;been&nbsp;generated.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.3a2<br>
+..&nbsp;versionchanged::&nbsp;1.4<br>
+&nbsp;&nbsp;&nbsp;Stop&nbsp;showing&nbsp;generated&nbsp;names&nbsp;in&nbsp;the&nbsp;`repr`&nbsp;when&nbsp;the&nbsp;``minimal_ident``<br>
+&nbsp;&nbsp;&nbsp;hasn't&nbsp;been&nbsp;requested.&nbsp;This&nbsp;reduces&nbsp;overhead&nbsp;and&nbsp;may&nbsp;be&nbsp;less&nbsp;confusing,<br>
+&nbsp;&nbsp;&nbsp;since&nbsp;``minimal_ident``&nbsp;can&nbsp;get&nbsp;reused.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-rawlink"><strong>rawlink</strong></a>(self, callback)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#gevent-rawlink">rawlink</a>(self,&nbsp;callback)<br>
+&nbsp;<br>
+Register&nbsp;a&nbsp;callable&nbsp;to&nbsp;be&nbsp;executed&nbsp;when&nbsp;the&nbsp;greenlet&nbsp;finishes<br>
+execution.<br>
+&nbsp;<br>
+The&nbsp;*callback*&nbsp;will&nbsp;be&nbsp;called&nbsp;with&nbsp;this&nbsp;instance&nbsp;as&nbsp;an<br>
+argument.<br>
+&nbsp;<br>
+..&nbsp;caution::<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;*callback*&nbsp;will&nbsp;be&nbsp;called&nbsp;in&nbsp;the&nbsp;hub&nbsp;and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;**MUST&nbsp;NOT**&nbsp;raise&nbsp;an&nbsp;exception.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-ready"><strong>ready</strong></a>(self)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#gevent-ready">ready</a>(self)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Return&nbsp;a&nbsp;true&nbsp;value&nbsp;if&nbsp;and&nbsp;only&nbsp;if&nbsp;the&nbsp;greenlet&nbsp;has&nbsp;finished<br>
+execution.<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;1.1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;function&nbsp;is&nbsp;only&nbsp;guaranteed&nbsp;to&nbsp;return&nbsp;true&nbsp;or&nbsp;false&nbsp;*values*,&nbsp;not<br>
+&nbsp;&nbsp;&nbsp;&nbsp;necessarily&nbsp;the&nbsp;literal&nbsp;constants&nbsp;``True``&nbsp;or&nbsp;``False``.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-start"><strong>start</strong></a>(self)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#gevent-start">start</a>(self)<br>
+Schedule&nbsp;the&nbsp;greenlet&nbsp;to&nbsp;run&nbsp;in&nbsp;this&nbsp;loop&nbsp;iteration</tt></dd></dl>
+
+<dl><dt><a name="myGevent-start_later"><strong>start_later</strong></a>(self, seconds)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#gevent-start_later">start_later</a>(self,&nbsp;seconds)<br>
+&nbsp;<br>
+<a href="#gevent-start_later">start_later</a>(seconds)&nbsp;-&gt;&nbsp;None<br>
+&nbsp;<br>
+Schedule&nbsp;the&nbsp;greenlet&nbsp;to&nbsp;run&nbsp;in&nbsp;the&nbsp;future&nbsp;loop&nbsp;iteration<br>
+*seconds*&nbsp;later</tt></dd></dl>
+
+<dl><dt><a name="myGevent-successful"><strong>successful</strong></a>(self)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#gevent-successful">successful</a>(self)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Return&nbsp;a&nbsp;true&nbsp;value&nbsp;if&nbsp;and&nbsp;only&nbsp;if&nbsp;the&nbsp;greenlet&nbsp;has&nbsp;finished&nbsp;execution<br>
+successfully,&nbsp;that&nbsp;is,&nbsp;without&nbsp;raising&nbsp;an&nbsp;error.<br>
+&nbsp;<br>
+..&nbsp;tip::&nbsp;A&nbsp;greenlet&nbsp;that&nbsp;has&nbsp;been&nbsp;killed&nbsp;with&nbsp;the&nbsp;default<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:class:`GreenletExit`&nbsp;exception&nbsp;is&nbsp;considered&nbsp;successful.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;That&nbsp;is,&nbsp;``GreenletExit``&nbsp;is&nbsp;not&nbsp;considered&nbsp;an&nbsp;error.<br>
+&nbsp;<br>
+..&nbsp;note::&nbsp;This&nbsp;function&nbsp;is&nbsp;only&nbsp;guaranteed&nbsp;to&nbsp;return&nbsp;true&nbsp;or&nbsp;false&nbsp;*values*,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;not&nbsp;necessarily&nbsp;the&nbsp;literal&nbsp;constants&nbsp;``True``&nbsp;or&nbsp;``False``.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-throw"><strong>throw</strong></a>(self, *args)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#gevent-throw">throw</a>(self,&nbsp;*args)<br>
+Immediately&nbsp;switch&nbsp;into&nbsp;the&nbsp;greenlet&nbsp;and&nbsp;raise&nbsp;an&nbsp;exception&nbsp;in&nbsp;it.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Should&nbsp;only&nbsp;be&nbsp;called&nbsp;from&nbsp;the&nbsp;HUB,&nbsp;otherwise&nbsp;the&nbsp;current&nbsp;greenlet&nbsp;is&nbsp;left&nbsp;unscheduled&nbsp;forever.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To&nbsp;raise&nbsp;an&nbsp;exception&nbsp;in&nbsp;a&nbsp;safe&nbsp;manner&nbsp;from&nbsp;any&nbsp;greenlet,&nbsp;use&nbsp;:meth:`kill`.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;a&nbsp;greenlet&nbsp;was&nbsp;started&nbsp;but&nbsp;never&nbsp;switched&nbsp;to&nbsp;yet,&nbsp;then&nbsp;also<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a)&nbsp;cancel&nbsp;the&nbsp;event&nbsp;that&nbsp;will&nbsp;start&nbsp;it<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b)&nbsp;fire&nbsp;the&nbsp;notifications&nbsp;as&nbsp;if&nbsp;an&nbsp;exception&nbsp;was&nbsp;raised&nbsp;in&nbsp;a&nbsp;greenlet</tt></dd></dl>
+
+<dl><dt><a name="myGevent-unlink"><strong>unlink</strong></a>(self, callback)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#gevent-unlink">unlink</a>(self,&nbsp;callback)<br>
+Remove&nbsp;the&nbsp;callback&nbsp;set&nbsp;by&nbsp;:meth:`link`&nbsp;or&nbsp;:meth:`rawlink`</tt></dd></dl>
+
+<dl><dt><a name="myGevent-unlink_all"><strong>unlink_all</strong></a>(self)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#gevent-unlink_all">unlink_all</a>(self)<br>
+&nbsp;<br>
+Remove&nbsp;all&nbsp;the&nbsp;callbacks.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.3a2</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="gevent._gevent_cgreenlet.html#Greenlet">gevent._gevent_cgreenlet.Greenlet</a>:<br>
+<dl><dt><a name="myGevent-spawn_later"><strong>spawn_later</strong></a>(seconds, *args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#gevent-spawn_later">spawn_later</a>(type&nbsp;cls,&nbsp;seconds,&nbsp;*args,&nbsp;**kwargs)<br>
+&nbsp;<br>
+<a href="#gevent-spawn_later">spawn_later</a>(seconds,&nbsp;function,&nbsp;*args,&nbsp;**kwargs)&nbsp;-&gt;&nbsp;<a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a><br>
+&nbsp;<br>
+Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;`<a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>`&nbsp;<a href="builtins.html#object">object</a>&nbsp;scheduled&nbsp;to&nbsp;run&nbsp;``function(*args,&nbsp;**kwargs)``<br>
+in&nbsp;a&nbsp;future&nbsp;loop&nbsp;iteration&nbsp;*seconds*&nbsp;later.&nbsp;This&nbsp;can&nbsp;be&nbsp;used&nbsp;as&nbsp;``<a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.spawn_later``<br>
+or&nbsp;``<a href="#gevent">gevent</a>.spawn_later``.<br>
+&nbsp;<br>
+The&nbsp;arguments&nbsp;are&nbsp;passed&nbsp;to&nbsp;:meth:`<a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.__init__`.<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;1.1b1<br>
+&nbsp;&nbsp;&nbsp;If&nbsp;an&nbsp;argument&nbsp;that's&nbsp;meant&nbsp;to&nbsp;be&nbsp;a&nbsp;function&nbsp;(the&nbsp;first&nbsp;argument&nbsp;in&nbsp;*args*,&nbsp;or&nbsp;the&nbsp;``run``&nbsp;keyword&nbsp;)<br>
+&nbsp;&nbsp;&nbsp;is&nbsp;given&nbsp;to&nbsp;this&nbsp;classmethod&nbsp;(and&nbsp;not&nbsp;a&nbsp;classmethod&nbsp;of&nbsp;a&nbsp;subclass),<br>
+&nbsp;&nbsp;&nbsp;it&nbsp;is&nbsp;verified&nbsp;to&nbsp;be&nbsp;callable.&nbsp;Previously,&nbsp;the&nbsp;spawned&nbsp;greenlet&nbsp;would&nbsp;have&nbsp;failed<br>
+&nbsp;&nbsp;&nbsp;when&nbsp;it&nbsp;started&nbsp;running.</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="gevent._gevent_cgreenlet.html#Greenlet">gevent._gevent_cgreenlet.Greenlet</a>:<br>
+<dl><dt><a name="myGevent-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-add_spawn_callback"><strong>add_spawn_callback</strong></a>(callback)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#gevent-add_spawn_callback">add_spawn_callback</a>(callback)<br>
+&nbsp;<br>
+<a href="#gevent-add_spawn_callback">add_spawn_callback</a>(callback)&nbsp;-&gt;&nbsp;None<br>
+&nbsp;<br>
+Set&nbsp;up&nbsp;a&nbsp;*callback*&nbsp;to&nbsp;be&nbsp;invoked&nbsp;when&nbsp;:class:`<a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>`&nbsp;objects<br>
+are&nbsp;started.<br>
+&nbsp;<br>
+The&nbsp;invocation&nbsp;order&nbsp;of&nbsp;spawn&nbsp;callbacks&nbsp;is&nbsp;unspecified.&nbsp;&nbsp;Adding&nbsp;the<br>
+same&nbsp;callback&nbsp;more&nbsp;than&nbsp;one&nbsp;time&nbsp;will&nbsp;not&nbsp;cause&nbsp;it&nbsp;to&nbsp;be&nbsp;called&nbsp;more<br>
+than&nbsp;once.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.4.0</tt></dd></dl>
+
+<dl><dt><a name="myGevent-remove_spawn_callback"><strong>remove_spawn_callback</strong></a>(callback)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#gevent-remove_spawn_callback">remove_spawn_callback</a>(callback)<br>
+&nbsp;<br>
+<a href="#gevent-remove_spawn_callback">remove_spawn_callback</a>(callback)&nbsp;-&gt;&nbsp;None<br>
+&nbsp;<br>
+Remove&nbsp;*callback*&nbsp;function&nbsp;added&nbsp;with&nbsp;:meth:`<a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.add_spawn_callback`.<br>
+This&nbsp;function&nbsp;will&nbsp;not&nbsp;fail&nbsp;if&nbsp;*callback*&nbsp;has&nbsp;been&nbsp;already&nbsp;removed&nbsp;or<br>
+if&nbsp;*callback*&nbsp;was&nbsp;never&nbsp;added.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.4.0</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="gevent._gevent_cgreenlet.html#Greenlet">gevent._gevent_cgreenlet.Greenlet</a>:<br>
+<dl><dt><strong>args</strong></dt>
+</dl>
+<dl><dt><strong>dead</strong></dt>
+<dd><tt>Boolean&nbsp;indicating&nbsp;that&nbsp;the&nbsp;greenlet&nbsp;is&nbsp;dead&nbsp;and&nbsp;will&nbsp;not&nbsp;run&nbsp;again.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;true&nbsp;if:<br>
+&nbsp;<br>
+1.&nbsp;We&nbsp;were&nbsp;never&nbsp;started,&nbsp;but&nbsp;were&nbsp;:meth:`killed&nbsp;&lt;kill&gt;`<br>
+&nbsp;&nbsp;&nbsp;immediately&nbsp;after&nbsp;creation&nbsp;(not&nbsp;possible&nbsp;with&nbsp;:meth:`spawn`);&nbsp;OR<br>
+2.&nbsp;We&nbsp;were&nbsp;started,&nbsp;but&nbsp;were&nbsp;killed&nbsp;before&nbsp;running;&nbsp;OR<br>
+3.&nbsp;We&nbsp;have&nbsp;run&nbsp;and&nbsp;terminated&nbsp;(by&nbsp;raising&nbsp;an&nbsp;exception&nbsp;out&nbsp;of&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;started&nbsp;function&nbsp;or&nbsp;by&nbsp;reaching&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;started&nbsp;function).</tt></dd>
+</dl>
+<dl><dt><strong>exc_info</strong></dt>
+<dd><tt>Holds&nbsp;the&nbsp;exc_info&nbsp;three-tuple&nbsp;raised&nbsp;by&nbsp;the&nbsp;function&nbsp;if&nbsp;the<br>
+greenlet&nbsp;finished&nbsp;with&nbsp;an&nbsp;error.&nbsp;Otherwise&nbsp;a&nbsp;false&nbsp;value.<br>
+&nbsp;<br>
+..&nbsp;note::&nbsp;This&nbsp;is&nbsp;a&nbsp;provisional&nbsp;API&nbsp;and&nbsp;may&nbsp;change.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.1</tt></dd>
+</dl>
+<dl><dt><strong>exception</strong></dt>
+<dd><tt>Holds&nbsp;the&nbsp;exception&nbsp;instance&nbsp;raised&nbsp;by&nbsp;the&nbsp;function&nbsp;if&nbsp;the<br>
+greenlet&nbsp;has&nbsp;finished&nbsp;with&nbsp;an&nbsp;error.&nbsp;Otherwise&nbsp;``None``.</tt></dd>
+</dl>
+<dl><dt><strong>kwargs</strong></dt>
+</dl>
+<dl><dt><strong>loop</strong></dt>
+</dl>
+<dl><dt><strong>minimal_ident</strong></dt>
+<dd><tt>A&nbsp;small,&nbsp;unique&nbsp;non-negative&nbsp;integer&nbsp;that&nbsp;identifies&nbsp;this&nbsp;object.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;similar&nbsp;to&nbsp;:attr:`threading.Thread.ident`&nbsp;(and&nbsp;`id`)<br>
+in&nbsp;that&nbsp;as&nbsp;long&nbsp;as&nbsp;this&nbsp;object&nbsp;is&nbsp;alive,&nbsp;no&nbsp;other&nbsp;greenlet&nbsp;*in<br>
+this&nbsp;hub*&nbsp;will&nbsp;have&nbsp;the&nbsp;same&nbsp;id,&nbsp;but&nbsp;it&nbsp;makes&nbsp;a&nbsp;stronger<br>
+guarantee&nbsp;that&nbsp;the&nbsp;assigned&nbsp;values&nbsp;will&nbsp;be&nbsp;small&nbsp;and<br>
+sequential.&nbsp;Sometime&nbsp;after&nbsp;this&nbsp;object&nbsp;has&nbsp;died,&nbsp;the&nbsp;value<br>
+will&nbsp;be&nbsp;available&nbsp;for&nbsp;reuse.<br>
+&nbsp;<br>
+To&nbsp;get&nbsp;ids&nbsp;that&nbsp;are&nbsp;unique&nbsp;across&nbsp;all&nbsp;hubs,&nbsp;combine&nbsp;this&nbsp;with<br>
+the&nbsp;hub's&nbsp;(``self.<strong>parent</strong>``)&nbsp;``minimal_ident``.<br>
+&nbsp;<br>
+Accessing&nbsp;this&nbsp;property&nbsp;from&nbsp;threads&nbsp;other&nbsp;than&nbsp;the&nbsp;thread&nbsp;running<br>
+this&nbsp;greenlet&nbsp;is&nbsp;not&nbsp;defined.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.3a2</tt></dd>
+</dl>
+<dl><dt><strong>spawn_tree_locals</strong></dt>
+<dd><tt>spawn_tree_locals:&nbsp;dict</tt></dd>
+</dl>
+<dl><dt><strong>spawning_greenlet</strong></dt>
+</dl>
+<dl><dt><strong>spawning_stack</strong></dt>
+</dl>
+<dl><dt><strong>started</strong></dt>
+</dl>
+<dl><dt><strong>value</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="gevent._gevent_cgreenlet.html#Greenlet">gevent._gevent_cgreenlet.Greenlet</a>:<br>
+<dl><dt><strong>__pyx_vtable__</strong> = &lt;capsule object NULL&gt;</dl>
+
+<dl><dt><strong>spawning_stack_limit</strong> = 10</dl>
+
+<hr>
+Methods inherited from <a href="greenlet.html#greenlet">greenlet.greenlet</a>:<br>
+<dl><dt><a name="myGevent-__getstate__"><strong>__getstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="myGevent-switch"><strong>switch</strong></a>(...)</dt><dd><tt><a href="#gevent-switch">switch</a>(*args,&nbsp;**kwargs)<br>
+&nbsp;<br>
+Switch&nbsp;execution&nbsp;to&nbsp;this&nbsp;greenlet.<br>
+&nbsp;<br>
+If&nbsp;this&nbsp;greenlet&nbsp;has&nbsp;never&nbsp;been&nbsp;run,&nbsp;then&nbsp;this&nbsp;greenlet<br>
+will&nbsp;be&nbsp;switched&nbsp;to&nbsp;using&nbsp;the&nbsp;body&nbsp;of&nbsp;``self.<a href="#gevent-run">run</a>(*args,&nbsp;**kwargs)``.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;greenlet&nbsp;is&nbsp;active&nbsp;(has&nbsp;been&nbsp;run,&nbsp;but&nbsp;was&nbsp;<a href="#gevent-switch">switch</a>()'ed<br>
+out&nbsp;before&nbsp;leaving&nbsp;its&nbsp;run&nbsp;function),&nbsp;then&nbsp;this&nbsp;greenlet&nbsp;will<br>
+be&nbsp;resumed&nbsp;and&nbsp;the&nbsp;return&nbsp;value&nbsp;to&nbsp;its&nbsp;switch&nbsp;call&nbsp;will&nbsp;be<br>
+None&nbsp;if&nbsp;no&nbsp;arguments&nbsp;are&nbsp;given,&nbsp;the&nbsp;given&nbsp;argument&nbsp;if&nbsp;one<br>
+argument&nbsp;is&nbsp;given,&nbsp;or&nbsp;the&nbsp;args&nbsp;tuple&nbsp;and&nbsp;keyword&nbsp;args&nbsp;dict&nbsp;if<br>
+multiple&nbsp;arguments&nbsp;are&nbsp;given.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;greenlet&nbsp;is&nbsp;dead,&nbsp;or&nbsp;is&nbsp;the&nbsp;current&nbsp;greenlet&nbsp;then&nbsp;this<br>
+function&nbsp;will&nbsp;simply&nbsp;return&nbsp;the&nbsp;arguments&nbsp;using&nbsp;the&nbsp;same&nbsp;rules&nbsp;as<br>
+above.</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="greenlet.html#greenlet">greenlet.greenlet</a>:<br>
+<dl><dt><a name="myGevent-getcurrent"><strong>getcurrent</strong></a>(...)</dt><dd><tt><a href="#gevent-getcurrent">getcurrent</a>()&nbsp;-&gt;&nbsp;greenlet<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;current&nbsp;greenlet&nbsp;(i.e.&nbsp;the&nbsp;one&nbsp;which&nbsp;called&nbsp;this&nbsp;function).</tt></dd></dl>
+
+<dl><dt><a name="myGevent-gettrace"><strong>gettrace</strong></a>(...)</dt><dd><tt><a href="#gevent-gettrace">gettrace</a>()&nbsp;-&gt;&nbsp;<a href="builtins.html#object">object</a><br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;currently&nbsp;set&nbsp;tracing&nbsp;function,&nbsp;or&nbsp;None.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-settrace"><strong>settrace</strong></a>(...)</dt><dd><tt><a href="#gevent-settrace">settrace</a>(callback)&nbsp;-&gt;&nbsp;<a href="builtins.html#object">object</a><br>
+&nbsp;<br>
+Sets&nbsp;a&nbsp;new&nbsp;tracing&nbsp;function&nbsp;and&nbsp;returns&nbsp;the&nbsp;previous&nbsp;one.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="greenlet.html#greenlet">greenlet.greenlet</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>gr_context</strong></dt>
+</dl>
+<dl><dt><strong>gr_frame</strong></dt>
+</dl>
+<dl><dt><strong>parent</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="greenlet.html#greenlet">greenlet.greenlet</a>:<br>
+<dl><dt><strong>GreenletExit</strong> = &lt;class 'greenlet.GreenletExit'&gt;</dl>
+
+<dl><dt><strong>error</strong> = &lt;class 'greenlet.error'&gt;</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="input_ui">class <strong>input_ui</strong></a>(<a href="udp_loglib.html#Base_ui">Base_ui</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>参数输入ui<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="udp_loglib.html#input_ui">input_ui</a></dd>
+<dd><a href="udp_loglib.html#Base_ui">Base_ui</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="input_ui-OnAfter"><strong>OnAfter</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="input_ui-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="input_ui-value_get"><strong>value_get</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="udp_loglib.html#Base_ui">Base_ui</a>:<br>
+<dl><dt><a name="input_ui-adaptor"><strong>adaptor</strong></a>(self, fun, **kwds)</dt></dl>
+
+<dl><dt><a name="input_ui-close"><strong>close</strong></a>(self, *agrs)</dt></dl>
+
+<dl><dt><a name="input_ui-combo_add"><strong>combo_add</strong></a>(self, name, values, state='readonly')</dt></dl>
+
+<dl><dt><a name="input_ui-items_add"><strong>items_add</strong></a>(self, name)</dt></dl>
+
+<dl><dt><a name="input_ui-mainloop"><strong>mainloop</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="input_ui-path_add"><strong>path_add</strong></a>(self, name, values)</dt></dl>
+
+<dl><dt><a name="input_ui-path_select"><strong>path_select</strong></a>(self, event, name, val)</dt></dl>
+
+<dl><dt><a name="input_ui-show_msg"><strong>show_msg</strong></a>(self, event, name, val)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="udp_loglib.html#Base_ui">Base_ui</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="myGevent">class <strong>myGevent</strong></a>(<a href="gevent._gevent_cgreenlet.html#Greenlet">gevent._gevent_cgreenlet.Greenlet</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>原协程会在单个协程异常后继续执行，此协程异常会使进程退出<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="udp_loglib.html#myGevent">myGevent</a></dd>
+<dd><a href="gevent._gevent_cgreenlet.html#Greenlet">gevent._gevent_cgreenlet.Greenlet</a></dd>
+<dd><a href="greenlet.html#greenlet">greenlet.greenlet</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="myGevent-joinall"><strong>joinall</strong></a>(greenlets, timeout=None, raise_error=False, count=None)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>等待协程&nbsp;<br>
+greenlets:&nbsp;<a href="#myGevent">myGevent</a>.spawn&nbsp;的返回值构成的一个列表<br>
+If&nbsp;``count``&nbsp;is&nbsp;``None``&nbsp;(the&nbsp;default),&nbsp;wait&nbsp;for&nbsp;all&nbsp;``greenletscts``<br>
+to&nbsp;become&nbsp;ready.<br>
+&nbsp;<br>
+If&nbsp;``count``&nbsp;is&nbsp;a&nbsp;number,&nbsp;wait&nbsp;for&nbsp;(up&nbsp;to)&nbsp;``count``&nbsp;objects&nbsp;to&nbsp;become<br>
+ready.&nbsp;(For&nbsp;example,&nbsp;if&nbsp;count&nbsp;is&nbsp;``1``&nbsp;then&nbsp;the&nbsp;function&nbsp;exits<br>
+when&nbsp;any&nbsp;<a href="builtins.html#object">object</a>&nbsp;in&nbsp;the&nbsp;list&nbsp;is&nbsp;ready).<br>
+&nbsp;<br>
+If&nbsp;``timeout``&nbsp;is&nbsp;provided,&nbsp;it&nbsp;specifies&nbsp;the&nbsp;maximum&nbsp;number&nbsp;of<br>
+seconds&nbsp;``wait()``&nbsp;will&nbsp;block.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-run"><strong>run</strong></a>(func, caller, *args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#myGevent-run">run</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="myGevent-sleep"><strong>sleep</strong></a>(sec)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>主动切换协程</tt></dd></dl>
+
+<dl><dt><a name="myGevent-spawn"><strong>spawn</strong></a>(func=None, *args, **kwargs) -&gt; gevent._gevent_cgreenlet.Greenlet<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>开启一个协程</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="myGevent-empty"><strong>empty</strong></a>()</dt><dd><tt>计算空闲时间，count&nbsp;数值越大空闲时间越多，不能检查出某个线程完全阻塞</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>gevent_dict</strong> = {}</dl>
+
+<dl><dt><strong>monkey</strong> = &lt;module 'gevent.monkey' from 'C:\\Users\\LiuXint...rm\\venv\\lib\\site-packages\\gevent\\monkey.py'&gt;<dd><tt>Make&nbsp;the&nbsp;standard&nbsp;library&nbsp;cooperative.<br>
+&nbsp;<br>
+The&nbsp;primary&nbsp;purpose&nbsp;of&nbsp;this&nbsp;module&nbsp;is&nbsp;to&nbsp;carefully&nbsp;patch,&nbsp;in&nbsp;place,<br>
+portions&nbsp;of&nbsp;the&nbsp;standard&nbsp;library&nbsp;with&nbsp;<a href="#gevent">gevent</a>-friendly&nbsp;functions&nbsp;that<br>
+behave&nbsp;in&nbsp;the&nbsp;same&nbsp;way&nbsp;as&nbsp;the&nbsp;original&nbsp;(at&nbsp;least&nbsp;as&nbsp;closely&nbsp;as&nbsp;possible).<br>
+&nbsp;<br>
+The&nbsp;primary&nbsp;interface&nbsp;to&nbsp;this&nbsp;is&nbsp;the&nbsp;:func:`patch_all`&nbsp;function,&nbsp;which<br>
+performs&nbsp;all&nbsp;the&nbsp;available&nbsp;patches.&nbsp;It&nbsp;accepts&nbsp;arguments&nbsp;to&nbsp;limit&nbsp;the<br>
+patching&nbsp;to&nbsp;certain&nbsp;modules,&nbsp;but&nbsp;most&nbsp;programs&nbsp;**should**&nbsp;use&nbsp;the<br>
+default&nbsp;values&nbsp;as&nbsp;they&nbsp;receive&nbsp;the&nbsp;most&nbsp;wide-spread&nbsp;testing,&nbsp;and&nbsp;some&nbsp;monkey<br>
+patches&nbsp;have&nbsp;dependencies&nbsp;on&nbsp;others.<br>
+&nbsp;<br>
+Patching&nbsp;**should&nbsp;be&nbsp;done&nbsp;as&nbsp;early&nbsp;as&nbsp;possible**&nbsp;in&nbsp;the&nbsp;lifecycle&nbsp;of&nbsp;the<br>
+program.&nbsp;For&nbsp;example,&nbsp;the&nbsp;main&nbsp;module&nbsp;(the&nbsp;one&nbsp;that&nbsp;tests&nbsp;against<br>
+``__main__``&nbsp;or&nbsp;is&nbsp;otherwise&nbsp;the&nbsp;first&nbsp;imported)&nbsp;should&nbsp;begin&nbsp;with<br>
+this&nbsp;code,&nbsp;ideally&nbsp;before&nbsp;any&nbsp;other&nbsp;imports::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<a href="#gevent">gevent</a>&nbsp;import&nbsp;monkey<br>
+&nbsp;&nbsp;&nbsp;&nbsp;monkey.patch_all()<br>
+&nbsp;<br>
+A&nbsp;corollary&nbsp;of&nbsp;the&nbsp;above&nbsp;is&nbsp;that&nbsp;patching&nbsp;**should&nbsp;be&nbsp;done&nbsp;on&nbsp;the&nbsp;main<br>
+thread**&nbsp;and&nbsp;**should&nbsp;be&nbsp;done&nbsp;while&nbsp;the&nbsp;program&nbsp;is&nbsp;single-threaded**.<br>
+&nbsp;<br>
+..&nbsp;tip::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Some&nbsp;frameworks,&nbsp;such&nbsp;as&nbsp;gunicorn,&nbsp;handle&nbsp;monkey-patching&nbsp;for&nbsp;you.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Check&nbsp;their&nbsp;documentation&nbsp;to&nbsp;be&nbsp;sure.<br>
+&nbsp;<br>
+..&nbsp;warning::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Patching&nbsp;too&nbsp;late&nbsp;can&nbsp;lead&nbsp;to&nbsp;unreliable&nbsp;behaviour&nbsp;(for&nbsp;example,&nbsp;some<br>
+&nbsp;&nbsp;&nbsp;&nbsp;modules&nbsp;may&nbsp;still&nbsp;use&nbsp;blocking&nbsp;sockets)&nbsp;or&nbsp;even&nbsp;errors.<br>
+&nbsp;<br>
+..&nbsp;tip::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Be&nbsp;sure&nbsp;to&nbsp;read&nbsp;the&nbsp;documentation&nbsp;for&nbsp;each&nbsp;patch&nbsp;function&nbsp;to&nbsp;check&nbsp;for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;known&nbsp;incompatibilities.<br>
+&nbsp;<br>
+Querying<br>
+========<br>
+&nbsp;<br>
+Sometimes&nbsp;it&nbsp;is&nbsp;helpful&nbsp;to&nbsp;know&nbsp;if&nbsp;objects&nbsp;have&nbsp;been&nbsp;monkey-patched,&nbsp;and&nbsp;in<br>
+advanced&nbsp;cases&nbsp;even&nbsp;to&nbsp;have&nbsp;access&nbsp;to&nbsp;the&nbsp;original&nbsp;standard&nbsp;library&nbsp;functions.&nbsp;This<br>
+module&nbsp;provides&nbsp;functions&nbsp;for&nbsp;that&nbsp;purpose.<br>
+&nbsp;<br>
+-&nbsp;:func:`is_module_patched`<br>
+-&nbsp;:func:`is_object_patched`<br>
+-&nbsp;:func:`get_original`<br>
+&nbsp;<br>
+..&nbsp;_plugins:<br>
+&nbsp;<br>
+Plugins&nbsp;and&nbsp;Events<br>
+==================<br>
+&nbsp;<br>
+Beginning&nbsp;in&nbsp;<a href="#gevent">gevent</a>&nbsp;1.3,&nbsp;events&nbsp;are&nbsp;emitted&nbsp;during&nbsp;the&nbsp;monkey&nbsp;patching&nbsp;process.<br>
+These&nbsp;events&nbsp;are&nbsp;delivered&nbsp;first&nbsp;to&nbsp;:mod:`<a href="#gevent">gevent</a>.events`&nbsp;subscribers,&nbsp;and&nbsp;then<br>
+to&nbsp;`setuptools&nbsp;entry&nbsp;points`_.<br>
+&nbsp;<br>
+The&nbsp;following&nbsp;events&nbsp;are&nbsp;defined.&nbsp;They&nbsp;are&nbsp;listed&nbsp;in&nbsp;(roughly)&nbsp;the&nbsp;order<br>
+that&nbsp;a&nbsp;call&nbsp;to&nbsp;:func:`patch_all`&nbsp;will&nbsp;emit&nbsp;them.<br>
+&nbsp;<br>
+-&nbsp;:class:`<a href="#gevent">gevent</a>.events.GeventWillPatchAllEvent`<br>
+-&nbsp;:class:`<a href="#gevent">gevent</a>.events.GeventWillPatchModuleEvent`<br>
+-&nbsp;:class:`<a href="#gevent">gevent</a>.events.GeventDidPatchModuleEvent`<br>
+-&nbsp;:class:`<a href="#gevent">gevent</a>.events.GeventDidPatchBuiltinModulesEvent`<br>
+-&nbsp;:class:`<a href="#gevent">gevent</a>.events.GeventDidPatchAllEvent`<br>
+&nbsp;<br>
+Each&nbsp;event&nbsp;class&nbsp;documents&nbsp;the&nbsp;corresponding&nbsp;setuptools&nbsp;entry&nbsp;point&nbsp;name.&nbsp;The<br>
+entry&nbsp;points&nbsp;will&nbsp;be&nbsp;called&nbsp;with&nbsp;a&nbsp;single&nbsp;argument,&nbsp;the&nbsp;same&nbsp;instance&nbsp;of<br>
+the&nbsp;class&nbsp;that&nbsp;was&nbsp;sent&nbsp;to&nbsp;the&nbsp;subscribers.<br>
+&nbsp;<br>
+You&nbsp;can&nbsp;subscribe&nbsp;to&nbsp;the&nbsp;events&nbsp;to&nbsp;monitor&nbsp;the&nbsp;monkey-patching&nbsp;process&nbsp;and<br>
+to&nbsp;manipulate&nbsp;it,&nbsp;for&nbsp;example&nbsp;by&nbsp;raising&nbsp;:exc:`<a href="#gevent">gevent</a>.events.DoNotPatch`.<br>
+&nbsp;<br>
+You&nbsp;can&nbsp;also&nbsp;subscribe&nbsp;to&nbsp;the&nbsp;events&nbsp;to&nbsp;provide&nbsp;additional&nbsp;patching&nbsp;beyond&nbsp;what<br>
+<a href="#gevent">gevent</a>&nbsp;distributes,&nbsp;either&nbsp;for&nbsp;additional&nbsp;standard&nbsp;library&nbsp;modules,&nbsp;or<br>
+for&nbsp;third-party&nbsp;packages.&nbsp;The&nbsp;suggested&nbsp;time&nbsp;to&nbsp;do&nbsp;this&nbsp;patching&nbsp;is&nbsp;in<br>
+the&nbsp;subscriber&nbsp;for&nbsp;:class:`<a href="#gevent">gevent</a>.events.GeventDidPatchBuiltinModulesEvent`.<br>
+For&nbsp;example,&nbsp;to&nbsp;automatically&nbsp;patch&nbsp;`psycopg2`_&nbsp;using&nbsp;`psycogreen`_<br>
+when&nbsp;the&nbsp;call&nbsp;to&nbsp;:func:`patch_all`&nbsp;is&nbsp;made,&nbsp;you&nbsp;could&nbsp;write&nbsp;code&nbsp;like&nbsp;this::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;mypackage.py<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;patch_psycopg(event):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;psycogreen.<a href="#gevent">gevent</a>&nbsp;import&nbsp;patch_psycopg<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patch_psycopg()<br>
+&nbsp;<br>
+In&nbsp;your&nbsp;``setup.py``&nbsp;you&nbsp;would&nbsp;register&nbsp;it&nbsp;like&nbsp;this::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;setuptools&nbsp;import&nbsp;setup<br>
+&nbsp;&nbsp;&nbsp;&nbsp;setup(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entry_points={<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<a href="#gevent">gevent</a>.plugins.monkey.did_patch_builtins':&nbsp;[<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'psycopg2&nbsp;=&nbsp;mypackage:patch_psycopg',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;)<br>
+&nbsp;<br>
+For&nbsp;more&nbsp;complex&nbsp;patching,&nbsp;<a href="#gevent">gevent</a>&nbsp;provides&nbsp;a&nbsp;helper&nbsp;method<br>
+that&nbsp;you&nbsp;can&nbsp;call&nbsp;to&nbsp;replace&nbsp;attributes&nbsp;of&nbsp;modules&nbsp;with&nbsp;attributes&nbsp;of&nbsp;your<br>
+own&nbsp;modules.&nbsp;This&nbsp;function&nbsp;also&nbsp;takes&nbsp;care&nbsp;of&nbsp;emitting&nbsp;the&nbsp;appropriate&nbsp;events.<br>
+&nbsp;<br>
+-&nbsp;:func:`patch_module`<br>
+&nbsp;<br>
+..&nbsp;_setuptools&nbsp;entry&nbsp;points:&nbsp;<a href="http://setuptools.readthedocs.io/en/latest/setuptools.html#dynamic-discovery-of-services-and-plugins">http://setuptools.readthedocs.io/en/latest/setuptools.html#dynamic-discovery-of-services-and-plugins</a><br>
+..&nbsp;_psycopg2:&nbsp;<a href="https://pypi.python.org/pypi/psycopg2">https://pypi.python.org/pypi/psycopg2</a><br>
+..&nbsp;_psycogreen:&nbsp;<a href="https://pypi.python.org/pypi/psycogreen">https://pypi.python.org/pypi/psycogreen</a><br>
+&nbsp;<br>
+Use&nbsp;as&nbsp;a&nbsp;module<br>
+===============<br>
+&nbsp;<br>
+Sometimes&nbsp;it&nbsp;is&nbsp;useful&nbsp;to&nbsp;run&nbsp;existing&nbsp;python&nbsp;scripts&nbsp;or&nbsp;modules&nbsp;that<br>
+were&nbsp;not&nbsp;built&nbsp;to&nbsp;be&nbsp;<a href="#gevent">gevent</a>&nbsp;aware&nbsp;under&nbsp;<a href="#gevent">gevent</a>.&nbsp;To&nbsp;do&nbsp;so,&nbsp;this&nbsp;module<br>
+can&nbsp;be&nbsp;run&nbsp;as&nbsp;the&nbsp;main&nbsp;module,&nbsp;passing&nbsp;the&nbsp;script&nbsp;and&nbsp;its&nbsp;arguments.<br>
+For&nbsp;details,&nbsp;see&nbsp;the&nbsp;:func:`main`&nbsp;function.<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;1.3b1<br>
+&nbsp;&nbsp;&nbsp;Added&nbsp;support&nbsp;for&nbsp;plugins&nbsp;and&nbsp;began&nbsp;emitting&nbsp;will/did&nbsp;patch&nbsp;events.</tt></dl>
+
+<hr>
+Methods inherited from <a href="gevent._gevent_cgreenlet.html#Greenlet">gevent._gevent_cgreenlet.Greenlet</a>:<br>
+<dl><dt><a name="myGevent-__bool__"><strong>__bool__</strong></a>(self, /)</dt><dd><tt>self&nbsp;!=&nbsp;0</tt></dd></dl>
+
+<dl><dt><a name="myGevent-__enter__"><strong>__enter__</strong></a>(self)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#myGevent-__enter__">__enter__</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="myGevent-__exit__"><strong>__exit__</strong></a>(self, t, v, tb)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#myGevent-__exit__">__exit__</a>(self,&nbsp;t,&nbsp;v,&nbsp;tb)</tt></dd></dl>
+
+<dl><dt><a name="myGevent-__init__"><strong>__init__</strong></a>(...)</dt><dd><tt>:param&nbsp;args:&nbsp;The&nbsp;arguments&nbsp;passed&nbsp;to&nbsp;the&nbsp;``run``&nbsp;function.<br>
+:param&nbsp;kwargs:&nbsp;The&nbsp;keyword&nbsp;arguments&nbsp;passed&nbsp;to&nbsp;the&nbsp;``run``&nbsp;function.<br>
+:keyword&nbsp;callable&nbsp;run:&nbsp;The&nbsp;callable&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;run.&nbsp;If&nbsp;not&nbsp;given,&nbsp;this&nbsp;<a href="builtins.html#object">object</a>'s<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`_run`&nbsp;method&nbsp;will&nbsp;be&nbsp;invoked&nbsp;(typically&nbsp;defined&nbsp;by&nbsp;subclasses).<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;1.1b1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;``run``&nbsp;argument&nbsp;to&nbsp;the&nbsp;constructor&nbsp;is&nbsp;now&nbsp;verified&nbsp;to&nbsp;be&nbsp;a&nbsp;callable<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="builtins.html#object">object</a>.&nbsp;Previously,&nbsp;passing&nbsp;a&nbsp;non-callable&nbsp;<a href="builtins.html#object">object</a>&nbsp;would&nbsp;fail&nbsp;after&nbsp;the&nbsp;greenlet<br>
+&nbsp;&nbsp;&nbsp;&nbsp;was&nbsp;spawned.<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;1.3b1<br>
+&nbsp;&nbsp;&nbsp;The&nbsp;``GEVENT_TRACK_GREENLET_TREE``&nbsp;configuration&nbsp;value&nbsp;may&nbsp;be&nbsp;set&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;a&nbsp;false&nbsp;value&nbsp;to&nbsp;disable&nbsp;``spawn_tree_locals``,&nbsp;``spawning_greenlet``,<br>
+&nbsp;&nbsp;&nbsp;and&nbsp;``spawning_stack``.&nbsp;The&nbsp;first&nbsp;two&nbsp;will&nbsp;be&nbsp;None&nbsp;in&nbsp;that&nbsp;case,&nbsp;and&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;latter&nbsp;will&nbsp;be&nbsp;empty.<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;1.5<br>
+&nbsp;&nbsp;&nbsp;<a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>&nbsp;objects&nbsp;are&nbsp;now&nbsp;more&nbsp;careful&nbsp;to&nbsp;verify&nbsp;that&nbsp;their&nbsp;``parent``&nbsp;is&nbsp;really<br>
+&nbsp;&nbsp;&nbsp;a&nbsp;<a href="#gevent">gevent</a>&nbsp;hub,&nbsp;raising&nbsp;a&nbsp;``TypeError``&nbsp;earlier&nbsp;instead&nbsp;of&nbsp;an&nbsp;``AttributeError``&nbsp;later.<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;20.12.1<br>
+&nbsp;&nbsp;&nbsp;<a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>&nbsp;objects&nbsp;now&nbsp;function&nbsp;as&nbsp;context&nbsp;managers.&nbsp;Exiting&nbsp;the&nbsp;``with``&nbsp;suite<br>
+&nbsp;&nbsp;&nbsp;ensures&nbsp;that&nbsp;the&nbsp;greenlet&nbsp;has&nbsp;completed&nbsp;by&nbsp;:meth:`joining&nbsp;&lt;join&gt;`<br>
+&nbsp;&nbsp;&nbsp;the&nbsp;greenlet&nbsp;(blocking,&nbsp;with<br>
+&nbsp;&nbsp;&nbsp;no&nbsp;timeout).&nbsp;If&nbsp;the&nbsp;body&nbsp;of&nbsp;the&nbsp;suite&nbsp;raises&nbsp;an&nbsp;exception,&nbsp;the&nbsp;greenlet&nbsp;is<br>
+&nbsp;&nbsp;&nbsp;:meth:`killed&nbsp;&lt;kill&gt;`&nbsp;with&nbsp;the&nbsp;default&nbsp;arguments&nbsp;and&nbsp;not&nbsp;joined&nbsp;in&nbsp;that&nbsp;case.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="myGevent-get"><strong>get</strong></a>(self, block=True, timeout=None)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#myGevent-get">get</a>(self,&nbsp;block=True,&nbsp;timeout=None)<br>
+&nbsp;<br>
+<a href="#myGevent-get">get</a>(block=True,&nbsp;timeout=None)&nbsp;-&gt;&nbsp;<a href="builtins.html#object">object</a><br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;result&nbsp;the&nbsp;greenlet&nbsp;has&nbsp;returned&nbsp;or&nbsp;re-raise&nbsp;the<br>
+exception&nbsp;it&nbsp;has&nbsp;raised.<br>
+&nbsp;<br>
+If&nbsp;block&nbsp;is&nbsp;``False``,&nbsp;raise&nbsp;:class:`<a href="#gevent">gevent</a>.Timeout`&nbsp;if&nbsp;the<br>
+greenlet&nbsp;is&nbsp;still&nbsp;alive.&nbsp;If&nbsp;block&nbsp;is&nbsp;``True``,&nbsp;unschedule&nbsp;the<br>
+current&nbsp;greenlet&nbsp;until&nbsp;the&nbsp;result&nbsp;is&nbsp;available&nbsp;or&nbsp;the&nbsp;timeout<br>
+expires.&nbsp;In&nbsp;the&nbsp;latter&nbsp;case,&nbsp;:class:`<a href="#gevent">gevent</a>.Timeout`&nbsp;is<br>
+raised.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-has_links"><strong>has_links</strong></a>(self)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#myGevent-has_links">has_links</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="myGevent-join"><strong>join</strong></a>(self, timeout=None)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#myGevent-join">join</a>(self,&nbsp;timeout=None)<br>
+&nbsp;<br>
+<a href="#myGevent-join">join</a>(timeout=None)&nbsp;-&gt;&nbsp;None<br>
+&nbsp;<br>
+Wait&nbsp;until&nbsp;the&nbsp;greenlet&nbsp;finishes&nbsp;or&nbsp;*timeout*&nbsp;expires.&nbsp;Return<br>
+``None``&nbsp;regardless.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-kill"><strong>kill</strong></a>(self, exception=&lt;class 'greenlet.GreenletExit'&gt;, block=True, timeout=None)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#myGevent-kill">kill</a>(self,&nbsp;exception=GreenletExit,&nbsp;block=True,&nbsp;timeout=None)<br>
+&nbsp;<br>
+Raise&nbsp;the&nbsp;``exception``&nbsp;in&nbsp;the&nbsp;greenlet.<br>
+&nbsp;<br>
+If&nbsp;``block``&nbsp;is&nbsp;``True``&nbsp;(the&nbsp;default),&nbsp;wait&nbsp;until&nbsp;the&nbsp;greenlet<br>
+dies&nbsp;or&nbsp;the&nbsp;optional&nbsp;timeout&nbsp;expires;&nbsp;this&nbsp;may&nbsp;require&nbsp;switching<br>
+greenlets.<br>
+If&nbsp;block&nbsp;is&nbsp;``False``,&nbsp;the&nbsp;current&nbsp;greenlet&nbsp;is&nbsp;not&nbsp;unscheduled.<br>
+&nbsp;<br>
+This&nbsp;function&nbsp;always&nbsp;returns&nbsp;``None``&nbsp;and&nbsp;never&nbsp;raises&nbsp;an&nbsp;error.&nbsp;It<br>
+may&nbsp;be&nbsp;called&nbsp;multpile&nbsp;times&nbsp;on&nbsp;the&nbsp;same&nbsp;greenlet&nbsp;<a href="builtins.html#object">object</a>,&nbsp;and&nbsp;may&nbsp;be<br>
+called&nbsp;on&nbsp;an&nbsp;unstarted&nbsp;or&nbsp;dead&nbsp;greenlet.<br>
+&nbsp;<br>
+..&nbsp;note::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Depending&nbsp;on&nbsp;what&nbsp;this&nbsp;greenlet&nbsp;is&nbsp;executing&nbsp;and&nbsp;the&nbsp;state<br>
+&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;the&nbsp;event&nbsp;loop,&nbsp;the&nbsp;exception&nbsp;may&nbsp;or&nbsp;may&nbsp;not&nbsp;be&nbsp;raised<br>
+&nbsp;&nbsp;&nbsp;&nbsp;immediately&nbsp;when&nbsp;this&nbsp;greenlet&nbsp;resumes&nbsp;execution.&nbsp;It&nbsp;may<br>
+&nbsp;&nbsp;&nbsp;&nbsp;be&nbsp;raised&nbsp;on&nbsp;a&nbsp;subsequent&nbsp;green&nbsp;call,&nbsp;or,&nbsp;if&nbsp;this&nbsp;greenlet<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exits&nbsp;before&nbsp;making&nbsp;such&nbsp;a&nbsp;call,&nbsp;it&nbsp;may&nbsp;not&nbsp;be&nbsp;raised&nbsp;at<br>
+&nbsp;&nbsp;&nbsp;&nbsp;all.&nbsp;As&nbsp;of&nbsp;1.1,&nbsp;an&nbsp;example&nbsp;where&nbsp;the&nbsp;exception&nbsp;is&nbsp;raised<br>
+&nbsp;&nbsp;&nbsp;&nbsp;later&nbsp;is&nbsp;if&nbsp;this&nbsp;greenlet&nbsp;had&nbsp;called&nbsp;:func:`<a href="#myGevent-sleep">sleep</a>(0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<a href="#gevent">gevent</a>.sleep&gt;`;&nbsp;an&nbsp;example&nbsp;where&nbsp;the&nbsp;exception&nbsp;is&nbsp;raised<br>
+&nbsp;&nbsp;&nbsp;&nbsp;immediately&nbsp;is&nbsp;if&nbsp;this&nbsp;greenlet&nbsp;had&nbsp;called<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:func:`<a href="#myGevent-sleep">sleep</a>(0.1)&nbsp;&lt;<a href="#gevent">gevent</a>.sleep&gt;`.<br>
+&nbsp;<br>
+..&nbsp;caution::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Use&nbsp;care&nbsp;when&nbsp;killing&nbsp;greenlets.&nbsp;If&nbsp;the&nbsp;code&nbsp;executing&nbsp;is&nbsp;not<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exception&nbsp;safe&nbsp;(e.g.,&nbsp;makes&nbsp;proper&nbsp;use&nbsp;of&nbsp;``finally``)&nbsp;then&nbsp;an<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unexpected&nbsp;exception&nbsp;could&nbsp;result&nbsp;in&nbsp;corrupted&nbsp;state.&nbsp;Using<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;:meth:`link`&nbsp;or&nbsp;:meth:`rawlink`&nbsp;(cheaper)&nbsp;may&nbsp;be&nbsp;a&nbsp;safer&nbsp;way&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;clean&nbsp;up&nbsp;resources.<br>
+&nbsp;<br>
+See&nbsp;also&nbsp;:func:`<a href="#gevent">gevent</a>.kill`&nbsp;and&nbsp;:func:`<a href="#gevent">gevent</a>.killall`.<br>
+&nbsp;<br>
+:keyword&nbsp;type&nbsp;exception:&nbsp;The&nbsp;type&nbsp;of&nbsp;exception&nbsp;to&nbsp;raise&nbsp;in&nbsp;the&nbsp;greenlet.&nbsp;The&nbsp;default<br>
+&nbsp;&nbsp;&nbsp;&nbsp;is&nbsp;:class:`GreenletExit`,&nbsp;which&nbsp;indicates&nbsp;a&nbsp;:meth:`successful`&nbsp;completion<br>
+&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;the&nbsp;greenlet.<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;0.13.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*block*&nbsp;is&nbsp;now&nbsp;``True``&nbsp;by&nbsp;default.<br>
+..&nbsp;versionchanged::&nbsp;1.1a2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;this&nbsp;greenlet&nbsp;had&nbsp;never&nbsp;been&nbsp;switched&nbsp;to,&nbsp;killing&nbsp;it&nbsp;will<br>
+&nbsp;&nbsp;&nbsp;&nbsp;prevent&nbsp;it&nbsp;from&nbsp;*ever*&nbsp;being&nbsp;switched&nbsp;to.&nbsp;Links&nbsp;(:meth:`rawlink`)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;will&nbsp;still&nbsp;be&nbsp;executed,&nbsp;though.<br>
+..&nbsp;versionchanged::&nbsp;20.12.1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;this&nbsp;greenlet&nbsp;is&nbsp;:meth:`ready`,&nbsp;immediately&nbsp;return&nbsp;instead&nbsp;of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;requiring&nbsp;a&nbsp;trip&nbsp;around&nbsp;the&nbsp;event&nbsp;loop.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-link"><strong>link</strong></a>(self, callback, SpawnedLink=&lt;class 'gevent._gevent_cgreenlet.SpawnedLink'&gt;)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#myGevent-link">link</a>(self,&nbsp;callback,&nbsp;SpawnedLink=SpawnedLink)<br>
+&nbsp;<br>
+Link&nbsp;greenlet's&nbsp;completion&nbsp;to&nbsp;a&nbsp;callable.<br>
+&nbsp;<br>
+The&nbsp;*callback*&nbsp;will&nbsp;be&nbsp;called&nbsp;with&nbsp;this&nbsp;instance&nbsp;as&nbsp;an<br>
+argument&nbsp;once&nbsp;this&nbsp;greenlet&nbsp;is&nbsp;dead.&nbsp;A&nbsp;callable&nbsp;is&nbsp;called&nbsp;in<br>
+its&nbsp;own&nbsp;:class:`greenlet.greenlet`&nbsp;(*not*&nbsp;a<br>
+:class:`<a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>`).</tt></dd></dl>
+
+<dl><dt><a name="myGevent-link_exception"><strong>link_exception</strong></a>(self, callback, SpawnedLink=&lt;class 'gevent._gevent_cgreenlet.FailureSpawnedLink'&gt;)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#myGevent-link_exception">link_exception</a>(self,&nbsp;callback,&nbsp;SpawnedLink=FailureSpawnedLink)<br>
+&nbsp;<br>
+Like&nbsp;:meth:`link`&nbsp;but&nbsp;*callback*&nbsp;is&nbsp;only&nbsp;notified&nbsp;when&nbsp;the<br>
+greenlet&nbsp;dies&nbsp;because&nbsp;of&nbsp;an&nbsp;unhandled&nbsp;exception.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-link_value"><strong>link_value</strong></a>(self, callback, SpawnedLink=&lt;class 'gevent._gevent_cgreenlet.SuccessSpawnedLink'&gt;)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#myGevent-link_value">link_value</a>(self,&nbsp;callback,&nbsp;SpawnedLink=SuccessSpawnedLink)<br>
+&nbsp;<br>
+Like&nbsp;:meth:`link`&nbsp;but&nbsp;*callback*&nbsp;is&nbsp;only&nbsp;notified&nbsp;when&nbsp;the&nbsp;greenlet<br>
+has&nbsp;completed&nbsp;successfully.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-name"><strong>name</strong></a>(...)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#myGevent-name">name</a>(self)<br>
+&nbsp;<br>
+The&nbsp;greenlet&nbsp;name.&nbsp;By&nbsp;default,&nbsp;a&nbsp;unique&nbsp;name&nbsp;is&nbsp;constructed&nbsp;using<br>
+the&nbsp;:attr:`minimal_ident`.&nbsp;You&nbsp;can&nbsp;assign&nbsp;a&nbsp;string&nbsp;to&nbsp;this<br>
+value&nbsp;to&nbsp;change&nbsp;it.&nbsp;It&nbsp;is&nbsp;shown&nbsp;in&nbsp;the&nbsp;`repr`&nbsp;of&nbsp;this&nbsp;<a href="builtins.html#object">object</a>&nbsp;if&nbsp;it<br>
+has&nbsp;been&nbsp;assigned&nbsp;to&nbsp;or&nbsp;if&nbsp;the&nbsp;`minimal_ident`&nbsp;has&nbsp;already&nbsp;been&nbsp;generated.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.3a2<br>
+..&nbsp;versionchanged::&nbsp;1.4<br>
+&nbsp;&nbsp;&nbsp;Stop&nbsp;showing&nbsp;generated&nbsp;names&nbsp;in&nbsp;the&nbsp;`repr`&nbsp;when&nbsp;the&nbsp;``minimal_ident``<br>
+&nbsp;&nbsp;&nbsp;hasn't&nbsp;been&nbsp;requested.&nbsp;This&nbsp;reduces&nbsp;overhead&nbsp;and&nbsp;may&nbsp;be&nbsp;less&nbsp;confusing,<br>
+&nbsp;&nbsp;&nbsp;since&nbsp;``minimal_ident``&nbsp;can&nbsp;get&nbsp;reused.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-rawlink"><strong>rawlink</strong></a>(self, callback)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#myGevent-rawlink">rawlink</a>(self,&nbsp;callback)<br>
+&nbsp;<br>
+Register&nbsp;a&nbsp;callable&nbsp;to&nbsp;be&nbsp;executed&nbsp;when&nbsp;the&nbsp;greenlet&nbsp;finishes<br>
+execution.<br>
+&nbsp;<br>
+The&nbsp;*callback*&nbsp;will&nbsp;be&nbsp;called&nbsp;with&nbsp;this&nbsp;instance&nbsp;as&nbsp;an<br>
+argument.<br>
+&nbsp;<br>
+..&nbsp;caution::<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;*callback*&nbsp;will&nbsp;be&nbsp;called&nbsp;in&nbsp;the&nbsp;hub&nbsp;and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;**MUST&nbsp;NOT**&nbsp;raise&nbsp;an&nbsp;exception.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-ready"><strong>ready</strong></a>(self)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#myGevent-ready">ready</a>(self)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Return&nbsp;a&nbsp;true&nbsp;value&nbsp;if&nbsp;and&nbsp;only&nbsp;if&nbsp;the&nbsp;greenlet&nbsp;has&nbsp;finished<br>
+execution.<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;1.1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;function&nbsp;is&nbsp;only&nbsp;guaranteed&nbsp;to&nbsp;return&nbsp;true&nbsp;or&nbsp;false&nbsp;*values*,&nbsp;not<br>
+&nbsp;&nbsp;&nbsp;&nbsp;necessarily&nbsp;the&nbsp;literal&nbsp;constants&nbsp;``True``&nbsp;or&nbsp;``False``.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-start"><strong>start</strong></a>(self)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#myGevent-start">start</a>(self)<br>
+Schedule&nbsp;the&nbsp;greenlet&nbsp;to&nbsp;run&nbsp;in&nbsp;this&nbsp;loop&nbsp;iteration</tt></dd></dl>
+
+<dl><dt><a name="myGevent-start_later"><strong>start_later</strong></a>(self, seconds)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#myGevent-start_later">start_later</a>(self,&nbsp;seconds)<br>
+&nbsp;<br>
+<a href="#myGevent-start_later">start_later</a>(seconds)&nbsp;-&gt;&nbsp;None<br>
+&nbsp;<br>
+Schedule&nbsp;the&nbsp;greenlet&nbsp;to&nbsp;run&nbsp;in&nbsp;the&nbsp;future&nbsp;loop&nbsp;iteration<br>
+*seconds*&nbsp;later</tt></dd></dl>
+
+<dl><dt><a name="myGevent-successful"><strong>successful</strong></a>(self)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#myGevent-successful">successful</a>(self)&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Return&nbsp;a&nbsp;true&nbsp;value&nbsp;if&nbsp;and&nbsp;only&nbsp;if&nbsp;the&nbsp;greenlet&nbsp;has&nbsp;finished&nbsp;execution<br>
+successfully,&nbsp;that&nbsp;is,&nbsp;without&nbsp;raising&nbsp;an&nbsp;error.<br>
+&nbsp;<br>
+..&nbsp;tip::&nbsp;A&nbsp;greenlet&nbsp;that&nbsp;has&nbsp;been&nbsp;killed&nbsp;with&nbsp;the&nbsp;default<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:class:`GreenletExit`&nbsp;exception&nbsp;is&nbsp;considered&nbsp;successful.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;That&nbsp;is,&nbsp;``GreenletExit``&nbsp;is&nbsp;not&nbsp;considered&nbsp;an&nbsp;error.<br>
+&nbsp;<br>
+..&nbsp;note::&nbsp;This&nbsp;function&nbsp;is&nbsp;only&nbsp;guaranteed&nbsp;to&nbsp;return&nbsp;true&nbsp;or&nbsp;false&nbsp;*values*,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;not&nbsp;necessarily&nbsp;the&nbsp;literal&nbsp;constants&nbsp;``True``&nbsp;or&nbsp;``False``.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-throw"><strong>throw</strong></a>(self, *args)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#myGevent-throw">throw</a>(self,&nbsp;*args)<br>
+Immediately&nbsp;switch&nbsp;into&nbsp;the&nbsp;greenlet&nbsp;and&nbsp;raise&nbsp;an&nbsp;exception&nbsp;in&nbsp;it.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Should&nbsp;only&nbsp;be&nbsp;called&nbsp;from&nbsp;the&nbsp;HUB,&nbsp;otherwise&nbsp;the&nbsp;current&nbsp;greenlet&nbsp;is&nbsp;left&nbsp;unscheduled&nbsp;forever.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To&nbsp;raise&nbsp;an&nbsp;exception&nbsp;in&nbsp;a&nbsp;safe&nbsp;manner&nbsp;from&nbsp;any&nbsp;greenlet,&nbsp;use&nbsp;:meth:`kill`.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;a&nbsp;greenlet&nbsp;was&nbsp;started&nbsp;but&nbsp;never&nbsp;switched&nbsp;to&nbsp;yet,&nbsp;then&nbsp;also<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a)&nbsp;cancel&nbsp;the&nbsp;event&nbsp;that&nbsp;will&nbsp;start&nbsp;it<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b)&nbsp;fire&nbsp;the&nbsp;notifications&nbsp;as&nbsp;if&nbsp;an&nbsp;exception&nbsp;was&nbsp;raised&nbsp;in&nbsp;a&nbsp;greenlet</tt></dd></dl>
+
+<dl><dt><a name="myGevent-unlink"><strong>unlink</strong></a>(self, callback)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#myGevent-unlink">unlink</a>(self,&nbsp;callback)<br>
+Remove&nbsp;the&nbsp;callback&nbsp;set&nbsp;by&nbsp;:meth:`link`&nbsp;or&nbsp;:meth:`rawlink`</tt></dd></dl>
+
+<dl><dt><a name="myGevent-unlink_all"><strong>unlink_all</strong></a>(self)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#myGevent-unlink_all">unlink_all</a>(self)<br>
+&nbsp;<br>
+Remove&nbsp;all&nbsp;the&nbsp;callbacks.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.3a2</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="gevent._gevent_cgreenlet.html#Greenlet">gevent._gevent_cgreenlet.Greenlet</a>:<br>
+<dl><dt><a name="myGevent-spawn_later"><strong>spawn_later</strong></a>(seconds, *args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#myGevent-spawn_later">spawn_later</a>(type&nbsp;cls,&nbsp;seconds,&nbsp;*args,&nbsp;**kwargs)<br>
+&nbsp;<br>
+<a href="#myGevent-spawn_later">spawn_later</a>(seconds,&nbsp;function,&nbsp;*args,&nbsp;**kwargs)&nbsp;-&gt;&nbsp;<a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a><br>
+&nbsp;<br>
+Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;`<a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>`&nbsp;<a href="builtins.html#object">object</a>&nbsp;scheduled&nbsp;to&nbsp;run&nbsp;``function(*args,&nbsp;**kwargs)``<br>
+in&nbsp;a&nbsp;future&nbsp;loop&nbsp;iteration&nbsp;*seconds*&nbsp;later.&nbsp;This&nbsp;can&nbsp;be&nbsp;used&nbsp;as&nbsp;``<a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.spawn_later``<br>
+or&nbsp;``<a href="#gevent">gevent</a>.spawn_later``.<br>
+&nbsp;<br>
+The&nbsp;arguments&nbsp;are&nbsp;passed&nbsp;to&nbsp;:meth:`<a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.__init__`.<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;1.1b1<br>
+&nbsp;&nbsp;&nbsp;If&nbsp;an&nbsp;argument&nbsp;that's&nbsp;meant&nbsp;to&nbsp;be&nbsp;a&nbsp;function&nbsp;(the&nbsp;first&nbsp;argument&nbsp;in&nbsp;*args*,&nbsp;or&nbsp;the&nbsp;``run``&nbsp;keyword&nbsp;)<br>
+&nbsp;&nbsp;&nbsp;is&nbsp;given&nbsp;to&nbsp;this&nbsp;classmethod&nbsp;(and&nbsp;not&nbsp;a&nbsp;classmethod&nbsp;of&nbsp;a&nbsp;subclass),<br>
+&nbsp;&nbsp;&nbsp;it&nbsp;is&nbsp;verified&nbsp;to&nbsp;be&nbsp;callable.&nbsp;Previously,&nbsp;the&nbsp;spawned&nbsp;greenlet&nbsp;would&nbsp;have&nbsp;failed<br>
+&nbsp;&nbsp;&nbsp;when&nbsp;it&nbsp;started&nbsp;running.</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="gevent._gevent_cgreenlet.html#Greenlet">gevent._gevent_cgreenlet.Greenlet</a>:<br>
+<dl><dt><a name="myGevent-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-add_spawn_callback"><strong>add_spawn_callback</strong></a>(callback)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#myGevent-add_spawn_callback">add_spawn_callback</a>(callback)<br>
+&nbsp;<br>
+<a href="#myGevent-add_spawn_callback">add_spawn_callback</a>(callback)&nbsp;-&gt;&nbsp;None<br>
+&nbsp;<br>
+Set&nbsp;up&nbsp;a&nbsp;*callback*&nbsp;to&nbsp;be&nbsp;invoked&nbsp;when&nbsp;:class:`<a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>`&nbsp;objects<br>
+are&nbsp;started.<br>
+&nbsp;<br>
+The&nbsp;invocation&nbsp;order&nbsp;of&nbsp;spawn&nbsp;callbacks&nbsp;is&nbsp;unspecified.&nbsp;&nbsp;Adding&nbsp;the<br>
+same&nbsp;callback&nbsp;more&nbsp;than&nbsp;one&nbsp;time&nbsp;will&nbsp;not&nbsp;cause&nbsp;it&nbsp;to&nbsp;be&nbsp;called&nbsp;more<br>
+than&nbsp;once.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.4.0</tt></dd></dl>
+
+<dl><dt><a name="myGevent-remove_spawn_callback"><strong>remove_spawn_callback</strong></a>(callback)</dt><dd><tt><a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.<a href="#myGevent-remove_spawn_callback">remove_spawn_callback</a>(callback)<br>
+&nbsp;<br>
+<a href="#myGevent-remove_spawn_callback">remove_spawn_callback</a>(callback)&nbsp;-&gt;&nbsp;None<br>
+&nbsp;<br>
+Remove&nbsp;*callback*&nbsp;function&nbsp;added&nbsp;with&nbsp;:meth:`<a href="gevent._gevent_cgreenlet.html#Greenlet">Greenlet</a>.add_spawn_callback`.<br>
+This&nbsp;function&nbsp;will&nbsp;not&nbsp;fail&nbsp;if&nbsp;*callback*&nbsp;has&nbsp;been&nbsp;already&nbsp;removed&nbsp;or<br>
+if&nbsp;*callback*&nbsp;was&nbsp;never&nbsp;added.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.4.0</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="gevent._gevent_cgreenlet.html#Greenlet">gevent._gevent_cgreenlet.Greenlet</a>:<br>
+<dl><dt><strong>args</strong></dt>
+</dl>
+<dl><dt><strong>dead</strong></dt>
+<dd><tt>Boolean&nbsp;indicating&nbsp;that&nbsp;the&nbsp;greenlet&nbsp;is&nbsp;dead&nbsp;and&nbsp;will&nbsp;not&nbsp;run&nbsp;again.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;true&nbsp;if:<br>
+&nbsp;<br>
+1.&nbsp;We&nbsp;were&nbsp;never&nbsp;started,&nbsp;but&nbsp;were&nbsp;:meth:`killed&nbsp;&lt;kill&gt;`<br>
+&nbsp;&nbsp;&nbsp;immediately&nbsp;after&nbsp;creation&nbsp;(not&nbsp;possible&nbsp;with&nbsp;:meth:`spawn`);&nbsp;OR<br>
+2.&nbsp;We&nbsp;were&nbsp;started,&nbsp;but&nbsp;were&nbsp;killed&nbsp;before&nbsp;running;&nbsp;OR<br>
+3.&nbsp;We&nbsp;have&nbsp;run&nbsp;and&nbsp;terminated&nbsp;(by&nbsp;raising&nbsp;an&nbsp;exception&nbsp;out&nbsp;of&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;started&nbsp;function&nbsp;or&nbsp;by&nbsp;reaching&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;started&nbsp;function).</tt></dd>
+</dl>
+<dl><dt><strong>exc_info</strong></dt>
+<dd><tt>Holds&nbsp;the&nbsp;exc_info&nbsp;three-tuple&nbsp;raised&nbsp;by&nbsp;the&nbsp;function&nbsp;if&nbsp;the<br>
+greenlet&nbsp;finished&nbsp;with&nbsp;an&nbsp;error.&nbsp;Otherwise&nbsp;a&nbsp;false&nbsp;value.<br>
+&nbsp;<br>
+..&nbsp;note::&nbsp;This&nbsp;is&nbsp;a&nbsp;provisional&nbsp;API&nbsp;and&nbsp;may&nbsp;change.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.1</tt></dd>
+</dl>
+<dl><dt><strong>exception</strong></dt>
+<dd><tt>Holds&nbsp;the&nbsp;exception&nbsp;instance&nbsp;raised&nbsp;by&nbsp;the&nbsp;function&nbsp;if&nbsp;the<br>
+greenlet&nbsp;has&nbsp;finished&nbsp;with&nbsp;an&nbsp;error.&nbsp;Otherwise&nbsp;``None``.</tt></dd>
+</dl>
+<dl><dt><strong>kwargs</strong></dt>
+</dl>
+<dl><dt><strong>loop</strong></dt>
+</dl>
+<dl><dt><strong>minimal_ident</strong></dt>
+<dd><tt>A&nbsp;small,&nbsp;unique&nbsp;non-negative&nbsp;integer&nbsp;that&nbsp;identifies&nbsp;this&nbsp;object.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;similar&nbsp;to&nbsp;:attr:`threading.Thread.ident`&nbsp;(and&nbsp;`id`)<br>
+in&nbsp;that&nbsp;as&nbsp;long&nbsp;as&nbsp;this&nbsp;object&nbsp;is&nbsp;alive,&nbsp;no&nbsp;other&nbsp;greenlet&nbsp;*in<br>
+this&nbsp;hub*&nbsp;will&nbsp;have&nbsp;the&nbsp;same&nbsp;id,&nbsp;but&nbsp;it&nbsp;makes&nbsp;a&nbsp;stronger<br>
+guarantee&nbsp;that&nbsp;the&nbsp;assigned&nbsp;values&nbsp;will&nbsp;be&nbsp;small&nbsp;and<br>
+sequential.&nbsp;Sometime&nbsp;after&nbsp;this&nbsp;object&nbsp;has&nbsp;died,&nbsp;the&nbsp;value<br>
+will&nbsp;be&nbsp;available&nbsp;for&nbsp;reuse.<br>
+&nbsp;<br>
+To&nbsp;get&nbsp;ids&nbsp;that&nbsp;are&nbsp;unique&nbsp;across&nbsp;all&nbsp;hubs,&nbsp;combine&nbsp;this&nbsp;with<br>
+the&nbsp;hub's&nbsp;(``self.<strong>parent</strong>``)&nbsp;``minimal_ident``.<br>
+&nbsp;<br>
+Accessing&nbsp;this&nbsp;property&nbsp;from&nbsp;threads&nbsp;other&nbsp;than&nbsp;the&nbsp;thread&nbsp;running<br>
+this&nbsp;greenlet&nbsp;is&nbsp;not&nbsp;defined.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.3a2</tt></dd>
+</dl>
+<dl><dt><strong>spawn_tree_locals</strong></dt>
+<dd><tt>spawn_tree_locals:&nbsp;dict</tt></dd>
+</dl>
+<dl><dt><strong>spawning_greenlet</strong></dt>
+</dl>
+<dl><dt><strong>spawning_stack</strong></dt>
+</dl>
+<dl><dt><strong>started</strong></dt>
+</dl>
+<dl><dt><strong>value</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="gevent._gevent_cgreenlet.html#Greenlet">gevent._gevent_cgreenlet.Greenlet</a>:<br>
+<dl><dt><strong>__pyx_vtable__</strong> = &lt;capsule object NULL&gt;</dl>
+
+<dl><dt><strong>spawning_stack_limit</strong> = 10</dl>
+
+<hr>
+Methods inherited from <a href="greenlet.html#greenlet">greenlet.greenlet</a>:<br>
+<dl><dt><a name="myGevent-__getstate__"><strong>__getstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="myGevent-switch"><strong>switch</strong></a>(...)</dt><dd><tt><a href="#myGevent-switch">switch</a>(*args,&nbsp;**kwargs)<br>
+&nbsp;<br>
+Switch&nbsp;execution&nbsp;to&nbsp;this&nbsp;greenlet.<br>
+&nbsp;<br>
+If&nbsp;this&nbsp;greenlet&nbsp;has&nbsp;never&nbsp;been&nbsp;run,&nbsp;then&nbsp;this&nbsp;greenlet<br>
+will&nbsp;be&nbsp;switched&nbsp;to&nbsp;using&nbsp;the&nbsp;body&nbsp;of&nbsp;``self.<a href="#myGevent-run">run</a>(*args,&nbsp;**kwargs)``.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;greenlet&nbsp;is&nbsp;active&nbsp;(has&nbsp;been&nbsp;run,&nbsp;but&nbsp;was&nbsp;<a href="#myGevent-switch">switch</a>()'ed<br>
+out&nbsp;before&nbsp;leaving&nbsp;its&nbsp;run&nbsp;function),&nbsp;then&nbsp;this&nbsp;greenlet&nbsp;will<br>
+be&nbsp;resumed&nbsp;and&nbsp;the&nbsp;return&nbsp;value&nbsp;to&nbsp;its&nbsp;switch&nbsp;call&nbsp;will&nbsp;be<br>
+None&nbsp;if&nbsp;no&nbsp;arguments&nbsp;are&nbsp;given,&nbsp;the&nbsp;given&nbsp;argument&nbsp;if&nbsp;one<br>
+argument&nbsp;is&nbsp;given,&nbsp;or&nbsp;the&nbsp;args&nbsp;tuple&nbsp;and&nbsp;keyword&nbsp;args&nbsp;dict&nbsp;if<br>
+multiple&nbsp;arguments&nbsp;are&nbsp;given.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;greenlet&nbsp;is&nbsp;dead,&nbsp;or&nbsp;is&nbsp;the&nbsp;current&nbsp;greenlet&nbsp;then&nbsp;this<br>
+function&nbsp;will&nbsp;simply&nbsp;return&nbsp;the&nbsp;arguments&nbsp;using&nbsp;the&nbsp;same&nbsp;rules&nbsp;as<br>
+above.</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="greenlet.html#greenlet">greenlet.greenlet</a>:<br>
+<dl><dt><a name="myGevent-getcurrent"><strong>getcurrent</strong></a>(...)</dt><dd><tt><a href="#myGevent-getcurrent">getcurrent</a>()&nbsp;-&gt;&nbsp;greenlet<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;current&nbsp;greenlet&nbsp;(i.e.&nbsp;the&nbsp;one&nbsp;which&nbsp;called&nbsp;this&nbsp;function).</tt></dd></dl>
+
+<dl><dt><a name="myGevent-gettrace"><strong>gettrace</strong></a>(...)</dt><dd><tt><a href="#myGevent-gettrace">gettrace</a>()&nbsp;-&gt;&nbsp;<a href="builtins.html#object">object</a><br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;currently&nbsp;set&nbsp;tracing&nbsp;function,&nbsp;or&nbsp;None.</tt></dd></dl>
+
+<dl><dt><a name="myGevent-settrace"><strong>settrace</strong></a>(...)</dt><dd><tt><a href="#myGevent-settrace">settrace</a>(callback)&nbsp;-&gt;&nbsp;<a href="builtins.html#object">object</a><br>
+&nbsp;<br>
+Sets&nbsp;a&nbsp;new&nbsp;tracing&nbsp;function&nbsp;and&nbsp;returns&nbsp;the&nbsp;previous&nbsp;one.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="greenlet.html#greenlet">greenlet.greenlet</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>gr_context</strong></dt>
+</dl>
+<dl><dt><strong>gr_frame</strong></dt>
+</dl>
+<dl><dt><strong>parent</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="greenlet.html#greenlet">greenlet.greenlet</a>:<br>
+<dl><dt><strong>GreenletExit</strong> = &lt;class 'greenlet.GreenletExit'&gt;</dl>
+
+<dl><dt><strong>error</strong> = &lt;class 'greenlet.error'&gt;</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-default_print"><strong>default_print</strong></a> = print(...)</dt><dd><tt><a href="#-print">print</a>(value,&nbsp;...,&nbsp;sep='&nbsp;',&nbsp;end='\n',&nbsp;file=sys.stdout,&nbsp;flush=False)<br>
+&nbsp;<br>
+Prints&nbsp;the&nbsp;values&nbsp;to&nbsp;a&nbsp;stream,&nbsp;or&nbsp;to&nbsp;sys.stdout&nbsp;by&nbsp;default.<br>
+Optional&nbsp;keyword&nbsp;arguments:<br>
+file:&nbsp;&nbsp;a&nbsp;file-like&nbsp;<a href="builtins.html#object">object</a>&nbsp;(stream);&nbsp;defaults&nbsp;to&nbsp;the&nbsp;current&nbsp;sys.stdout.<br>
+sep:&nbsp;&nbsp;&nbsp;string&nbsp;inserted&nbsp;between&nbsp;values,&nbsp;default&nbsp;a&nbsp;space.<br>
+end:&nbsp;&nbsp;&nbsp;string&nbsp;appended&nbsp;after&nbsp;the&nbsp;last&nbsp;value,&nbsp;default&nbsp;a&nbsp;newline.<br>
+flush:&nbsp;whether&nbsp;to&nbsp;forcibly&nbsp;flush&nbsp;the&nbsp;stream.</tt></dd></dl>
+ <dl><dt><a name="-gevent_join"><strong>gevent_join</strong></a>(greenlet_list)</dt><dd><tt>启动协程</tt></dd></dl>
+ <dl><dt><a name="-mPrint"><strong>mPrint</strong></a>(*args, mode=0, **kwargs)</dt><dd><tt>测试平台的打印<br>
+args:&nbsp;<br>
+&nbsp;&nbsp;mode:int&nbsp;[0,1,2,3]&nbsp;0时两条分割线均打印.&nbsp;1&nbsp;仅打印第一条&nbsp;2：&nbsp;均不打印&nbsp;3：&nbsp;仅打印第三条</tt></dd></dl>
+ <dl><dt><a name="-myAssert"><strong>myAssert</strong></a>(ass: bool, *args, **kwargs)</dt><dd><tt>断言函数</tt></dd></dl>
+ <dl><dt><a name="-print"><strong>print</strong></a>(...)</dt><dd><tt><a href="#-print">print</a>(value,&nbsp;...,&nbsp;sep='&nbsp;',&nbsp;end='\n',&nbsp;file=sys.stdout,&nbsp;flush=False)<br>
+&nbsp;<br>
+Prints&nbsp;the&nbsp;values&nbsp;to&nbsp;a&nbsp;stream,&nbsp;or&nbsp;to&nbsp;sys.stdout&nbsp;by&nbsp;default.<br>
+Optional&nbsp;keyword&nbsp;arguments:<br>
+file:&nbsp;&nbsp;a&nbsp;file-like&nbsp;<a href="builtins.html#object">object</a>&nbsp;(stream);&nbsp;defaults&nbsp;to&nbsp;the&nbsp;current&nbsp;sys.stdout.<br>
+sep:&nbsp;&nbsp;&nbsp;string&nbsp;inserted&nbsp;between&nbsp;values,&nbsp;default&nbsp;a&nbsp;space.<br>
+end:&nbsp;&nbsp;&nbsp;string&nbsp;appended&nbsp;after&nbsp;the&nbsp;last&nbsp;value,&nbsp;default&nbsp;a&nbsp;newline.<br>
+flush:&nbsp;whether&nbsp;to&nbsp;forcibly&nbsp;flush&nbsp;the&nbsp;stream.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>DEBUG_MODE</strong> = False<br>
+<strong>funclog</strong> = &lt;FuncLog.FuncLog object&gt;<br>
+<strong>i</strong> = -1<br>
+<strong>path</strong> = r'C:\Users\LiuXintian\Desktop\testplatform\venv\Lib'<br>
+<strong>paths</strong> = ['C:', 'Users', 'LiuXintian', 'Desktop', 'testplatform']<br>
+<strong>print_function</strong> = _Feature((2, 6, 0, 'alpha', 2), (3, 0, 0, 'alpha', 0), 1048576)<br>
+<strong>sysPath_temp</strong> = [r'C:\Users\LiuXintian\Desktop\testplatform\py_lib', r'C:\Users\LiuXintian\Desktop\testplatform', r'C:\Users\LiuXintian\Desktop\testplatform\venv\Lib\site-packages']</td></tr></table>
+</body></html>

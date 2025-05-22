@@ -1,0 +1,192 @@
+2021-12-30 10:08:12 main.py 230 <module> __init__     form = udp_loglib.TestPlatForm(18125, 18125, set_client=False)\n (18125, 18125) {'set_client': False}
+2021-12-30 10:08:12 udp_loglib.py 1561 __init__ spawn         gevent.spawn(gevent.empty)   (<class 'udp_loglib.myGevent'>, <function myGevent.empty >) {}
+2021-12-30 10:08:12 main.py 244 <module> copyImage_fromVM     form.vmtool.copyImage_fromVM(cmd_type, dstpath=normal_path)\n ('mvcu',) {'dstpath': 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\normal_image'}
+2021-12-30 10:08:12 vmtcp.py 505 copyImage_fromVM _send_cmd         self._send_cmd(func, args)\n ('copy_image', ('mvcu', 'F:/testplaatform1025/Master/testplatform/case_test/normal_image')) {}
+2021-12-30 10:08:12 vmtcp.py 432 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "copy_image", "args": ["mvcu", "F:/testplaatform1025/Master/testplatform/case_test/normal_image"]}',) {}
+2021-12-30 10:08:12 vmtcp.py 412 send set_VM_path             self.set_VM_path()\n () {}
+2021-12-30 10:08:12 vmtcp.py 553 set_VM_path _send_cmd         self._send_cmd(func, args)\n ('set_VM_path', ([('C:\\Users\\test2\\Desktop', 'F:'), ('C:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform', 'F:\\testplaatform1025\\Master\\testplatform')],)) {}
+2021-12-30 10:08:12 vmtcp.py 432 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "set_VM_path", "args": [[["C:\\\\Users\\\\test2\\\\Desktop", "F:"], ["C:\\\\Users\\\\test2\\\\Desktop\\\\testplaatform1025\\\\Master\\\\testplatform", "F:\\\\testplaatform1025\\\\Master\\\\testplatform"]]]}',) {}
+2021-12-30 10:08:12 vmtcp.py 439 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'set_VM_path_15d2a92721da5eb30f92195b8b3255ac') {}
+2021-12-30 10:08:13 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "set_VM_path", "args": [[["C:\\\\Users\\\\test2\\\\Desktop", "F:"], ["C:\\\\Users\\\\test2\\\\Desktop\\\\testplaatform1025\\\\Master\\\\testplatform", "F:\\\\testplaatform1025\\\\Master\\\\testplatform"]]]}',) {}
+2021-12-30 10:08:13 vmtcp.py 565 set_VM_path print_func         VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', '') {}
+2021-12-30 10:08:14 vmtcp.py 439 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'copy_image_mvcu,F:/testplaatform1025/Master/testplatform/case_test/normal_image') {}
+2021-12-30 10:08:14 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["mvcu", "F:/testplaatform1025/Master/testplatform/case_test/normal_image"]}',) {}
+2021-12-30 10:08:16 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["mvcu", "F:/testplaatform1025/Master/testplatform/case_test/normal_image"]}',) {}
+2021-12-30 10:08:16 vmtcp.py 518 copyImage_fromVM print_func         VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', 'C:\\Users\\MSTEP\\Desktop\\VMtools102\\VCU_DEV_MVCU\\build/out to F:/testplaatform1025/Master/testplatform/case_test/normal_image') {}
+2021-12-30 10:08:16 vmtcp.py 522 copyImage_fromVM print_func         VMConfig.print_func('image_path: %s ' % dstpath)\n (<class 'vmtcp.VMConfig'>, 'image_path: C:/Users/test2/Desktop/testplaatform1025/Master/testplatform/case_test/normal_image ') {}
+2021-12-30 10:08:16 main.py 246 <module> copyImage_fromVM     form.vmtool.copyImage_fromVM(cmd_type, dstpath=normal_path)\n ('svcu',) {'dstpath': 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\normal_image'}
+2021-12-30 10:08:16 vmtcp.py 505 copyImage_fromVM _send_cmd         self._send_cmd(func, args)\n ('copy_image', ('svcu', 'F:/testplaatform1025/Master/testplatform/case_test/normal_image')) {}
+2021-12-30 10:08:16 vmtcp.py 432 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "copy_image", "args": ["svcu", "F:/testplaatform1025/Master/testplatform/case_test/normal_image"]}',) {}
+2021-12-30 10:08:18 vmtcp.py 439 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'copy_image_svcu,F:/testplaatform1025/Master/testplatform/case_test/normal_image') {}
+2021-12-30 10:08:18 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["svcu", "F:/testplaatform1025/Master/testplatform/case_test/normal_image"]}',) {}
+2021-12-30 10:08:20 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["svcu", "F:/testplaatform1025/Master/testplatform/case_test/normal_image"]}',) {}
+2021-12-30 10:08:20 vmtcp.py 518 copyImage_fromVM print_func         VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', 'C:\\Users\\MSTEP\\Desktop\\VMtools102\\VCU_DEV\\build/out to F:/testplaatform1025/Master/testplatform/case_test/normal_image') {}
+2021-12-30 10:08:20 vmtcp.py 522 copyImage_fromVM print_func         VMConfig.print_func('image_path: %s ' % dstpath)\n (<class 'vmtcp.VMConfig'>, 'image_path: C:/Users/test2/Desktop/testplaatform1025/Master/testplatform/case_test/normal_image ') {}
+2021-12-30 10:08:20 main.py 260 main path_set         Log.path_set(os.path.dirname(__file__) + '/Log/default')\n (<class 'udp_loglib.Log'>, 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test/Log/default') {}
+2021-12-30 10:08:20 udp_loglib.py 1478 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\Log\\default/',) {}
+2021-12-30 10:08:20 main.py 254 testcase_log funclog.write             udp_loglib.funclog.wirte(msg)\n ('2021-12-30 10:08:20 to run cases: [Cfg2_SwITC_MVCU_1517.py,Cfg2_SwITC_MVCU_1546.py,Cfg2_SwITC_MVCU_1603.py]',) {}
+2021-12-30 10:08:20 main.py 252 testcase_log mPrint             Public.mPrint(msg)\n ('start Cfg2_SwITC_MVCU_1517.py',) {}
+2021-12-30 10:08:20 main.py 267 main mPrint             Public.mPrint('delete %s' % dir_path)\n ('delete c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase/Sw_MVCU/Log/Cfg2_SwITC_MVCU_1517',) {}
+2021-12-30 10:08:20 testcase/Sw_MVCU/Cfg2_SwITC_MVCU_1517.py 24 LogPath_set path_set     Log.path_set(dir_path)\n (<class 'udp_loglib.Log'>, 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase/Sw_MVCU/Log/Cfg2_SwITC_MVCU_1517/default') {}
+2021-12-30 10:08:20 udp_loglib.py 1478 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_MVCU\\Log\\Cfg2_SwITC_MVCU_1517\\default/',) {}
+2021-12-30 10:08:20 udp_loglib.py 2012 gevent_join spawn         gevent.spawn(form._log_recv, *(form.clientP, )),   (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._log_recv of <udp_loglib.TestPlatForm object >>, <udp_loglib.UdpClient object >) {}
+2021-12-30 10:08:20 udp_loglib.py 2013 gevent_join spawn         gevent.spawn(form._log_recv, *(form.clientS, )),   (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._log_recv of <udp_loglib.TestPlatForm object >>, <udp_loglib.UdpClient object >) {}
+2021-12-30 10:08:20 udp_loglib.py 2014 gevent_join spawn         gevent.spawn(form._serial_recv),\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._serial_recv of <udp_loglib.TestPlatForm object >>) {}
+2021-12-30 10:08:20 udp_loglib.py 2015 gevent_join spawn         gevent.spawn(form._mib_recv),\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._mib_recv of <udp_loglib.TestPlatForm object >>) {}
+2021-12-30 10:08:20 udp_loglib.py 2016 gevent_join spawn         gevent.spawn(form._wireshark_recv)]\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._wireshark_recv of <udp_loglib.TestPlatForm object >>) {}
+2021-12-30 10:08:20 udp_loglib.py 2019 gevent_join joinall     gevent.joinall(default_list)\n (<class 'udp_loglib.myGevent'>, [<Greenlet >>(<bound method TestPlatForm._log_recv of <udp_logli, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._log_recv of <udp_logli, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._serial_recv of <udp_lo, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._mib_recv of <udp_logli, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._wireshark_recv of <udp, [FrameInfo(frame=<frame >]) {}
+2021-12-30 10:08:20 udp_loglib.py 377 run _log_recv             rt_val = func(*args, **kwargs)\n (<udp_loglib.UdpClient object >,) {}
+2021-12-30 10:08:20 udp_loglib.py 1813 _log_recv mPrint         mPrint('recv start %s,%s' % client.remote)\n ('recv start 20.2.1.11,18125',) {}
+2021-12-30 10:08:20 udp_loglib.py 377 run _log_recv             rt_val = func(*args, **kwargs)\n (<udp_loglib.UdpClient object >,) {}
+2021-12-30 10:08:20 udp_loglib.py 1813 _log_recv mPrint         mPrint('recv start %s,%s' % client.remote)\n ('recv start 20.1.1.11,18125',) {}
+2021-12-30 10:08:20 serialread.py 121 open_all funclog.write             funclog.wirte(port, outfile)\n ('COM22', None) {}
+2021-12-30 10:08:20 serialread.py 121 open_all funclog.write             funclog.wirte(port, outfile)\n ('COM23', None) {}
+2021-12-30 10:08:20 udp_loglib.py 1846 _serial_recv mPrint                     mPrint('start listen', self._SerialRead.queue_dict.keys())\n ('start listen', dict_keys(['COM22', 'COM23'])) {}
+2021-12-30 10:08:20 udp_loglib.py 1926 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2021-12-30 10:08:20 serialread.py 149 port_open mPrint             self.print('port %s cannot open' % port )\n ('port COM23 cannot open',) {}
+2021-12-30 10:08:20 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2021-12-30 10:08:20 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.11'}
+2021-12-30 10:08:20 udp_loglib.py 1908 _wireshark_recv start                 p_new = self.wireShark.start(outfile='wireshark_recv.pcapng', block=False)\n () {'outfile': 'wireshark_recv.pcapng', 'block': False}
+2021-12-30 10:08:20 wireShark.py 103 start mPrint             self.print('%s' % self.get_path(outfile))\n ('c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_MVCU\\Log\\Cfg2_SwITC_MVCU_1517\\default/wireshark_recv.pcapng',) {}
+2021-12-30 10:08:21 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 28) {'snmpip': '20.2.1.11'}
+2021-12-30 10:08:21 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 28) {'snmpip': '20.1.1.11'}
+2021-12-30 10:08:21 udp_loglib.py 405 empty buzy                     buzy(count, (cur_time - temp))\n (3, 1.0648162364959717) {}
+2021-12-30 10:08:21 udp_loglib.py 396 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 3, 1.06) {}
+2021-12-30 10:08:21 wireShark.py 73 __find_Conn mPrint             self.print('“‘Ã´Õ¯  ≈‰∆˜: %s' % self._Conn)\n ('“‘Ã´Õ¯  ≈‰∆˜: “‘Ã´Õ¯',) {}
+2021-12-30 10:08:22 udp_loglib.py 1990 _set_client mPrint                 mPrint('use mvcu p')\n ('use mvcu p',) {}
+2021-12-30 10:08:22 udp_loglib.py 1350 _set __init__         frame = UdpSendFrame()\n () {}
+2021-12-30 10:08:22 main.py 162 case_start tst_set     form.tst_set(active_mvcu, Conf.allFlagSet(1)) ('2', <udp_loglib.UdpSendFrame object >) {}
+2021-12-30 10:08:22 udp_loglib.py 1775 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-12-30 10:08:22 udp_loglib.py 1781 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2021-12-30 10:08:22 udp_loglib.py 838 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff02320f000000000300010001f5c4') {}
+2021-12-30 10:08:23 udp_loglib.py 666 respondCheck mPrint                 Public.mPrint('set success')\n ('set success',) {}
+2021-12-30 10:08:23 main.py 163 case_start get_eventlog     form.get_eventlog(active_mvcu)\n ('2',) {}
+2021-12-30 10:08:23 udp_loglib.py 1614 get_eventlog get_eventlog                 event = viv.get_eventlog(cpu)\n ('A',) {}
+2021-12-30 10:08:27 udp_loglib.py 1614 get_eventlog get_eventlog                 event = viv.get_eventlog(cpu)\n ('B',) {}
+2021-12-30 10:08:29 main.py 164 case_start get_eventlog     form.get_eventlog(active_svcu)\n ('',) {}
+2021-12-30 10:08:29 caseFunc.py 195 vm_build_update copySrc_toVM     vmtool.copySrc_toVM(cmd_type)\n ('mvcu',) {}
+2021-12-30 10:08:29 vmtcp.py 533 copySrc_toVM _send_cmd         self._send_cmd(func, args)\n ('copy_src', ('mvcu',)) {}
+2021-12-30 10:08:29 vmtcp.py 432 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "copy_src", "args": ["mvcu"]}',) {}
+2021-12-30 10:08:29 vmtcp.py 439 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'copy_src_mvcu') {}
+2021-12-30 10:08:30 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_src", "args": ["mvcu"]}',) {}
+2021-12-30 10:08:31 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_src", "args": ["mvcu"]}',) {}
+2021-12-30 10:08:32 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_src", "args": ["mvcu"]}',) {}
+2021-12-30 10:08:33 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_src", "args": ["mvcu"]}',) {}
+2021-12-30 10:08:34 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_src", "args": ["mvcu"]}',) {}
+2021-12-30 10:08:35 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_src", "args": ["mvcu"]}',) {}
+2021-12-30 10:08:35 vmtcp.py 545 copySrc_toVM print_func         VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', ' G:\\MVCU_CW_CPUA  to C:\\Users\\MSTEP\\Desktop\\VMtools102\\VCU_DEV_MVCU\\src ') {}
+2021-12-30 10:08:35 caseFunc.py 197 vm_build_update openTagInit         vmtool.openTagInit(cmd_type, open_initTag)\n ('mvcu', 'VCU_MVCU_SwITC_1517001') {}
+2021-12-30 10:08:35 vmtcp.py 463 openTagInit _send_cmd         self._send_cmd(func, args)\n ('openTagInit', ('mvcu', ['VCU_MVCU_SwITC_1517001'])) {}
+2021-12-30 10:08:35 vmtcp.py 432 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "openTagInit", "args": ["mvcu", ["VCU_MVCU_SwITC_1517001"]]}',) {}
+2021-12-30 10:08:36 vmtcp.py 439 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'openTagInit_["mvcu", ["VCU_MVCU_SwITC_1517001"]]') {}
+2021-12-30 10:08:36 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "openTagInit", "args": ["mvcu", ["VCU_MVCU_SwITC_1517001"]]}',) {}
+2021-12-30 10:08:39 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "openTagInit", "args": ["mvcu", ["VCU_MVCU_SwITC_1517001"]]}',) {}
+2021-12-30 10:08:39 vmtcp.py 476 openTagInit print_func         VMConfig.print_func(state, Tag_list)\n (<class 'vmtcp.VMConfig'>, 'success', ['VCU_MVCU_SwITC_1517001']) {}
+2021-12-30 10:08:41 caseFunc.py 199 vm_build_update build     vmtool.build(cmd_type)\n ('mvcu',) {}
+2021-12-30 10:08:41 vmtcp.py 482 build _send_cmd         self._send_cmd(func, args)\n ('build', ('mvcu',)) {}
+2021-12-30 10:08:41 vmtcp.py 432 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:08:41 vmtcp.py 439 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'build_mvcu') {}
+2021-12-30 10:08:43 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:08:45 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:08:47 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:08:49 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:08:51 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:08:53 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:08:55 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:08:57 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:08:59 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:01 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:03 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:05 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:07 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:09 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:11 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:13 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:15 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:17 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:19 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:21 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:23 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:25 udp_loglib.py 1926 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2021-12-30 10:09:25 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2021-12-30 10:09:25 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 28) {'snmpip': '20.2.1.11'}
+2021-12-30 10:09:25 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:27 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:29 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:31 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:33 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:35 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:37 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:39 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:41 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:43 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:45 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:48 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:50 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:52 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:54 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:56 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:09:58 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:00 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:02 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:04 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:06 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:08 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:10 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:12 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:14 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:16 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:18 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:20 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:22 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:24 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:26 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:28 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:29 udp_loglib.py 1926 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2021-12-30 10:10:29 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.11'}
+2021-12-30 10:10:29 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 28) {'snmpip': '20.2.1.11'}
+2021-12-30 10:10:30 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:32 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:34 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:36 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:38 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:40 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:42 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:44 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:46 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:48 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:50 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:52 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:54 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:56 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:10:58 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:11:00 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:11:02 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:11:04 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:11:06 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:11:08 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-30 10:11:08 vmtcp.py 495 build print_func         VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', 'err 0 warning 3360 time 146 s ') {}
+2021-12-30 10:11:08 caseFunc.py 200 vm_build_update copyImage_fromVM     vmtool.copyImage_fromVM(cmd_type)\n ('mvcu',) {}
+2021-12-30 10:11:08 vmtcp.py 505 copyImage_fromVM _send_cmd         self._send_cmd(func, args)\n ('copy_image', ('mvcu',)) {}
+2021-12-30 10:11:08 vmtcp.py 432 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "copy_image", "args": ["mvcu"]}',) {}
+2021-12-30 10:11:10 vmtcp.py 439 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'copy_image_mvcu') {}
+2021-12-30 10:11:10 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["mvcu"]}',) {}
+2021-12-30 10:11:12 vmtcp.py 443 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["mvcu"]}',) {}
+2021-12-30 10:11:12 vmtcp.py 518 copyImage_fromVM print_func         VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', 'C:\\Users\\MSTEP\\Desktop\\VMtools102\\VCU_DEV_MVCU\\build/out to F:\\testplaatform1025\\Master\\testplatform\\RUT') {}
+2021-12-30 10:11:12 vmtcp.py 522 copyImage_fromVM print_func         VMConfig.print_func('image_path: %s ' % dstpath)\n (<class 'vmtcp.VMConfig'>, 'image_path: C:/Users/test2/Desktop/testplaatform1025/Master/testplatform/RUT ') {}
+2021-12-30 10:11:13 main.py 252 testcase_log mPrint             Public.mPrint(msg)\n ('2021-12-30 10:11:13 execption at testcase c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase/Sw_MVCU/Cfg2_SwITC_MVCU_1517.py VCU_CW_CPU_A_ROM_GUEST_INTA 2188 version may not eq',) {}
+2021-12-30 10:11:13 main.py 278 main program_end                 Public.program_end(e)  (<class 'udp_loglib.Public'>, Exception('VCU_CW_CPU_A_ROM_GUEST_INTA 2188 version may not eq')) {}
+2021-12-30 10:11:13 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('Traceback (most recent call last):\n',) {'mode': 2}
+2021-12-30 10:11:13 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\main.py", line 273, in main\n',) {'mode': 2}
+2021-12-30 10:11:13 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('    mod.main() # ÷¥––”√¿˝µƒ main ∑Ω∑®\n',) {'mode': 2}
+2021-12-30 10:11:13 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase/Sw_MVCU/Cfg2_SwITC_MVCU_1517.py", line 39, in main\n',) {'mode': 2}
+2021-12-30 10:11:13 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('    step1()\n',) {'mode': 2}
+2021-12-30 10:11:13 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase/Sw_MVCU/Cfg2_SwITC_MVCU_1517.py", line 32, in step1\n',) {'mode': 2}
+2021-12-30 10:11:13 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ("    caseFunc.vm_build_update('2', 'VCU_MVCU_SwITC_1517001')\n",) {'mode': 2}
+2021-12-30 10:11:13 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\caseFunc.py", line 201, in vm_build_update\n',) {'mode': 2}
+2021-12-30 10:11:13 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ("    form.update('auto', 0, slots)\n",) {'mode': 2}
+2021-12-30 10:11:13 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\udp_loglib.py", line 1591, in update\n',) {'mode': 2}
+2021-12-30 10:11:13 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('    return rut.update(fileType, act, module_3, dirname, block, retry, savepath)\n',) {'mode': 2}
+2021-12-30 10:11:13 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\RUT\\light_update.py", line 248, in update\n',) {'mode': 2}
+2021-12-30 10:11:13 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ("    raise Exception('%s %s version may not eq' % (name, m - _time))\n",) {'mode': 2}
+2021-12-30 10:11:13 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('Exception: VCU_CW_CPU_A_ROM_GUEST_INTA 2188 version may not eq\n',) {'mode': 2}

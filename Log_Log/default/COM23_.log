@@ -1,0 +1,960 @@
+2022-01-26 14:43:35 COM23_ 90 chanel1 0xFFFA2132 BIT.c:374>Reset CBIT Tempo. Remaining seconds before 1 hour period 0x00000D09
+2022-01-26 14:43:35 COM23_ 91 chanel2 0xFFFA2132 ../src/BIT/BIT.c:374>Reset CBIT Tempo. Remaining seconds before 1 hour period 0x00000D09
+2022-01-26 14:43:36 COM23_ 92 chanel1 0xFFFA252C tst_tsk.c:295> 0x7F040002 0x00000016 0x00000012 0x00000000 0x00000000 0x00000000
+2022-01-26 14:43:36 COM23_ 93 chanel1 0xFFFA252D tst_tsk.c:446>Tst_Flag_SerialReport Tst_Flag_UDPReport 0x00000001 0x00000001
+2022-01-26 14:43:37 COM23_ 94 chanel1 0xFFFA252E tst_tsk.c:153>conf tst 0x00000000 0x00000003 0x00010001
+2022-01-26 14:43:37 COM23_ 95 chanel2 0xFFFA252C t/demo/src/tst/tst_tsk.c:446>Tst_Flag_SerialReport Tst_Flag_UDPReport 0x00000001 0x00000001
+2022-01-26 14:43:37 COM23_ 96 chanel2 0xFFFA252D t/demo/src/tst/tst_tsk.c:153>conf tst 0x00000000 0x00000003 0x00010001
+2022-01-26 14:43:37 COM23_ 97 chanel1 0xFFFA2720 guest.c:1331>Send SDB data 0x00000000 0x00000000
+2022-01-26 14:43:37 COM23_ 98 chanel2 0xFFFA2720 t/demo/src/voob/guest.c:1331>Send SDB data 0x00000000 0x00000000
+2022-01-26 14:43:38 COM23_ 99 chanel1 0xFFFA2CFC tst_tsk.c:295> 0x7F040002 0x00000016 0x00000010 0x00000000 0x00000000 0x00000061
+2022-01-26 14:43:38 COM23_ 100 chanel1 0xFFFA2CFD tstswitch.c:296>[OPEN] STUB, idx, cycle:  0x00006101 0x00000000 0x00000000
+2022-01-26 14:43:39 COM23_ 101 chanel1 0xFFFA2CFE tst_tsk.c:149>tag recv 0x00610111
+2022-01-26 14:43:39 COM23_ 102 chanel1 0xFFFA2CFF guest.c:1175>recv SDB data 0x00000000 0x00000000 0x00000000 0x00000000
+2022-01-26 14:43:39 COM23_ 103 chanel2 0xFFFA2CFC demo/src/tst/tstswitch.c:296>[OPEN] STUB, idx, cycle:  0x00006101 0x00000000 0x00000000
+2022-01-26 14:43:39 COM23_ 104 chanel2 0xFFFA2CFD t/demo/src/tst/tst_tsk.c:149>tag recv 0x00610111
+2022-01-26 14:43:39 COM23_ 105 chanel2 0xFFFA2CFE t/demo/src/voob/guest.c:1175>recv SDB data 0x00000000 0x00000000 0x00000000 0x00000000
+2022-01-26 14:43:41 COM23_ 106 chanel1 0xFFFA36C0 guest.c:1175>recv SDB data 0x00000000 0x00000000 0x00000000 0x00000000
+2022-01-26 14:43:41 COM23_ 107 chanel2 0xFFFA36C0 t/demo/src/voob/guest.c:1175>recv SDB data 0x00000000 0x00000000 0x00000000 0x00000000
+2022-01-26 14:43:43 COM23_ 108 chanel1 0xFFFA4084 guest.c:1175>recv SDB data 0x00000000 0x00000000 0x00000000 0x00000000
+2022-01-26 14:43:43 COM23_ 109 chanel2 0xFFFA4084 t/demo/src/voob/guest.c:1175>recv SDB data 0x00000000 0x00000000 0x00000000 0x00000000
+2022-01-26 14:43:46 COM23_ 110 chanel1 0xFFFA4A48 guest.c:1175>recv SDB data 0x00000000 0x00000000 0x00000000 0x00000000
+2022-01-26 14:43:46 COM23_ 111 chanel2 0xFFFA4A48 t/demo/src/voob/guest.c:1175>recv SDB data 0x00000000 0x00000000 0x00000000 0x00000000
+2022-01-26 14:43:47 COM23_ 112 chanel1 0xFFFA511F guest.c:1175>recv SDB data 0x00000004 0x00000000 0x00000000 0x00000000
+2022-01-26 14:43:47 COM23_ 113 chanel2 0xFFFA511F t/demo/src/voob/guest.c:1175>recv SDB data 0x00000004 0x00000000 0x00000000 0x00000000
+2022-01-26 14:53:58 COM23_ 791 chanel1 0x0003A4D1 guest.c:1175>recv SDB data 0x00000000 0x00000000 0x00000000 0x00000000
+2022-01-26 14:53:59 COM23_ 792 chanel2 0x0003A4D0 t/demo/src/voob/guest.c:1175>recv SDB data 0x00000000 0x00000000 0x00000000 0x00000000
+2022-01-26 14:53:59 COM23_ 793 chanel1 0x0003A6C5 tst_tsk.c:295> 0x7F040002 0x00000016 0x00000012 0x00000000 0x00000000 0x00000000
+2022-01-26 14:53:59 COM23_ 794 chanel1 0x0003A6C6 tst_tsk.c:446>Tst_Flag_SerialReport Tst_Flag_UDPReport 0x00000001 0x00000001
+2022-01-26 14:53:59 COM23_ 795 chanel1 0x0003A6C6 tst_tsk.c:153>conf tst 0x00000000 0x00000003 0x00010001
+2022-01-26 14:53:59 COM23_ 796 chanel2 0x0003A6C4 t/demo/src/tst/tst_tsk.c:446>Tst_Flag_SerialReport Tst_Flag_UDPReport 0x00000001 0x00000001
+2022-01-26 14:54:00 COM23_ 797 chanel2 0x0003A6C5 t/demo/src/tst/tst_tsk.c:153>conf tst 0x00000000 0x00000003 0x00010001
+2022-01-26 14:54:01 COM23_ 798 chanel1 0x0003AE95 tst_tsk.c:295> 0x7F040002 0x00000016 0x00000010 0x00000000 0x00000000 0x00000061
+2022-01-26 14:54:01 COM23_ 799 chanel1 0x0003AE96 tstswitch.c:296>[OPEN] STUB, idx, cycle:  0x00006101 0x00000000 0x00000000
+2022-01-26 14:54:01 COM23_ 800 chanel1 0x0003AE96 tst_tsk.c:149>tag recv 0x00610111
+2022-01-26 14:54:02 COM23_ 801 chanel1 0x0003AE97 guest.c:1175>recv SDB data 0x00000000 0x00000000 0x00000000 0x00000000
+2022-01-26 14:54:02 COM23_ 802 chanel2 0x0003AE94 demo/src/tst/tstswitch.c:296>[OPEN] STUB, idx, cycle:  0x00006101 0x00000000 0x00000000
+2022-01-26 14:54:02 COM23_ 803 chanel2 0x0003AE95 t/demo/src/tst/tst_tsk.c:149>tag recv 0x00610111
+2022-01-26 14:54:02 COM23_ 804 chanel2 0x0003AE95 t/demo/src/voob/guest.c:1175>recv SDB data 0x00000000 0x00000000 0x00000000 0x00000000
+2022-01-26 14:54:02 COM23_ 805 chanel1 0x0003B089 guest.c:1331>Send SDB data 0x00000001 0x00000001
+2022-01-26 14:54:02 COM23_ 806 chanel2 0x0003B088 t/demo/src/voob/guest.c:1331>Send SDB data 0x00000001 0x00000001
+2022-01-26 14:54:03 COM23_ 807 chanel1 0x0003B859 guest.c:1175>recv SDB data 0x00000000 0x00000000 0x00000000 0x00000000
+2022-01-26 14:54:04 COM23_ 808 chanel2 0x0003B858 t/demo/src/voob/guest.c:1175>recv SDB data 0x00000000 0x00000000 0x00000000 0x00000000
+2022-01-26 14:54:06 COM23_ 809 chanel1 0x0003C21D guest.c:1175>recv SDB data 0x00000000 0x00000000 0x00000000 0x00000000
+2022-01-26 14:54:06 COM23_ 810 chanel2 0x0003C21C t/demo/src/voob/guest.c:1175>recv SDB data 0x00000000 0x00000000 0x00000000 0x00000000
+2022-01-26 14:54:08 COM23_ 811 chanel1 0x0003CBE1 guest.c:1175>recv SDB data 0x00000000 0x00000000 0x00000000 0x00000000
+2022-01-26 14:54:08 COM23_ 812 chanel2 0x0003CBE0 t/demo/src/voob/guest.c:1175>recv SDB data 0x00000000 0x00000000 0x00000000 0x00000000
+2022-01-26 14:54:11 COM23_ 813 chanel1 0x0003D3B1 guest.c:1175>recv SDB data 0x00000004 0x00000000 0x00000000 0x00000000
+2022-01-26 14:54:11 COM23_ 814 chanel2 0x0003D3B0 t/demo/src/voob/guest.c:1175>recv SDB data 0x00000004 0x00000000 0x00000000 0x00000000
+2022-01-26 14:54:12 COM23_ 815 chanel1 0x0003D9AB can_safety.c:756> 0x02080200
+2022-01-26 14:54:12 COM23_ 816 chanel2 0x0003D9AA ../src/CAN/can_safety.c:756> 0x02080200
+2022-01-26 14:54:12 COM23_ 817 chanel1 0x0003DA87 guest.c:1175>recv SDB data 0x00000000 0x00000000 0x00000000 0x00000000
+2022-01-26 14:54:12 COM23_ 818 chanel2 0x0003DA87 t/demo/src/voob/guest.c:1175>recv SDB data 0x00000000 0x00000000 0x00000000 0x00000000
+2022-01-26 14:54:13 COM23_ 819 chanel1 0x0003DD75 guest.c:1175>recv SDB data 0x00000004 0x00000000 0x00000000 0x00000000
+2022-01-26 14:54:13 COM23_ 820 chanel2 0x0003DD75 t/demo/src/voob/guest.c:1175>recv SDB data 0x00000004 0x00000000 0x00000000 0x00000000
+2022-01-26 14:54:14 COM23_ 821 chanel1 0x0003E15D tst_tsk.c:254> Abe-start
+2022-01-26 14:54:14 COM23_ 822 chanel1 0x0003E15D guest.c:1331>Send SDB data 0x00000001 0x00000001
+2022-01-26 14:54:14 COM23_ 823 chanel2 0x0003E15C ../guest/demo/src/tst/tst_tsk.c:254> Abe-start
+2022-01-26 14:54:14 COM23_ 824 chanel2 0x0003E15D t/demo/src/voob/guest.c:1331>Send SDB data 0x00000001 0x00000001
+2022-01-26 14:54:15 COM23_ 825 chanel1 0x0003E739 guest.c:1175>recv SDB data 0x00000004 0x00000000 0x00000000 0x00000000
+2022-01-26 14:54:15 COM23_ 826 chanel2 0x0003E738 t/demo/src/voob/guest.c:1175>recv SDB data 0x00000004 0x00000000 0x00000000 0x00000000
+2022-01-26 14:54:18 COM23_ 827 chanel1 0x0003F0FD guest.c:1175>recv SDB data 0x00000004 0x00000000 0x00000000 0x00000000
+2022-01-26 14:54:18 COM23_ 828 chanel2 0x0003F0FC t/demo/src/voob/guest.c:1175>recv SDB data 0x00000004 0x00000000 0x00000000 0x00000000
+2022-01-26 15:10:05 COM23_ 1864 chanel1 0x00126530 guest.c:1175>recv SDB data 0x00000000 0x00000000 0x00000000 0x00000000
+2022-01-26 15:10:05 COM23_ 1865 chanel2 0x0012652F t/demo/src/voob/guest.c:1175>recv SDB data 0x00000000 0x00000000 0x00000000 0x00000000
+2022-01-26 15:12:59 COM23_ 2064 chanel1 0x00150BE6 tst_tsk.c:254> Abe-start
+2022-01-26 15:12:59 COM23_ 2065 chanel1 0x00150BE7 guest.c:1331>Send SDB data 0x00000001 0x00000001
+2022-01-26 15:12:59 COM23_ 2066 chanel2 0x00150BE5 ../guest/demo/src/tst/tst_tsk.c:254> Abe-start
+2022-01-26 15:12:59 COM23_ 2067 chanel2 0x00150BE5 t/demo/src/voob/guest.c:1331>Send SDB data 0x00000001 0x00000001
+2022-01-26 15:12:59 COM23_ 2068 chanel1 0x00150CA7 Schedule.c:872>main cycle 0x00009470
+2022-01-26 15:57:12 COM23_ 1223 chanel1 0x00029462 viv.c:1530>opening session 0xF9794A43
+2022-01-26 15:57:12 COM23_ 1224 chanel1 0x00029751 tst_tsk.c:295> 0x14010164 0x00000004 0x00000012 0x00000000 0x00000000 0x00000000
+2022-01-26 15:57:12 COM23_ 1225 chanel1 0x00029753 tst_tsk.c:446>Tst_Flag_SerialReport Tst_Flag_UDPReport 0x00000001 0x00000001
+2022-01-26 16:31:09 COM23_ 447 chanel1 0x00015D15 com.c:240> [35mAt: 746237 Avg: 34 %
+2022-01-26 16:31:09 COM23_ 448 chanel2 0x00015D16 ../guest/demo/src/com/com.c:240> [35mAt: 748242 Avg: 32 %
+2022-01-26 16:31:09 COM23_ 449 chanel1 0x00015E0B can.c:1144>MVCU switch to Normal 0x000B63F3
+2022-01-26 16:31:09 COM23_ 450 chanel2 0x00015E09 ../src/CAN/can.c:1144>MVCU switch to Normal 0x000B6BC5
+2022-01-26 16:31:09 COM23_ 451 chanel1 0x00015E35 can_safety.c:640> 0x02080200
+2022-01-26 16:31:09 COM23_ 452 chanel1 0x00015E3A SDB.c:1505>STDBY->NORMAL switch: Stopped session: EqId 0x00000000
+2022-01-26 16:31:09 COM23_ 453 chanel1 0x00015E3B SDB.c:1505>STDBY->NORMAL switch: Stopped session: EqId 0x00000001
+2022-01-26 16:31:09 COM23_ 454 chanel1 0x00015E3B SDB.c:1505>STDBY->NORMAL switch: Stopped session: EqId 0x00000002
+2022-01-26 16:31:10 COM23_ 455 chanel1 0x00015E3B SDB.c:1505>STDBY->NORMAL switch: Stopped session: EqId 0x00000003
+2022-01-26 16:31:10 COM23_ 456 chanel1 0x00015E3C SDB.c:1505>STDBY->NORMAL switch: Stopped session: EqId 0x00000004
+2022-01-26 16:31:10 COM23_ 457 chanel1 0x00015E3C SDB.c:1505>STDBY->NORMAL switch: Stopped session: EqId 0x00000005
+2022-01-26 16:31:10 COM23_ 458 chanel2 0x00015E33 ../src/CAN/can_safety.c:640> 0x02080200
+2022-01-26 16:31:11 COM23_ 459 chanel2 0x00015E39 ../src/SDB/SDB.c:1505>STDBY->NORMAL switch: Stopped session: EqId 0x00000000
+2022-01-26 16:31:11 COM23_ 460 chanel2 0x00015E39 ../src/SDB/SDB.c:1505>STDBY->NORMAL switch: Stopped session: EqId 0x00000001
+2022-01-26 16:31:11 COM23_ 461 chanel2 0x00015E3A ../src/SDB/SDB.c:1505>STDBY->NORMAL switch: Stopped session: EqId 0x00000002
+2022-01-26 16:31:11 COM23_ 462 chanel2 0x00015E3A ../src/SDB/SDB.c:1505>STDBY->NORMAL switch: Stopped session: EqId 0x00000003
+2022-01-26 16:31:11 COM23_ 463 chanel2 0x00015E3B ../src/SDB/SDB.c:1505>STDBY->NORMAL switch: Stopped session: EqId 0x00000004
+2022-01-26 16:31:12 COM23_ 464 chanel2 0x00015E3B ../src/SDB/SDB.c:1505>STDBY->NORMAL switch: Stopped session: EqId 0x00000005
+2022-01-26 16:31:12 COM23_ 465 chanel1 0x00016759 RECORD_utl.c:108>Log Entering function: MainEventWrite
+2022-01-26 16:31:12 COM23_ 466 chanel1 0x00016759 RECORD.c:474>log backup
+2022-01-26 16:31:12 COM23_ 467 chanel2 0x00016911 ../src/RECORD/RECORD_utl.c:108>Log Entering function: MainEventWrite
+2022-01-26 16:31:12 COM23_ 468 chanel2 0x00016911 ../src/RECORD/RECORD.c:474>log backup
+2022-01-26 16:31:13 COM23_ 469 chanel1 0x00016B42 RECORD_utl.c:108>Log Entering function: MainIdle
+2022-01-26 16:31:13 COM23_ 470 chanel2 0x00016CFA ../src/RECORD/RECORD_utl.c:108>Log Entering function: MainIdle
+2022-01-26 16:31:14 COM23_ 471 chanel2 0x00016FFC ../src/Drv_Lib/Drv_Can_Lib.c:1709>canDrvErr:CAN 1, MB n inactive, IFLAG=0, but not free 0x00000001
+2022-01-26 16:31:15 COM23_ 472 chanel1 0x000172DE viv.c:1530>opening session 0x57A26828
+2022-01-26 16:31:15 COM23_ 473 chanel1 0x00017679 tst_tsk.c:295> 0x14010164 0x00000004 0x00000012 0x00000000 0x00000000 0x00000000
+2022-01-26 16:31:15 COM23_ 474 chanel1 0x0001767C tst_tsk.c:446>Tst_Flag_SerialReport Tst_Flag_UDPReport 0x00000001 0x00000001
+2022-01-26 16:31:15 COM23_ 475 chanel1 0x0001767D tst_tsk.c:153>conf tst 0x00000000 0x00000003 0x00010001
+2022-01-26 16:38:59 COM23_ 293 chanel1 0xFFFA5C90 viv.c:1530>opening session 0xE5E438DF
+2022-01-26 16:47:12 COM23_ 260 chanel1 0xFFFAE3E7 viv.c:1530>opening session 0xE5E438DF
+2022-01-26 16:53:56 COM23_ 662 chanel1 0x00010C4D viv.c:1530>opening session 0xF9794A43
+2022-01-26 17:00:02 COM23_ 93 chanel1 0xFFF6FADF tst_tsk.c:295> 0x14010164 0x00000004 0x00000012 0x00000000 0x00000000 0x00000000
+2022-01-26 17:00:02 COM23_ 94 chanel1 0xFFF6FAE2 tst_tsk.c:446>Tst_Flag_SerialReport Tst_Flag_UDPReport 0x00000001 0x00000001
+2022-01-26 17:00:02 COM23_ 95 chanel1 0xFFF6FAE3 tst_tsk.c:153>conf tst 0x00000000 0x00000003 0x00010001
+2022-01-26 17:00:02 COM23_ 96 chanel1 0xFFF6FAE6 tst_tsk.c:270> tst_task time:11
+2022-01-26 17:00:02 COM23_ 97 chanel2 0xFFF6FAE0 t/demo/src/tst/tst_tsk.c:446>Tst_Flag_SerialReport Tst_Flag_UDPReport 0x00000001 0x00000001
+2022-01-26 17:17:20 COM23_ 102 chanel1 0xFFF7E2CF viv.c:1530>opening session 0xE5E438DF
+2022-01-26 17:26:48 COM23_ 102 chanel1 0xFFF7242F tst_tsk.c:295> 0x14010164 0x00000004 0x00000012 0x00000000 0x00000000 0x00000000
+2022-01-26 17:26:48 COM23_ 103 chanel1 0xFFF72431 tst_tsk.c:446>Tst_Flag_SerialReport Tst_Flag_UDPReport 0x00000001 0x00000001
+2022-01-26 17:26:48 COM23_ 104 chanel1 0xFFF72432 tst_tsk.c:153>conf tst 0x00000000 0x00000003 0x00010001
+2022-01-26 17:26:48 COM23_ 105 chanel2 0xFFF72430 t/demo/src/tst/tst_tsk.c:446>Tst_Flag_SerialReport Tst_Flag_UDPReport 0x00000001 0x00000001
+2022-01-26 17:26:48 COM23_ 106 chanel2 0xFFF72432 t/demo/src/tst/tst_tsk.c:153>conf tst 0x00000000 0x00000003 0x00010001
+2022-01-26 17:27:42 COM23_ 135 chanel1 0xFFF7F5F2 viv.c:1530>opening session 0x57A26828
+2022-01-26 17:27:43 COM23_ 136 chanel1 0xFFF7F82E Drv_Can_Lib.c:1696>canDrvErr:CAN 0, MB n inactive, IFLAG=0, but not free 0x00000001
+2022-02-28 10:18:54 COM23_ 65 chanel1 0xFFF68543 CONF_autho.c:4853>CC autho check pass.
+2022-02-28 10:18:54 COM23_ 66 chanel2 0xFFF68544 ../src/CONF/CONF_autho.c:4853>CC autho check pass.
+2022-02-28 10:18:54 COM23_ 67 chanel1 0xFFF685D3 CONF_autho.c:5167>Switched to Standby: Id 0x00000002
+2022-02-28 10:18:54 COM23_ 68 chanel2 0xFFF685D4 ../src/CONF/CONF_autho.c:5167>Switched to Standby: Id 0x00000002
+2022-02-28 10:18:54 COM23_ 69 chanel1 0xFFF685DF GM_PROSTACK_Ip_tsk.c:1591>GM_PROS_Iptsk: This is a secondary board linking direct-redunded
+2022-02-28 10:18:55 COM23_ 70 chanel1 0xFFF685E4 Drv_Fec_Lib.c:937>fecDrvErr: Restart to 10Mbps half-duplex mode.
+2022-02-28 10:18:55 COM23_ 71 chanel1 0xFFF685E9 Drv_Fec_Lib.c:937>fecDrvErr: Restart to 10Mbps half-duplex mode.
+2022-02-28 10:18:55 COM23_ 72 chanel1 0xFFF685EA GM_PROSTACK_Ip_tsk.c:1682>Non-Safety_Ip=1401010A - Non-Safety_NetMask=FFFF0000
+2022-02-28 10:18:55 COM23_ 73 chanel2 0xFFF685DF ../src/ProStack/GM_PROSTACK_Ip_tsk.c:2465>GM_PROS_Iptsk: This is a secondary board linking bridge-normal
+2022-02-28 10:18:55 COM23_ 74 chanel1 0xFFF685EB GM_PROSTACK_Ip_tsk.c:1685>Safety_Ip=1405010A - Safety_NetMask=FFFF0000
+2022-02-28 10:18:55 COM23_ 75 LOST-RX-0x00000008
+2022-02-28 10:18:55 COM23_ 76 chanel2 0xFFF685E4 ../src/Drv_Lib/Drv_Fec_Lib.c:937>fecDrvErr: Restart to 10Mbps half-duplex mode.
+2022-02-28 10:18:55 COM23_ 77 chanel1 0xFFF685EB GM_PROSTACK_Ip_tsk.c:1688>Non-SafetyGateway=14010101 - SafetyGateway=14050101
+2022-02-28 10:18:55 COM23_ 78 chanel1 0xFFF685EC GM_PROSTACK_Ip_tsk.c:1691>Non-Safety_Mac=00-16-9B-02-40-29
+2022-02-28 10:18:56 COM23_ 79 chanel1 0xFFF685EC GM_PROSTACK_Ip_tsk.c:1694>Safety_Mac=00-16-9B-02-40-31
+2022-02-28 10:18:56 COM23_ 80 chanel1 0xFFF68604 GM_FSFB2_V_TXP.c:86>Transmit process started.
+2022-02-28 10:18:56 COM23_ 81 chanel1 0xFFF68608 GM_FSFB2_V_MGT.c:315>Reception process started
+2022-02-28 10:18:56 COM23_ 82 chanel1 0xFFF68609 GM_Snmp.c:203>Succeed to start SNMP task.
+2022-02-28 10:18:56 COM23_ 83 chanel1 0xFFF6860C VOTE_com.c:584>Get a memory block for VOTE message failed 0x00000042
+2022-02-28 10:18:56 COM23_ 84 chanel1 0xFFF6860E VOTE_com.c:584>Get a memory block for VOTE message failed 0x00000042
+2022-02-28 10:18:56 COM23_ 85 chanel1 0xFFF68610 VOTE_com.c:584>Get a memory block for VOTE message failed 0x00000042
+2022-02-28 10:18:56 COM23_ 86 chanel1 0xFFF68611 GM_Sntp.c:81>Succeed to start SNTP task.
+2022-02-28 10:18:57 COM23_ 87 chanel1 0xFFF68611 VOTE_com.c:584>Get a memory block for VOTE message failed 0x00000042
+2022-02-28 10:18:57 COM23_ 88 chanel1 0xFFF68611 com.c:118> Software data identification: 0x142E036F
+2022-02-28 10:18:57 COM23_ 89 chanel1 0xFFF68612 VOTE_com.c:584>Get a memory block for VOTE message failed 0x00000042
+2022-02-28 10:18:57 COM23_ 90 chanel1 0xFFF68612 tst_tsk.c:234>Succeed to start Tst task. 0x14010164 0x00000001 0xFFFFFFFE 0x00000004
+2022-02-28 10:18:57 COM23_ 91 chanel1 0xFFF68614 VOTE_com.c:584>Get a memory block for VOTE message failed 0x00000042
+2022-02-28 10:18:57 COM23_ 92 chanel1 0xFFF68615 VOTE_com.c:584>Get a memory block for VOTE message failed 0x00000042
+2022-02-28 10:18:57 COM23_ 93 chanel1 0xFFF68617 VOTE_com.c:584>Get a memory block for VOTE message failed 0x00000042
+2022-02-28 10:18:57 COM23_ 94 chanel2 0xFFF685E9 ../src/Drv_Lib/Drv_Fec_Lib.c:937>fecDrvErr: Restart to 10Mbps half-duplex mode.
+2022-02-28 10:18:57 COM23_ 95 chanel2 0xFFF685EA ../src/ProStack/GM_PROSTACK_Ip_tsk.c:2553>Non-Safety_Ip=7F000104 - Non-Safety_NetMask=FFFFFF00
+2022-02-28 10:18:57 COM23_ 96 chanel2 0xFFF685EA ../src/ProStack/GM_PROSTACK_Ip_tsk.c:2556>Safety_Ip=1405010B - Safety_NetMask=FFFF0000
+2022-02-28 10:18:58 COM23_ 97 chanel2 0xFFF685EB ../src/ProStack/GM_PROSTACK_Ip_tsk.c:2559>Non-SafetyGateway=7F000102 - SafetyGateway=14050101
+2022-02-28 10:18:58 COM23_ 98 chanel2 0xFFF685EB ../src/ProStack/GM_PROSTACK_Ip_tsk.c:2562>Non-Safety_Mac=00-16-9B-02-40-30
+2022-02-28 10:18:58 COM23_ 99 chanel2 0xFFF685EC ../src/ProStack/GM_PROSTACK_Ip_tsk.c:2565>Safety_Mac=00-16-9B-02-40-32
+2022-02-28 10:18:58 COM23_ 100 chanel2 0xFFF685ED ../src/FileSys/FILESYS.c:2442>can not open src file: srcName, file, srcIndex TFTP 0x01020101 0x00000001
+2022-02-28 10:18:58 COM23_ 101 chanel2 0xFFF685EE ../src/FileSys/FILESYS.c:2541>Src of file is used up: srcName, file, srcIndex TFTP 0x01020101 0x00000001
+2022-02-28 10:18:58 COM23_ 102 chanel2 0xFFF685EF ../src/FileSys/FILESYS.c:2442>can not open src file: srcName, file, srcIndex F_CPY 0x01350101 0x00000000
+2022-02-28 10:18:58 COM23_ 103 chanel2 0xFFF685F0 ../src/FileSys/FILESYS.c:2541>Src of file is used up: srcName, file, srcIndex F_CPY 0x01350101 0x00000000
+2022-02-28 10:18:58 COM23_ 104 chanel2 0xFFF685F1 ../src/FileSys/FILESYS.c:2442>can not open src file: srcName, file, srcIndex TFTP 0x01020201 0x00000001
+2022-02-28 10:18:59 COM23_ 105 chanel2 0xFFF685F2 ../src/FileSys/FILESYS.c:2541>Src of file is used up: srcName, file, srcIndex TFTP 0x01020201 0x00000001
+2022-02-28 10:18:59 COM23_ 106 chanel2 0xFFF685F4 ../src/FileSys/FILESYS.c:2442>can not open src file: srcName, file, srcIndex F_CPY 0x01350201 0x00000000
+2022-02-28 10:18:59 COM23_ 107 chanel2 0xFFF685F4 ../src/FileSys/FILESYS.c:2541>Src of file is used up: srcName, file, srcIndex F_CPY 0x01350201 0x00000000
+2022-02-28 10:18:59 COM23_ 108 chanel2 0xFFF685F5 ../src/FileSys/FILESYS.c:2442>can not open src file: srcName, file, srcIndex TFTP 0x01020301 0x00000001
+2022-02-28 10:18:59 COM23_ 109 chanel1 0xFFF68FBF RECORD_utl.c:108>Log Entering function: MainFlush
+2022-02-28 10:18:59 COM23_ 110 chanel2 0xFFF68FD0 ../src/RECORD/RECORD_utl.c:108>Log Entering function: MainFlush
+2022-02-28 10:19:00 COM23_ 111 chanel1 0xFFF69985 Schedule.c:862>Initializations success
+2022-02-28 10:19:00 COM23_ 112 chanel1 0xFFF69986 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:00 COM23_ 113 chanel2 0xFFF69985 ../src/SCHED/Schedule.c:862>Initializations success
+2022-02-28 10:19:00 COM23_ 114 chanel2 0xFFF69986 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:00 COM23_ 115 chanel2 0xFFF69990 ../src/FSFB2/GM_FSFB2_V_SESSION.c:826>Creating Session: SSType, SSId, LogId, Idx 0x0000003C 0x00000005 0x00000005 0x00000000
+2022-02-28 10:19:00 COM23_ 116 chanel1 0xFFF699AD can_open.c:712>Received NMT_START 0x00000000
+2022-02-28 10:19:00 COM23_ 117 chanel1 0xFFF699AE can_open.c:712>Received NMT_START 0x00000001
+2022-02-28 10:19:00 COM23_ 118 chanel1 0xFFF699AF can_open.c:712>Received NMT_START 0x00000000
+2022-02-28 10:19:00 COM23_ 119 chanel1 0xFFF699AF can_open.c:712>Received NMT_START 0x00000001
+2022-02-28 10:19:00 COM23_ 120 chanel2 0xFFF69992 ../src/FSFB2/GM_FSFB2_V_SESSION.c:826>Creating Session: SSType, SSId, LogId, Idx 0x0000003C 0x00000006 0x00000006 0x00000001
+2022-02-28 10:19:00 COM23_ 121 chanel2 0xFFF699AD ../src/CAN/can_open.c:712>Received NMT_START 0x00000000
+2022-02-28 10:19:00 COM23_ 122 chanel2 0xFFF699AE ../src/CAN/can_open.c:712>Received NMT_START 0x00000001
+2022-02-28 10:19:01 COM23_ 123 chanel2 0xFFF699AE ../src/CAN/can_open.c:712>Received NMT_START 0x00000000
+2022-02-28 10:19:01 COM23_ 124 chanel2 0xFFF699AF ../src/CAN/can_open.c:712>Received NMT_START 0x00000001
+2022-02-28 10:19:01 COM23_ 125 chanel1 0xFFF69B78 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:01 COM23_ 126 chanel2 0xFFF69B78 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:01 COM23_ 127 chanel1 0xFFF69C8A RECORD_utl.c:108>Log Entering function: MainIdle
+2022-02-28 10:19:01 COM23_ 128 chanel2 0xFFF69CB1 ../src/RECORD/RECORD_utl.c:108>Log Entering function: MainIdle
+2022-02-28 10:19:01 COM23_ 129 chanel1 0xFFF69D6C test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:01 COM23_ 130 chanel2 0xFFF69D6C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:01 COM23_ 131 chanel1 0xFFF69F60 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:02 COM23_ 132 chanel2 0xFFF69F60 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:02 COM23_ 133 chanel1 0xFFF6A154 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:02 COM23_ 134 chanel2 0xFFF6A154 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:02 COM23_ 135 chanel1 0xFFF6A348 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:02 COM23_ 136 chanel2 0xFFF6A348 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:02 COM23_ 137 chanel1 0xFFF6A53C test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:02 COM23_ 138 chanel2 0xFFF6A53C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:03 COM23_ 139 chanel1 0xFFF6A730 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:03 COM23_ 140 chanel2 0xFFF6A730 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:03 COM23_ 141 chanel1 0xFFF6A924 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:03 COM23_ 142 chanel2 0xFFF6A924 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:04 COM23_ 143 chanel1 0xFFF6AB18 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:04 COM23_ 144 chanel2 0xFFF6AB18 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:04 COM23_ 145 chanel1 0xFFF6AD0C test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:04 COM23_ 146 chanel2 0xFFF6AD0C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:05 COM23_ 147 chanel1 0xFFF6AF00 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:05 COM23_ 148 chanel2 0xFFF6AF00 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:05 COM23_ 149 chanel1 0xFFF6B0F4 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:05 COM23_ 150 chanel2 0xFFF6B0F4 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:06 COM23_ 151 chanel1 0xFFF6B2E8 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:06 COM23_ 152 chanel2 0xFFF6B2E8 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:06 COM23_ 153 chanel1 0xFFF6B4DC test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:06 COM23_ 154 chanel2 0xFFF6B4DC ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:07 COM23_ 155 chanel1 0xFFF6B6D0 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:07 COM23_ 156 chanel2 0xFFF6B6D0 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:07 COM23_ 157 chanel1 0xFFF6B8C4 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:07 COM23_ 158 chanel2 0xFFF6B8C4 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:08 COM23_ 159 chanel1 0xFFF6BAB8 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:08 COM23_ 160 chanel2 0xFFF6BAB8 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:08 COM23_ 161 chanel1 0xFFF6BCAC test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:08 COM23_ 162 chanel2 0xFFF6BCAC ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:09 COM23_ 163 chanel1 0xFFF6BEA0 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:09 COM23_ 164 chanel2 0xFFF6BEA0 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:09 COM23_ 165 chanel1 0xFFF6C094 com.c:209> [35mAt: 50865 Avg: 30 %
+2022-02-28 10:19:09 COM23_ 166 chanel1 0xFFF6C095 com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:19:09 COM23_ 167 chanel1 0xFFF6C096 com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:19:09 COM23_ 168 chanel1 0xFFF6C097 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:10 COM23_ 169 chanel2 0xFFF6C094 ../src/COM/com.c:209> [35mAt: 58500 Avg: 32 %
+2022-02-28 10:19:10 COM23_ 170 chanel2 0xFFF6C095 ../src/COM/com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:19:10 COM23_ 171 chanel2 0xFFF6C096 ../src/COM/com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:19:10 COM23_ 172 chanel2 0xFFF6C097 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:10 COM23_ 173 chanel1 0xFFF6C288 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:10 COM23_ 174 chanel2 0xFFF6C288 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:10 COM23_ 175 chanel1 0xFFF6C47C test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:10 COM23_ 176 chanel2 0xFFF6C47C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:11 COM23_ 177 chanel1 0xFFF6C670 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:11 COM23_ 178 chanel2 0xFFF6C670 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:11 COM23_ 179 chanel1 0xFFF6C864 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:11 COM23_ 180 chanel2 0xFFF6C864 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:12 COM23_ 181 chanel1 0xFFF6CA58 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:12 COM23_ 182 chanel2 0xFFF6CA58 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:12 COM23_ 183 chanel1 0xFFF6CC4C test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:12 COM23_ 184 chanel2 0xFFF6CC4C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:13 COM23_ 185 chanel1 0xFFF6CE40 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:13 COM23_ 186 chanel2 0xFFF6CE40 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:13 COM23_ 187 chanel1 0xFFF6D034 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:13 COM23_ 188 chanel2 0xFFF6D034 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:14 COM23_ 189 chanel1 0xFFF6D228 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:14 COM23_ 190 chanel2 0xFFF6D228 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:14 COM23_ 191 chanel1 0xFFF6D41C test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:14 COM23_ 192 chanel2 0xFFF6D41C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:15 COM23_ 193 chanel1 0xFFF6D610 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:15 COM23_ 194 chanel2 0xFFF6D610 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:15 COM23_ 195 chanel1 0xFFF6D804 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:15 COM23_ 196 chanel2 0xFFF6D804 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:16 COM23_ 197 chanel1 0xFFF6D9F8 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:16 COM23_ 198 chanel2 0xFFF6D9F8 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:16 COM23_ 199 chanel1 0xFFF6DBEC test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:16 COM23_ 200 chanel2 0xFFF6DBEC ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:17 COM23_ 201 chanel1 0xFFF6DDE0 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:17 COM23_ 202 chanel2 0xFFF6DDE0 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:17 COM23_ 203 chanel1 0xFFF6DFD4 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:17 COM23_ 204 chanel2 0xFFF6DFD4 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:17 COM23_ 205 chanel1 0xFFF6E1C8 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:18 COM23_ 206 chanel2 0xFFF6E1C8 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:18 COM23_ 207 chanel1 0xFFF6E3BC test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:18 COM23_ 208 chanel2 0xFFF6E3BC ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:19 COM23_ 209 chanel1 0xFFF6E5B0 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:19 COM23_ 210 chanel2 0xFFF6E5B0 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:19 COM23_ 211 chanel1 0xFFF6E7A4 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:19 COM23_ 212 chanel2 0xFFF6E7A4 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:20 COM23_ 213 chanel1 0xFFF6E998 com.c:209> [35mAt: 61365 Avg: 30 %
+2022-02-28 10:19:20 COM23_ 214 chanel1 0xFFF6E999 com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:19:20 COM23_ 215 chanel1 0xFFF6E99A com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:19:20 COM23_ 216 chanel1 0xFFF6E99B test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:20 COM23_ 217 chanel2 0xFFF6E998 ../src/COM/com.c:209> [35mAt: 69000 Avg: 33 %
+2022-02-28 10:19:20 COM23_ 218 chanel2 0xFFF6E999 ../src/COM/com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:19:20 COM23_ 219 chanel2 0xFFF6E99A ../src/COM/com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:19:20 COM23_ 220 chanel2 0xFFF6E99B ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:21 COM23_ 221 chanel1 0xFFF6EB8C test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:21 COM23_ 222 chanel2 0xFFF6EB8C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:21 COM23_ 223 chanel1 0xFFF6ED80 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:21 COM23_ 224 chanel2 0xFFF6ED80 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:21 COM23_ 225 chanel1 0xFFF6EF74 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:21 COM23_ 226 chanel2 0xFFF6EF74 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:22 COM23_ 227 chanel1 0xFFF6F168 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:19:22 COM23_ 228 chanel2 0xFFF6F168 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:23 COM23_ 256 chanel1 0xFFF6C85F test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:24 COM23_ 257 chanel2 0xFFF6C860 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:24 COM23_ 258 chanel1 0xFFF6CA53 com.c:209> [35mAt: 53361 Avg: 21 %
+2022-02-28 10:34:24 COM23_ 259 chanel1 0xFFF6CA54 com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:34:24 COM23_ 260 chanel1 0xFFF6CA56 com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:34:24 COM23_ 261 chanel1 0xFFF6CA57 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:24 COM23_ 262 chanel2 0xFFF6CA54 ../src/COM/com.c:209> [35mAt: 60988 Avg: 27 %
+2022-02-28 10:34:25 COM23_ 263 chanel2 0xFFF6CA55 ../src/COM/com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:34:25 COM23_ 264 chanel2 0xFFF6CA58 ../src/COM/com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:34:25 COM23_ 265 chanel2 0xFFF6CA58 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:25 COM23_ 266 chanel1 0xFFF6CC47 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:25 COM23_ 267 chanel2 0xFFF6CC48 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:25 COM23_ 268 chanel1 0xFFF6CE3B test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:25 COM23_ 269 chanel2 0xFFF6CE3C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:25 COM23_ 270 chanel1 0xFFF6D02F test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:26 COM23_ 271 chanel2 0xFFF6D030 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:26 COM23_ 272 chanel1 0xFFF6D223 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:26 COM23_ 273 chanel2 0xFFF6D224 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:26 COM23_ 274 chanel1 0xFFF6D417 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:26 COM23_ 275 chanel2 0xFFF6D418 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:27 COM23_ 276 chanel1 0xFFF6D60B test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:27 COM23_ 277 chanel2 0xFFF6D60C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:27 COM23_ 278 chanel1 0xFFF6D7FF test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:27 COM23_ 279 chanel2 0xFFF6D800 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:28 COM23_ 280 chanel1 0xFFF6D9F3 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:28 COM23_ 281 chanel2 0xFFF6D9F4 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:29 COM23_ 282 chanel1 0xFFF6DBE7 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:29 COM23_ 283 chanel2 0xFFF6DBE8 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:29 COM23_ 284 chanel1 0xFFF6DDDB test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:29 COM23_ 285 chanel2 0xFFF6DDDC ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:30 COM23_ 286 chanel1 0xFFF6DFCF test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:30 COM23_ 287 chanel2 0xFFF6DFD0 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:30 COM23_ 288 chanel1 0xFFF6E1C3 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:30 COM23_ 289 chanel2 0xFFF6E1C4 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:30 COM23_ 290 chanel1 0xFFF6E3B7 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:30 COM23_ 291 chanel2 0xFFF6E3B8 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:31 COM23_ 292 chanel1 0xFFF6E5AB test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:31 COM23_ 293 chanel2 0xFFF6E5AC ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:31 COM23_ 294 chanel1 0xFFF6E79F test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:32 COM23_ 295 chanel2 0xFFF6E7A0 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:32 COM23_ 296 chanel1 0xFFF6E993 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:32 COM23_ 297 chanel2 0xFFF6E994 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:32 COM23_ 298 chanel1 0xFFF6EB87 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:32 COM23_ 299 chanel2 0xFFF6EB88 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:33 COM23_ 300 chanel1 0xFFF6ED7B test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:33 COM23_ 301 chanel2 0xFFF6ED7C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:33 COM23_ 302 chanel1 0xFFF6EF6F test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:34 COM23_ 303 chanel2 0xFFF6EF70 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:34 COM23_ 304 chanel1 0xFFF6F163 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:34 COM23_ 305 chanel2 0xFFF6F164 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:35 COM23_ 306 chanel1 0xFFF6F357 com.c:209> [35mAt: 63861 Avg: 22 %
+2022-02-28 10:34:35 COM23_ 307 chanel1 0xFFF6F358 com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:34:35 COM23_ 308 chanel1 0xFFF6F35A com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:34:35 COM23_ 309 chanel1 0xFFF6F35B test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:35 COM23_ 310 chanel2 0xFFF6F358 ../src/COM/com.c:209> [35mAt: 71488 Avg: 28 %
+2022-02-28 10:34:35 COM23_ 311 chanel2 0xFFF6F35A ../src/COM/com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:34:35 COM23_ 312 chanel2 0xFFF6F35B ../src/COM/com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:34:35 COM23_ 313 chanel2 0xFFF6F35C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:35 COM23_ 314 chanel1 0xFFF6F54B test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:36 COM23_ 315 chanel2 0xFFF6F54C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:36 COM23_ 316 chanel1 0xFFF6F73F test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:36 COM23_ 317 chanel2 0xFFF6F740 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:36 COM23_ 318 chanel1 0xFFF6F933 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:36 COM23_ 319 chanel2 0xFFF6F934 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:37 COM23_ 320 chanel1 0xFFF6FB27 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:37 COM23_ 321 chanel2 0xFFF6FB28 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:37 COM23_ 322 chanel1 0xFFF6FD1B test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:37 COM23_ 323 chanel2 0xFFF6FD1C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:37 COM23_ 324 chanel1 0xFFF6FF0F test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:37 COM23_ 325 chanel2 0xFFF6FF10 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:38 COM23_ 326 chanel1 0xFFF70103 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:38 COM23_ 327 chanel2 0xFFF70104 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:38 COM23_ 328 chanel1 0xFFF702F7 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:39 COM23_ 329 chanel2 0xFFF702F8 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:39 COM23_ 330 chanel1 0xFFF704EB test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:39 COM23_ 331 chanel2 0xFFF704EC ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:39 COM23_ 332 chanel1 0xFFF706DF test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:40 COM23_ 333 chanel2 0xFFF706E0 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:40 COM23_ 334 chanel1 0xFFF708D3 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:40 COM23_ 335 chanel2 0xFFF708D4 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:40 COM23_ 336 chanel1 0xFFF70AC7 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:40 COM23_ 337 chanel2 0xFFF70AC8 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:41 COM23_ 338 chanel1 0xFFF70CBB test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:41 COM23_ 339 chanel2 0xFFF70CBC ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:42 COM23_ 340 chanel1 0xFFF70EAF test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:42 COM23_ 341 chanel2 0xFFF70EB0 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:42 COM23_ 342 chanel1 0xFFF710A4 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:42 COM23_ 343 chanel2 0xFFF710A4 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:42 COM23_ 344 chanel1 0xFFF71298 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:43 COM23_ 345 chanel1 0xFFF7129A tst_tsk.c:271> Abe-start
+2022-02-28 10:34:43 COM23_ 346 chanel2 0xFFF71299 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:43 COM23_ 347 chanel2 0xFFF7129B ../src/tst/tst_tsk.c:271> Abe-start
+2022-02-28 10:34:43 COM23_ 348 chanel1 0xFFF71459 Schedule.c:977>main cycle 0x000003E8
+2022-02-28 10:34:43 COM23_ 349 chanel1 0xFFF7148B test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:43 COM23_ 350 chanel2 0xFFF7148C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:43 COM23_ 351 chanel1 0xFFF7167F test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:43 COM23_ 352 chanel2 0xFFF71680 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:44 COM23_ 353 chanel1 0xFFF71873 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:44 COM23_ 354 chanel2 0xFFF71874 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:44 COM23_ 355 chanel1 0xFFF71A67 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:44 COM23_ 356 chanel2 0xFFF71A68 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:45 COM23_ 357 chanel1 0xFFF71C5C com.c:209> [35mAt: 74361 Avg: 22 %
+2022-02-28 10:34:45 COM23_ 358 chanel1 0xFFF71C5E com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:34:45 COM23_ 359 chanel1 0xFFF71C5F com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:34:45 COM23_ 360 chanel1 0xFFF71C60 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:46 COM23_ 361 chanel2 0xFFF71C5E ../src/COM/com.c:209> [35mAt: 81988 Avg: 27 %
+2022-02-28 10:34:46 COM23_ 362 chanel2 0xFFF71C5F ../src/COM/com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:34:46 COM23_ 363 chanel2 0xFFF71C60 ../src/COM/com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:34:46 COM23_ 364 chanel2 0xFFF71C61 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:46 COM23_ 365 chanel1 0xFFF71E4F test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:46 COM23_ 366 chanel2 0xFFF71E50 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:46 COM23_ 367 chanel1 0xFFF72043 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:46 COM23_ 368 chanel2 0xFFF72046 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:46 COM23_ 369 chanel1 0xFFF72237 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:47 COM23_ 370 chanel2 0xFFF7223A ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:47 COM23_ 371 chanel1 0xFFF7242C test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:47 COM23_ 372 chanel2 0xFFF7242E ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:47 COM23_ 373 chanel1 0xFFF72620 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:47 COM23_ 374 chanel2 0xFFF72622 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:48 COM23_ 375 chanel1 0xFFF72815 com.c:249> [32mUsage: Min: 21 %, Cur: 22 %, Max: 46 %
+2022-02-28 10:34:48 COM23_ 376 chanel1 0xFFF72815 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:48 COM23_ 377 chanel2 0xFFF72816 ../src/COM/com.c:249> [32mUsage: Min: 17 %, Cur: 26 %, Max: 47 %
+2022-02-28 10:34:48 COM23_ 378 chanel2 0xFFF72817 ../src/COM/com.c:256> [35mMax Delta seqNb. Ntwk: Norm=0 Redund=0
+2022-02-28 10:34:48 COM23_ 379 chanel2 0xFFF72817 ../src/COM/com.c:261> [35mMax propagation Delay in ms. Ntwk: Norm=0 Redund=0
+2022-02-28 10:34:49 COM23_ 380 chanel2 0xFFF72818 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:49 COM23_ 381 chanel1 0xFFF72A09 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:49 COM23_ 382 chanel2 0xFFF72A09 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:49 COM23_ 383 chanel1 0xFFF72BFC test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:49 COM23_ 384 chanel2 0xFFF72BFC ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:49 COM23_ 385 chanel1 0xFFF72DF0 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:49 COM23_ 386 chanel2 0xFFF72DF0 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:50 COM23_ 387 chanel1 0xFFF72FE4 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:50 COM23_ 388 chanel2 0xFFF72FE4 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:50 COM23_ 389 chanel1 0xFFF731D8 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:50 COM23_ 390 chanel2 0xFFF731D8 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:51 COM23_ 391 chanel1 0xFFF733CC test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:34:51 COM23_ 392 chanel2 0xFFF733CD ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:49 COM23_ 499 chanel1 0xFFF79161 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:49 COM23_ 500 chanel2 0xFFF79162 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:49 COM23_ 501 chanel1 0xFFF79355 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:49 COM23_ 502 chanel2 0xFFF79356 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:50 COM23_ 503 chanel1 0xFFF79549 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:50 COM23_ 504 chanel2 0xFFF7954A ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:50 COM23_ 505 chanel1 0xFFF7973D com.c:209> [35mAt: 105818 Avg: 21 %
+2022-02-28 10:46:50 COM23_ 506 chanel1 0xFFF7973E com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:46:50 COM23_ 507 chanel1 0xFFF7973F com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:46:50 COM23_ 508 chanel1 0xFFF79740 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:50 COM23_ 509 chanel2 0xFFF7973E ../src/COM/com.c:209> [35mAt: 113440 Avg: 25 %
+2022-02-28 10:46:50 COM23_ 510 chanel2 0xFFF7973F ../src/COM/com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:46:50 COM23_ 511 chanel2 0xFFF79740 ../src/COM/com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:46:51 COM23_ 512 chanel2 0xFFF79741 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:51 COM23_ 513 chanel1 0xFFF79931 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:51 COM23_ 514 chanel2 0xFFF79932 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:51 COM23_ 515 chanel1 0xFFF79B25 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:52 COM23_ 516 chanel2 0xFFF79B26 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:52 COM23_ 517 chanel1 0xFFF79D19 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:52 COM23_ 518 chanel2 0xFFF79D1A ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:52 COM23_ 519 chanel1 0xFFF79F0D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:53 COM23_ 520 chanel2 0xFFF79F0E ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:53 COM23_ 521 chanel1 0xFFF7A101 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:53 COM23_ 522 chanel2 0xFFF7A102 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:53 COM23_ 523 chanel1 0xFFF7A2F5 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:53 COM23_ 524 chanel2 0xFFF7A2F6 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:54 COM23_ 525 chanel1 0xFFF7A4E9 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:54 COM23_ 526 chanel2 0xFFF7A4EA ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:54 COM23_ 527 chanel1 0xFFF7A6DD test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:54 COM23_ 528 chanel2 0xFFF7A6DE ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:55 COM23_ 529 chanel1 0xFFF7A8D1 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:55 COM23_ 530 chanel2 0xFFF7A8D2 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:55 COM23_ 531 chanel1 0xFFF7AAC5 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:55 COM23_ 532 chanel2 0xFFF7AAC6 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:56 COM23_ 533 chanel1 0xFFF7ACB9 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:56 COM23_ 534 chanel2 0xFFF7ACBA ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:56 COM23_ 535 chanel1 0xFFF7AEAD test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:56 COM23_ 536 chanel2 0xFFF7AEAE ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:57 COM23_ 537 chanel1 0xFFF7B0A1 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:57 COM23_ 538 chanel2 0xFFF7B0A2 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:58 COM23_ 539 chanel1 0xFFF7B295 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:58 COM23_ 540 chanel2 0xFFF7B296 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:58 COM23_ 541 chanel1 0xFFF7B489 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:58 COM23_ 542 chanel2 0xFFF7B48A ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:59 COM23_ 543 chanel1 0xFFF7B67D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:59 COM23_ 544 chanel2 0xFFF7B67E ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:59 COM23_ 545 chanel1 0xFFF7B871 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:59 COM23_ 546 chanel2 0xFFF7B872 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:59 COM23_ 547 chanel1 0xFFF7BA65 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:46:59 COM23_ 548 chanel2 0xFFF7BA66 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:00 COM23_ 549 chanel1 0xFFF7BC59 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:00 COM23_ 550 chanel2 0xFFF7BC5A ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:00 COM23_ 551 chanel1 0xFFF7BE4D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:01 COM23_ 552 chanel2 0xFFF7BE4E ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:01 COM23_ 553 chanel1 0xFFF7C041 com.c:209> [35mAt: 116318 Avg: 21 %
+2022-02-28 10:47:01 COM23_ 554 chanel1 0xFFF7C042 com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:47:01 COM23_ 555 chanel1 0xFFF7C043 com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:47:01 COM23_ 556 chanel1 0xFFF7C044 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:01 COM23_ 557 chanel2 0xFFF7C042 ../src/COM/com.c:209> [35mAt: 123940 Avg: 24 %
+2022-02-28 10:47:01 COM23_ 558 chanel2 0xFFF7C043 ../src/COM/com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:47:01 COM23_ 559 chanel2 0xFFF7C044 ../src/COM/com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:47:01 COM23_ 560 chanel2 0xFFF7C045 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:01 COM23_ 561 chanel1 0xFFF7C235 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:02 COM23_ 562 chanel2 0xFFF7C236 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:02 COM23_ 563 chanel1 0xFFF7C429 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:02 COM23_ 564 chanel2 0xFFF7C42A ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:02 COM23_ 565 chanel1 0xFFF7C61D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:02 COM23_ 566 chanel2 0xFFF7C61E ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:03 COM23_ 567 chanel1 0xFFF7C811 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:03 COM23_ 568 chanel2 0xFFF7C812 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:03 COM23_ 569 chanel1 0xFFF7CA05 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:03 COM23_ 570 chanel2 0xFFF7CA06 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:04 COM23_ 571 chanel1 0xFFF7CBF9 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:04 COM23_ 572 chanel2 0xFFF7CBFA ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:04 COM23_ 573 chanel1 0xFFF7CDED test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:05 COM23_ 574 chanel2 0xFFF7CDEE ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:05 COM23_ 575 chanel1 0xFFF7CFE1 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:05 COM23_ 576 chanel2 0xFFF7CFE2 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:05 COM23_ 577 chanel1 0xFFF7D1D5 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:05 COM23_ 578 chanel2 0xFFF7D1D6 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:06 COM23_ 579 chanel1 0xFFF7D3C9 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:06 COM23_ 580 chanel2 0xFFF7D3CA ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:06 COM23_ 581 chanel1 0xFFF7D5BD test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:06 COM23_ 582 chanel1 0xFFF7D5BE tst_tsk.c:271> Abe-start
+2022-02-28 10:47:07 COM23_ 583 chanel2 0xFFF7D5BE ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:07 COM23_ 584 chanel2 0xFFF7D5BF ../src/tst/tst_tsk.c:271> Abe-start
+2022-02-28 10:47:07 COM23_ 585 chanel1 0xFFF7D77F Schedule.c:977>main cycle 0x000007D0
+2022-02-28 10:47:07 COM23_ 586 chanel1 0xFFF7D7B1 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:07 COM23_ 587 chanel2 0xFFF7D7B2 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:07 COM23_ 588 chanel1 0xFFF7D9A5 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:08 COM23_ 589 chanel2 0xFFF7D9A6 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:08 COM23_ 590 chanel1 0xFFF7DB99 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:08 COM23_ 591 chanel2 0xFFF7DB9A ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:08 COM23_ 592 chanel1 0xFFF7DD8D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:08 COM23_ 593 chanel2 0xFFF7DD8E ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:09 COM23_ 594 chanel1 0xFFF7DF81 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:09 COM23_ 595 chanel2 0xFFF7DF82 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:09 COM23_ 596 chanel1 0xFFF7E175 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:09 COM23_ 597 chanel2 0xFFF7E176 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:10 COM23_ 598 chanel1 0xFFF7E369 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:10 COM23_ 599 chanel2 0xFFF7E36A ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:10 COM23_ 600 chanel1 0xFFF7E55D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:10 COM23_ 601 chanel2 0xFFF7E55E ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:11 COM23_ 602 chanel1 0xFFF7E751 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:11 COM23_ 603 chanel2 0xFFF7E752 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:11 COM23_ 604 chanel1 0xFFF7E945 com.c:209> [35mAt: 126818 Avg: 22 %
+2022-02-28 10:47:11 COM23_ 605 chanel1 0xFFF7E946 com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:47:11 COM23_ 606 chanel1 0xFFF7E947 com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:47:11 COM23_ 607 chanel1 0xFFF7E948 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:11 COM23_ 608 chanel2 0xFFF7E946 ../src/COM/com.c:209> [35mAt: 134440 Avg: 24 %
+2022-02-28 10:47:11 COM23_ 609 chanel2 0xFFF7E947 ../src/COM/com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:47:11 COM23_ 610 chanel2 0xFFF7E947 ../src/COM/com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 10:47:11 COM23_ 611 chanel2 0xFFF7E948 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:12 COM23_ 612 chanel1 0xFFF7EB39 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:12 COM23_ 613 chanel2 0xFFF7EB3A ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:12 COM23_ 614 chanel1 0xFFF7ED2D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:12 COM23_ 615 chanel2 0xFFF7ED2E ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:13 COM23_ 616 chanel1 0xFFF7EF21 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:13 COM23_ 617 chanel2 0xFFF7EF22 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:13 COM23_ 618 chanel1 0xFFF7F115 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:14 COM23_ 619 chanel2 0xFFF7F116 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:14 COM23_ 620 chanel1 0xFFF7F309 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:14 COM23_ 621 chanel2 0xFFF7F30B ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:14 COM23_ 622 chanel1 0xFFF7F4FD test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:14 COM23_ 623 chanel2 0xFFF7F4FE ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:15 COM23_ 624 chanel1 0xFFF7F6F1 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:15 COM23_ 625 chanel2 0xFFF7F6F2 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:15 COM23_ 626 chanel1 0xFFF7F8E5 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:15 COM23_ 627 chanel2 0xFFF7F8E6 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:16 COM23_ 628 chanel1 0xFFF7FAD9 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:16 COM23_ 629 chanel2 0xFFF7FADA ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:16 COM23_ 630 chanel1 0xFFF7FCCD test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:17 COM23_ 631 chanel2 0xFFF7FCCE ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:17 COM23_ 632 chanel1 0xFFF7FEC1 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 10:47:17 COM23_ 633 chanel2 0xFFF7FEC2 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:06:58 COM23_ 1096 chanel1 0xFFF9AADD test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:06:59 COM23_ 1097 chanel2 0xFFF9AADC ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:06:59 COM23_ 1098 chanel1 0xFFF9ACD1 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:06:59 COM23_ 1099 chanel2 0xFFF9ACD0 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:06:59 COM23_ 1100 chanel1 0xFFF9AEC5 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:06:59 COM23_ 1101 chanel2 0xFFF9AEC4 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:00 COM23_ 1102 chanel1 0xFFF9B0B9 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:00 COM23_ 1103 chanel2 0xFFF9B0B8 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:00 COM23_ 1104 chanel1 0xFFF9B2AD com.c:209> [35mAt: 243916 Avg: 29 %
+2022-02-28 11:07:01 COM23_ 1105 chanel1 0xFFF9B2AE com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 11:07:01 COM23_ 1106 chanel1 0xFFF9B2AF com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 11:07:01 COM23_ 1107 chanel1 0xFFF9B2B1 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:01 COM23_ 1108 chanel2 0xFFF9B2AC ../src/COM/com.c:209> [35mAt: 251529 Avg: 31 %
+2022-02-28 11:07:01 COM23_ 1109 chanel2 0xFFF9B2AD ../src/COM/com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 11:07:01 COM23_ 1110 chanel2 0xFFF9B2B1 ../src/COM/com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 11:07:01 COM23_ 1111 chanel2 0xFFF9B2B2 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:01 COM23_ 1112 chanel1 0xFFF9B4A1 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:01 COM23_ 1113 chanel2 0xFFF9B4A0 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:01 COM23_ 1114 chanel1 0xFFF9B695 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:02 COM23_ 1115 chanel2 0xFFF9B694 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:02 COM23_ 1116 chanel1 0xFFF9B889 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:02 COM23_ 1117 chanel2 0xFFF9B888 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:02 COM23_ 1118 chanel1 0xFFF9BA7D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:02 COM23_ 1119 chanel2 0xFFF9BA7C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:03 COM23_ 1120 chanel1 0xFFF9BC71 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:03 COM23_ 1121 chanel2 0xFFF9BC70 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:03 COM23_ 1122 chanel1 0xFFF9BE65 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:04 COM23_ 1123 chanel2 0xFFF9BE64 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:04 COM23_ 1124 chanel1 0xFFF9C059 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:04 COM23_ 1125 chanel2 0xFFF9C058 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:04 COM23_ 1126 chanel1 0xFFF9C24D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:04 COM23_ 1127 chanel2 0xFFF9C24C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:05 COM23_ 1128 chanel1 0xFFF9C441 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:05 COM23_ 1129 chanel2 0xFFF9C440 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:05 COM23_ 1130 chanel1 0xFFF9C635 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:05 COM23_ 1131 chanel2 0xFFF9C634 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:06 COM23_ 1132 chanel1 0xFFF9C829 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:06 COM23_ 1133 chanel2 0xFFF9C828 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:06 COM23_ 1134 chanel1 0xFFF9CA1D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:06 COM23_ 1135 chanel2 0xFFF9CA1C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:07 COM23_ 1136 chanel1 0xFFF9CC11 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:07 COM23_ 1137 chanel2 0xFFF9CC10 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:07 COM23_ 1138 chanel1 0xFFF9CE05 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:07 COM23_ 1139 chanel2 0xFFF9CE04 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:08 COM23_ 1140 chanel1 0xFFF9CFF9 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:08 COM23_ 1141 chanel2 0xFFF9CFF8 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:08 COM23_ 1142 chanel1 0xFFF9D1ED test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:08 COM23_ 1143 chanel2 0xFFF9D1ED ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:09 COM23_ 1144 chanel1 0xFFF9D3E1 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:09 COM23_ 1145 chanel2 0xFFF9D3E1 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:09 COM23_ 1146 chanel1 0xFFF9D5D5 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:09 COM23_ 1147 chanel2 0xFFF9D5D5 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:10 COM23_ 1148 chanel1 0xFFF9D7C9 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:10 COM23_ 1149 chanel2 0xFFF9D7C9 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:10 COM23_ 1150 chanel1 0xFFF9D9BD test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:10 COM23_ 1151 chanel2 0xFFF9D9BD ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:11 COM23_ 1152 chanel1 0xFFF9DBB1 com.c:209> [35mAt: 254416 Avg: 29 %
+2022-02-28 11:07:11 COM23_ 1153 chanel1 0xFFF9DBB2 com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 11:07:11 COM23_ 1154 chanel1 0xFFF9DBB4 com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 11:07:11 COM23_ 1155 chanel1 0xFFF9DBB7 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:11 COM23_ 1156 chanel2 0xFFF9DBB1 ../src/COM/com.c:209> [35mAt: 262030 Avg: 31 %
+2022-02-28 11:07:11 COM23_ 1157 chanel2 0xFFF9DBB2 ../src/COM/com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 11:07:11 COM23_ 1158 chanel2 0xFFF9DBB5 ../src/COM/com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 11:07:11 COM23_ 1159 chanel2 0xFFF9DBB6 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:11 COM23_ 1160 chanel1 0xFFF9DDA5 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:11 COM23_ 1161 chanel2 0xFFF9DDA5 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:12 COM23_ 1162 chanel1 0xFFF9DF99 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:12 COM23_ 1163 chanel2 0xFFF9DF99 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:12 COM23_ 1164 chanel1 0xFFF9E18D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:12 COM23_ 1165 chanel2 0xFFF9E18D ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:13 COM23_ 1166 chanel1 0xFFF9E381 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:13 COM23_ 1167 chanel2 0xFFF9E381 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:13 COM23_ 1168 chanel1 0xFFF9E575 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:13 COM23_ 1169 chanel2 0xFFF9E575 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:14 COM23_ 1170 chanel1 0xFFF9E769 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:14 COM23_ 1171 chanel2 0xFFF9E769 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:14 COM23_ 1172 chanel1 0xFFF9E95D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:15 COM23_ 1173 chanel2 0xFFF9E95D ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:15 COM23_ 1174 chanel1 0xFFF9EB51 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:15 COM23_ 1175 chanel2 0xFFF9EB51 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:15 COM23_ 1176 chanel1 0xFFF9ED45 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:15 COM23_ 1177 chanel2 0xFFF9ED45 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:16 COM23_ 1178 chanel1 0xFFF9EF39 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:16 COM23_ 1179 chanel2 0xFFF9EF39 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:16 COM23_ 1180 chanel1 0xFFF9F12D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:16 COM23_ 1181 chanel2 0xFFF9F12D ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:17 COM23_ 1182 chanel1 0xFFF9F321 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:17 COM23_ 1183 chanel2 0xFFF9F321 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:18 COM23_ 1184 chanel1 0xFFF9F515 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:18 COM23_ 1185 chanel2 0xFFF9F515 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:18 COM23_ 1186 chanel1 0xFFF9F709 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:18 COM23_ 1187 chanel2 0xFFF9F709 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:18 COM23_ 1188 chanel1 0xFFF9F8FD test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:18 COM23_ 1189 chanel2 0xFFF9F8FD ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:19 COM23_ 1190 chanel1 0xFFF9FAF1 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:19 COM23_ 1191 chanel2 0xFFF9FAF1 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:19 COM23_ 1192 chanel1 0xFFF9FCE5 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:19 COM23_ 1193 chanel2 0xFFF9FCE5 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:20 COM23_ 1194 chanel1 0xFFF9FED9 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:20 COM23_ 1195 chanel2 0xFFF9FED9 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:20 COM23_ 1196 chanel1 0xFFFA00CD test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:20 COM23_ 1197 chanel2 0xFFFA00CD ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:21 COM23_ 1198 chanel1 0xFFFA02C1 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:21 COM23_ 1199 chanel2 0xFFFA02C1 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:21 COM23_ 1200 chanel1 0xFFFA04B5 com.c:209> [35mAt: 264916 Avg: 29 %
+2022-02-28 11:07:21 COM23_ 1201 chanel1 0xFFFA04B7 com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 11:07:22 COM23_ 1202 chanel1 0xFFFA04B8 com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 11:07:22 COM23_ 1203 chanel1 0xFFFA04BA test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:22 COM23_ 1204 chanel2 0xFFFA04B5 ../src/COM/com.c:209> [35mAt: 272530 Avg: 31 %
+2022-02-28 11:07:22 COM23_ 1205 chanel2 0xFFFA04B6 ../src/COM/com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 11:07:22 COM23_ 1206 chanel2 0xFFFA04B7 ../src/COM/com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-02-28 11:07:22 COM23_ 1207 chanel2 0xFFFA04B8 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:22 COM23_ 1208 chanel1 0xFFFA06A9 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:22 COM23_ 1209 chanel2 0xFFFA06A8 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:23 COM23_ 1210 chanel1 0xFFFA089D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:23 COM23_ 1211 chanel2 0xFFFA089C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:23 COM23_ 1212 chanel1 0xFFFA0A91 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:23 COM23_ 1213 chanel2 0xFFFA0A90 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:23 COM23_ 1214 chanel1 0xFFFA0C85 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:24 COM23_ 1215 chanel2 0xFFFA0C84 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:24 COM23_ 1216 chanel1 0xFFFA0E79 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:24 COM23_ 1217 chanel2 0xFFFA0E78 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:24 COM23_ 1218 chanel1 0xFFFA106D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:24 COM23_ 1219 chanel2 0xFFFA106C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:25 COM23_ 1220 chanel1 0xFFFA1261 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:25 COM23_ 1221 chanel2 0xFFFA1260 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:25 COM23_ 1222 chanel1 0xFFFA1455 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:25 COM23_ 1223 chanel2 0xFFFA1454 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:26 COM23_ 1224 chanel1 0xFFFA1649 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:26 COM23_ 1225 chanel2 0xFFFA1648 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:26 COM23_ 1226 chanel1 0xFFFA183D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-02-28 11:07:26 COM23_ 1227 chanel2 0xFFFA183C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:33 COM23_ l1 0xFFF95109 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:33 COM23_ 998 chanel2 0xFFF9510A ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:33 COM23_ 999 chanel1 0xFFF952FD test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:34 COM23_ 1000 chanel2 0xFFF952FE ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:34 COM23_ 1001 chanel1 0xFFF954F1 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:34 COM23_ 1002 chanel2 0xFFF954F2 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:35 COM23_ 1003 chanel1 0xFFF956E5 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:35 COM23_ 1004 chanel2 0xFFF956E6 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:35 COM23_ 1005 chanel1 0xFFF958D9 com.c:209> [35mAt: 220919 Avg: 22 %
+2022-03-03 10:26:35 COM23_ 1006 chanel1 0xFFF958DA com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-03-03 10:26:36 COM23_ 1007 chanel1 0xFFF958DB com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-03-03 10:26:36 COM23_ 1008 chanel1 0xFFF958DC test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:36 COM23_ 1009 chanel2 0xFFF958DA ../src/COM/com.c:209> [35mAt: 228503 Avg: 26 %
+2022-03-03 10:26:36 COM23_ 1010 chanel2 0xFFF958DB ../src/COM/com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-03-03 10:26:36 COM23_ 1011 chanel2 0xFFF958DC ../src/COM/com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-03-03 10:26:37 COM23_ 1012 chanel2 0xFFF958DD ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:37 COM23_ 1013 chanel1 0xFFF95ACD test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:37 COM23_ 1014 chanel2 0xFFF95ACE ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:37 COM23_ 1015 chanel1 0xFFF95CC1 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:38 COM23_ 1016 chanel2 0xFFF95CC2 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:38 COM23_ 1017 chanel1 0xFFF95EB5 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:38 COM23_ 1018 chanel2 0xFFF95EB6 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:38 COM23_ 1019 chanel1 0xFFF960A9 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:38 COM23_ 1020 chanel2 0xFFF960AA ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:39 COM23_ 1021 chanel1 0xFFF9629D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:39 COM23_ 1022 chanel2 0xFFF9629E ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:39 COM23_ 1023 chanel1 0xFFF96491 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:39 COM23_ 1024 chanel2 0xFFF96492 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:39 COM23_ 1025 chanel1 0xFFF96685 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:39 COM23_ 1026 chanel2 0xFFF96686 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:39 COM23_ 1027 chanel1 0xFFF96879 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:39 COM23_ 1028 chanel2 0xFFF9687A ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:40 COM23_ 1029 chanel1 0xFFF96A6D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:40 COM23_ 1030 chanel2 0xFFF96A6E ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:40 COM23_ 1031 chanel1 0xFFF96C61 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:40 COM23_ 1032 chanel2 0xFFF96C62 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:40 COM23_ 1033 chanel1 0xFFF96E55 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:41 COM23_ 1034 chanel2 0xFFF96E56 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:41 COM23_ 1035 chanel1 0xFFF97049 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:41 COM23_ 1036 chanel2 0xFFF9704A ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:42 COM23_ 1037 chanel1 0xFFF9723D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:42 COM23_ 1038 chanel2 0xFFF9723E ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:42 COM23_ 1039 chanel1 0xFFF97431 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:42 COM23_ 1040 chanel2 0xFFF97432 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:43 COM23_ 1041 chanel1 0xFFF97625 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:43 COM23_ 1042 chanel2 0xFFF97626 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:43 COM23_ 1043 chanel1 0xFFF97819 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:43 COM23_ 1044 chanel2 0xFFF9781A ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:43 COM23_ 1045 chanel1 0xFFF97A0D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:44 COM23_ 1046 chanel2 0xFFF97A0E ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:44 COM23_ 1047 chanel1 0xFFF97C01 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:44 COM23_ 1048 chanel2 0xFFF97C02 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:44 COM23_ 1049 chanel1 0xFFF97DF5 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:45 COM23_ 1050 chanel2 0xFFF97DF6 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:45 COM23_ 1051 chanel1 0xFFF97FE9 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:45 COM23_ 1052 chanel2 0xFFF97FEA ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:46 COM23_ 1053 chanel1 0xFFF981DD com.c:209> [35mAt: 231419 Avg: 22 %
+2022-03-03 10:26:46 COM23_ 1054 chanel1 0xFFF981DE com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-03-03 10:26:46 COM23_ 1055 chanel1 0xFFF981DF com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-03-03 10:26:46 COM23_ 1056 chanel1 0xFFF981E0 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:47 COM23_ 1057 chanel2 0xFFF981DE ../src/COM/com.c:209> [35mAt: 239003 Avg: 25 %
+2022-03-03 10:26:47 COM23_ 1058 chanel2 0xFFF981DF ../src/COM/com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-03-03 10:26:47 COM23_ 1059 chanel2 0xFFF981E0 ../src/COM/com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-03-03 10:26:47 COM23_ 1060 chanel2 0xFFF981E1 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:47 COM23_ 1061 chanel1 0xFFF983D1 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:48 COM23_ 1062 chanel1 0xFFF983D2 tst_tsk.c:271> Abe-start
+2022-03-03 10:26:48 COM23_ 1063 chanel2 0xFFF983D2 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:48 COM23_ 1064 chanel2 0xFFF983D3 ../src/tst/tst_tsk.c:271> Abe-start
+2022-03-03 10:26:48 COM23_ 1065 chanel1 0xFFF98593 Schedule.c:977>main cycle 0x00000FA0
+2022-03-03 10:26:49 COM23_ 1066 chanel1 0xFFF985C5 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:49 COM23_ 1067 chanel2 0xFFF985C6 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:49 COM23_ 1068 chanel1 0xFFF987B9 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:49 COM23_ 1069 chanel2 0xFFF987BA ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:49 COM23_ 1070 chanel1 0xFFF989AD test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:50 COM23_ 1071 chanel2 0xFFF989AE ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:50 COM23_ 1072 chanel1 0xFFF98BA1 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:50 COM23_ 1073 chanel2 0xFFF98BA2 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:50 COM23_ 1074 chanel1 0xFFF98D95 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:50 COM23_ 1075 chanel2 0xFFF98D96 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:50 COM23_ 1076 chanel1 0xFFF98F89 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:50 COM23_ 1077 chanel2 0xFFF98F8A ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:50 COM23_ 1078 chanel1 0xFFF9917D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:50 COM23_ 1079 chanel2 0xFFF9917E ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:50 COM23_ 1080 chanel1 0xFFF99371 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:51 COM23_ 1081 chanel2 0xFFF99372 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:51 COM23_ 1082 chanel1 0xFFF99565 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:51 COM23_ 1083 chanel2 0xFFF99566 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:51 COM23_ 1084 chanel1 0xFFF99759 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:51 COM23_ 1085 chanel2 0xFFF9975A ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:52 COM23_ 1086 chanel1 0xFFF9994D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:52 COM23_ 1087 chanel2 0xFFF9994E ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:52 COM23_ 1088 chanel1 0xFFF99B41 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:52 COM23_ 1089 chanel2 0xFFF99B42 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:53 COM23_ 1090 chanel1 0xFFF99D35 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:53 COM23_ 1091 chanel2 0xFFF99D36 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:53 COM23_ 1092 chanel1 0xFFF99F29 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:53 COM23_ 1093 chanel2 0xFFF99F2A ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:53 COM23_ 1094 chanel1 0xFFF9A11D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:54 COM23_ 1095 chanel2 0xFFF9A11E ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:54 COM23_ 1096 chanel1 0xFFF9A311 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:54 COM23_ 1097 chanel2 0xFFF9A312 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:54 COM23_ 1098 chanel1 0xFFF9A505 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:55 COM23_ 1099 chanel2 0xFFF9A506 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:55 COM23_ 1100 chanel1 0xFFF9A6F9 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:55 COM23_ 1101 chanel2 0xFFF9A6FA ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:56 COM23_ 1102 chanel1 0xFFF9A8ED test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:56 COM23_ 1103 chanel2 0xFFF9A8EE ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:56 COM23_ 1104 chanel1 0xFFF9AAE1 com.c:209> [35mAt: 241919 Avg: 22 %
+2022-03-03 10:26:56 COM23_ 1105 chanel1 0xFFF9AAE2 com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-03-03 10:26:56 COM23_ 1106 chanel1 0xFFF9AAE3 com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-03-03 10:26:57 COM23_ 1107 chanel1 0xFFF9AAE4 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:57 COM23_ 1108 chanel2 0xFFF9AAE2 ../src/COM/com.c:209> [35mAt: 249503 Avg: 25 %
+2022-03-03 10:26:57 COM23_ 1109 chanel2 0xFFF9AAE3 ../src/COM/com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-03-03 10:26:57 COM23_ 1110 chanel2 0xFFF9AAE4 ../src/COM/com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-03-03 10:26:58 COM23_ 1111 chanel2 0xFFF9AAE5 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:58 COM23_ 1112 chanel1 0xFFF9ACD5 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:58 COM23_ 1113 chanel2 0xFFF9ACD6 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:58 COM23_ 1114 chanel1 0xFFF9AEC9 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:58 COM23_ 1115 chanel2 0xFFF9AECA ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:59 COM23_ 1116 chanel1 0xFFF9B0BD test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:59 COM23_ 1117 chanel2 0xFFF9B0BE ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:59 COM23_ 1118 chanel1 0xFFF9B2B1 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:59 COM23_ 1119 chanel2 0xFFF9B2B2 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:26:59 COM23_ 1120 chanel1 0xFFF9B4A5 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:27:00 COM23_ 1121 chanel2 0xFFF9B4A6 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:27:00 COM23_ 1122 chanel1 0xFFF9B699 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:27:00 COM23_ 1123 chanel2 0xFFF9B69A ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:27:00 COM23_ 1124 chanel1 0xFFF9B88D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:27:00 COM23_ 1125 chanel2 0xFFF9B88E ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:27:00 COM23_ 1126 chanel1 0xFFF9BA81 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:27:00 COM23_ 1127 chanel2 0xFFF9BA82 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:27:01 COM23_ 1128 chanel1 0xFFF9BC75 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:27:01 COM23_ 1129 chanel2 0xFFF9BC76 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:27:01 COM23_ 1130 chanel1 0xFFF9BE69 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:27:01 COM23_ 1131 chanel2 0xFFF9BE6A ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:27:01 COM23_ 1132 chanel1 0xFFF9C05D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:04 COM23_ 112 chanel1 0xFFF69C76 Schedule.c:862>Initializations success
+2022-03-03 10:32:05 COM23_ 113 chanel1 0xFFF69C77 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:05 COM23_ 114 chanel2 0xFFF69C78 ../src/SCHED/Schedule.c:862>Initializations success
+2022-03-03 10:32:05 COM23_ 115 chanel2 0xFFF69C7A ../src/FSFB2/GM_FSFB2_V_SESSION.c:826>Creating Session: SSType, SSId, LogId, Idx 0x0000003C 0x00000005 0x00000005 0x00000000
+2022-03-03 10:32:05 COM23_ 116 chanel2 0xFFF69C7B ../src/FSFB2/GM_FSFB2_V_SESSION.c:826>Creating Session: SSType, SSId, LogId, Idx 0x0000003C 0x00000006 0x00000006 0x00000001
+2022-03-03 10:32:05 COM23_ 117 chanel1 0xFFF69C9B can_open.c:712>Received NMT_START 0x00000000
+2022-03-03 10:32:06 COM23_ 118 chanel1 0xFFF69C9C can_open.c:712>Received NMT_START 0x00000001
+2022-03-03 10:32:06 COM23_ 119 chanel1 0xFFF69C9D can_open.c:712>Received NMT_START 0x00000000
+2022-03-03 10:32:06 COM23_ 120 chanel1 0xFFF69C9D can_open.c:712>Received NMT_START 0x00000001
+2022-03-03 10:32:06 COM23_ 121 chanel2 0xFFF69C7C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:07 COM23_ 122 chanel2 0xFFF69C9C ../src/CAN/can_open.c:712>Received NMT_START 0x00000000
+2022-03-03 10:32:07 COM23_ 123 chanel2 0xFFF69C9D ../src/CAN/can_open.c:712>Received NMT_START 0x00000001
+2022-03-03 10:32:07 COM23_ 124 chanel2 0xFFF69C9D ../src/CAN/can_open.c:712>Received NMT_START 0x00000000
+2022-03-03 10:32:07 COM23_ 125 chanel2 0xFFF69C9E ../src/CAN/can_open.c:712>Received NMT_START 0x00000001
+2022-03-03 10:32:07 COM23_ 126 chanel1 0xFFF69E6A test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:08 COM23_ 127 chanel2 0xFFF69E6B ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:08 COM23_ 128 chanel1 0xFFF6A05E test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:08 COM23_ 129 chanel2 0xFFF6A05F ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:08 COM23_ 130 chanel1 0xFFF6A08F RECORD_utl.c:108>Log Entering function: MainIdle
+2022-03-03 10:32:08 COM23_ 131 chanel2 0xFFF6A0B6 ../src/RECORD/RECORD_utl.c:108>Log Entering function: MainIdle
+2022-03-03 10:32:08 COM23_ 132 chanel1 0xFFF6A252 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:08 COM23_ 133 chanel2 0xFFF6A253 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:08 COM23_ 134 chanel1 0xFFF6A446 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:08 COM23_ 135 chanel2 0xFFF6A447 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:08 COM23_ 136 chanel1 0xFFF6A63A test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:09 COM23_ 137 chanel2 0xFFF6A63B ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:09 COM23_ 138 chanel1 0xFFF6A82E test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:09 COM23_ 139 chanel2 0xFFF6A82F ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:09 COM23_ 140 chanel1 0xFFF6AA22 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:10 COM23_ 141 chanel2 0xFFF6AA23 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:10 COM23_ 142 chanel1 0xFFF6AC16 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:10 COM23_ 143 chanel2 0xFFF6AC17 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:10 COM23_ 144 chanel1 0xFFF6AE0A test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:10 COM23_ 145 chanel2 0xFFF6AE0B ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:11 COM23_ 146 chanel1 0xFFF6AFFE test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:11 COM23_ 147 chanel2 0xFFF6AFFF ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:11 COM23_ 148 chanel1 0xFFF6B1F2 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:11 COM23_ 149 chanel2 0xFFF6B1F3 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:12 COM23_ 150 chanel1 0xFFF6B3E6 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:12 COM23_ 151 chanel2 0xFFF6B3E7 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:12 COM23_ 152 chanel1 0xFFF6B5DA test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:12 COM23_ 153 chanel2 0xFFF6B5DB ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:12 COM23_ 154 chanel1 0xFFF6B7CE test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:13 COM23_ 155 chanel2 0xFFF6B7CF ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:13 COM23_ 156 chanel1 0xFFF6B9C2 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:13 COM23_ 157 chanel2 0xFFF6B9C3 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:13 COM23_ 158 chanel1 0xFFF6BBB6 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:13 COM23_ 159 chanel2 0xFFF6BBB7 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:14 COM23_ 160 chanel1 0xFFF6BDAA test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:14 COM23_ 161 chanel2 0xFFF6BDAB ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:14 COM23_ 162 chanel1 0xFFF6BF9E test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:14 COM23_ 163 chanel2 0xFFF6BF9F ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:15 COM23_ 164 chanel1 0xFFF6C192 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:15 COM23_ 165 chanel2 0xFFF6C193 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:15 COM23_ 166 chanel1 0xFFF6C386 com.c:209> [35mAt: 51619 Avg: 21 %
+2022-03-03 10:32:15 COM23_ 167 chanel1 0xFFF6C387 com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-03-03 10:32:15 COM23_ 168 chanel1 0xFFF6C388 com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-03-03 10:32:16 COM23_ 169 chanel1 0xFFF6C389 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:16 COM23_ 170 chanel2 0xFFF6C387 ../src/COM/com.c:209> [35mAt: 59197 Avg: 25 %
+2022-03-03 10:32:16 COM23_ 171 chanel2 0xFFF6C389 ../src/COM/com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-03-03 10:32:16 COM23_ 172 chanel2 0xFFF6C38A ../src/COM/com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-03-03 10:32:16 COM23_ 173 chanel2 0xFFF6C38B ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:17 COM23_ 174 chanel1 0xFFF6C57A test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:17 COM23_ 175 chanel2 0xFFF6C57B ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:17 COM23_ 176 chanel1 0xFFF6C76E test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:17 COM23_ 177 chanel2 0xFFF6C76F ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:18 COM23_ 178 chanel1 0xFFF6C962 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:18 COM23_ 179 chanel2 0xFFF6C963 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:18 COM23_ 180 chanel1 0xFFF6CB56 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:18 COM23_ 181 chanel2 0xFFF6CB57 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:18 COM23_ 182 chanel1 0xFFF6CD4A test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:19 COM23_ 183 chanel2 0xFFF6CD4B ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:19 COM23_ 184 chanel1 0xFFF6CF3E test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:19 COM23_ 185 chanel2 0xFFF6CF3F ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:19 COM23_ 186 chanel1 0xFFF6D132 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:19 COM23_ 187 chanel2 0xFFF6D133 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:19 COM23_ 188 chanel1 0xFFF6D326 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:19 COM23_ 189 chanel2 0xFFF6D327 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:19 COM23_ 190 chanel1 0xFFF6D51A test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:19 COM23_ 191 chanel2 0xFFF6D51B ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:19 COM23_ 192 chanel1 0xFFF6D70E test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:20 COM23_ 193 chanel2 0xFFF6D70F ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:20 COM23_ 194 chanel1 0xFFF6D902 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:20 COM23_ 195 chanel2 0xFFF6D903 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:20 COM23_ 196 chanel1 0xFFF6DAF6 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:20 COM23_ 197 chanel2 0xFFF6DAF7 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:21 COM23_ 198 chanel1 0xFFF6DCEA test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:21 COM23_ 199 chanel2 0xFFF6DCEB ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:22 COM23_ 200 chanel1 0xFFF6DEDE test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:22 COM23_ 201 chanel2 0xFFF6DEDF ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:22 COM23_ 202 chanel1 0xFFF6E0D2 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:22 COM23_ 203 chanel2 0xFFF6E0D3 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:22 COM23_ 204 chanel1 0xFFF6E2C6 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:23 COM23_ 205 chanel2 0xFFF6E2C7 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:23 COM23_ 206 chanel1 0xFFF6E4BA test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:23 COM23_ 207 chanel2 0xFFF6E4BB ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:23 COM23_ 208 chanel1 0xFFF6E6AE test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:24 COM23_ 209 chanel2 0xFFF6E6AF ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:24 COM23_ 210 chanel1 0xFFF6E8A2 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:24 COM23_ 211 chanel2 0xFFF6E8A3 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:25 COM23_ 212 chanel1 0xFFF6EA96 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:25 COM23_ 213 chanel2 0xFFF6EA97 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:25 COM23_ 214 chanel1 0xFFF6EC8A com.c:209> [35mAt: 62119 Avg: 21 %
+2022-03-03 10:32:25 COM23_ 215 chanel1 0xFFF6EC8B com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-03-03 10:32:25 COM23_ 216 chanel1 0xFFF6EC8C com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-03-03 10:32:26 COM23_ 217 chanel1 0xFFF6EC8D test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:26 COM23_ 218 chanel2 0xFFF6EC8B ../src/COM/com.c:209> [35mAt: 69697 Avg: 25 %
+2022-03-03 10:32:26 COM23_ 219 chanel2 0xFFF6EC8D ../src/COM/com.c:214> LocalNetStatus net0 A B, NET1 A B, COMMUN A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-03-03 10:32:26 COM23_ 220 chanel2 0xFFF6EC8E ../src/COM/com.c:215> OtherNetStatus net0 A B, NET1 A B, SAFETY A B 0x00000001 0x00000001 0x00000001 0x00000001 0x00000002 0x00000002
+2022-03-03 10:32:27 COM23_ 221 chanel2 0xFFF6EC8E ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:27 COM23_ 222 chanel1 0xFFF6EE7E test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:27 COM23_ 223 chanel2 0xFFF6EE7F ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:27 COM23_ 224 chanel1 0xFFF6F072 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:27 COM23_ 225 chanel2 0xFFF6F073 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:28 COM23_ 226 chanel1 0xFFF6F266 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:28 COM23_ 227 chanel2 0xFFF6F267 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:28 COM23_ 228 chanel1 0xFFF6F45A test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:28 COM23_ 229 chanel2 0xFFF6F45C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:28 COM23_ 230 chanel1 0xFFF6F64E test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:29 COM23_ 231 chanel2 0xFFF6F650 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:29 COM23_ 232 chanel1 0xFFF6F842 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:29 COM23_ 233 chanel2 0xFFF6F844 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:29 COM23_ 234 chanel1 0xFFF6FA36 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:29 COM23_ 235 chanel2 0xFFF6FA38 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:29 COM23_ 236 chanel1 0xFFF6FC2A test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:29 COM23_ 237 chanel2 0xFFF6FC2C ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:29 COM23_ 238 chanel1 0xFFF6FE1E test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:29 COM23_ 239 chanel2 0xFFF6FE1F ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:30 COM23_ 240 chanel1 0xFFF70012 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:30 COM23_ 241 chanel2 0xFFF70013 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:30 COM23_ 242 chanel1 0xFFF70206 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:30 COM23_ 243 chanel2 0xFFF70207 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:31 COM23_ 244 chanel1 0xFFF703FA test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:31 COM23_ 245 chanel2 0xFFF703FB ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:31 COM23_ 246 chanel1 0xFFF705EE test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:32 COM23_ 247 chanel2 0xFFF705EF ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:32 COM23_ 248 chanel1 0xFFF707E2 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:32 COM23_ 249 chanel2 0xFFF707E3 ../src/COM/test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000
+2022-03-03 10:32:32 COM23_ 250 chanel1 0xFFF709D6 test_def.c:620>The status of SCHED_UTL_V_StandbyTransition is:  0x00000000

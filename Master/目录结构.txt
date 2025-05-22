@@ -1,0 +1,112 @@
+﻿├─testplatform
+   ├─.idea # pyCharm 配置
+   ├─.vscode #vs code 配置
+   ├─case_test # 自动化测试
+      ├─testcase # 桩保存路径
+      │  main.py # 自动化测试主入口
+      └─ caseFunc.py # 自动化库
+   ├─Log_Log # Log 
+      ├─default # log 默认保存位置
+      ├─funclog # 程序运行异常log
+      ├─database # 所有的log 储存时会在这里储存一份
+         │  updateview.py # 更新数据库
+         │  opendb.bat # 用这个脚本打开数据库
+         └─ SQLiteSpy # 最终打开数据库的软件
+   ├─py_lib # 供Python 使用的库
+      │  funcLog.py # 保存运行的参数log
+      │  logdatabase.py # 保存log
+      │  autopower.py # 管理自动电源
+      │  logprint.py # 带文件行号的打印
+      │  mib.py # mib 
+      │  serialread.py # 串口
+      │  simulator.py # 模拟器
+      │  sub_module_base.py # 部分子模块的父类
+      │  trys.py # 批量创建协程
+      │  vmtcp.py # 与虚拟机通信
+      └─ wireShark.py # 抓包
+   ├─tests # 单元测试
+   ├─venv # 虚拟环境
+      └─install.bat # 配置虚拟环境
+   │  copy_build.bat # 一键编译源代码加在线更新
+   │  log_manger.pyw # python ui (仅python3 可用)
+   │  lru_print.py #log_manger.pyw 会调用
+   │  setip.bat # 一键配置ip
+   │  udp_loglib.py # 测试平台的库
+   └─ vcu_test.py # 测试平台入口
+ 
+├─VCUCODE
+   │  com.c # 应用文件 参考
+   │  guest.c # 应用文件 参考
+   │  print.c # print 参考
+   │  tst.c # tst 主要的函数
+   │  tst.h    # tst 函数、变量 声明 和 配置
+   │  tstswitch.c # 桩切换
+   │  tst_define.h # 兼容不同环境
+   │  tstswitch.h
+   │  tst_tsk.c # 测试任务函数
+   │  tst_tsk.h
+   └─ tst_vcu_stubs.h # 桩定义
+├─rut  # 在线更新
+   ├─cfg #在线更新配置
+   ├─CPU_A 
+   ├─CPU_B
+   ├─dump # dump log 存放
+   ├─input # 配置文件路径
+   ├─log 
+   ├─update #在线更新镜像文件缓存
+   │  dump.bat # 在线dump
+   │  light_update.py # 在线更新镜像的python
+   └─ UpdateImage.bat #在线更新镜像命令
+
+├─文档
+├─VMtools
+   │  .gitignore
+   │  cfgSS.py # link.py 会调用
+   │  copy-s19-RUT-VCU.bat# 所有子目录的copy 会调用
+   │  Copy_SrcToVM.bat # copy 源代码至虚拟机
+   │  copyfromVM.py # 所有子目录的copy 会调用，在copy-s19-RUT-VCU.bat 之前
+   │  Flash_basic_conf.bat # 所有子目录的烧录文件会调用
+   │  link.py   #更换路径时 需在新路径下运行该文件
+   │  MSYS.bat # 会调用MSYS.py  
+   │  MSYS.py #会调用 msyslog.py，过滤掉msyslog.py不重要的输出
+   │  msyslog.py # 通过sh 运行makefile ，捕获输出并进行处理
+   │  
+   ├─Flash_Es
+   │  │  3_Guest_board_electronic_stamp.bat # SVCU 电子戳
+   │  │  COM_board_electronic_stamp-S.bat # 第二个 MVCU 电子戳
+   │  │  COM_board_electronic_stamp-S.cfg
+   │  │  COM_board_electronic_stamp.bat # 第一个MVCU 电子戳
+   │  │  COM_board_electronic_stamp.cfg
+   │  │  Guest_board_electronic_stamp.cfg
+   │  ├─es
+   │  └─es_com
+   │          
+   ├─mVCU_DEV_GUEST 
+   │  │  1_Flash_basic_conf_A_CW.bat # 烧录CPUA
+   │  │  3_Flash_basic_conf_B_GCC.bat # 烧录CPUB
+   │  │  copy.bat  # 复制所需文件至VCU_S19
+   │  │  Flash_basic_conf_A_CW.cfg
+   │  │  Flash_basic_conf_B_GCC.cfg
+   │  │  input.txt # sh 的 输入，无需手动设置
+   │  │  MSYS.lnk  # 编译当前路径
+   │  │  output.msys # 编译的输出
+   │  │  temp.log
+   │  │  
+   │  ├─build # 编译文件路径
+   │  ├─guest 
+   │  ├─kernel
+   │  ├─Project_Settings # VCU工程
+   │  └─SI                      # sroce insight 工程
+   │          
+   ├─Restore_fuse_new/secend
+   │  │  4_Restore_SW_FUSE_CPUA.bat 
+   │  │  5_Restore_SW_FUSE_CPUB.bat
+   │  │  STEP_Restore_SW_FUSE_MSTEP_CPUA.cfg
+   │  │  STEP_Restore_SW_FUSE_MSTEP_CPUB.cfg
+   │  │ 
+   │  └─fuse_s19  
+   ├─site-packages  # 第三方库 ，需复制到python27/lib/site-packages
+   ├─sVCU_DEV_GUEST 
+   ├─VCU_DEV
+   ├─VCU_DEV_MVCU
+   └─VCU_s19

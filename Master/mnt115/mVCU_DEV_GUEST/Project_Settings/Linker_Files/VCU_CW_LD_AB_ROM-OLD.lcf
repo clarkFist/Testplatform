@@ -1,0 +1,237 @@
+ ####################################################################################
+ # Copyright � 2018 CASCO Signal. All rights reserved.                          #
+ #                                                                                  #
+ #                                                                                  #
+ #    Date: 2018                                                                    #
+ #                                                                                  #
+ # DESCRIPTION                                                                      #
+ #   Linker command file for rom-console target.                                    #
+ #                                                                                  #
+ #                                                                                  #
+ #                                                                                  #
+ # NOTE                                                                             #
+ #                                                                                  #
+ #                                                                                  #
+ #                                                                                  #
+ # HISTORY                                                                          #
+ # 1. created by J.s.,20180103.                                                                                 #
+ ####################################################################################
+
+MEMORY
+{
+    vector_ram  (RWX)   : ORIGIN = 0x80000000, LENGTH = 0x00000500
+    sram        (RWX)   : ORIGIN = 0x80000000, LENGTH = 0x00010000  #64KB
+    sram_user   (RWX)   : ORIGIN = 0x80000500, LENGTH = 0x0000F700
+    sram_stack_boot(RWX)   : ORIGIN = 0x8000FC00, LENGTH = 0x00000400
+    ext_sdram_data (RWX)   : ORIGIN = 0x40000000, LENGTH = 0x00800000 # 0x00800000 = 8M ,0x04000000 = 64MB
+   # ipsbar      (RWX)   : ORIGIN = 0x40000000, LENGTH = 0x00000001
+    ext_flash   (RX)    : ORIGIN = 0x20000000, LENGTH = 0x00320000 
+    ext_flash_ES   (RX) : ORIGIN = 0x20320000, LENGTH = 0x00CE0000
+    ext_sdram_code  (RWX)   : ORIGIN = 0x44000000, LENGTH = 0x00800000 # 0x00800000 = 8M ,0x04000000 = 64MB
+}
+
+
+SECTIONS
+{
+
+    .vector_ram 	: {} > vector_ram
+#    .ipsbar     	: {} > ipsbar
+    .sram       	: {} > sram
+    .ext_sdram_data   	: {} > ext_sdram_data
+    .ext_flash 	 	: {} > ext_flash
+    .sram_user  	: {} > sram_user
+    .ext_sdram_code 	: {} > ext_sdram_code
+    .ext_flash_ES 	: {} > ext_flash_ES
+
+    .boot :
+    {
+        ___START_VECTOR_ROM = .;
+        *(.textvectors)
+        *(.rodatavectors)
+        ___END_VECTOR_ROM = .;
+        ___START_BOOT_ROM = .;
+        *(.textboot)
+        *(.rodataboot)
+        *(.rodata.str1.1)
+        . = ALIGN (0x4);
+        ___END_BOOT_ROM = .;
+
+    } >> ext_flash
+
+    ___EXT_FLASH = ADDR(.boot);
+
+	___CRC_FLASH_START = ___EXT_FLASH + (___END_BOOT_ROM - ___START_VECTOR_ROM);
+
+	.crc : AT(___CRC_FLASH_START)
+	{
+		___CRC_ROM_START = .;
+		*(.CRC)
+		. = ALIGN (0x4);
+		___CRC_ROM_END 	= .;
+	} >> ext_flash
+
+    ___CODE_SRAM_FLASH_START = ___CRC_FLASH_START + (___CRC_ROM_END - ___CRC_ROM_START);
+    .sram_code : AT(___CODE_SRAM_FLASH_START)
+    {
+        ___START_CODE_SRAM = .;
+        *(.textsram)
+        . = ALIGN (0x4);
+        ___END_CODE_SRAM = .;
+    } >> sram_user
+
+    ___CODE_FLASH_START = ___CODE_SRAM_FLASH_START + ( ___END_CODE_SRAM - ___START_CODE_SRAM);
+
+
+
+    .code : AT(___CODE_FLASH_START)
+    {
+        ___START_CODE_ROM = .;
+        *(.text)
+        *(.code)
+        . = ALIGN (0x4);
+        ___END_CODE_ROM = .;
+    } >> ext_sdram_code
+
+    ___DATA_SRAM_FLASH_START = ___CODE_FLASH_START + ( ___END_CODE_ROM - ___START_CODE_ROM);
+    ___DATA_RAM_START = ADDR(.sram_user);
+
+    .initialized_data_sram : AT(___DATA_SRAM_FLASH_START)
+    {
+        ___DATA_SRAM_START = .;
+
+        *(.dataos)
+        *(.sdataos)
+        *(.idata_sram)
+	*(.databoot)
+        . = ALIGN (0x4);
+        ___NO_TEST_SRAM_INIT_SECTION_START = .;
+        *(.idata_no_memtest_sram)
+        . = ALIGN (0x4);
+        ___NO_TEST_SRAM_INIT_SECTION_END = .;
+
+        ___DATA_SRAM_END = .;
+
+    } >> sram_user
+
+	___CONST_SRAM_FLASH_START = ___DATA_SRAM_FLASH_START + (___DATA_SRAM_END - ___DATA_SRAM_START);
+
+    .initialized_constant_sram : AT(___CONST_SRAM_FLASH_START)
+    {
+         ___CONST_SRAM_START = .;
+        *(.rodataos)
+	    . = ALIGN (0x4);
+        ___CONST_SRAM_END = .;
+        ___DATA_END = .;
+    } >> sram_user
+
+    ___DATA_EXT_FLASH_START  = ___CONST_SRAM_FLASH_START + (___CONST_SRAM_END - ___CONST_SRAM_START);
+
+	___DATA_EXT_START = ADDR(.ext_sdram_data);
+    /* Default is to EXT RAM */
+    .initialized_data_extram : AT(___DATA_EXT_FLASH_START)
+    {
+        ___DATA_EXT_SDRAM_DATA_START = .;
+        ALIGNALL(4);
+        *(.data)
+        *(.sdata)
+
+        . = ALIGN (0x4);
+        ___DCA_INIT_SECTION_START = .;
+        *(.idata_dca)
+        . = ALIGN (0x4);
+        ___DCA_INIT_SECTION_END = .;
+
+        . = ALIGN (0x4);
+        ___NO_TEST_INIT_SECTION_START = .;
+        *(.idata_no_memtest)
+        . = ALIGN (0x4);
+        ___NO_TEST_INIT_SECTION_END = .;
+
+        ___DATA_EXT_SDRAM_DATA_END = .;
+    } >> ext_sdram_data
+
+    ___CONST_EXT_FLASH_START = ___DATA_EXT_FLASH_START + (___DATA_EXT_SDRAM_DATA_END - ___DATA_EXT_SDRAM_DATA_START);
+
+    .initialized_constant_extram : AT(___CONST_EXT_FLASH_START)
+    {
+        ___CONST_EXT_SDRAM_CODE_START = .;
+        *(.rodata)
+        . = ALIGN (0x4);
+        ___CONST_EXT_SDRAM_CODE_END = .;
+        ___DATA_EXT_END = .;
+   } >> ext_sdram_code
+
+
+     .uninitialized_data_sram :
+    {
+        ___BSS_START = .;
+        ALIGNALL(4);
+        *(.bssos)
+        *(.sbssos)
+
+        *(.udata_sram)
+
+        . = ALIGN (0x4);
+        ___NO_TEST_SRAM_UNINIT_SECTION_START = .;
+        *(.udata_no_memtest_sram)
+        . = ALIGN (0x4);
+        ___NO_TEST_SRAM_UNINIT_SECTION_END = .;
+
+        ___BSS_END = .;
+		. = ALIGN (0x4);
+        ___HEAP_START   = .;
+        .                   = . + 0x0000;
+        ___HEAP_END     = .;
+
+    } >> sram_user
+
+     .uninitialized_data_stack_boot :
+    {
+        ___SP_END      = .;
+	*(.bootstack)
+        ___SP_INIT      = .;
+    } > sram_stack_boot
+
+    /* Default is to Ext RAM */
+    .uninitialized_data_extram :
+    {
+        ___BSS_EXT_SDRAM_DATA_START = .;
+        ALIGNALL(4);
+        *(.bss)
+        *(COMMON)
+        *(.sbss)
+        *(SCOMMON)
+
+	. = ALIGN (0x4);
+	___DCA_UNINIT_SECTION_START = .;
+       	*(.udata_dca)
+       	. = ALIGN (0x4);
+       	___DCA_UNINIT_SECTION_END = .;
+
+	. = ALIGN (0x4);
+	___NO_TEST_UNINIT_SECTION_START = .;
+       	*(.udata_no_memtest)
+       	. = ALIGN (0x4);
+       	___NO_TEST_UNINIT_SECTION_END = .;
+
+        ___BSS_EXT_SDRAM_DATA_END = .;
+    } >> ext_sdram_data
+
+#    ___IPSBAR              = ADDR(.ipsbar);
+    ___VECTOR_RAM          = ADDR(.vector_ram);
+    ___VECTOR_RAM_END      = ___VECTOR_RAM + 0x400;
+    ___SDRAM               = 0;
+    ___SRAM                = ADDR(.sram);
+    ___EXT_SDRAM_DATA         = ADDR(.ext_sdram_data);
+    ___EXT_SDRAM_CODE		   = ADDR(.ext_sdram_code);
+    ___SRAM_CODE		   = ADDR(.sram_code);
+    ___EXT_FLASH           = ADDR(.ext_flash);
+    ___EXT_FLASH_END_USE   = ___CONST_EXT_FLASH_START + (___CONST_EXT_SDRAM_CODE_END - ___CONST_EXT_SDRAM_CODE_START);
+    __SP_INIT              = ___SP_INIT;
+    ___EXT_FLASH_ES         = ADDR(.ext_flash_ES);
+    
+    __SRAM = ___SRAM;
+    __SP_END              = ___SP_END;
+
+
+}

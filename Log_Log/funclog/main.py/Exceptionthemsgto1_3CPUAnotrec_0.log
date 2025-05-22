@@ -1,0 +1,206 @@
+2021-11-03 16:52:19 main.py 127 <module> __init__     form = udp_loglib.TestPlatForm(18125, 18125, set_client=False)\n (18125, 18125) {'set_client': False}
+2021-11-03 16:52:19 udp_loglib.py 1522 __init__ spawn         gevent.spawn(gevent.empty)   (<class 'udp_loglib.myGevent'>, <function myGevent.empty >) {}
+2021-11-03 16:52:19 main.py 141 <module> copyImage_fromVM     form.vmtool.copyImage_fromVM(cmd_type, dstpath=normal_path)\n ('mvcu',) {'dstpath': 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\normal_image'}
+2021-11-03 16:52:19 vmtcp.py 480 copyImage_fromVM _send_cmd         self._send_cmd(func, args)\n ('copy_image', ('mvcu', 'F:/testplaatform1025/Master/testplatform/case_test/normal_image')) {}
+2021-11-03 16:52:19 vmtcp.py 419 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "copy_image", "args": ["mvcu", "F:/testplaatform1025/Master/testplatform/case_test/normal_image"]}',) {}
+2021-11-03 16:52:19 vmtcp.py 399 send set_VM_path             self.set_VM_path()\n () {}
+2021-11-03 16:52:19 vmtcp.py 515 set_VM_path _send_cmd         self._send_cmd(func, args)\n ('set_VM_path', ([('C:\\Users\\test2\\Desktop', 'F:'), ('C:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform', 'F:\\testplaatform1025\\Master\\testplatform')],)) {}
+2021-11-03 16:52:19 vmtcp.py 419 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "set_VM_path", "args": [[["C:\\\\Users\\\\test2\\\\Desktop", "F:"], ["C:\\\\Users\\\\test2\\\\Desktop\\\\testplaatform1025\\\\Master\\\\testplatform", "F:\\\\testplaatform1025\\\\Master\\\\testplatform"]]]}',) {}
+2021-11-03 16:52:19 vmtcp.py 426 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'set_VM_path_15d2a92721da5eb30f92195b8b3255ac') {}
+2021-11-03 16:52:19 vmtcp.py 430 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "set_VM_path", "args": [[["C:\\\\Users\\\\test2\\\\Desktop", "F:"], ["C:\\\\Users\\\\test2\\\\Desktop\\\\testplaatform1025\\\\Master\\\\testplatform", "F:\\\\testplaatform1025\\\\Master\\\\testplatform"]]]}',) {}
+2021-11-03 16:52:20 vmtcp.py 521 set_VM_path print_func         VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', '') {}
+2021-11-03 16:52:21 vmtcp.py 426 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'copy_image_mvcu,F:/testplaatform1025/Master/testplatform/case_test/normal_image') {}
+2021-11-03 16:52:21 vmtcp.py 430 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["mvcu", "F:/testplaatform1025/Master/testplatform/case_test/normal_image"]}',) {}
+2021-11-03 16:52:22 vmtcp.py 486 copyImage_fromVM print_func         VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', 'C:\\Users\\MSTEP\\Desktop\\VMtools\\VCU_DEV_MVCU\\build/out to F:/testplaatform1025/Master/testplatform/case_test/normal_image') {}
+2021-11-03 16:52:22 vmtcp.py 490 copyImage_fromVM print_func         VMConfig.print_func('image_path: %s ' % dstpath)\n (<class 'vmtcp.VMConfig'>, 'image_path: C:/Users/test2/Desktop/testplaatform1025/Master/testplatform/case_test/normal_image ') {}
+2021-11-03 16:52:22 main.py 143 <module> copyImage_fromVM     form.vmtool.copyImage_fromVM(cmd_type, dstpath=normal_path)\n ('svcu',) {'dstpath': 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\normal_image'}
+2021-11-03 16:52:22 vmtcp.py 480 copyImage_fromVM _send_cmd         self._send_cmd(func, args)\n ('copy_image', ('svcu', 'F:/testplaatform1025/Master/testplatform/case_test/normal_image')) {}
+2021-11-03 16:52:22 vmtcp.py 419 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "copy_image", "args": ["svcu", "F:/testplaatform1025/Master/testplatform/case_test/normal_image"]}',) {}
+2021-11-03 16:52:23 vmtcp.py 426 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'copy_image_svcu,F:/testplaatform1025/Master/testplatform/case_test/normal_image') {}
+2021-11-03 16:52:23 vmtcp.py 430 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["svcu", "F:/testplaatform1025/Master/testplatform/case_test/normal_image"]}',) {}
+2021-11-03 16:52:24 vmtcp.py 486 copyImage_fromVM print_func         VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', 'C:\\Users\\MSTEP\\Desktop\\VMtools\\VCU_DEV\\build/out to F:/testplaatform1025/Master/testplatform/case_test/normal_image') {}
+2021-11-03 16:52:24 vmtcp.py 490 copyImage_fromVM print_func         VMConfig.print_func('image_path: %s ' % dstpath)\n (<class 'vmtcp.VMConfig'>, 'image_path: C:/Users/test2/Desktop/testplaatform1025/Master/testplatform/case_test/normal_image ') {}
+2021-11-03 16:52:24 main.py 148 main funclog.write         udp_loglib.funclog.wirte(cases)\n (['Cfg2_SwRTC_SVCU_0052.py', 'Cfg2_SwRTC_SVCU_0054.py', 'Cfg2_SwRTC_SVCU_0055.py'],) {}
+2021-11-03 16:52:24 main.py 149 main path_set         Log.path_set(os.path.dirname(__file__) + '/Log/default')\n (<class 'udp_loglib.Log'>, 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test/Log/default') {}
+2021-11-03 16:52:24 udp_loglib.py 1380 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\Log\\default/',) {}
+2021-11-03 16:52:24 main.py 152 main mPrint             Public.mPrint('start %s' % case)\n ('start Cfg2_SwRTC_SVCU_0052.py',) {}
+2021-11-03 16:52:24 Sw_SVCU/Cfg2_SwRTC_SVCU_0052.py 24 LogPath_set path_set     Log.path_set(dir_path)\n (<class 'udp_loglib.Log'>, 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU/Log/Cfg2_SwRTC_SVCU_0052/default') {}
+2021-11-03 16:52:24 udp_loglib.py 1380 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg2_SwRTC_SVCU_0052\\default/',) {}
+2021-11-03 16:52:24 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:24 udp_loglib.py 1924 gevent_join spawn         gevent.spawn(form._log_recv, *(form.clientP, )),   (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._log_recv of <udp_loglib.TestPlatForm object >>, <udp_loglib.UdpClient object >) {}
+2021-11-03 16:52:24 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:24 udp_loglib.py 1925 gevent_join spawn         gevent.spawn(form._log_recv, *(form.clientS, )),   (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._log_recv of <udp_loglib.TestPlatForm object >>, <udp_loglib.UdpClient object >) {}
+2021-11-03 16:52:24 udp_loglib.py 1926 gevent_join spawn         gevent.spawn(form._serial_recv),\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._serial_recv of <udp_loglib.TestPlatForm object >>) {}
+2021-11-03 16:52:24 udp_loglib.py 1927 gevent_join spawn         gevent.spawn(form._mib_recv),\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._mib_recv of <udp_loglib.TestPlatForm object >>) {}
+2021-11-03 16:52:24 udp_loglib.py 1928 gevent_join spawn         gevent.spawn(form._wireshark_recv)]\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._wireshark_recv of <udp_loglib.TestPlatForm object >>) {}
+2021-11-03 16:52:24 udp_loglib.py 1931 gevent_join joinall     gevent.joinall(default_list)\n (<class 'udp_loglib.myGevent'>, [<Greenlet >>(<bound method TestPlatForm._log_recv of <udp_logli, [''], [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._log_recv of <udp_logli, [''], [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._serial_recv of <udp_lo, [''], [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._mib_recv of <udp_logli, [''], [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._wireshark_recv of <udp, [''], [FrameInfo(frame=<frame >]) {}
+2021-11-03 16:52:24 udp_loglib.py 336 run _log_recv             rt_val[0] = func(*args, **kwargs)\n (<udp_loglib.UdpClient object >,) {}
+2021-11-03 16:52:24 udp_loglib.py 1776 _log_recv mPrint         mPrint('recv start %s,%s' % client.remote)\n ('recv start 20.2.1.10,18125',) {}
+2021-11-03 16:52:24 udp_loglib.py 336 run _log_recv             rt_val[0] = func(*args, **kwargs)\n (<udp_loglib.UdpClient object >,) {}
+2021-11-03 16:52:24 udp_loglib.py 1776 _log_recv mPrint         mPrint('recv start %s,%s' % client.remote)\n ('recv start 20.1.1.10,18125',) {}
+2021-11-03 16:52:24 serialread.py 77 open_all funclog.write             funclog.wirte(port, outfile)\n ('COM15', None) {}
+2021-11-03 16:52:24 serialread.py 77 open_all funclog.write             funclog.wirte(port, outfile)\n ('COM22', None) {}
+2021-11-03 16:52:24 udp_loglib.py 1820 _serial_recv mPrint                     mPrint('start listen', self._SerialRead.queue_dict.keys())\n ('start listen', dict_keys(['COM15', 'COM22'])) {}
+2021-11-03 16:52:24 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 udp_loglib.py 1891 _wireshark_recv start                 p_new = self.wireShark.start(outfile='wireshark_recv.pcapng', block=False)\n () {'outfile': 'wireshark_recv.pcapng', 'block': False}
+2021-11-03 16:52:25 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 wireShark.py 103 start mPrint             self.print('%s' % self.get_path(outfile))\n ('c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg2_SwRTC_SVCU_0052\\default//wireshark_recv.pcapng',) {}
+2021-11-03 16:52:25 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:25 wireShark.py 73 __find_Conn mPrint             self.print('“‘Ã´Õ¯  ≈‰∆˜: %s' % self._Conn)\n ('“‘Ã´Õ¯  ≈‰∆˜: “‘Ã´Õ¯',) {}
+2021-11-03 16:52:26 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:26 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:26 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:26 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:26 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:26 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:26 udp_loglib.py 1635 _set_client mPrint                 mPrint('use mvcu p')\n ('use mvcu p',) {}
+2021-11-03 16:52:26 udp_loglib.py 1223 _set __init__         frame = UdpSendFrame()\n () {}
+2021-11-03 16:52:26 udp_loglib.py 1643 _set_client tst_set             self.tst_set(dst_svcu, Conf.serialFlagSet(1))           \n ('5', <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 16:52:26 udp_loglib.py 1765 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 16:52:26 udp_loglib.py 1771 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2021-11-03 16:52:27 udp_loglib.py 873 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff10320f0000000000000100018764') {}
+2021-11-03 16:52:27 udp_loglib.py 709 respondCheck mPrint                 Public.mPrint('set success')\n ('set success',) {}
+2021-11-03 16:52:27 udp_loglib.py 1223 _set __init__         frame = UdpSendFrame()\n () {}
+2021-11-03 16:52:27 main.py 97 case_start tst_set     form.tst_set(active_mvcu, Conf.allFlagSet(1)) ('2', <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 16:52:27 udp_loglib.py 1765 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 16:52:27 udp_loglib.py 1771 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2021-11-03 16:52:27 udp_loglib.py 873 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff02320f000000000300010001f5c4') {}
+2021-11-03 16:52:28 udp_loglib.py 709 respondCheck mPrint                 Public.mPrint('set success')\n ('set success',) {}
+2021-11-03 16:52:28 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:28 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:28 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:28 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:28 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:28 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:28 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:44 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:44 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:44 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:44 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:58 Sw_SVCU/Cfg2_SwRTC_SVCU_0052.py 24 LogPath_set path_set     Log.path_set(dir_path)\n (<class 'udp_loglib.Log'>, 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU/Log/Cfg2_SwRTC_SVCU_0052/02') {}
+2021-11-03 16:52:58 udp_loglib.py 1380 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg2_SwRTC_SVCU_0052\\02/',) {}
+2021-11-03 16:52:58 udp_loglib.py 1299 tag_send __init__         frame = UdpSendFrame()\n () {}
+2021-11-03 16:52:58 Sw_SVCU/Cfg2_SwRTC_SVCU_0052.py 34 step2 tst_set     form.tst_set(dst_slot, Tag.tag_send('00520111'))\n ('3', <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 16:52:58 udp_loglib.py 1223 _set __init__         frame = UdpSendFrame()\n () {}
+2021-11-03 16:52:58 udp_loglib.py 1747 tst_set tst_set             self.tst_set(slots, Conf.allFlagSet(1), False, False)\n ('3', <udp_loglib.UdpSendFrame object >, False, False) {}
+2021-11-03 16:52:58 udp_loglib.py 1765 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 16:52:58 udp_loglib.py 1765 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 16:52:58 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:58 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:58 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:58 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:58 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:58 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:58 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:58 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:58 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:58 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:58 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:58 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:52:59 udp_loglib.py 1771 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2021-11-03 16:52:59 udp_loglib.py 1891 _wireshark_recv start                 p_new = self.wireShark.start(outfile='wireshark_recv.pcapng', block=False)\n () {'outfile': 'wireshark_recv.pcapng', 'block': False}
+2021-11-03 16:52:59 wireShark.py 103 start mPrint             self.print('%s' % self.get_path(outfile))\n ('c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg2_SwRTC_SVCU_0052\\02//wireshark_recv.pcapng',) {}
+2021-11-03 16:53:00 udp_loglib.py 1893 _wireshark_recv spawn                     gevent.spawn(kill_p_old, p_old)\n (<class 'udp_loglib.myGevent'>, <function TestPlatForm._wireshark_recv.<locals>.kill_p_old >, <Popen >) {}
+2021-11-03 16:53:07 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_3,CPUA not recv respond, msg 0cFF120F00000000030001000171F5',) {}
+2021-11-03 16:53:07 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 16:53:07 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 16:53:07 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_3,CPUA not recv respond, msg 0cFF100F000052011100000000795A',) {}
+2021-11-03 16:53:07 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 16:53:07 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 16:53:15 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_3,CPUA not recv respond, msg 0cFF120F00000000030001000171F5',) {}
+2021-11-03 16:53:15 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 16:53:15 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 16:53:15 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_3,CPUA not recv respond, msg 0cFF100F000052011100000000795A',) {}
+2021-11-03 16:53:15 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 16:53:15 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 16:53:24 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_3,CPUA not recv respond, msg 0cFF120F00000000030001000171F5',) {}
+2021-11-03 16:53:24 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 16:53:24 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 16:53:24 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_3,CPUA not recv respond, msg 0cFF100F000052011100000000795A',) {}
+2021-11-03 16:53:24 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 16:53:24 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 16:53:33 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_3,CPUA not recv respond, msg 0cFF120F00000000030001000171F5',) {}
+2021-11-03 16:53:33 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 16:53:33 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 16:53:33 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_3,CPUA not recv respond, msg 0cFF100F000052011100000000795A',) {}
+2021-11-03 16:53:33 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 16:53:33 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 16:53:41 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_3,CPUA not recv respond, msg 0cFF120F00000000030001000171F5',) {}
+2021-11-03 16:53:41 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 16:53:41 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 16:53:41 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_3,CPUA not recv respond, msg 0cFF100F000052011100000000795A',) {}
+2021-11-03 16:53:41 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 16:53:41 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 16:53:50 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_3,CPUA not recv respond, msg 0cFF120F00000000030001000171F5',) {}
+2021-11-03 16:53:50 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 16:53:50 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 16:53:50 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_3,CPUA not recv respond, msg 0cFF100F000052011100000000795A',) {}
+2021-11-03 16:53:50 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 16:53:50 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 16:53:59 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_3,CPUA not recv respond, msg 0cFF120F00000000030001000171F5',) {}
+2021-11-03 16:53:59 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 16:53:59 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 16:53:59 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_3,CPUA not recv respond, msg 0cFF100F000052011100000000795A',) {}
+2021-11-03 16:53:59 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 16:53:59 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 16:54:00 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:54:00 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:54:00 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:54:00 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:54:00 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:54:00 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:54:01 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:54:01 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:54:01 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:54:01 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:54:01 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:54:01 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:54:03 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:54:03 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 16:54:03 udp_loglib.py 90 normal_end mPrint         cls.mPrint('normal end')\n ('normal end',) {}
+2021-11-03 16:54:03 main.py 164 main mPrint                 Public.mPrint(testcase_log)\n ('2021-11-03 16:54:02 execption at testcase c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU/Cfg2_SwRTC_SVCU_0052.py the msg to 1_3, CPUA not recv respond, msg 0cFF120F00000000030001000171F5',) {}
+2021-11-03 16:54:03 main.py 182 thead_start program_end             Public.program_end(e)\n (<class 'udp_loglib.Public'>, Exception('the msg to 1_3, CPUA not recv respond, msg 0cFF120F00000000030001000171F5')) {}
+2021-11-03 16:54:03 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('Traceback (most recent call last):\n',) {'mode': 2}
+2021-11-03 16:54:03 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\main.py", line 180, in thead_start\n',) {'mode': 2}
+2021-11-03 16:54:03 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('    main()\n',) {'mode': 2}
+2021-11-03 16:54:03 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\main.py", line 167, in main\n',) {'mode': 2}
+2021-11-03 16:54:03 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('    raise e\n',) {'mode': 2}
+2021-11-03 16:54:03 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\main.py", line 157, in main\n',) {'mode': 2}
+2021-11-03 16:54:03 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('    ret = mod.main() # ÷¥––”√¿˝µƒ main ∑Ω∑®\n',) {'mode': 2}
+2021-11-03 16:54:03 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU/Cfg2_SwRTC_SVCU_0052.py", line 48, in main\n',) {'mode': 2}
+2021-11-03 16:54:03 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('    step2()\n',) {'mode': 2}
+2021-11-03 16:54:03 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU/Cfg2_SwRTC_SVCU_0052.py", line 34, in step2\n',) {'mode': 2}
+2021-11-03 16:54:03 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ("    form.tst_set(dst_slot, Tag.tag_send('00520111'))\n",) {'mode': 2}
+2021-11-03 16:54:03 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\py_lib\\FuncLog.py", line 57, in run\n',) {'mode': 2}
+2021-11-03 16:54:03 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('    return func(*args, **kwargs)\n',) {'mode': 2}
+2021-11-03 16:54:03 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\udp_loglib.py", line 1771, in tst_set\n',) {'mode': 2}
+2021-11-03 16:54:03 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('    FrameLib.respondCheck()\n',) {'mode': 2}
+2021-11-03 16:54:03 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\py_lib\\FuncLog.py", line 57, in run\n',) {'mode': 2}
+2021-11-03 16:54:03 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('    return func(*args, **kwargs)\n',) {'mode': 2}
+2021-11-03 16:54:03 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\udp_loglib.py", line 694, in respondCheck\n',) {'mode': 2}
+2021-11-03 16:54:03 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ("    raise Exception('the msg to %s, %s not recv respond, msg %s' %\n",) {'mode': 2}
+2021-11-03 16:54:03 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('Exception: the msg to 1_3, CPUA not recv respond, msg 0cFF120F00000000030001000171F5\n',) {'mode': 2}

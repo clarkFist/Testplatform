@@ -1,0 +1,2 @@
+2022-03-30 10:09:22 caseFunc.py 264 <module> __init__     Config.form = udp_loglib.TestPlatForm(18125, 18125, set_client=False)\n (18125, 18125) {'set_client': False}
+2022-03-30 10:09:22 udp_loglib.py 1562 __init__ spawn         gevent.spawn(gevent.empty)   (<class 'udp_loglib.myGevent'>, <function myGevent.empty >) {}

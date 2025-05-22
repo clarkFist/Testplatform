@@ -1,0 +1,893 @@
+
+-- File Name : ICMTC
+-- Date      : Thu Mar 22 11:18:33 CST 2012
+-- Author    : WebNMS Agent Toolkit C Edition - MibEditor 6
+
+
+-- *****************************************************************
+-- ICMTC-MIB:  MIB-II MIB file
+-- 22 Mar 2012, Lin Yi - ICMTC TEAM
+-- CASCO reserved
+-- *****************************************************************
+--
+
+ICMTC-MIB	DEFINITIONS ::= BEGIN
+	IMPORTS
+		IANAifType
+			FROM IANAifType-MIB
+		OBJECT-TYPE
+			FROM RFC-1212
+		enterprises, mgmt, NetworkAddress, IpAddress, Counter, Gauge, TimeTicks
+			FROM RFC1155-SMI;
+
+	org	OBJECT IDENTIFIER
+		::=  {  iso  3  }
+
+	dod	OBJECT IDENTIFIER
+		::=  {  org  6  }
+
+	internet	OBJECT IDENTIFIER
+		::=  {  dod  1  }
+
+	mgmt	OBJECT IDENTIFIER
+		::=  {  internet  2  }
+
+	private	OBJECT IDENTIFIER
+		::=  {  internet  4  }
+
+	enterprises	OBJECT IDENTIFIER
+		::=  {  private  1  }
+
+	casco	OBJECT IDENTIFIER
+		::=  {  enterprises  13933  }
+
+	icmtc	OBJECT IDENTIFIER
+		::=  {  casco  100  }
+
+	product	OBJECT IDENTIFIER
+		::=  {  icmtc  1  }
+
+	software	OBJECT IDENTIFIER
+		::=  {  icmtc  2  }
+
+	lru	OBJECT IDENTIFIER
+		::=  {  icmtc  3  }
+
+	otherEquipments	OBJECT IDENTIFIER
+		::=  {  icmtc  4  }
+
+	rMonGauge	OBJECT IDENTIFIER
+		::=  {  icmtc  5  }
+
+	rMonCounter	OBJECT IDENTIFIER
+		::=  {  icmtc  6  }
+
+	redundancyService	OBJECT IDENTIFIER
+		::=  {  icmtc  7  }
+
+	state	OBJECT IDENTIFIER
+		::=  {  icmtc  8  }
+
+	mssId	OBJECT IDENTIFIER
+		::=  {  icmtc  9  }
+
+	prodName	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 50  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is the name of the CASCO product (i.e. hardware+software package) without version or index indication. The string is intended for presentation to a human"
+		DEFVAL			{ "i-CMTC" }
+		::=  {  product  1  }
+
+	prodPresentation	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 160  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is the description of the CASCO product (i.e. the main function) in one sentence. The string is intended for presentation to a human"
+		DEFVAL			{ "This is the i-CMTC project of CASCO, the MIB is designed by Lin Yi" }
+		::=  {  product  2  }
+
+	swNumber	OBJECT-TYPE	
+		SYNTAX			INTEGER  ( -2147483648 .. 2147483647  ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"The number of independents software present inside the equipment."
+		DEFVAL			{ 12 }
+		::=  {  software  1  }
+
+	swTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  SwEntry
+		ACCESS		not-accessible
+		STATUS		mandatory
+		DESCRIPTION	"This is a list of software entries. The number of entries 
+              is given by the value of SwNumber."
+		::=  { software  2 }
+
+	swEntry	OBJECT-TYPE
+		SYNTAX		SwEntry
+		ACCESS		not-accessible
+		STATUS		mandatory
+		DESCRIPTION	"description of a software"
+		INDEX		{  swIndex  }
+		::=  { swTable 1 }
+
+	SwEntry  ::=  SEQUENCE {
+		swIndex  INTEGER,
+		swDescr  OCTET STRING,
+		swLocation  OCTET STRING,
+		swEditor  OCTET STRING,
+		swVersion  OCTET STRING,
+		swCheckSum  OCTET STRING
+		}
+
+
+	swIndex	OBJECT-TYPE	
+		SYNTAX			INTEGER
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"A unique value for each software of the equipment. 
+               Its value ranges between 1 and the value SwNumber."
+		::=  {  swEntry  1  }
+
+
+	swDescr	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 50  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is a text string containing information about the software. The string is intended for presentation to a human"
+		::=  {  swEntry  2  }
+
+
+	swLocation	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 80  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is a text string containing information about the location of the software inside the equipment. The string is intended for presentation to a human"
+		::=  {  swEntry  3  }
+
+
+	swEditor	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 50  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is a text string containing information about the software editor. The string is intended for presentation to a human"
+		::=  {  swEntry  4  }
+
+
+	swVersion	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 30  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is a text string containing information about the version software. 
+              The string is intended for presentation to a human"
+		::=  {  swEntry  5  }
+
+
+	swCheckSum	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 40  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is a text string containing information about the checksum software. The string is intended for presentation to a human"
+		::=  {  swEntry  6  }
+
+	lruNumber	OBJECT-TYPE	
+		SYNTAX			INTEGER  ( -2147483648 .. 2147483647  ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is the number of LRU of the subsystem present inside the equipment."
+		DEFVAL			{ 10 }
+		::=  {  lru  1  }
+
+	lruTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  LruEntry
+		ACCESS		not-accessible
+		STATUS		mandatory
+		DESCRIPTION	"This is a list of Lru entries. The number of 
+              entries is given by the value of LruNumber."
+		::=  { lru  2 }
+
+	lruEntry	OBJECT-TYPE
+		SYNTAX		LruEntry
+		ACCESS		not-accessible
+		STATUS		mandatory
+		DESCRIPTION	"A LRU entry is containing multiple information."
+		INDEX		{  lruIndex  }
+		::=  { lruTable 1 }
+
+	LruEntry  ::=  SEQUENCE {
+		lruIndex  INTEGER,
+		lruDescr  OCTET STRING,
+		lruState  INTEGER,
+		lruDefaultCode  INTEGER,
+		lruTimeStampDefault  OCTET STRING,
+		lruDefaultContext  OCTET STRING,
+		lruRefTable  OCTET STRING
+		}
+
+
+	lruIndex	OBJECT-TYPE	
+		SYNTAX			INTEGER
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is a unique value for each LRU of the subsystem. Its value ranges between 1 and the value lruNumber.
+              "
+		::=  {  lruEntry  1  }
+
+
+	lruDescr	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 50  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is a text string containing information about the LRU of the subsystem. The string is intended for presentation to a human"
+		::=  {  lruEntry  2  }
+
+
+	lruState	OBJECT-TYPE	
+		SYNTAX			INTEGER  { available ( 1 ) , unavailable ( 2 ) } 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"Indicate the state of the LRU."
+		DEFVAL			{ available }
+		::=  {  lruEntry  3  }
+
+
+	lruDefaultCode	OBJECT-TYPE	
+		SYNTAX			INTEGER  ( -2147483648 .. 2147483647  ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This field makes it possible to particularize the problem for the LRU at fault. 
+               The code of defect will be used by the team of maintenance 
+               in particular for the checking of the disappearance of the 
+               defect after intervention."
+		DEFVAL			{ 0 }
+		::=  {  lruEntry  4  }
+
+
+	lruTimeStampDefault	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 8  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"Indicate only if the LRU is not available, in this case this field indicates the date of appearance of the problem. 
+               The time fields are coded in hour GMT (Greenwich Mean Time) on 64 bits:
+               The first 32 bits represent the number of seconds passed since midnight (0 hour, or 0h) on January 1, 1900.   
+               The 32 following bits store the one second fraction."
+		::=  {  lruEntry  5  }
+
+
+	lruDefaultContext	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 360  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"The data present in the field context are identical for the LRU, 
+				OtherEquipment and RMonGauge. With each detection of problem 
+				(State passes from available to unavailable) the data of the context 
+				are photographed and places in this field. The field context allows 
+				an immediate invertigation of the problem by operator MSS."
+		::=  {  lruEntry  6  }
+
+
+	lruRefTable	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 40  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"The data shall represent the table name from the system database where this LRU is described.
+				If this LRU is not described in the dabase, lruRefTable shall be empty"
+		::=  {  lruEntry  7  }
+
+	lruHwNumber	OBJECT-TYPE	
+		SYNTAX			INTEGER  ( -2147483648 .. 2147483647  ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is the number of hardware of all the LRU of the subsystem present inside the equipment."
+		DEFVAL			{ 0 }
+		::=  {  lru  3  }
+
+	lruHwTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  LruHwEntry
+		ACCESS		not-accessible
+		STATUS		mandatory
+		DESCRIPTION	"This is a list of Hardware entries of the specified LRU. 
+              The number of entries is given by the value of LruNumberOfHw."
+		::=  { lru  4 }
+
+	lruHwEntry	OBJECT-TYPE
+		SYNTAX		LruHwEntry
+		ACCESS		not-accessible
+		STATUS		mandatory
+		DESCRIPTION	"en test"
+		INDEX		{  hwIndex  }
+		::=  { lruHwTable 1 }
+
+	LruHwEntry  ::=  SEQUENCE {
+		hwIndex  INTEGER,
+		hwLruIndex  INTEGER,
+		hwDescr  OCTET STRING,
+		hwVersion  OCTET STRING,
+		hwSerialNumber  OCTET STRING
+		}
+
+
+	hwIndex	OBJECT-TYPE	
+		SYNTAX			INTEGER
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is a unique value for each hardware of the LRU. 
+              Its value ranges between 1 and the value LruNumberOfHw."
+		::=  {  lruHwEntry  1  }
+
+
+	hwLruIndex	OBJECT-TYPE	
+		SYNTAX			INTEGER
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is a unique value for each LRU of the subsystem. Its value ranges between 1 and the value lruNumber.
+               This index indicates what hardware refers to lru."
+		::=  {  lruHwEntry  2  }
+
+
+	hwDescr	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 50  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is a text string containing information of the hardware component, with type and name. The string is intended for presentation to a human"
+		::=  {  lruHwEntry  3  }
+
+
+	hwVersion	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 20  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is a text string containing version information of the hardware component.
+              The string is intended for presentation to a human"
+		::=  {  lruHwEntry  4  }
+
+
+	hwSerialNumber	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 30  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is a  text string containing serial number of the hardware component. 
+              The string is intended for presentation to a human"
+		::=  {  lruHwEntry  5  }
+
+	eqtNumber	OBJECT-TYPE	
+		SYNTAX			INTEGER  ( -2147483648 .. 2147483647  ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is the number of passive equipment or no-computer 
+              equipments connect at the subsystem"
+		DEFVAL			{ 0 }
+		::=  {  otherEquipments  1  }
+
+	eqtTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  EqtEntry
+		ACCESS		not-accessible
+		STATUS		mandatory
+		DESCRIPTION	"This is a list of Eqt entries. The number of entries 
+              is given by the value of EqtNumber"
+		::=  { otherEquipments  2 }
+
+	eqtEntry	OBJECT-TYPE
+		SYNTAX		EqtEntry
+		ACCESS		not-accessible
+		STATUS		mandatory
+		DESCRIPTION	"A external equipment entry containing multiple information"
+		INDEX		{  eqtIndex  }
+		::=  { eqtTable 1 }
+
+	EqtEntry  ::=  SEQUENCE {
+		eqtIndex  INTEGER,
+		eqtType  OCTET STRING,
+		eqtDescr  OCTET STRING,
+		eqtState  INTEGER,
+		eqtDefaultCode  INTEGER,
+		eqtTimeStampDefault  OCTET STRING,
+		eqtDefaultContext  OCTET STRING,
+		eqtRefTable  OCTET STRING
+		}
+
+
+	eqtIndex	OBJECT-TYPE	
+		SYNTAX			INTEGER
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is a unique value for equipment. 
+              Its value ranges between 1 and the value EqtNumber."
+		::=  {  eqtEntry  1  }
+
+
+	eqtType	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 50  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is a text string containing information about the type of the equipment. The string is intended for presentation to a human. The type of equipment must be able to present the reference of the OtherEquipment"
+		::=  {  eqtEntry  2  }
+
+
+	eqtDescr	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 50  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"A text string must define this OtherEquipment in the subsystem who describe this MIB. The string is intended for presentation to a human
+For each OtherEquipment entry, if the OtherEquipment is described in the database system (like a Point from CBI subsystem) the eqtDescr shall represent the objects name from the table where the OtherEquipment is described.
+If the OtherEquipment is not described in the dabase, eqtRefTable shall be empty"
+		::=  {  eqtEntry  3  }
+
+
+	eqtState	OBJECT-TYPE	
+		SYNTAX			INTEGER  { available ( 1 ) , unavailable ( 2 ) } 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"Indicate the state of the equipment."
+		::=  {  eqtEntry  4  }
+
+
+	eqtDefaultCode	OBJECT-TYPE	
+		SYNTAX			INTEGER
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This field makes it possible to particularize the problem for the LRU at fault. 
+               The code of defect will be used by the team of maintenance 
+               in particular for the checking of the disappearance of the 
+               defect after intervention."
+		::=  {  eqtEntry  5  }
+
+
+	eqtTimeStampDefault	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 8  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"Indicate only if the equipment is not available, in this case this field indicates the date of appearance of the problem. 
+              The time fields are coded in hour GMT (Greenwich Mean Time) on 64 bits:
+              The first 32 bits represent the number of seconds passed since midnight (0 hour, or 0h) on January 1, 1900.   
+              The 32 following bits store the one second fraction.  
+              "
+		::=  {  eqtEntry  6  }
+
+
+	eqtDefaultContext	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 360  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"The data present in the field context are identical for the LRU, 
+				OtherEquipment and RMonGauge. With each detection of problem 
+				(State passes from available to unavailable) the data of the context 
+				are photographed and places in this field. The field context allows 
+				an immediate invertigation of the problem by operator MSS."
+		::=  {  eqtEntry  7  }
+
+
+	eqtRefTable	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 40  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"The data shall represent the table name from the system database where this OtherEquipment is described.
+				If this OtherEquipment is not described in the dabase, lruRefTable shall be empty"
+		::=  {  eqtEntry  8  }
+
+	rmgNumber	OBJECT-TYPE	
+		SYNTAX			INTEGER  ( -2147483648 .. 2147483647  ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is the number of remote monitoring data in the subsystem"
+		DEFVAL			{ 14 }
+		::=  {  rMonGauge  1  }
+
+	rmgTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  RmgEntry
+		ACCESS		not-accessible
+		STATUS		mandatory
+		DESCRIPTION	"This is a list of remote monitoring data entries. The number of entries is given by the value of RmgNumber"
+		::=  { rMonGauge  2 }
+
+	rmgEntry	OBJECT-TYPE
+		SYNTAX		RmgEntry
+		ACCESS		not-accessible
+		STATUS		mandatory
+		DESCRIPTION	"This is a remote monitoring gauge data entry contain multiple information"
+		INDEX		{  rmgIndex  }
+		::=  { rmgTable 1 }
+
+	RmgEntry  ::=  SEQUENCE {
+		rmgIndex  INTEGER,
+		rmgType  INTEGER,
+		rmgDescr  OCTET STRING,
+		rmgRefEqt  INTEGER,
+		rmgUnit  OCTET STRING,
+		rmgThresholdAlarm  Gauge,
+		rmgValue  Gauge,
+		rmgTimeStampDefault  OCTET STRING,
+		rmgContext  OCTET STRING
+		}
+
+
+	rmgIndex	OBJECT-TYPE	
+		SYNTAX			INTEGER
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is a unique value for each remote monitoring gauge data of the subsystem. 
+              Its value ranges between 1 and the value RmgNumber. "
+		::=  {  rmgEntry  1  }
+
+
+	rmgType	OBJECT-TYPE	
+		SYNTAX			INTEGER  { start-End-upper ( 1 ) , event-upper ( 2 ) , start-End-lower ( 3 ) , event-lower ( 4 ) } 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"Type of Gauge managing "
+		::=  {  rmgEntry  2  }
+
+
+	rmgDescr	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 50  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is  the total description of the gauge. The string is intended for presentation to a human"
+		::=  {  rmgEntry  3  }
+
+
+	rmgRefEqt	OBJECT-TYPE	
+		SYNTAX			INTEGER
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This value must make it possible to know the reference of the equipment that applies this threshold.
+              Additional requirements:
+              0 if the equipment is the equipment supporting the MIB
+              EqtIndex else . EqtIndex is an other equipment who is 
+              described in the sub tree OtherEquipment"
+		::=  {  rmgEntry  4  }
+
+
+	rmgUnit	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 20  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is the unit of coding of the data. The string is intended for presentation to a human"
+		::=  {  rmgEntry  5  }
+
+
+	rmgThresholdAlarm	OBJECT-TYPE	
+		SYNTAX			Gauge
+		ACCESS			read-write
+		STATUS			mandatory
+		DESCRIPTION		"Value of the threshold before sending a alarm. 
+              REMARK : The threshold can be configured by the SNMP manager (MSS)"
+		::=  {  rmgEntry  6  }
+
+
+	rmgValue	OBJECT-TYPE	
+		SYNTAX			Gauge  ( 0 .. 4294967295  ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is the current value of the remote monitoring gauge data."
+		::=  {  rmgEntry  7  }
+
+
+	rmgTimeStampDefault	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 8  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"When Trap is send (Threshold is reached)
+               The time fields are coded in hour GMT (Greenwich Mean Time) on 64 bits:
+               The first 32 bits represent the number of seconds passed since midnight (0 hour, or 0h) on January 1, 1900.   
+               The 32 following bits store the one second fraction."
+		::=  {  rmgEntry  8  }
+
+
+	rmgContext	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 360  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"The data present in the field context are identical for the LRU, 
+				OtherEquipment and RMonGauge. With each detection of problem 
+				(State passes from available to unavailable) the data of the context 
+				are photographed and places in this field. The field context allows 
+				an immediate invertigation of the problem by operator MSS."
+		::=  {  rmgEntry  9  }
+
+	rmcNumber	OBJECT-TYPE	
+		SYNTAX			INTEGER  ( -2147483648 .. 2147483647  ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is the number of remote monitoring counter data in the subsystem."
+		DEFVAL			{ 9 }
+		::=  {  rMonCounter  1  }
+
+	rmcTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  RmcEntry
+		ACCESS		not-accessible
+		STATUS		mandatory
+		DESCRIPTION	"This is a remote monitoring counter data entry contain multiple information."
+		::=  { rMonCounter  2 }
+
+	rmcEntry	OBJECT-TYPE
+		SYNTAX		RmcEntry
+		ACCESS		not-accessible
+		STATUS		mandatory
+		DESCRIPTION	"This is a remote monitoring counter data entry contain multiple information."
+		INDEX		{  rmcIndex  }
+		::=  { rmcTable 1 }
+
+	RmcEntry  ::=  SEQUENCE {
+		rmcIndex  INTEGER,
+		rmcDescr  OCTET STRING,
+		rmcRefEqt  INTEGER,
+		rmcUnit  OCTET STRING,
+		rmcValue  Counter
+		}
+
+
+	rmcIndex	OBJECT-TYPE	
+		SYNTAX			INTEGER
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is a unique value for each remote monitoring counter data 
+              of the subsystem. Its value ranges between 1 and the value RmcNumber."
+		::=  {  rmcEntry  1  }
+
+
+	rmcDescr	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 50  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is the total description of the counter data. The string is intended for presentation to a human"
+		::=  {  rmcEntry  2  }
+
+
+	rmcRefEqt	OBJECT-TYPE	
+		SYNTAX			INTEGER
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This value must make it possible to know the reference of the equipment that applies this counter.
+              Additional requirements:
+              0 if the equipment is the equipment supporting the MIB
+              EqtIndex else . EqtIndex is other equipment who is described 
+              in the sub tree OtherEquipment "
+		::=  {  rmcEntry  3  }
+
+
+	rmcUnit	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 20  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is the unit of coding of the counter data. The string is intended for presentation to a human"
+		::=  {  rmcEntry  4  }
+
+
+	rmcValue	OBJECT-TYPE	
+		SYNTAX			Counter
+		ACCESS			read-write
+		STATUS			mandatory
+		DESCRIPTION		"This is the current value of the remote monitoring counter data. 
+              REMARK : The counter can be positioned by the SNMP manager (MSS), 
+              generally when the counter reached a threshold inside MSS, MSS create a alarm. 
+              When the alarm will acknowledged by an operator,  MSS will reset the RmcValue."
+		::=  {  rmcEntry  5  }
+
+	rsRcvIdentity	OBJECT-TYPE	
+		SYNTAX			INTEGER
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"Unique Id in the system of the receiving Sub-system 
+              (get from RedundancyHeader), the current sub-system."
+		::=  {  redundancyService  1  }
+
+	rsVersion	OBJECT-TYPE	
+		SYNTAX			INTEGER
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"(get from RedundancyHeader) of the current sub-system."
+		::=  {  redundancyService  2  }
+
+	rsLinkNumber	OBJECT-TYPE	
+		SYNTAX			INTEGER
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"Up to MaxConnectedSSy; (Nb of connected Sender Sub-systems)."
+		::=  {  redundancyService  3  }
+
+	rsNbOverflow	OBJECT-TYPE	
+		SYNTAX			INTEGER
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"If the MaxRsLinkNumber has been reached and that a new Sub-system 
+              has to be linked with (either as sender or receiver)."
+		::=  {  redundancyService  4  }
+
+	rsHeaderErrors	OBJECT-TYPE	
+		SYNTAX			Counter
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"nb of messages rejected due to data inconsistency in the redundancy 
+              header fields (length, version, Transmitter/ReceiverID)."
+		::=  {  redundancyService  5  }
+
+	rsTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  RsEntry
+		ACCESS		not-accessible
+		STATUS		mandatory
+		DESCRIPTION	"Sequence of RsLkEntry repeat RsLinkNumber times."
+		::=  { redundancyService  6 }
+
+	rsEntry	OBJECT-TYPE
+		SYNTAX		RsEntry
+		ACCESS		not-accessible
+		STATUS		mandatory
+		DESCRIPTION	"nothing."
+		INDEX		{  rsLinkIndex  }
+		::=  { rsTable 1 }
+
+	RsEntry  ::=  SEQUENCE {
+		rsLinkIndex  INTEGER,
+		rsSndIdentity  INTEGER,
+		rsTimeStampLinkCreation  OCTET STRING,
+		rsRejectedMsg  Counter,
+		rsValidMsg  Counter
+		}
+
+
+	rsLinkIndex	OBJECT-TYPE	
+		SYNTAX			INTEGER
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is a unique value for each link entry of redundancy layer for the subsystem.
+              Its value ranges between 1 and the value RsLinkNumber."
+		::=  {  rsEntry  1  }
+
+
+	rsSndIdentity	OBJECT-TYPE	
+		SYNTAX			INTEGER
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"Unique Id of the sending Sub-system (get from RedundancyHeader)."
+		::=  {  rsEntry  2  }
+
+
+	rsTimeStampLinkCreation	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 8  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"In NTP format to record the communication start
+               The time fields are coded in hour GMT (Greenwich Mean Time) on 64 bits:
+               The first 32 bits represent the number of seconds passed since midnight (0 hour, or 0h) on January 1, 1900.   
+               The 32 following bits store the one second fraction."
+		::=  {  rsEntry  3  }
+
+
+	rsRejectedMsg	OBJECT-TYPE	
+		SYNTAX			Counter
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"Nb of msgs rejected due to SN already in the ReceivingSN_Table."
+		::=  {  rsEntry  4  }
+
+
+	rsValidMsg	OBJECT-TYPE	
+		SYNTAX			Counter
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"Nb of valid messages sent to the Application layer (after redundancy processing)."
+		::=  {  rsEntry  5  }
+
+	stateLRUCounter	OBJECT-TYPE	
+		SYNTAX			Counter
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"the counter is incremented each time a LRU changes its state (OK->NOK or OK->NOK)"
+		::=  {  state  1  }
+
+	stateTimeStampLRU	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 8  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"It is relative to the last increment of stateLRUCounter 
+               The time fields are coded in hour GMT (Greenwich Mean Time) on 64 bits:
+               The first 32 bits represent the number of seconds passed since midnight (0 hour, or 0h) on January 1, 1900.   
+               The 32 following bits store the one second fraction.
+              "
+		::=  {  state  2  }
+
+	stateOtherEquipmentCounter	OBJECT-TYPE	
+		SYNTAX			Counter
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"the counter is incremented each time an OtherEquipment changes its state (OK->NOK or OK->NOK)"
+		::=  {  state  3  }
+
+	stateTimeStampOtherEquipment	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 8  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"It is relative to the last increment of stateTimeStampOtherEquipment 
+              The time fields are coded in hour GMT (Greenwich Mean Time) on 64 bits:
+              The first 32 bits represent the number of seconds passed since midnight (0 hour, or 0h) on January 1, 1900.   
+              The 32 following bits store the one second fraction."
+		::=  {  state  4  }
+
+	stateMIBdataAvailable	OBJECT-TYPE	
+		SYNTAX			INTEGER  { available ( 1 ) , unavailable ( 2 ) } 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"This is the description of the result of the self-test of starting. The string is intended for presentation to a human.
+              Additional requirements:
+              The string must begin by a number on four characters, followed by a space. 
+              This number must consist of four characters between �0� and �9�.
+              This number must be unique in each subsystem for this string.
+              "
+		::=  {  state  5  }
+
+	stateNumberService	OBJECT-TYPE	
+		SYNTAX			INTEGER
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"The number of external service needed for the subsystem.
+              "
+		::=  {  state  6  }
+
+	stateServiceTable	OBJECT-TYPE
+		SYNTAX		SEQUENCE  OF  StateServiceEntry
+		ACCESS		not-accessible
+		STATUS		mandatory
+		DESCRIPTION	"structure of service."
+		::=  { state  7 }
+
+	stateServiceEntry	OBJECT-TYPE
+		SYNTAX		StateServiceEntry
+		ACCESS		not-accessible
+		STATUS		mandatory
+		DESCRIPTION	"The service� state contains multiples information."
+		INDEX		{  stateServiceIndex  }
+		::=  { stateServiceTable 1 }
+
+	StateServiceEntry  ::=  SEQUENCE {
+		stateServiceIndex  INTEGER,
+		stateServiceDescr  OCTET STRING,
+		stateServiceState  INTEGER
+		}
+
+
+	stateServiceIndex	OBJECT-TYPE	
+		SYNTAX			INTEGER
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"A unique value for each external service needed for the subsystem. Its value ranges between 1 and the value StateServiceNumber"
+		::=  {  stateServiceEntry  1  }
+
+
+	stateServiceDescr	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 50  ) ) 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"The total description of the external service needed for the subsystem. The string is intended for presentation to a human"
+		::=  {  stateServiceEntry  2  }
+
+
+	stateServiceState	OBJECT-TYPE	
+		SYNTAX			INTEGER  { available ( 1 ) , unavailable ( 2 ) } 
+		ACCESS			read-only
+		STATUS			mandatory
+		DESCRIPTION		"The current state of this service."
+		::=  {  stateServiceEntry  3  }
+
+	mssRedAddress	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 15  ) ) 
+		ACCESS			read-write
+		STATUS			mandatory
+		DESCRIPTION		"Red SIG address where the MSS is reachable to receive TRAP message"
+		DEFVAL			{ 127 }
+		::=  {  mssId  1  }
+
+	mssBlueAddress	OBJECT-TYPE	
+		SYNTAX			OCTET STRING  ( SIZE ( 15  ) ) 
+		ACCESS			read-write
+		STATUS			mandatory
+		DESCRIPTION		"Blue SIG address where the MSS is reachable to receive TRAP message"
+		DEFVAL			{ 127 }
+		::=  {  mssId  2  }
+
+	enterpriseSpecific	TRAP-TYPE
+		ENTERPRISE		casco
+		VARIABLES		{ rmgValue }
+		DESCRIPTION		"Description"
+		::=  1001
+END

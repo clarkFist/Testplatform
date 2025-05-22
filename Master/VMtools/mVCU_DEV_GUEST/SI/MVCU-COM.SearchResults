@@ -1,0 +1,5 @@
+---- pNetStatus Æ¥Åä (6 in 0 ÎÄ¼þ) ----
+Com.c (c:\users\mstep\desktop\vmtools\mvcu_dev_guest\guest\demo\src\com):    MSTEP_T_NetStatusInfo pNetStatus = {0u};
+Com.c (c:\users\mstep\desktop\vmtools\mvcu_dev_guest\guest\demo\src\com):    	physicalOK = MSTEP_F_GetLocalMVCUNetStatus(&pNetStatus);
+Com.c (c:\users\mstep\desktop\vmtools\mvcu_dev_guest\guest\demo\src\com):    		if((pNetStatus.Net1_physicalLayerStatus_A == 2u)&&(pNetStatus.Net1_physicalLayerStatus_B == 2u))
+Com.c (c:\users\mstep\desktop\vmtools\mvcu_dev_guest\guest\demo\src\com):    			DTXT_F_Report(4,DTXT_C_LOC,"pNetStatus.physicalLayerStatus_N == 2u)&&(pNetStatus.physicalLayerStatus_R == 2u",0,0,0,0,0,0,0); 

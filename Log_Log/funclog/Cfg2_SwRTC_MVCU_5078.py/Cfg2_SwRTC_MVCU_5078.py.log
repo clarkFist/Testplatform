@@ -1,0 +1,275 @@
+2021-12-06 16:19:10 Cfg2_SwRTC_MVCU_5078.py 58 <module> __init__     form = TestPlatForm(18125, 18125)\n (18125, 18125) {}
+2021-12-06 16:19:10 udp_loglib.py 1597 __init__ spawn         gevent.spawn(gevent.empty)   (<class 'udp_loglib.myGevent'>, <function myGevent.empty >) {}
+2021-12-06 16:19:12 udp_loglib.py 1990 _set_client mPrint                 mPrint('use mvcu p')\n ('use mvcu p',) {}
+2021-12-06 16:19:12 udp_loglib.py 2005 gevent_join spawn         greenlet_list = [gevent.spawn(greenlet_list)]\n (<class 'udp_loglib.myGevent'>, <function confSet >) {}
+2021-12-06 16:19:12 udp_loglib.py 2012 gevent_join spawn         gevent.spawn(form._log_recv, *(form.clientP, )),   (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._log_recv of <udp_loglib.TestPlatForm object >>, <udp_loglib.UdpClient object >) {}
+2021-12-06 16:19:12 udp_loglib.py 2013 gevent_join spawn         gevent.spawn(form._log_recv, *(form.clientS, )),   (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._log_recv of <udp_loglib.TestPlatForm object >>, <udp_loglib.UdpClient object >) {}
+2021-12-06 16:19:12 udp_loglib.py 2014 gevent_join spawn         gevent.spawn(form._serial_recv),\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._serial_recv of <udp_loglib.TestPlatForm object >>) {}
+2021-12-06 16:19:12 udp_loglib.py 2015 gevent_join spawn         gevent.spawn(form._mib_recv),\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._mib_recv of <udp_loglib.TestPlatForm object >>) {}
+2021-12-06 16:19:12 udp_loglib.py 2016 gevent_join spawn         gevent.spawn(form._wireshark_recv)]\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._wireshark_recv of <udp_loglib.TestPlatForm object >>) {}
+2021-12-06 16:19:12 udp_loglib.py 2019 gevent_join joinall     gevent.joinall(default_list)\n (<class 'udp_loglib.myGevent'>, [<Greenlet >>(<bound method TestPlatForm._log_recv of <udp_logli, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._log_recv of <udp_logli, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._serial_recv of <udp_lo, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._mib_recv of <udp_logli, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._wireshark_recv of <udp, [FrameInfo(frame=<frame >, <Greenlet >>(<function confSet >, [FrameInfo(frame=<frame >]) {}
+2021-12-06 16:19:12 Cfg2_SwRTC_MVCU_5078.py 62 confSet respondCheck         FrameLib.respondCheck()   (<class 'udp_loglib.FrameLib'>,) {}
+2021-12-06 16:19:12 udp_loglib.py 707 respondCheck mPrint                 Public.mPrint('set success')\n ('set success',) {}
+2021-12-06 16:19:12 udp_loglib.py 338 run _log_recv             rt_val = func(*args, **kwargs)\n (<udp_loglib.UdpClient object >,) {}
+2021-12-06 16:19:12 udp_loglib.py 1814 _log_recv mPrint         mPrint('recv start %s,%s' % client.remote)\n ('recv start 20.2.1.10,18125',) {}
+2021-12-06 16:19:12 udp_loglib.py 338 run _log_recv             rt_val = func(*args, **kwargs)\n (<udp_loglib.UdpClient object >,) {}
+2021-12-06 16:19:12 udp_loglib.py 1814 _log_recv mPrint         mPrint('recv start %s,%s' % client.remote)\n ('recv start 20.1.1.10,18125',) {}
+2021-12-06 16:19:12 udp_loglib.py 1926 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2021-12-06 16:19:12 caseFunc.py 130 vm_build_update copySrc_toVM     vmtool.copySrc_toVM(cmd_type)\n ('mvcu',) {}
+2021-12-06 16:19:12 vmtcp.py 493 copySrc_toVM _send_cmd         self._send_cmd(func, args)\n ('copy_src', ('mvcu',)) {}
+2021-12-06 16:19:12 vmtcp.py 411 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "copy_src", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:12 vmtcp.py 391 send set_VM_path             self.set_VM_path()\n () {}
+2021-12-06 16:19:12 vmtcp.py 507 set_VM_path _send_cmd         self._send_cmd(func, args)\n ('set_VM_path', ([('C:\\Users\\test2\\Desktop', 'F:'), ('C:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform', 'F:\\testplaatform1025\\Master\\testplatform')],)) {}
+2021-12-06 16:19:12 vmtcp.py 411 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "set_VM_path", "args": [[["C:\\\\Users\\\\test2\\\\Desktop", "F:"], ["C:\\\\Users\\\\test2\\\\Desktop\\\\testplaatform1025\\\\Master\\\\testplatform", "F:\\\\testplaatform1025\\\\Master\\\\testplatform"]]]}',) {}
+2021-12-06 16:19:12 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2021-12-06 16:19:12 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.10'}
+2021-12-06 16:19:12 udp_loglib.py 1908 _wireshark_recv start                 p_new = self.wireShark.start(outfile='wireshark_recv.pcapng', block=False)\n () {'outfile': 'wireshark_recv.pcapng', 'block': False}
+2021-12-06 16:19:12 wireShark.py 103 start mPrint             self.print('%s' % self.get_path(outfile))\n ('Log_Log/default//wireshark_recv.pcapng',) {}
+2021-12-06 16:19:12 vmtcp.py 418 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'set_VM_path_15d2a92721da5eb30f92195b8b3255ac') {}
+2021-12-06 16:19:12 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "set_VM_path", "args": [[["C:\\\\Users\\\\test2\\\\Desktop", "F:"], ["C:\\\\Users\\\\test2\\\\Desktop\\\\testplaatform1025\\\\Master\\\\testplatform", "F:\\\\testplaatform1025\\\\Master\\\\testplatform"]]]}',) {}
+2021-12-06 16:19:13 wireShark.py 73 __find_Conn mPrint             self.print('“‘Ã´Õ¯  ≈‰∆˜: %s' % self._Conn)\n ('“‘Ã´Õ¯  ≈‰∆˜: “‘Ã´Õ¯',) {}
+2021-12-06 16:19:13 serialread.py 77 open_all funclog.write             funclog.wirte(port, outfile)\n ('COM22', None) {}
+2021-12-06 16:19:13 udp_loglib.py 1847 _serial_recv mPrint                     mPrint('start listen', self._SerialRead.queue_dict.keys())\n ('start listen', dict_keys(['COM22'])) {}
+2021-12-06 16:19:13 vmtcp.py 513 set_VM_path print_func         VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', '') {}
+2021-12-06 16:19:14 vmtcp.py 418 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'copy_src_mvcu') {}
+2021-12-06 16:19:14 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_src", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:15 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_src", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:16 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_src", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:17 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_src", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:18 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_src", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:19 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2021-12-06 16:19:19 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.10'}
+2021-12-06 16:19:19 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_src", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:20 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_src", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:21 vmtcp.py 499 copySrc_toVM print_func         VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', ' G:\\MVCU_CW_CPUA  to C:\\Users\\MSTEP\\Desktop\\VMtools115\\VCU_DEV_MVCU\\src ') {}
+2021-12-06 16:19:22 caseFunc.py 132 vm_build_update openTagInit         vmtool.openTagInit(cmd_type, open_initTag)\n ('mvcu', 'VCU_MVCU_SwRTC_5078001') {}
+2021-12-06 16:19:22 vmtcp.py 442 openTagInit _send_cmd         self._send_cmd(func, args)\n ('openTagInit', ('mvcu', ['VCU_MVCU_SwRTC_5078001'])) {}
+2021-12-06 16:19:22 vmtcp.py 411 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "openTagInit", "args": ["mvcu", ["VCU_MVCU_SwRTC_5078001"]]}',) {}
+2021-12-06 16:19:23 vmtcp.py 418 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'openTagInit_["mvcu", ["VCU_MVCU_SwRTC_5078001"]]') {}
+2021-12-06 16:19:23 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "openTagInit", "args": ["mvcu", ["VCU_MVCU_SwRTC_5078001"]]}',) {}
+2021-12-06 16:19:24 vmtcp.py 448 openTagInit print_func         VMConfig.print_func(state, Tag_list)\n (<class 'vmtcp.VMConfig'>, 'success', ['VCU_MVCU_SwRTC_5078001']) {}
+2021-12-06 16:19:24 caseFunc.py 133 vm_build_update build     vmtool.build(cmd_type)\n ('mvcu',) {}
+2021-12-06 16:19:24 vmtcp.py 454 build _send_cmd         self._send_cmd(func, args)\n ('build', ('mvcu',)) {}
+2021-12-06 16:19:24 vmtcp.py 411 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:25 vmtcp.py 418 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'build_mvcu') {}
+2021-12-06 16:19:25 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:26 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:27 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:28 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:29 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:30 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:31 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:32 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:33 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:34 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:35 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:36 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:37 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:38 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:39 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:40 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:41 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:42 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:43 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:44 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:45 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:46 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:47 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:48 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:49 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:50 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:51 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:52 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:53 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:54 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:55 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:56 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:57 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:58 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:19:59 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:00 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:01 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:02 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:03 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:04 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:05 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:06 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:07 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:08 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:09 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:10 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:11 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:12 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:13 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:14 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:15 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:16 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:18 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:19 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:20 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:21 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:22 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:23 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:24 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:25 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:26 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:27 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:27 udp_loglib.py 1926 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2021-12-06 16:20:27 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2021-12-06 16:20:27 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.10'}
+2021-12-06 16:20:28 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:29 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:30 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:31 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:32 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:33 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:34 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:35 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:36 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:37 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:38 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:39 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:40 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:41 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:42 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:43 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:44 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:45 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:46 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:47 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:48 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:49 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:50 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:51 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:52 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:53 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:54 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:55 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:56 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:57 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:58 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:20:59 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:00 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:01 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:02 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:03 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:04 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:05 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:06 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:07 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:08 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:09 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:10 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:11 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:12 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:13 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:14 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:16 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:17 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:18 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:19 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:20 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:21 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:22 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:23 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:24 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:25 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:26 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:27 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:28 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:29 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:30 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:31 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:32 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:33 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:34 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:35 udp_loglib.py 1926 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2021-12-06 16:21:35 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2021-12-06 16:21:35 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.10'}
+2021-12-06 16:21:35 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:36 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:37 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:38 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:39 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:40 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:41 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:42 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:43 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:44 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:45 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:46 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:47 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:48 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:49 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:50 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:51 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:52 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:53 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:54 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:55 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:56 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:57 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:58 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:21:59 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:22:00 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:22:01 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:22:03 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:22:04 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:22:05 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "build", "args": ["mvcu"]}',) {}
+2021-12-06 16:22:06 vmtcp.py 459 build print_func             VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', 'err 0 warning 2476 time 160 s ') {}
+2021-12-06 16:22:08 caseFunc.py 134 vm_build_update copyImage_fromVM     vmtool.copyImage_fromVM(cmd_type)\n ('mvcu',) {}
+2021-12-06 16:22:08 vmtcp.py 472 copyImage_fromVM _send_cmd         self._send_cmd(func, args)\n ('copy_image', ('mvcu',)) {}
+2021-12-06 16:22:08 vmtcp.py 411 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "copy_image", "args": ["mvcu"]}',) {}
+2021-12-06 16:22:08 vmtcp.py 418 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'copy_image_mvcu') {}
+2021-12-06 16:22:08 vmtcp.py 422 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["mvcu"]}',) {}
+2021-12-06 16:22:09 vmtcp.py 478 copyImage_fromVM print_func         VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', 'C:\\Users\\MSTEP\\Desktop\\VMtools115\\VCU_DEV_MVCU\\build/out to F:\\testplaatform1025\\Master\\testplatform\\RUT') {}
+2021-12-06 16:22:09 vmtcp.py 482 copyImage_fromVM print_func         VMConfig.print_func('image_path: %s ' % dstpath)\n (<class 'vmtcp.VMConfig'>, 'image_path: C:/Users/test2/Desktop/testplaatform1025/Master/testplatform/RUT ') {}
+2021-12-06 16:22:43 udp_loglib.py 1926 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2021-12-06 16:22:43 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2021-12-06 16:22:43 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.10'}
+2021-12-06 16:23:07 Cfg2_SwRTC_MVCU_5078.py 25 LogPath_set path_set     Log.path_set(dir_path)\n (<class 'udp_loglib.Log'>, 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_MVCU/Log/Cfg2_SwRTC_MVCU_5078/01') {}
+2021-12-06 16:23:07 udp_loglib.py 1456 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_MVCU\\Log\\Cfg2_SwRTC_MVCU_5078\\01/',) {}
+2021-12-06 16:23:08 udp_loglib.py 1908 _wireshark_recv start                 p_new = self.wireShark.start(outfile='wireshark_recv.pcapng', block=False)\n () {'outfile': 'wireshark_recv.pcapng', 'block': False}
+2021-12-06 16:23:08 wireShark.py 103 start mPrint             self.print('%s' % self.get_path(outfile))\n ('c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_MVCU\\Log\\Cfg2_SwRTC_MVCU_5078\\01//wireshark_recv.pcapng',) {}
+2021-12-06 16:23:08 udp_loglib.py 1926 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2021-12-06 16:23:08 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2021-12-06 16:23:08 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.10'}
+2021-12-06 16:23:09 udp_loglib.py 1910 _wireshark_recv spawn                     gevent.spawn(kill_p_old, p_old)\n (<class 'udp_loglib.myGevent'>, <function TestPlatForm._wireshark_recv.<locals>.kill_p_old >, <Popen >) {}
+2021-12-06 16:24:16 udp_loglib.py 1926 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2021-12-06 16:24:16 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2021-12-06 16:24:16 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.10'}
+2021-12-06 16:25:23 udp_loglib.py 1926 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2021-12-06 16:25:23 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2021-12-06 16:25:23 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.10'}
+2021-12-06 16:26:31 udp_loglib.py 1926 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2021-12-06 16:26:31 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2021-12-06 16:26:31 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.10'}
+2021-12-06 16:27:19 Cfg2_SwRTC_MVCU_5078.py 25 LogPath_set path_set     Log.path_set(dir_path)\n (<class 'udp_loglib.Log'>, 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_MVCU/Log/Cfg2_SwRTC_MVCU_5078/02') {}
+2021-12-06 16:27:19 udp_loglib.py 1456 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_MVCU\\Log\\Cfg2_SwRTC_MVCU_5078\\02/',) {}
+2021-12-06 16:27:19 udp_loglib.py 1926 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2021-12-06 16:27:19 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2021-12-06 16:27:20 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.10'}
+2021-12-06 16:27:20 udp_loglib.py 1908 _wireshark_recv start                 p_new = self.wireShark.start(outfile='wireshark_recv.pcapng', block=False)\n () {'outfile': 'wireshark_recv.pcapng', 'block': False}
+2021-12-06 16:27:20 wireShark.py 103 start mPrint             self.print('%s' % self.get_path(outfile))\n ('c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_MVCU\\Log\\Cfg2_SwRTC_MVCU_5078\\02//wireshark_recv.pcapng',) {}
+2021-12-06 16:27:22 udp_loglib.py 1910 _wireshark_recv spawn                     gevent.spawn(kill_p_old, p_old)\n (<class 'udp_loglib.myGevent'>, <function TestPlatForm._wireshark_recv.<locals>.kill_p_old >, <Popen >) {}
+2021-12-06 16:28:28 udp_loglib.py 1926 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2021-12-06 16:28:28 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2021-12-06 16:28:28 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.10'}
+2021-12-06 16:29:35 udp_loglib.py 1926 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2021-12-06 16:29:35 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2021-12-06 16:29:35 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.10'}
+2021-12-06 16:30:43 udp_loglib.py 1926 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2021-12-06 16:30:43 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2021-12-06 16:30:43 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.10'}
+2021-12-06 16:31:51 udp_loglib.py 1926 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2021-12-06 16:31:51 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2021-12-06 16:31:51 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.10'}
+2021-12-06 16:32:58 udp_loglib.py 1926 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2021-12-06 16:32:58 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2021-12-06 16:32:58 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.10'}
+2021-12-06 16:34:07 udp_loglib.py 1926 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2021-12-06 16:34:07 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2021-12-06 16:34:07 FuncLog.py 31 run _get                 caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.10'}
+2021-12-06 16:35:00 Cfg2_SwRTC_MVCU_5078.py 66 confSet normal_end         Public.normal_end()\n (<class 'udp_loglib.Public'>,) {}
+2021-12-06 16:35:00 udp_loglib.py 92 normal_end mPrint         cls.mPrint('normal end')\n ('normal end',) {}
+2021-12-06 16:35:00 Cfg2_SwRTC_MVCU_5078.py 67 confSet mPrint         Public.mPrint('exit')\n ('exit',) {}

@@ -1,0 +1,47 @@
+2022-03-29 11:04:02 Cfg2_SwRTC_SVCU_0051.py 61 <module> __init__     form = TestPlatForm(18125, 18125)\n (18125, 18125) {}
+2022-03-29 11:04:02 udp_loglib.py 1562 __init__ spawn         gevent.spawn(gevent.empty)   (<class 'udp_loglib.myGevent'>, <function myGevent.empty >) {}
+2022-03-29 11:04:02 udp_loglib.py 1999 _set_client mPrint             mPrint('use 2 mvcu')\n ('use 2 mvcu',) {}
+2022-03-29 11:04:02 udp_loglib.py 2010 gevent_join spawn         greenlet_list = [gevent.spawn(greenlet_list)]\n (<class 'udp_loglib.myGevent'>, <function confSet >) {}
+2022-03-29 11:04:02 udp_loglib.py 2017 gevent_join spawn         gevent.spawn(form._log_recv, *(form.clientP, )),   (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._log_recv of <udp_loglib.TestPlatForm object >>, <udp_loglib.UdpClient object >) {}
+2022-03-29 11:04:02 udp_loglib.py 2018 gevent_join spawn         gevent.spawn(form._log_recv, *(form.clientS, )),   (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._log_recv of <udp_loglib.TestPlatForm object >>, <udp_loglib.UdpClient object >) {}
+2022-03-29 11:04:02 udp_loglib.py 2019 gevent_join spawn         gevent.spawn(form._serial_recv),\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._serial_recv of <udp_loglib.TestPlatForm object >>) {}
+2022-03-29 11:04:02 udp_loglib.py 2020 gevent_join spawn         gevent.spawn(form._mib_recv),\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._mib_recv of <udp_loglib.TestPlatForm object >>) {}
+2022-03-29 11:04:02 udp_loglib.py 2021 gevent_join spawn         gevent.spawn(form._wireshark_recv)]\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._wireshark_recv of <udp_loglib.TestPlatForm object >>) {}
+2022-03-29 11:04:02 udp_loglib.py 2024 gevent_join joinall     gevent.joinall(default_list)\n (<class 'udp_loglib.myGevent'>, [<Greenlet >>(<bound method TestPlatForm._log_recv of <udp_logli, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._log_recv of <udp_logli, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._serial_recv of <udp_lo, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._mib_recv of <udp_logli, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._wireshark_recv of <udp, [FrameInfo(frame=<frame >, <Greenlet >>(<function confSet >, [FrameInfo(frame=<frame >]) {}
+2022-03-29 11:04:02 Cfg2_SwRTC_SVCU_0051.py 65 confSet respondCheck         FrameLib.respondCheck()   (<class 'udp_loglib.FrameLib'>,) {}
+2022-03-29 11:04:02 udp_loglib.py 666 respondCheck mPrint                 Public.mPrint('set success TP Ver-3.0.5')\n ('set success TP Ver-3.0.5',) {}
+2022-03-29 11:04:02 udp_loglib.py 377 run _log_recv             rt_val = func(*args, **kwargs)\n (<udp_loglib.UdpClient object >,) {}
+2022-03-29 11:04:02 udp_loglib.py 1818 _log_recv mPrint         mPrint('recv start %s,%s' % client.remote)\n ('recv start 20.2.1.10,18125',) {}
+2022-03-29 11:04:02 udp_loglib.py 377 run _log_recv             rt_val = func(*args, **kwargs)\n (<udp_loglib.UdpClient object >,) {}
+2022-03-29 11:04:02 udp_loglib.py 1818 _log_recv mPrint         mPrint('recv start %s,%s' % client.remote)\n ('recv start 20.1.1.10,18125',) {}
+2022-03-29 11:04:02 udp_loglib.py 1931 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-03-29 11:04:02 Cfg2_SwRTC_SVCU_0051.py 24 LogPath_set path_set     Log.path_set(dir_path)\n (<class 'udp_loglib.Log'>, 'f:\\Testplatform\\Master\\testplatform\\case_test/Log/Cfg2_SwRTC_SVCU_0051/02') {}
+2022-03-29 11:04:02 udp_loglib.py 1478 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to f:\\Testplatform\\Master\\testplatform\\case_test\\Log\\Cfg2_SwRTC_SVCU_0051\\02/',) {}
+2022-03-29 11:04:02 udp_loglib.py 1395 tag_send __init__         frame = UdpSendFrame()\n () {}
+2022-03-29 11:04:02 Cfg2_SwRTC_SVCU_0051.py 34 step2 tst_set     form.tst_set(dst_slot, Tag.tag_send('00510111'))\n ('5', <udp_loglib.UdpSendFrame object >) {}
+2022-03-29 11:04:02 udp_loglib.py 1350 _set __init__         frame = UdpSendFrame()\n () {}
+2022-03-29 11:04:02 udp_loglib.py 1752 tst_set tst_set             self.tst_set(slots, Conf.allFlagSet(1), False, False)\n ('5', <udp_loglib.UdpSendFrame object >, False, False) {}
+2022-03-29 11:04:02 udp_loglib.py 1780 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2022-03-29 11:04:02 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2022-03-29 11:04:02 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.10'}
+2022-03-29 11:04:02 udp_loglib.py 1913 _wireshark_recv start                 p_new = self.wireShark.start(outfile='wireshark_recv.pcapng', block=False)\n () {'outfile': 'wireshark_recv.pcapng', 'block': False}
+2022-03-29 11:04:02 wireShark.py 103 start mPrint             self.print('%s' % self.get_path(outfile))\n ('f:\\Testplatform\\Master\\testplatform\\case_test\\Log\\Cfg2_SwRTC_SVCU_0051\\02/wireshark_recv.pcapng',) {}
+2022-03-29 11:04:02 udp_loglib.py 1780 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2022-03-29 11:04:03 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 30) {'snmpip': '20.2.1.10'}
+2022-03-29 11:04:03 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 30) {'snmpip': '20.1.1.10'}
+2022-03-29 11:04:03 serialread.py 107 open_all mPrint             self.print('no port is avaliable')\n ('no port is avaliable',) {}
+2022-03-29 11:04:03 udp_loglib.py 1851 _serial_recv mPrint                     mPrint('start listen', self._SerialRead.queue_dict.keys())\n ('start listen', dict_keys([])) {}
+2022-03-29 11:04:03 udp_loglib.py 1786 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2022-03-29 11:04:03 udp_loglib.py 379 run program_end             Public.program_end(e)\n (<class 'udp_loglib.Public'>, AttributeError("'Wireshark' object has no attribute '_Conn'")) {}
+2022-03-29 11:04:03 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('Traceback (most recent call last):\n',) {'mode': 2}
+2022-03-29 11:04:03 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "f:\\Testplatform\\Master\\testplatform\\udp_loglib.py", line 377, in run\n',) {'mode': 2}
+2022-03-29 11:04:03 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('    rt_val = func(*args, **kwargs)\n',) {'mode': 2}
+2022-03-29 11:04:03 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "f:\\Testplatform\\Master\\testplatform\\udp_loglib.py", line 1913, in _wireshark_recv\n',) {'mode': 2}
+2022-03-29 11:04:03 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ("    p_new = self.wireShark.start(outfile='wireshark_recv.pcapng', block=False)\n",) {'mode': 2}
+2022-03-29 11:04:03 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "f:\\Testplatform\\Master\\testplatform\\py_lib\\FuncLog.py", line 59, in run\n',) {'mode': 2}
+2022-03-29 11:04:03 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('    return func(*args, **kwargs)\n',) {'mode': 2}
+2022-03-29 11:04:03 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "f:\\Testplatform\\Master\\testplatform\\py_lib\\wireShark.py", line 106, in start\n',) {'mode': 2}
+2022-03-29 11:04:03 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ("    cmd_dict['-i'] = self.__find_Conn()\n",) {'mode': 2}
+2022-03-29 11:04:03 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "f:\\Testplatform\\Master\\testplatform\\py_lib\\wireShark.py", line 73, in __find_Conn\n',) {'mode': 2}
+2022-03-29 11:04:03 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ("    self.print('“‘Ã´Õ¯  ≈‰∆˜: %s' % self._Conn)\n",) {'mode': 2}
+2022-03-29 11:04:03 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ("AttributeError: 'Wireshark' object has no attribute '_Conn'\n",) {'mode': 2}

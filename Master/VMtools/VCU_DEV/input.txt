@@ -1,0 +1,2 @@
+cd /C/Users/MSTEP/Desktop/VMtools_2/VCU_DEV/build/
+make.sh

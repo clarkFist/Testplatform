@@ -1,0 +1,387 @@
+##############################################################################################
+#
+#                 ii.                                         ;9ABH,          
+#                SA391,                                    .r9GG35&G          
+#                &#ii13Gh;                               i3X31i;:,rB1         
+#                iMs,:,i5895,                         .5G91:,:;:s1:8A         
+#                 33::::,,;5G5,                     ,58Si,,:::,sHX;iH1        
+#                  Sr.,:;rs13BBX35hh11511h5Shhh5S3GAXS:.,,::,,1AG3i,GG        
+#                  .G51S511sr;;iiiishS8G89Shsrrsh59S;.,,,,,..5A85Si,h8        
+#                 :SB9s:,............................,,,.,,,SASh53h,1G.       
+#              .r18S;..,,,,,,,,,,,,,,,,,,,,,,,,,,,,,....,,.1H315199,rX,       
+#            ;S89s,..,,,,,,,,,,,,,,,,,,,,,,,....,,.......,,,;r1ShS8,;Xi       
+#          i55s:.........,,,,,,,,,,,,,,,,.,,,......,.....,,....r9&5.:X1       
+#         59;.....,.     .,,,,,,,,,,,...        .............,..:1;.:&s       
+#        s8,..;53S5S3s.   .,,,,,,,.,..      i15S5h1:.........,,,..,,:99       
+#        93.:39s:rSGB@A;  ..,,,,.....    .SG3hhh9G&BGi..,,,,,,,,,,,,.,83      
+#        G5.G8  9#@@@@@X. .,,,,,,.....  iA9,.S&B###@@Mr...,,,,,,,,..,.;Xh     
+#        Gs.X8 S@@@@@@@B:..,,,,,,,,,,. rA1 ,A@@@@@@@@@H:........,,,,,,.iX:    
+#       ;9. ,8A#@@@@@@#5,.,,,,,,,,,... 9A. 8@@@@@@@@@@M;    ....,,,,,,,,S8    
+#       X3    iS8XAHH8s.,,,,,,,,,,...,..58hH@@@@@@@@@Hs       ...,,,,,,,:Gs   
+#      r8,        ,,,...,,,,,,,,,,.....  ,h8XABMMHX3r.          .,,,,,,,.rX:  
+#     :9, .    .:,..,:;;;::,.,,,,,..          .,,.               ..,,,,,,.59  
+#    .Si      ,:.i8HBMMMMMB&5,....                    .            .,,,,,.sMr
+#    SS       :: h@@@@@@@@@@#; .                     ...  .         ..,,,,iM5
+#    91  .    ;:.,1&@@@@@@MXs.                            .          .,,:,:&S
+#    hS ....  .:;,,,i3MMS1;..,..... .  .     ...                     ..,:,.99
+#    ,8; ..... .,:,..,8Ms:;,,,...                                     .,::.83
+#     s&: ....  .sS553B@@HX3s;,.    .,;13h.                            .:::&1
+#      SXr  .  ...;s3G99XA&X88Shss11155hi.                             ,;:h&,
+#       iH8:  . ..   ,;iiii;,::,,,,,.                                 .;irHA  
+#        ,8X5;   .     .......                                       ,;iih
+#           1831,                                                 .,;irr
+#             ;5A8r.                                            .:;iii
+#               :X@H3s.......                                .,:;iii
+#                r#h:;,...,,.. .,,:;;;;;:::,...              .:;;;
+#               ,M8 ..,....,.....,,::::::,,...         .     .,;;;
+#               8B;.,,,,,,,.,.....          .           ..   .:;;;;
+#              i@5,:::,,,,,,,,.... .                   . .:::;;;;;i;
+#              9Bi,:,,,,......                        ..r91;;;;;iir;;
+#  
+##############################################################################################
+# path to Codewarrior compiler
+CW_PATH = C:/Freescale/CW_MCU_v10.4/MCU/ColdFire_Tools/Command_Line_Tools
+
+# path to GCC compiler
+GCC_PATH = C:/Compiler/GCC/bin
+
+# Path Definition for Compiler
+CC   = $(CW_PATH)/mwccmcf
+AS   = $(CW_PATH)/mwasmmcf
+
+# Path Definition for linkers
+LD   = $(CW_PATH)/mwldmcf
+
+# Path Definition for Objcopy
+OBJCP   = $(CW_PATH)/mwldmcf
+
+# Path Definition for CRC maker
+CRC_FUNC = ./crc_make/crc.exe
+
+# Default to Flash target
+ifndef TYPE
+TYPE = ROM
+endif
+
+PREFIX = CW_
+
+CPU = CPU_A
+
+MODULE_NAME = GUEST_NOETH
+
+TARGET = VCU_$(PREFIX)$(CPU)_$(TYPE)_$(MODULE_NAME)
+LCF = ../src/Project_Settings/Linker_Files/VCU_CW_LD_AB_$(TYPE).lcf
+
+# Module List
+OS_MODULE = ../src/ReWorkCert/ucos ../src/ReWorkCert/App ../src/ReWorkCert/ReWorksCert/kernel/include \
+	../src/ReWorkCert/uC-CPU ../src/ReWorkCert/uC-CPU/ColdFire ../src/ReWorkCert/uC-LIB ../src/ReWorkCert/BSP \
+	../src/ReWorkCert/kconfig ../src/ReWorkCert/ports ../src/ReWorkCert/ReWorksCert/arch/coldfire/include \
+	../src/ReWorkCert/ReWorksCert/kernel/include/core/private ../src/ReWorkCert/ReWorksCert/kernel/src/core \
+	../src/ReWorkCert/ReWorksCert/kernel/src/reworks ../src/ReWorkCert/ReWorksCert/arch/coldfire/src
+	
+PRJ_MODULE = ../src/Project_Headers ../src/Project_Settings/Startup_Code
+	
+KERNEL_MODULENAME = BIT CAN CONF FCODE FileSys FLASH GDF Interface IpStack MATH OSW PRINT RECORD SCHED SDB STD VOTE WDG
+
+APP_MODULENAME = VOOB
+
+DRV_MODULE = ../src/Drv_Lib/vcu_cau ../src/Drv_Lib ../src/Drv_Lib/MCF54418
+
+COMMONMODULE = $(addprefix ../src/,$(KERNEL_MODULENAME) $(APP_MODULENAME)) $(DRV_MODULE)
+
+ALLMODULE = $(COMMONMODULE) $(OS_MODULE) $(PRJ_MODULE) 
+
+# OBJ List
+OBJ_DIR = ./out/$(CPU)/
+
+CRC_SOURCE = ./crc_make/CW_crc_result.S
+FINAL_CRC_SOURCE = ./crc_make/final_crc_result.S
+CRC_OBJ = ./crc_make/CW_crc_result.o
+
+ELFOBJ = $(TARGET).elf
+S19OBJ = $(TARGET).S19
+MAPOBJ = $(ELFOBJ).xMAP
+BINOBJ = $(ELFOBJ).bin
+##############################################################################################
+# File List
+
+CFILES = $(foreach n,$(ALLMODULE),$(wildcard ./$(n)/*.c))
+CFILES += $(wildcard ./*.c)
+
+SFILES = $(foreach n,$(ALLMODULE),$(wildcard ./$(n)/*.s))
+SFILES += $(wildcard ./*.s)
+
+#OPTI_CFILES = $(foreach n,$(ALLMODULE),$(wildcard ./$(n)/*.C))
+#OPTI_CFILES += $(wildcard ./*.C)
+
+OPTI_SFILES = $(foreach n,$(ALLMODULE),$(wildcard ./$(n)/*.S))
+OPTI_SFILES += $(wildcard ./*.S)
+
+#ALLFILES = $(SFILES) $(OPTI_SFILES) $(CFILES)
+
+COBJ = $(join $(dir $(CFILES)), $(addprefix $(PREFIX), $(notdir $(patsubst %.c,%.o,$(CFILES)))))
+SOBJ = $(join $(dir $(SFILES)), $(addprefix $(PREFIX), $(notdir $(patsubst %.s,%.o,$(SFILES)))))
+
+#OPTI_COBJ = $(join $(dir $(OPTI_CFILES)), $(addprefix $(PREFIX), $(notdir $(patsubst %.C,%.o,$(OPTI_CFILES)))))
+OPTI_SOBJ = $(join $(dir $(OPTI_SFILES)), $(addprefix $(PREFIX), $(notdir $(patsubst %.S,%.o,$(OPTI_SFILES)))))
+
+#OBJECTS     = $(join $(dir $(ALLFILES)), $(addprefix $(PREFIX), $(addsuffix .o,$(basename $(notdir $(ALLFILES))))))
+
+SRC = $(COBJ)
+ASRC = $(SOBJ) $(OPTI_SOBJ)
+
+##############################################################################################
+# Calc .Elf size
+
+SIZE_BOOT           = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".boot" |tr -s ' ' |cut -d " " -f4`
+OFFSET_BOOT         = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".boot" |tr -s ' ' |cut -d " " -f7`
+
+# Vector table offset is not an entire sectire. It is only a table located in .boot section. The table
+# start address is BOOT_VECTORS_V_VectorRamTable. The four following variable are used to extract this table address in .ELF files:
+EXT_FLASH_START_VMA = \`$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".boot" |tr -s ' ' |cut -d " " -f6\`
+VECTOR_START_VMA    = \`$(GCC_PATH)/m68k-elf-objdump -t $(ELFOBJ) | grep "BOOT_VECTORS_V_VectorRamTable" | tr -s ' ' | cut -d " " -f1\`
+EXT_FLASH_OFFSET    = \`$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".boot" |tr -s ' ' |cut -d " " -f7\`
+OFFSET_VECTOR       = `VAL=$$((0x$(EXT_FLASH_OFFSET)+0x$(VECTOR_START_VMA)-0x$(EXT_FLASH_START_VMA))) && printf "%x" $$VAL`
+
+SIZE_CODE           = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".code" |tr -s ' ' |cut -d " " -f4`
+OFFSET_CODE         = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".code" |tr -s ' ' |cut -d " " -f7`
+
+SIZE_CODE_SRAM      = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".sram_code" |tr -s ' ' |cut -d " " -f4`
+OFFSET_CODE_SRAM    = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".sram_code" |tr -s ' ' |cut -d " " -f7`
+
+SIZE_DATA_SRAM      = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".initialized_data_sram" |tr -s ' ' |cut -d " " -f4`
+OFFSET_DATA_SRAM    = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".initialized_data_sram" |tr -s ' ' |cut -d " " -f7`
+
+SIZE_CONST_SRAM     = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".initialized_constant_sram" |tr -s ' ' |cut -d " " -f4`
+OFFSET_CONST_SRAM   = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".initialized_constant_sram" |tr -s ' ' |cut -d " " -f7`
+
+SIZE_DATA_EXTRAM    = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".initialized_data_extram" |tr -s ' ' |cut -d " " -f4`
+OFFSET_DATA_EXTRAM  = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".initialized_data_extram" |tr -s ' ' |cut -d " " -f7`
+
+SIZE_CONST_EXTRAM   = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".initialized_constant_extram" |tr -s ' ' |cut -d " " -f4`
+OFFSET_CONST_EXTRAM = `$(GCC_PATH)/m68k-elf-objdump -h $(ELFOBJ) | grep -F  ".initialized_constant_extram" |tr -s ' ' |cut -d " " -f7`
+
+
+##############################################################################################
+# Include DIR
+INCDIR = $(addprefix -i ,$(ALLMODULE))
+
+#OBJS    = $(ASRC:.S=.o) $(SRC:.c=.o)
+OBJS    = $(ASRC) $(SRC)
+
+TARGET_OBJS = $(addprefix $(OBJ_DIR), $(notdir $(OBJS)))
+
+# C compiler options
+CFLAGS = -sym full -msgstyle parseable -proc 54418 -c -nostdinc -nosyspath -enc ascii \
+-DALSTOM_CONFIG_CPU_A -warn illpragmas -warn unwanted -warn extended -warn hidevirtual -warn implicitconv \
+-warn unusedarg -warn unusedvar -warn extracomma -warn emptydecl -warn structclass -opt level=0 -opt space -ipa off \
+-inline on -align coldfire -model farCode -model farData -fp soft -a6 -nocoloring -noscheduling -nopeephole \
+-requireprotos -bool off -Cpp_Exceptions off -RTTI off -enum int -char unsigned -str nopool -str reuse -abi standard
+ 
+#asm compiler options
+ASFLAGS = -sym full -msgstyle parseable -proc 54418 -nosyspath -g
+
+#linker options
+#LDFLAGS = -sym full -msgstyle parseable -proc 54418 -nostdlib $(LCF) \
+#-m __startup -force_active __BOOT_VECTOR_ROM -application -map -map keep -srec -sreclength 252 \
+#-sreceol dos -list -brec -breclength 252 -w off 
+
+LDFLAGS = $(TARGET_OBJS) $(CRC_OBJ) -sym full -msgstyle parseable -proc 54418 -nostdlib $(LCF) \
+-m __startup -force_active __BOOT_VECTOR_ROM -application -map -map keep -w off -o $(ELFOBJ)
+
+# objcopy flags
+OBFLAGS = $(TARGET_OBJS) $(CRC_OBJ) -sym full -msgstyle parseable -proc 54418 -nostdlib $(LCF) \
+-m __startup -force_active __BOOT_VECTOR_ROM -application -map closure -srec -sreclength 252 \
+-sreceol dos -brec -breclength 252 -w off -o $(ELFOBJ) && mv $(ELFOBJ).S19 $(S19OBJ)
+
+##############################################################################################
+
+.SECONDEXPANSION:
+#.SUFFIXES: .c .s 
+
+all : clean EMPTY_CRC all_o all_e RIGHT_CRC all_o all_s done
+all_uncrc : clean all_o all_s done
+
+
+all_o : $(OBJS)
+	@mv $(OBJS) $(OBJ_DIR)
+	
+all_e : 
+	@echo "Linking... " $<
+	@$(LD) $(LDFLAGS)
+	
+all_s : 
+	@echo "Generate S19... " $<
+	@$(OBJCP) $(OBFLAGS)
+##############################################################################################
+
+#General rules for compiling/assembling source code
+$(PREFIX)%.o : %.s
+	@echo "Compile " $<
+	@$(AS) -c $(ASFLAGS) $(INCDIR) -o $@ $< 
+
+$(PREFIX)%.o : %.S
+	@echo "Compile " $<
+	@$(AS) -c $(ASFLAGS) $(INCDIR) -o $@ $< 
+	
+$(PREFIX)%.o : %.c
+	@echo "Compile " $<
+	@$(CC) -c $(CFLAGS) $(INCDIR) -o $@ $< 
+
+#Calc CRC 	
+###########################################################################	
+.PHONY: EMPTY_CRC RIGHT_CRC 
+	
+FIRST_LINK: 
+	@$(AS) -c $(ASFLAGS) $(INCDIR) -o $(CRC_OBJ) $(CRC_SOURCE)
+	@echo "Linking... " $<
+	@$(LD) $(LDFLAGS)
+
+FINAL_LINK:
+	@echo "Update... " $<
+	@rm -rf $(ELFOBJ)
+	@rm -rf $(MAPOBJ)
+	@rm -f $(CRC_OBJ)
+	@$(AS) -c $(ASMFLAGS) $(INCDIR) -o $(CRC_OBJ) $(FINAL_CRC_SOURCE)
+	
+	@echo "Generate S19... " $<
+	@$(OBJCP) $(OBFLAGS)
+	
+EMPTY_CRC:
+	@ mkdir -p $(dir $(CRC_SOURCE))
+	@cat ./crc_make/basic_crc_result.S > $(CRC_SOURCE)
+	@echo "_p_CPU_A_Crc_boot:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_A_Crc_vector:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_A_Crc_code:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_A_Crc_code_sram:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_A_Crc_sram:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_A_Crc_const_sram:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_A_Crc_ext_sdram:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_A_Crc_const_ext_sdram:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+
+	@echo "_p_CPU_B_Crc_boot:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_B_Crc_vector:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_B_Crc_code:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_B_Crc_code_sram:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_B_Crc_sram:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_B_Crc_const_sram:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_B_Crc_ext_sdram:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)
+	@echo "_p_CPU_B_Crc_const_ext_sdram:" >> $(CRC_SOURCE)
+	@echo "	.long 00000000" >> $(CRC_SOURCE)	
+	
+#	@cp $(CRC_SOURCE) ../src/Drv_Lib
+	
+RIGHT_CRC:
+
+	@ mkdir -p $(dir $(FINAL_CRC_SOURCE))
+	@cat ./crc_make/basic_crc_result.S > $(FINAL_CRC_SOURCE)
+	@echo "_p_CPU_A_Crc_boot:" >> $(FINAL_CRC_SOURCE)
+	@$(CRC_FUNC) $(ELFOBJ) $(SIZE_BOOT) $(OFFSET_BOOT) >> $(FINAL_CRC_SOURCE)
+
+	@echo "_p_CPU_A_Crc_vector:" >> $(FINAL_CRC_SOURCE)
+	@$(CRC_FUNC) $(ELFOBJ) 400 $(OFFSET_VECTOR) >> $(FINAL_CRC_SOURCE)
+
+	@echo "_p_CPU_A_Crc_code:" >> $(FINAL_CRC_SOURCE)
+	@$(CRC_FUNC) $(ELFOBJ) $(SIZE_CODE) $(OFFSET_CODE) >> $(FINAL_CRC_SOURCE)
+	@echo "_p_CPU_A_Crc_code_sram:" >> $(FINAL_CRC_SOURCE)
+	@$(CRC_FUNC) $(ELFOBJ) $(SIZE_CODE_SRAM) $(OFFSET_CODE_SRAM) >> $(FINAL_CRC_SOURCE)
+	@echo "_p_CPU_A_Crc_sram:" >> $(FINAL_CRC_SOURCE)
+	@$(CRC_FUNC) $(ELFOBJ) $(SIZE_DATA_SRAM) $(OFFSET_DATA_SRAM) >> $(FINAL_CRC_SOURCE)
+	@echo "_p_CPU_A_Crc_const_sram:" >> $(FINAL_CRC_SOURCE)
+	@$(CRC_FUNC) $(ELFOBJ) $(SIZE_CONST_SRAM) $(OFFSET_CONST_SRAM) >> $(FINAL_CRC_SOURCE)
+	@echo "_p_CPU_A_Crc_ext_sdram:" >> $(FINAL_CRC_SOURCE)
+	@$(CRC_FUNC) $(ELFOBJ) $(SIZE_DATA_EXTRAM) $(OFFSET_DATA_EXTRAM) >> $(FINAL_CRC_SOURCE)
+	@echo "_p_CPU_A_Crc_const_ext_sdram:" >> $(FINAL_CRC_SOURCE)
+	@$(CRC_FUNC) $(ELFOBJ) $(SIZE_CONST_EXTRAM) $(OFFSET_CONST_EXTRAM) >> $(FINAL_CRC_SOURCE)
+
+# Only for test
+	@echo "_p_CPU_B_Crc_boot:" >> $(FINAL_CRC_SOURCE)
+	@echo "	.long 00000000" >> $(FINAL_CRC_SOURCE)
+	@echo "_p_CPU_B_Crc_vector:" >> $(FINAL_CRC_SOURCE)
+	@echo "	.long 00000000" >> $(FINAL_CRC_SOURCE)
+	@echo "_p_CPU_B_Crc_code:" >> $(FINAL_CRC_SOURCE)
+	@echo "	.long 00000000" >> $(FINAL_CRC_SOURCE)
+	@echo "_p_CPU_B_Crc_code_sram:" >> $(FINAL_CRC_SOURCE)
+	@echo "	.long 00000000" >> $(FINAL_CRC_SOURCE)
+	@echo "_p_CPU_B_Crc_sram:" >> $(FINAL_CRC_SOURCE)
+	@echo "	.long 00000000" >> $(FINAL_CRC_SOURCE)
+	@echo "_p_CPU_B_Crc_const_sram:" >> $(FINAL_CRC_SOURCE)
+	@echo "	.long 00000000" >> $(FINAL_CRC_SOURCE)
+	@echo "_p_CPU_B_Crc_ext_sdram:" >> $(FINAL_CRC_SOURCE)
+	@echo "	.long 00000000" >> $(FINAL_CRC_SOURCE)
+	@echo "_p_CPU_B_Crc_const_ext_sdram:" >> $(FINAL_CRC_SOURCE)
+	@echo "	.long 00000000" >> $(FINAL_CRC_SOURCE)	
+#end Only for test
+	
+	@echo "Software data identification for "CPU_A": 0x"$(shell printf "%x" $$((\
+		$(shell $(CRC_FUNC) $(ELFOBJ) $(SIZE_BOOT) $(OFFSET_BOOT) | sed -e "s/.\.long \([0-9]*\).*/\1/") ^\
+		$(shell $(CRC_FUNC) $(ELFOBJ) $(SIZE_CODE) $(OFFSET_CODE) | sed -e "s/.\.long \([0-9]*\).*/\1/") ^\
+		$(shell $(CRC_FUNC) $(ELFOBJ) $(SIZE_CODE_SRAM) $(OFFSET_CODE_SRAM) | sed -e "s/.\.long \([0-9]*\).*/\1/") ^\
+		$(shell $(CRC_FUNC) $(ELFOBJ) $(SIZE_DATA_SRAM) $(OFFSET_DATA_SRAM) | sed -e "s/.\.long \([0-9]*\).*/\1/") ^\
+		$(shell $(CRC_FUNC) $(ELFOBJ) $(SIZE_CONST_SRAM) $(OFFSET_CONST_SRAM) | sed -e "s/.\.long \([0-9]*\).*/\1/") ^\
+		$(shell $(CRC_FUNC) $(ELFOBJ) $(SIZE_DATA_EXTRAM) $(OFFSET_DATA_EXTRAM) | sed -e "s/.\.long \([0-9]*\).*/\1/") ^\
+		$(shell $(CRC_FUNC) $(ELFOBJ) $(SIZE_CONST_EXTRAM) $(OFFSET_CONST_EXTRAM) | sed -e "s/.\.long \([0-9]*\).*/\1/")))) | tee ./software_data_identification_CPU_A.txt	
+
+
+		
+###########################################################################		
+	
+showflag:
+#	@echo "CC is : $(CC)"
+#	@echo "CFlag is : $(CFLAGS)"
+#	@echo "ASM is : $(AS)"	
+#	@echo "AFlag is : $(ASFLAGS)"
+#	@echo "LD is : $(LD)"	
+#	@echo "LDFlag is : $(LDFLAGS)"	
+	@echo $(TARGET_OBJS)
+	
+done:
+#	@mv -rf $(OBJSDIR)/*.o
+	@mv $(ELFOBJ) $(OBJ_DIR)
+	@mv $(S19OBJ) $(OBJ_DIR)
+	@mv $(MAPOBJ) $(OBJ_DIR)
+	@mv $(BINOBJ) $(OBJ_DIR)
+	@mv $(CRC_OBJ) $(OBJ_DIR)
+	@mv $(CRC_SOURCE) $(OBJ_DIR)
+	@mv $(FINAL_CRC_SOURCE) ./out/
+	@mv ./software_data_identification_CPU_A.txt $(OBJ_DIR)
+	@echo "Finish!"
+
+#update_crc:
+#	@rm -rf $(CRC_SOURCE_TEMP)
+#	@rm -rf $(CRC_OBJ_TEMP)
+#	@ mkdir -p $(dir $(CRC_SOURCE_TEMP))
+#	@cat $(FINAL_CRC_SOURCE) > $(CRC_SOURCE_TEMP)
+	
+
+clean:
+	@echo "cleanall..."
+	rm -rf out/CPU_A/*
+	ls ./out/CPU_A
+	rm -rf out/CPU_B/*
+	ls ./out/CPU_B
+	rm -rf ./out/final_crc_result.S	
+
+
+# 
+# Include the dependency files, should be the last of the makefile
+#
+-include $(shell mkdir .dep 2> nul) $(wildcard .dep/*)
+
+
+# *** EOF ***

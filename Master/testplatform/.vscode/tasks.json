@@ -1,0 +1,10 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {"label":"vars",
+        "command": "echo",
+        "args": ["${workspaceFolder}/lib/",""],
+        "type": "shell"
+        }
+    ],
+}

@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="FSFB2Sim.cpp" />
+    <ClCompile Include="FSFB2SimDoc.cpp" />
+    <ClCompile Include="FSFB2SimView.cpp" />
+    <ClCompile Include="GlueData.c" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="OutputWnd.cpp" />
+    <ClCompile Include="RSSP1_Control.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="..\GridCtrl\GridCtrl_src\GridCell.cpp">
+      <Filter>GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GridCtrl\GridCtrl_src\GridCellBase.cpp">
+      <Filter>GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GridCtrl\NewCellTypes\GridCellCheck.cpp">
+      <Filter>GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GridCtrl\NewCellTypes\GridCellCombo.cpp">
+      <Filter>GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GridCtrl\NewCellTypes\GridCellDateTime.cpp">
+      <Filter>GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GridCtrl\NewCellTypes\GridCellNumeric.cpp">
+      <Filter>GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GridCtrl\GridCtrl_src\GridCtrl.cpp">
+      <Filter>GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GridCtrl\GridCtrl_src\GridDropTarget.cpp">
+      <Filter>GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GridCtrl\NewCellTypes\GridURLCell.cpp">
+      <Filter>GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GridCtrl\GridCtrl_src\InPlaceEdit.cpp">
+      <Filter>GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GridCtrl\GridCtrl_src\TitleTip.cpp">
+      <Filter>GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\GM_RSSP1_APP_Interface.c">
+      <Filter>RSSP1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\GM_RSSP1_MQ_Interface.c">
+      <Filter>RSSP1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\GM_RSSP1_Msg_Queue.c">
+      <Filter>RSSP1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\GM_RSSP1_Syn.c">
+      <Filter>RSSP1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\SFM\GM_RSSP1_PROC_Int.c">
+      <Filter>RSSP1\SFM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\SFM\GM_RSSP1_SFM.c">
+      <Filter>RSSP1\SFM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\SFM\GM_RSSP1_SFM_Init.c">
+      <Filter>RSSP1\SFM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\SFM\GM_RSSP1_SFM_Init_Addr.c">
+      <Filter>RSSP1\SFM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\SFM\GM_RSSP1_SFM_Interface.c">
+      <Filter>RSSP1\SFM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\SFM\GM_RSSP1_Time.c">
+      <Filter>RSSP1\SFM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\CFM\GM_RSSP1_CFM.c">
+      <Filter>RSSP1\CFM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\CFM\GM_RSSP1_CFM_Init.c">
+      <Filter>RSSP1\CFM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\CFM\GM_RSSP1_CFM_Init_Addr.c">
+      <Filter>RSSP1\CFM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\CFM\GM_RSSP1_CFM_Interface.c">
+      <Filter>RSSP1\CFM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\UDP\FSFB_CFM_UDP.c">
+      <Filter>RSSP1\UDP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\UDP\FSFB_UDP_Init.c">
+      <Filter>RSSP1\UDP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\common\GM_RSSP1_CRC.c">
+      <Filter>RSSP1\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\common\GM_RSSP1_File.c">
+      <Filter>RSSP1\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\common\GM_RSSP1_LFSR.c">
+      <Filter>RSSP1\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\common\GM_RSSP1_Memory.c">
+      <Filter>RSSP1\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\common\GM_RSSP1_Mutex.c">
+      <Filter>RSSP1\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\common\GM_RSSP1_Utils_Other.cpp">
+      <Filter>RSSP1\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\common\GM_RSSP1_VSN.c">
+      <Filter>RSSP1\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\GM_Utils\GM_Condition.c">
+      <Filter>RSSP1\GM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\GM_Utils\GM_Free.c">
+      <Filter>RSSP1\GM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\GM_Utils\GM_Malloc.c">
+      <Filter>RSSP1\GM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\GM_Utils\GM_Memcpy.c">
+      <Filter>RSSP1\GM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\GM_Utils\GM_Memset.c">
+      <Filter>RSSP1\GM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\GM_Utils\GM_MQ.c">
+      <Filter>RSSP1\GM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\GM_Utils\GM_MultiThread.c">
+      <Filter>RSSP1\GM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\GM_Utils\GM_Mutex.c">
+      <Filter>RSSP1\GM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RSSP1\GM_Utils\GM_Time.c">
+      <Filter>RSSP1\GM</Filter>
+    </ClCompile>
+    <ClCompile Include="TB_RSSP1.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\GridCtrl\GridCtrl_src\CellRange.h" />
+    <ClInclude Include="..\GridCtrl\GridCtrl_src\MemoryDC.h" />
+    <ClInclude Include="AppUtility.h" />
+    <ClInclude Include="FSFB2Sim.h" />
+    <ClInclude Include="FSFB2SimDoc.h" />
+    <ClInclude Include="FSFB2SimView.h" />
+    <ClInclude Include="GlueData.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="OutputWnd.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="RSSP1_Control.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="..\GridCtrl\GridCtrl_src\InPlaceEdit.h">
+      <Filter>GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GridCtrl\GridCtrl_src\GridCell.h">
+      <Filter>GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GridCtrl\GridCtrl_src\GridCellBase.h">
+      <Filter>GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GridCtrl\NewCellTypes\GridCellCheck.h">
+      <Filter>GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GridCtrl\NewCellTypes\GridCellCombo.h">
+      <Filter>GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GridCtrl\NewCellTypes\GridCellDateTime.h">
+      <Filter>GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GridCtrl\NewCellTypes\GridCellNumeric.h">
+      <Filter>GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GridCtrl\GridCtrl_src\GridCtrl.h">
+      <Filter>GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GridCtrl\GridCtrl_src\GridDropTarget.h">
+      <Filter>GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GridCtrl\NewCellTypes\GridURLCell.h">
+      <Filter>GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GridCtrl\GridCtrl_src\TitleTip.h">
+      <Filter>GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_RSSP1_APP_Interface.h">
+      <Filter>RSSP1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_RSSP1_Define.h">
+      <Filter>RSSP1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_RSSP1_Error.h">
+      <Filter>RSSP1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_RSSP1_Lib_Def.h">
+      <Filter>RSSP1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_RSSP1_MQ_Interface.h">
+      <Filter>RSSP1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_RSSP1_Msg_Define.h">
+      <Filter>RSSP1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_RSSP1_Msg_Queue.h">
+      <Filter>RSSP1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_RSSP1_Syn.h">
+      <Filter>RSSP1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_RSSP1_Utils.h">
+      <Filter>RSSP1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_RSSP1_Utils_Base.h">
+      <Filter>RSSP1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\SFM\GM_RSSP1_PROC_Int.h">
+      <Filter>RSSP1\SFM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\SFM\GM_RSSP1_SFM.h">
+      <Filter>RSSP1\SFM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\SFM\GM_RSSP1_SFM_Init.h">
+      <Filter>RSSP1\SFM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\SFM\GM_RSSP1_SFM_Interface.h">
+      <Filter>RSSP1\SFM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\SFM\GM_RSSP1_Time.h">
+      <Filter>RSSP1\SFM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\CFM\GM_RSSP1_CFM.h">
+      <Filter>RSSP1\CFM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\CFM\GM_RSSP1_CFM_Init.h">
+      <Filter>RSSP1\CFM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\CFM\GM_RSSP1_CFM_Interface.h">
+      <Filter>RSSP1\CFM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\UDP\FSFB_CFM_UDP.h">
+      <Filter>RSSP1\UDP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\UDP\FSFB_LINK_Def.h">
+      <Filter>RSSP1\UDP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\UDP\FSFB_UDP_Init.h">
+      <Filter>RSSP1\UDP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\common\GM_RSSP1_CRC.h">
+      <Filter>RSSP1\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\common\GM_RSSP1_File.h">
+      <Filter>RSSP1\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\common\GM_RSSP1_LFSR.h">
+      <Filter>RSSP1\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\common\GM_RSSP1_Memory.h">
+      <Filter>RSSP1\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\common\GM_RSSP1_Mutex.h">
+      <Filter>RSSP1\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\common\GM_RSSP1_Utils_Other.h">
+      <Filter>RSSP1\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\common\GM_RSSP1_VSN.h">
+      <Filter>RSSP1\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_Utils\GM_Condition.h">
+      <Filter>RSSP1\GM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_Utils\GM_Free.h">
+      <Filter>RSSP1\GM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_Utils\GM_Malloc.h">
+      <Filter>RSSP1\GM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_Utils\GM_Memcpy.h">
+      <Filter>RSSP1\GM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_Utils\GM_Memset.h">
+      <Filter>RSSP1\GM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_Utils\GM_MQ.h">
+      <Filter>RSSP1\GM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_Utils\GM_MultiThread.h">
+      <Filter>RSSP1\GM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_Utils\GM_MultiThread_Priority.h">
+      <Filter>RSSP1\GM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_Utils\GM_Mutex.h">
+      <Filter>RSSP1\GM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_Utils\GM_Time.h">
+      <Filter>RSSP1\GM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_Utils\GM_Utils_Base.h">
+      <Filter>RSSP1\GM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_Define.h">
+      <Filter>RSSP1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RSSP1\GM_Error.h">
+      <Filter>RSSP1</Filter>
+    </ClInclude>
+    <ClInclude Include="TB_RSSP1.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RSSP1Sim.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\RSSP1Sim.ico" />
+    <None Include="res\RSSP1Sim.rc2" />
+    <None Include="res\RSSP1SimDoc.ico" />
+    <None Include="res\output_wnd.ico" />
+    <None Include="res\output_wnd_hc.ico" />
+    <None Include="res\Toolbar.bmp" />
+    <None Include="res\Toolbar256.bmp" />
+    <None Include="UserImages.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="GridCtrl">
+      <UniqueIdentifier>{0bb87bd1-2f12-47b6-a7da-ae4bec01bc9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RSSP1">
+      <UniqueIdentifier>{e2179d06-4885-4de2-9d23-1ec039bec287}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RSSP1\SFM">
+      <UniqueIdentifier>{90035a79-aa43-481d-bd88-ec18daca1df5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RSSP1\CFM">
+      <UniqueIdentifier>{5d918a5d-774c-46e8-bb33-52d27949035d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RSSP1\UDP">
+      <UniqueIdentifier>{aea561dc-7f3b-435c-b9fb-567939076a7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RSSP1\common">
+      <UniqueIdentifier>{88f8ccf7-5a58-4ec9-bfc4-db0629248265}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RSSP1\GM">
+      <UniqueIdentifier>{b3b251b8-faa7-4d1a-9b01-7fcdb3a393e6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

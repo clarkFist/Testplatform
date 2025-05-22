@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{87B43EA3-55B5-4540-8C45-09BE5D2DF04D}</ProjectGuid>
+    <RootNamespace>RSSP1Sim</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\;..\RSSP1\;..\RSSP1\UDP;..\RSSP1\CFM;..\RSSP1\SFM;..\RSSP1\common;..\RSSP1\GM_Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>.\;..\RSSP1\;..\RSSP1\UDP;..\RSSP1\CFM;..\RSSP1\SFM;..\RSSP1\common;..\RSSP1\GM_Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\RSSP1Sim.ico" />
+    <None Include="res\RSSP1Sim.rc2" />
+    <None Include="res\RSSP1SimDoc.ico" />
+    <None Include="res\output_wnd.ico" />
+    <None Include="res\output_wnd_hc.ico" />
+    <None Include="res\Toolbar.bmp" />
+    <None Include="res\Toolbar256.bmp" />
+    <None Include="UserImages.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\GridCtrl\GridCtrl_src\CellRange.h" />
+    <ClInclude Include="..\GridCtrl\GridCtrl_src\GridCell.h" />
+    <ClInclude Include="..\GridCtrl\GridCtrl_src\GridCellBase.h" />
+    <ClInclude Include="..\GridCtrl\GridCtrl_src\GridCtrl.h" />
+    <ClInclude Include="..\GridCtrl\GridCtrl_src\GridDropTarget.h" />
+    <ClInclude Include="..\GridCtrl\GridCtrl_src\InPlaceEdit.h" />
+    <ClInclude Include="..\GridCtrl\GridCtrl_src\MemoryDC.h" />
+    <ClInclude Include="..\GridCtrl\GridCtrl_src\TitleTip.h" />
+    <ClInclude Include="..\GridCtrl\NewCellTypes\GridCellCheck.h" />
+    <ClInclude Include="..\GridCtrl\NewCellTypes\GridCellCombo.h" />
+    <ClInclude Include="..\GridCtrl\NewCellTypes\GridCellDateTime.h" />
+    <ClInclude Include="..\GridCtrl\NewCellTypes\GridCellNumeric.h" />
+    <ClInclude Include="..\GridCtrl\NewCellTypes\GridURLCell.h" />
+    <ClInclude Include="..\RSSP1\CFM\GM_RSSP1_CFM.h" />
+    <ClInclude Include="..\RSSP1\CFM\GM_RSSP1_CFM_Init.h" />
+    <ClInclude Include="..\RSSP1\CFM\GM_RSSP1_CFM_Interface.h" />
+    <ClInclude Include="..\RSSP1\common\GM_RSSP1_CRC.h" />
+    <ClInclude Include="..\RSSP1\common\GM_RSSP1_File.h" />
+    <ClInclude Include="..\RSSP1\common\GM_RSSP1_LFSR.h" />
+    <ClInclude Include="..\RSSP1\common\GM_RSSP1_Memory.h" />
+    <ClInclude Include="..\RSSP1\common\GM_RSSP1_Mutex.h" />
+    <ClInclude Include="..\RSSP1\common\GM_RSSP1_Utils_Other.h" />
+    <ClInclude Include="..\RSSP1\common\GM_RSSP1_VSN.h" />
+    <ClInclude Include="..\RSSP1\GM_Define.h" />
+    <ClInclude Include="..\RSSP1\GM_Error.h" />
+    <ClInclude Include="..\RSSP1\GM_RSSP1_APP_Interface.h" />
+    <ClInclude Include="..\RSSP1\GM_RSSP1_Define.h" />
+    <ClInclude Include="..\RSSP1\GM_RSSP1_Error.h" />
+    <ClInclude Include="..\RSSP1\GM_RSSP1_Lib_Def.h" />
+    <ClInclude Include="..\RSSP1\GM_RSSP1_MQ_Interface.h" />
+    <ClInclude Include="..\RSSP1\GM_RSSP1_Msg_Define.h" />
+    <ClInclude Include="..\RSSP1\GM_RSSP1_Msg_Queue.h" />
+    <ClInclude Include="..\RSSP1\GM_RSSP1_Syn.h" />
+    <ClInclude Include="..\RSSP1\GM_RSSP1_Utils.h" />
+    <ClInclude Include="..\RSSP1\GM_RSSP1_Utils_Base.h" />
+    <ClInclude Include="..\RSSP1\GM_Utils\GM_Condition.h" />
+    <ClInclude Include="..\RSSP1\GM_Utils\GM_Free.h" />
+    <ClInclude Include="..\RSSP1\GM_Utils\GM_Malloc.h" />
+    <ClInclude Include="..\RSSP1\GM_Utils\GM_Memcpy.h" />
+    <ClInclude Include="..\RSSP1\GM_Utils\GM_Memset.h" />
+    <ClInclude Include="..\RSSP1\GM_Utils\GM_MQ.h" />
+    <ClInclude Include="..\RSSP1\GM_Utils\GM_MultiThread.h" />
+    <ClInclude Include="..\RSSP1\GM_Utils\GM_MultiThread_Priority.h" />
+    <ClInclude Include="..\RSSP1\GM_Utils\GM_Mutex.h" />
+    <ClInclude Include="..\RSSP1\GM_Utils\GM_Time.h" />
+    <ClInclude Include="..\RSSP1\GM_Utils\GM_Utils_Base.h" />
+    <ClInclude Include="..\RSSP1\SFM\GM_RSSP1_PROC_Int.h" />
+    <ClInclude Include="..\RSSP1\SFM\GM_RSSP1_SFM.h" />
+    <ClInclude Include="..\RSSP1\SFM\GM_RSSP1_SFM_Init.h" />
+    <ClInclude Include="..\RSSP1\SFM\GM_RSSP1_SFM_Interface.h" />
+    <ClInclude Include="..\RSSP1\SFM\GM_RSSP1_Time.h" />
+    <ClInclude Include="..\RSSP1\UDP\FSFB_CFM_UDP.h" />
+    <ClInclude Include="..\RSSP1\UDP\FSFB_LINK_Def.h" />
+    <ClInclude Include="..\RSSP1\UDP\FSFB_UDP_Init.h" />
+    <ClInclude Include="AppUtility.h" />
+    <ClInclude Include="FSFB2Sim.h" />
+    <ClInclude Include="FSFB2SimDoc.h" />
+    <ClInclude Include="FSFB2SimView.h" />
+    <ClInclude Include="GlueData.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="OutputWnd.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="RSSP1_Control.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TB_RSSP1.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\GridCtrl\GridCtrl_src\GridCell.cpp" />
+    <ClCompile Include="..\GridCtrl\GridCtrl_src\GridCellBase.cpp" />
+    <ClCompile Include="..\GridCtrl\GridCtrl_src\GridCtrl.cpp" />
+    <ClCompile Include="..\GridCtrl\GridCtrl_src\GridDropTarget.cpp" />
+    <ClCompile Include="..\GridCtrl\GridCtrl_src\InPlaceEdit.cpp" />
+    <ClCompile Include="..\GridCtrl\GridCtrl_src\TitleTip.cpp" />
+    <ClCompile Include="..\GridCtrl\NewCellTypes\GridCellCheck.cpp" />
+    <ClCompile Include="..\GridCtrl\NewCellTypes\GridCellCombo.cpp" />
+    <ClCompile Include="..\GridCtrl\NewCellTypes\GridCellDateTime.cpp" />
+    <ClCompile Include="..\GridCtrl\NewCellTypes\GridCellNumeric.cpp" />
+    <ClCompile Include="..\GridCtrl\NewCellTypes\GridURLCell.cpp" />
+    <ClCompile Include="..\RSSP1\CFM\GM_RSSP1_CFM.c" />
+    <ClCompile Include="..\RSSP1\CFM\GM_RSSP1_CFM_Init.c" />
+    <ClCompile Include="..\RSSP1\CFM\GM_RSSP1_CFM_Init_Addr.c" />
+    <ClCompile Include="..\RSSP1\CFM\GM_RSSP1_CFM_Interface.c" />
+    <ClCompile Include="..\RSSP1\common\GM_RSSP1_CRC.c" />
+    <ClCompile Include="..\RSSP1\common\GM_RSSP1_File.c" />
+    <ClCompile Include="..\RSSP1\common\GM_RSSP1_LFSR.c" />
+    <ClCompile Include="..\RSSP1\common\GM_RSSP1_Memory.c" />
+    <ClCompile Include="..\RSSP1\common\GM_RSSP1_Mutex.c" />
+    <ClCompile Include="..\RSSP1\common\GM_RSSP1_Utils_Other.cpp" />
+    <ClCompile Include="..\RSSP1\common\GM_RSSP1_VSN.c" />
+    <ClCompile Include="..\RSSP1\GM_RSSP1_APP_Interface.c" />
+    <ClCompile Include="..\RSSP1\GM_RSSP1_MQ_Interface.c" />
+    <ClCompile Include="..\RSSP1\GM_RSSP1_Msg_Queue.c" />
+    <ClCompile Include="..\RSSP1\GM_RSSP1_Syn.c" />
+    <ClCompile Include="..\RSSP1\GM_Utils\GM_Condition.c" />
+    <ClCompile Include="..\RSSP1\GM_Utils\GM_Free.c" />
+    <ClCompile Include="..\RSSP1\GM_Utils\GM_Malloc.c" />
+    <ClCompile Include="..\RSSP1\GM_Utils\GM_Memcpy.c" />
+    <ClCompile Include="..\RSSP1\GM_Utils\GM_Memset.c" />
+    <ClCompile Include="..\RSSP1\GM_Utils\GM_MQ.c" />
+    <ClCompile Include="..\RSSP1\GM_Utils\GM_MultiThread.c" />
+    <ClCompile Include="..\RSSP1\GM_Utils\GM_Mutex.c" />
+    <ClCompile Include="..\RSSP1\GM_Utils\GM_Time.c" />
+    <ClCompile Include="..\RSSP1\SFM\GM_RSSP1_PROC_Int.c" />
+    <ClCompile Include="..\RSSP1\SFM\GM_RSSP1_SFM.c" />
+    <ClCompile Include="..\RSSP1\SFM\GM_RSSP1_SFM_Init.c" />
+    <ClCompile Include="..\RSSP1\SFM\GM_RSSP1_SFM_Init_Addr.c" />
+    <ClCompile Include="..\RSSP1\SFM\GM_RSSP1_SFM_Interface.c" />
+    <ClCompile Include="..\RSSP1\SFM\GM_RSSP1_Time.c" />
+    <ClCompile Include="..\RSSP1\UDP\FSFB_CFM_UDP.c" />
+    <ClCompile Include="..\RSSP1\UDP\FSFB_UDP_Init.c" />
+    <ClCompile Include="FSFB2Sim.cpp" />
+    <ClCompile Include="FSFB2SimDoc.cpp" />
+    <ClCompile Include="FSFB2SimView.cpp" />
+    <ClCompile Include="GlueData.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="OutputWnd.cpp" />
+    <ClCompile Include="RSSP1_Control.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TB_RSSP1.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RSSP1Sim.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="RSSP1Sim.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

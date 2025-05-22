@@ -1,0 +1,792 @@
+2021-11-03 17:23:49 main.py 127 <module> __init__     form = udp_loglib.TestPlatForm(18125, 18125, set_client=False)\n (18125, 18125) {'set_client': False}
+2021-11-03 17:23:49 udp_loglib.py 1522 __init__ spawn         gevent.spawn(gevent.empty)   (<class 'udp_loglib.myGevent'>, <function myGevent.empty >) {}
+2021-11-03 17:23:49 main.py 141 <module> copyImage_fromVM     form.vmtool.copyImage_fromVM(cmd_type, dstpath=normal_path)\n ('mvcu',) {'dstpath': 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\normal_image'}
+2021-11-03 17:23:49 vmtcp.py 480 copyImage_fromVM _send_cmd         self._send_cmd(func, args)\n ('copy_image', ('mvcu', 'F:/testplaatform1025/Master/testplatform/case_test/normal_image')) {}
+2021-11-03 17:23:49 vmtcp.py 419 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "copy_image", "args": ["mvcu", "F:/testplaatform1025/Master/testplatform/case_test/normal_image"]}',) {}
+2021-11-03 17:23:49 vmtcp.py 399 send set_VM_path             self.set_VM_path()\n () {}
+2021-11-03 17:23:49 vmtcp.py 515 set_VM_path _send_cmd         self._send_cmd(func, args)\n ('set_VM_path', ([('C:\\Users\\test2\\Desktop', 'F:'), ('C:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform', 'F:\\testplaatform1025\\Master\\testplatform')],)) {}
+2021-11-03 17:23:49 vmtcp.py 419 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "set_VM_path", "args": [[["C:\\\\Users\\\\test2\\\\Desktop", "F:"], ["C:\\\\Users\\\\test2\\\\Desktop\\\\testplaatform1025\\\\Master\\\\testplatform", "F:\\\\testplaatform1025\\\\Master\\\\testplatform"]]]}',) {}
+2021-11-03 17:23:49 vmtcp.py 426 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'set_VM_path_15d2a92721da5eb30f92195b8b3255ac') {}
+2021-11-03 17:23:49 vmtcp.py 430 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "set_VM_path", "args": [[["C:\\\\Users\\\\test2\\\\Desktop", "F:"], ["C:\\\\Users\\\\test2\\\\Desktop\\\\testplaatform1025\\\\Master\\\\testplatform", "F:\\\\testplaatform1025\\\\Master\\\\testplatform"]]]}',) {}
+2021-11-03 17:23:50 vmtcp.py 521 set_VM_path print_func         VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', '') {}
+2021-11-03 17:23:51 vmtcp.py 426 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'copy_image_mvcu,F:/testplaatform1025/Master/testplatform/case_test/normal_image') {}
+2021-11-03 17:23:51 vmtcp.py 430 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["mvcu", "F:/testplaatform1025/Master/testplatform/case_test/normal_image"]}',) {}
+2021-11-03 17:23:52 vmtcp.py 486 copyImage_fromVM print_func         VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', 'C:\\Users\\MSTEP\\Desktop\\VMtools\\VCU_DEV_MVCU\\build/out to F:/testplaatform1025/Master/testplatform/case_test/normal_image') {}
+2021-11-03 17:23:52 vmtcp.py 490 copyImage_fromVM print_func         VMConfig.print_func('image_path: %s ' % dstpath)\n (<class 'vmtcp.VMConfig'>, 'image_path: C:/Users/test2/Desktop/testplaatform1025/Master/testplatform/case_test/normal_image ') {}
+2021-11-03 17:23:52 main.py 143 <module> copyImage_fromVM     form.vmtool.copyImage_fromVM(cmd_type, dstpath=normal_path)\n ('svcu',) {'dstpath': 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\normal_image'}
+2021-11-03 17:23:52 vmtcp.py 480 copyImage_fromVM _send_cmd         self._send_cmd(func, args)\n ('copy_image', ('svcu', 'F:/testplaatform1025/Master/testplatform/case_test/normal_image')) {}
+2021-11-03 17:23:52 vmtcp.py 419 _send_cmd send         buff = self.send(msg)\n ('{"type": "cmd", "func": "copy_image", "args": ["svcu", "F:/testplaatform1025/Master/testplatform/case_test/normal_image"]}',) {}
+2021-11-03 17:23:53 vmtcp.py 426 _send_cmd print_func             VMConfig.print_func(buff)\n (<class 'vmtcp.VMConfig'>, 'copy_image_svcu,F:/testplaatform1025/Master/testplatform/case_test/normal_image') {}
+2021-11-03 17:23:53 vmtcp.py 430 get_request send         buff = self.send(msg)\n ('{"type": "request", "func": "copy_image", "args": ["svcu", "F:/testplaatform1025/Master/testplatform/case_test/normal_image"]}',) {}
+2021-11-03 17:23:54 vmtcp.py 486 copyImage_fromVM print_func         VMConfig.print_func(state, msg)\n (<class 'vmtcp.VMConfig'>, 'success', 'C:\\Users\\MSTEP\\Desktop\\VMtools\\VCU_DEV\\build/out to F:/testplaatform1025/Master/testplatform/case_test/normal_image') {}
+2021-11-03 17:23:54 vmtcp.py 490 copyImage_fromVM print_func         VMConfig.print_func('image_path: %s ' % dstpath)\n (<class 'vmtcp.VMConfig'>, 'image_path: C:/Users/test2/Desktop/testplaatform1025/Master/testplatform/case_test/normal_image ') {}
+2021-11-03 17:23:54 main.py 148 main funclog.write         udp_loglib.funclog.wirte(cases)\n (['Cfg2_SwRTC_SVCU_0054.py'],) {}
+2021-11-03 17:23:54 main.py 149 main path_set         Log.path_set(os.path.dirname(__file__) + '/Log/default')\n (<class 'udp_loglib.Log'>, 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test/Log/default') {}
+2021-11-03 17:23:54 udp_loglib.py 1380 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\Log\\default/',) {}
+2021-11-03 17:23:54 main.py 152 main mPrint             Public.mPrint('start %s' % case)\n ('start Cfg2_SwRTC_SVCU_0054.py',) {}
+2021-11-03 17:23:54 Sw_SVCU/Cfg2_SwRTC_SVCU_0054.py 24 LogPath_set path_set     Log.path_set(dir_path)\n (<class 'udp_loglib.Log'>, 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU/Log/Cfg2_SwRTC_SVCU_0054/default') {}
+2021-11-03 17:23:54 udp_loglib.py 1380 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg2_SwRTC_SVCU_0054\\default/',) {}
+2021-11-03 17:23:54 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:54 udp_loglib.py 1924 gevent_join spawn         gevent.spawn(form._log_recv, *(form.clientP, )),   (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._log_recv of <udp_loglib.TestPlatForm object >>, <udp_loglib.UdpClient object >) {}
+2021-11-03 17:23:54 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:54 udp_loglib.py 1925 gevent_join spawn         gevent.spawn(form._log_recv, *(form.clientS, )),   (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._log_recv of <udp_loglib.TestPlatForm object >>, <udp_loglib.UdpClient object >) {}
+2021-11-03 17:23:54 udp_loglib.py 1926 gevent_join spawn         gevent.spawn(form._serial_recv),\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._serial_recv of <udp_loglib.TestPlatForm object >>) {}
+2021-11-03 17:23:54 udp_loglib.py 1927 gevent_join spawn         gevent.spawn(form._mib_recv),\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._mib_recv of <udp_loglib.TestPlatForm object >>) {}
+2021-11-03 17:23:54 udp_loglib.py 1928 gevent_join spawn         gevent.spawn(form._wireshark_recv)]\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._wireshark_recv of <udp_loglib.TestPlatForm object >>) {}
+2021-11-03 17:23:54 udp_loglib.py 1931 gevent_join joinall     gevent.joinall(default_list)\n (<class 'udp_loglib.myGevent'>, [<Greenlet >>(<bound method TestPlatForm._log_recv of <udp_logli, [''], [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._log_recv of <udp_logli, [''], [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._serial_recv of <udp_lo, [''], [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._mib_recv of <udp_logli, [''], [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._wireshark_recv of <udp, [''], [FrameInfo(frame=<frame >]) {}
+2021-11-03 17:23:54 udp_loglib.py 336 run _log_recv             rt_val[0] = func(*args, **kwargs)\n (<udp_loglib.UdpClient object >,) {}
+2021-11-03 17:23:54 udp_loglib.py 1776 _log_recv mPrint         mPrint('recv start %s,%s' % client.remote)\n ('recv start 20.2.1.10,18125',) {}
+2021-11-03 17:23:54 udp_loglib.py 336 run _log_recv             rt_val[0] = func(*args, **kwargs)\n (<udp_loglib.UdpClient object >,) {}
+2021-11-03 17:23:54 udp_loglib.py 1776 _log_recv mPrint         mPrint('recv start %s,%s' % client.remote)\n ('recv start 20.1.1.10,18125',) {}
+2021-11-03 17:23:54 serialread.py 77 open_all funclog.write             funclog.wirte(port, outfile)\n ('COM15', None) {}
+2021-11-03 17:23:54 serialread.py 77 open_all funclog.write             funclog.wirte(port, outfile)\n ('COM22', None) {}
+2021-11-03 17:23:54 udp_loglib.py 1820 _serial_recv mPrint                     mPrint('start listen', self._SerialRead.queue_dict.keys())\n ('start listen', dict_keys(['COM15', 'COM22'])) {}
+2021-11-03 17:23:54 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:54 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:54 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:54 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:54 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:54 udp_loglib.py 1891 _wireshark_recv start                 p_new = self.wireShark.start(outfile='wireshark_recv.pcapng', block=False)\n () {'outfile': 'wireshark_recv.pcapng', 'block': False}
+2021-11-03 17:23:54 wireShark.py 103 start mPrint             self.print('%s' % self.get_path(outfile))\n ('c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg2_SwRTC_SVCU_0054\\default//wireshark_recv.pcapng',) {}
+2021-11-03 17:23:54 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:54 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:54 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:54 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:54 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:54 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:54 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:54 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:54 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:54 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:54 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:55 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:55 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:55 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:55 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:55 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:55 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:55 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:55 wireShark.py 73 __find_Conn mPrint             self.print('“‘Ã´Õ¯  ≈‰∆˜: %s' % self._Conn)\n ('“‘Ã´Õ¯  ≈‰∆˜: “‘Ã´Õ¯',) {}
+2021-11-03 17:23:55 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:55 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:55 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:55 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:55 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:55 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:55 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:56 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:56 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:56 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:56 udp_loglib.py 1635 _set_client mPrint                 mPrint('use mvcu p')\n ('use mvcu p',) {}
+2021-11-03 17:23:56 udp_loglib.py 1223 _set __init__         frame = UdpSendFrame()\n () {}
+2021-11-03 17:23:56 udp_loglib.py 1643 _set_client tst_set             self.tst_set(dst_svcu, Conf.serialFlagSet(1))           \n ('5', <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 17:23:56 udp_loglib.py 1765 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 17:23:56 udp_loglib.py 1771 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2021-11-03 17:23:56 udp_loglib.py 873 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff10320f0000000000000100018764') {}
+2021-11-03 17:23:57 udp_loglib.py 709 respondCheck mPrint                 Public.mPrint('set success')\n ('set success',) {}
+2021-11-03 17:23:57 udp_loglib.py 1223 _set __init__         frame = UdpSendFrame()\n () {}
+2021-11-03 17:23:57 main.py 97 case_start tst_set     form.tst_set(active_mvcu, Conf.allFlagSet(1)) ('2', <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 17:23:57 udp_loglib.py 1765 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 17:23:57 udp_loglib.py 1771 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2021-11-03 17:23:57 udp_loglib.py 873 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff02320f000000000300010001f5c4') {}
+2021-11-03 17:23:58 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:58 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:58 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:58 udp_loglib.py 709 respondCheck mPrint                 Public.mPrint('set success')\n ('set success',) {}
+2021-11-03 17:23:58 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:58 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:58 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:23:58 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:24:14 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:24:14 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:24:14 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:24:14 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:24:51 Sw_SVCU/Cfg2_SwRTC_SVCU_0054.py 24 LogPath_set path_set     Log.path_set(dir_path)\n (<class 'udp_loglib.Log'>, 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU/Log/Cfg2_SwRTC_SVCU_0054/02') {}
+2021-11-03 17:24:51 udp_loglib.py 1380 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg2_SwRTC_SVCU_0054\\02/',) {}
+2021-11-03 17:24:51 udp_loglib.py 1299 tag_send __init__         frame = UdpSendFrame()\n () {}
+2021-11-03 17:24:51 Sw_SVCU/Cfg2_SwRTC_SVCU_0054.py 35 step2 tst_set     form.tst_set(dst_slot, Tag.tag_send('00540111'))\n ('5', <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 17:24:51 udp_loglib.py 1223 _set __init__         frame = UdpSendFrame()\n () {}
+2021-11-03 17:24:51 udp_loglib.py 1747 tst_set tst_set             self.tst_set(slots, Conf.allFlagSet(1), False, False)\n ('5', <udp_loglib.UdpSendFrame object >, False, False) {}
+2021-11-03 17:24:51 udp_loglib.py 1765 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 17:24:51 udp_loglib.py 1765 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 17:24:51 udp_loglib.py 1891 _wireshark_recv start                 p_new = self.wireShark.start(outfile='wireshark_recv.pcapng', block=False)\n () {'outfile': 'wireshark_recv.pcapng', 'block': False}
+2021-11-03 17:24:51 wireShark.py 103 start mPrint             self.print('%s' % self.get_path(outfile))\n ('c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg2_SwRTC_SVCU_0054\\02//wireshark_recv.pcapng',) {}
+2021-11-03 17:24:52 udp_loglib.py 1771 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2021-11-03 17:24:52 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:24:52 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:24:52 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:24:52 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:24:52 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:24:52 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:24:52 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:24:52 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:24:52 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:24:52 udp_loglib.py 873 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff10320f00000000030001000169b6') {}
+2021-11-03 17:24:52 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:24:52 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:24:52 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:24:52 udp_loglib.py 873 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff10300f000054011100000000c03c') {}
+2021-11-03 17:24:53 udp_loglib.py 709 respondCheck mPrint                 Public.mPrint('set success')\n ('set success',) {}
+2021-11-03 17:24:53 udp_loglib.py 1223 _set __init__         frame = UdpSendFrame()\n () {}
+2021-11-03 17:24:53 Sw_SVCU/Cfg2_SwRTC_SVCU_0054.py 36 step2 tst_set     form.tst_set('5', Conf.AllowFaultFifter())\n ('5', <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 17:24:53 udp_loglib.py 1765 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 17:24:53 udp_loglib.py 1771 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2021-11-03 17:24:53 udp_loglib.py 1893 _wireshark_recv spawn                     gevent.spawn(kill_p_old, p_old)\n (<class 'udp_loglib.myGevent'>, <function TestPlatForm._wireshark_recv.<locals>.kill_p_old >, <Popen >) {}
+2021-11-03 17:24:53 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 16 and 20 lost!',) {}
+2021-11-03 17:24:53 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 18 and 22 lost!',) {}
+2021-11-03 17:24:54 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 33 and 40 lost!',) {}
+2021-11-03 17:24:54 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 36 and 42 lost!',) {}
+2021-11-03 17:24:55 udp_loglib.py 873 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff10320f020000000100010001eb52') {}
+2021-11-03 17:24:55 udp_loglib.py 709 respondCheck mPrint                 Public.mPrint('set success')\n ('set success',) {}
+2021-11-03 17:24:55 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:24:55 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:24:55 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:24:55 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:24:55 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 53 and 61 lost!',) {}
+2021-11-03 17:24:55 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 56 and 64 lost!',) {}
+2021-11-03 17:24:56 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 78 and 84 lost!',) {}
+2021-11-03 17:24:56 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 75 and 81 lost!',) {}
+2021-11-03 17:24:57 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 98 and 104 lost!',) {}
+2021-11-03 17:24:57 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 94 and 101 lost!',) {}
+2021-11-03 17:24:58 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 118 and 124 lost!',) {}
+2021-11-03 17:24:58 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 114 and 121 lost!',) {}
+2021-11-03 17:24:59 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 138 and 145 lost!',) {}
+2021-11-03 17:24:59 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 133 and 141 lost!',) {}
+2021-11-03 17:25:00 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 154 and 161 lost!',) {}
+2021-11-03 17:25:00 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 159 and 165 lost!',) {}
+2021-11-03 17:25:01 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 179 and 185 lost!',) {}
+2021-11-03 17:25:01 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 175 and 181 lost!',) {}
+2021-11-03 17:25:02 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 195 and 201 lost!',) {}
+2021-11-03 17:25:02 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 199 and 205 lost!',) {}
+2021-11-03 17:25:03 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 219 and 225 lost!',) {}
+2021-11-03 17:25:03 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 215 and 221 lost!',) {}
+2021-11-03 17:25:04 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 239 and 245 lost!',) {}
+2021-11-03 17:25:04 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 235 and 241 lost!',) {}
+2021-11-03 17:25:05 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 259 and 266 lost!',) {}
+2021-11-03 17:25:05 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 255 and 261 lost!',) {}
+2021-11-03 17:25:06 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 280 and 286 lost!',) {}
+2021-11-03 17:25:06 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 275 and 281 lost!',) {}
+2021-11-03 17:25:07 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 300 and 306 lost!',) {}
+2021-11-03 17:25:07 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 294 and 301 lost!',) {}
+2021-11-03 17:25:09 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 320 and 326 lost!',) {}
+2021-11-03 17:25:09 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 315 and 321 lost!',) {}
+2021-11-03 17:25:10 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 339 and 346 lost!',) {}
+2021-11-03 17:25:10 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 335 and 341 lost!',) {}
+2021-11-03 17:25:11 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 358 and 366 lost!',) {}
+2021-11-03 17:25:11 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 353 and 361 lost!',) {}
+2021-11-03 17:25:12 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 380 and 387 lost!',) {}
+2021-11-03 17:25:12 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 374 and 381 lost!',) {}
+2021-11-03 17:25:13 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 400 and 407 lost!',) {}
+2021-11-03 17:25:13 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 395 and 401 lost!',) {}
+2021-11-03 17:25:14 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 421 and 427 lost!',) {}
+2021-11-03 17:25:14 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 415 and 421 lost!',) {}
+2021-11-03 17:25:15 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 441 and 447 lost!',) {}
+2021-11-03 17:25:15 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 435 and 441 lost!',) {}
+2021-11-03 17:25:16 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 461 and 467 lost!',) {}
+2021-11-03 17:25:16 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 455 and 461 lost!',) {}
+2021-11-03 17:25:17 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 481 and 487 lost!',) {}
+2021-11-03 17:25:17 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 475 and 481 lost!',) {}
+2021-11-03 17:25:19 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 500 and 507 lost!',) {}
+2021-11-03 17:25:19 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 496 and 502 lost!',) {}
+2021-11-03 17:25:20 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 520 and 527 lost!',) {}
+2021-11-03 17:25:20 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 516 and 522 lost!',) {}
+2021-11-03 17:25:21 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 540 and 547 lost!',) {}
+2021-11-03 17:25:21 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 536 and 542 lost!',) {}
+2021-11-03 17:25:22 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 560 and 567 lost!',) {}
+2021-11-03 17:25:22 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 556 and 562 lost!',) {}
+2021-11-03 17:25:23 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 580 and 587 lost!',) {}
+2021-11-03 17:25:23 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 576 and 582 lost!',) {}
+2021-11-03 17:25:24 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 600 and 607 lost!',) {}
+2021-11-03 17:25:24 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 596 and 602 lost!',) {}
+2021-11-03 17:25:25 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 620 and 627 lost!',) {}
+2021-11-03 17:25:25 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 617 and 623 lost!',) {}
+2021-11-03 17:25:26 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 640 and 647 lost!',) {}
+2021-11-03 17:25:26 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 637 and 643 lost!',) {}
+2021-11-03 17:25:27 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 661 and 667 lost!',) {}
+2021-11-03 17:25:27 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 657 and 663 lost!',) {}
+2021-11-03 17:25:28 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 680 and 687 lost!',) {}
+2021-11-03 17:25:28 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 677 and 683 lost!',) {}
+2021-11-03 17:25:29 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 700 and 707 lost!',) {}
+2021-11-03 17:25:29 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 697 and 703 lost!',) {}
+2021-11-03 17:25:30 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 721 and 727 lost!',) {}
+2021-11-03 17:25:30 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 717 and 723 lost!',) {}
+2021-11-03 17:25:31 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 737 and 744 lost!',) {}
+2021-11-03 17:25:31 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 741 and 747 lost!',) {}
+2021-11-03 17:25:32 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 761 and 767 lost!',) {}
+2021-11-03 17:25:32 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 757 and 764 lost!',) {}
+2021-11-03 17:25:33 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 779 and 787 lost!',) {}
+2021-11-03 17:25:33 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 776 and 784 lost!',) {}
+2021-11-03 17:25:34 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 801 and 807 lost!',) {}
+2021-11-03 17:25:34 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 798 and 804 lost!',) {}
+2021-11-03 17:25:35 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 821 and 827 lost!',) {}
+2021-11-03 17:25:35 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 818 and 824 lost!',) {}
+2021-11-03 17:25:36 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 841 and 849 lost!',) {}
+2021-11-03 17:25:36 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 837 and 845 lost!',) {}
+2021-11-03 17:25:37 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 863 and 869 lost!',) {}
+2021-11-03 17:25:37 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 858 and 865 lost!',) {}
+2021-11-03 17:25:38 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 883 and 889 lost!',) {}
+2021-11-03 17:25:38 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 878 and 885 lost!',) {}
+2021-11-03 17:25:39 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 903 and 909 lost!',) {}
+2021-11-03 17:25:39 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 898 and 905 lost!',) {}
+2021-11-03 17:25:40 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 923 and 929 lost!',) {}
+2021-11-03 17:25:40 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 919 and 925 lost!',) {}
+2021-11-03 17:25:41 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 943 and 949 lost!',) {}
+2021-11-03 17:25:41 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 938 and 945 lost!',) {}
+2021-11-03 17:25:42 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 963 and 969 lost!',) {}
+2021-11-03 17:25:42 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 959 and 965 lost!',) {}
+2021-11-03 17:25:43 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 975 and 978 lost!',) {}
+2021-11-03 17:25:43 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 979 and 983 lost!',) {}
+2021-11-03 17:25:43 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 983 and 989 lost!',) {}
+2021-11-03 17:25:43 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 978 and 985 lost!',) {}
+2021-11-03 17:25:44 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 993 and 1003 lost!',) {}
+2021-11-03 17:25:44 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 989 and 999 lost!',) {}
+2021-11-03 17:25:44 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1003 and 1009 lost!',) {}
+2021-11-03 17:25:44 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 999 and 1005 lost!',) {}
+2021-11-03 17:25:44 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1012 and 1023 lost!',) {}
+2021-11-03 17:25:44 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1008 and 1019 lost!',) {}
+2021-11-03 17:25:44 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1023 and 1029 lost!',) {}
+2021-11-03 17:25:44 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1019 and 1025 lost!',) {}
+2021-11-03 17:25:44 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1027 and 1038 lost!',) {}
+2021-11-03 17:25:45 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1031 and 1043 lost!',) {}
+2021-11-03 17:25:45 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1038 and 1045 lost!',) {}
+2021-11-03 17:25:45 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1043 and 1049 lost!',) {}
+2021-11-03 17:25:45 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1050 and 1058 lost!',) {}
+2021-11-03 17:25:45 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1055 and 1063 lost!',) {}
+2021-11-03 17:25:45 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1063 and 1069 lost!',) {}
+2021-11-03 17:25:45 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1058 and 1065 lost!',) {}
+2021-11-03 17:25:46 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1074 and 1083 lost!',) {}
+2021-11-03 17:25:46 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1070 and 1079 lost!',) {}
+2021-11-03 17:25:46 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1079 and 1085 lost!',) {}
+2021-11-03 17:25:46 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1083 and 1089 lost!',) {}
+2021-11-03 17:25:46 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1095 and 1103 lost!',) {}
+2021-11-03 17:25:46 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1091 and 1099 lost!',) {}
+2021-11-03 17:25:46 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1103 and 1109 lost!',) {}
+2021-11-03 17:25:46 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1099 and 1105 lost!',) {}
+2021-11-03 17:25:47 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1108 and 1118 lost!',) {}
+2021-11-03 17:25:47 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1112 and 1123 lost!',) {}
+2021-11-03 17:25:47 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1123 and 1129 lost!',) {}
+2021-11-03 17:25:47 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1118 and 1125 lost!',) {}
+2021-11-03 17:25:47 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1130 and 1138 lost!',) {}
+2021-11-03 17:25:47 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1134 and 1143 lost!',) {}
+2021-11-03 17:25:47 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1143 and 1149 lost!',) {}
+2021-11-03 17:25:47 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1138 and 1145 lost!',) {}
+2021-11-03 17:25:48 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1149 and 1156 lost!',) {}
+2021-11-03 17:25:48 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1156 and 1158 lost!',) {}
+2021-11-03 17:25:48 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1154 and 1163 lost!',) {}
+2021-11-03 17:25:48 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1163 and 1169 lost!',) {}
+2021-11-03 17:25:48 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1158 and 1165 lost!',) {}
+2021-11-03 17:25:48 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1170 and 1178 lost!',) {}
+2021-11-03 17:25:48 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1174 and 1183 lost!',) {}
+2021-11-03 17:25:49 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1183 and 1189 lost!',) {}
+2021-11-03 17:25:49 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1178 and 1185 lost!',) {}
+2021-11-03 17:25:49 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1193 and 1201 lost!',) {}
+2021-11-03 17:25:49 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1202 and 1209 lost!',) {}
+2021-11-03 17:25:49 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1188 and 1205 lost!',) {}
+2021-11-03 17:25:50 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1211 and 1218 lost!',) {}
+2021-11-03 17:25:50 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1216 and 1223 lost!',) {}
+2021-11-03 17:25:50 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1223 and 1229 lost!',) {}
+2021-11-03 17:25:50 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1218 and 1225 lost!',) {}
+2021-11-03 17:25:50 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1228 and 1238 lost!',) {}
+2021-11-03 17:25:50 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1233 and 1243 lost!',) {}
+2021-11-03 17:25:50 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1243 and 1249 lost!',) {}
+2021-11-03 17:25:50 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1238 and 1245 lost!',) {}
+2021-11-03 17:25:51 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1248 and 1258 lost!',) {}
+2021-11-03 17:25:51 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1252 and 1263 lost!',) {}
+2021-11-03 17:25:51 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1263 and 1269 lost!',) {}
+2021-11-03 17:25:51 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1258 and 1265 lost!',) {}
+2021-11-03 17:25:51 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1274 and 1283 lost!',) {}
+2021-11-03 17:25:51 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1269 and 1279 lost!',) {}
+2021-11-03 17:25:51 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1283 and 1289 lost!',) {}
+2021-11-03 17:25:51 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1279 and 1285 lost!',) {}
+2021-11-03 17:25:52 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1295 and 1303 lost!',) {}
+2021-11-03 17:25:52 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1291 and 1299 lost!',) {}
+2021-11-03 17:25:52 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1303 and 1309 lost!',) {}
+2021-11-03 17:25:52 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1299 and 1305 lost!',) {}
+2021-11-03 17:25:52 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1310 and 1318 lost!',) {}
+2021-11-03 17:25:52 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1314 and 1323 lost!',) {}
+2021-11-03 17:25:52 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1323 and 1329 lost!',) {}
+2021-11-03 17:25:53 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1318 and 1325 lost!',) {}
+2021-11-03 17:25:53 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1336 and 1343 lost!',) {}
+2021-11-03 17:25:53 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1331 and 1339 lost!',) {}
+2021-11-03 17:25:53 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1343 and 1349 lost!',) {}
+2021-11-03 17:25:53 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1339 and 1345 lost!',) {}
+2021-11-03 17:25:54 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1350 and 1358 lost!',) {}
+2021-11-03 17:25:54 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1355 and 1363 lost!',) {}
+2021-11-03 17:25:54 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1363 and 1369 lost!',) {}
+2021-11-03 17:25:54 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1358 and 1365 lost!',) {}
+2021-11-03 17:25:54 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1370 and 1378 lost!',) {}
+2021-11-03 17:25:54 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1375 and 1383 lost!',) {}
+2021-11-03 17:25:54 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1383 and 1389 lost!',) {}
+2021-11-03 17:25:54 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1378 and 1385 lost!',) {}
+2021-11-03 17:25:55 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1394 and 1402 lost!',) {}
+2021-11-03 17:25:55 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1389 and 1398 lost!',) {}
+2021-11-03 17:25:55 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1403 and 1409 lost!',) {}
+2021-11-03 17:25:55 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1399 and 1405 lost!',) {}
+2021-11-03 17:25:55 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:25:55 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:25:55 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:25:55 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:25:55 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:25:55 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:25:55 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1409 and 1419 lost!',) {}
+2021-11-03 17:25:56 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1414 and 1423 lost!',) {}
+2021-11-03 17:25:56 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:25:56 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:25:56 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1423 and 1429 lost!',) {}
+2021-11-03 17:25:56 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1419 and 1425 lost!',) {}
+2021-11-03 17:25:56 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:25:56 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:25:56 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:25:56 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:25:56 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1429 and 1438 lost!',) {}
+2021-11-03 17:25:57 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1434 and 1449 lost!',) {}
+2021-11-03 17:25:57 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1439 and 1445 lost!',) {}
+2021-11-03 17:25:57 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1451 and 1458 lost!',) {}
+2021-11-03 17:25:57 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1455 and 1469 lost!',) {}
+2021-11-03 17:25:57 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1459 and 1465 lost!',) {}
+2021-11-03 17:25:57 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1467 and 1478 lost!',) {}
+2021-11-03 17:25:57 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1471 and 1489 lost!',) {}
+2021-11-03 17:25:57 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1479 and 1485 lost!',) {}
+2021-11-03 17:25:58 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1489 and 1497 lost!',) {}
+2021-11-03 17:25:58 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1497 and 1499 lost!',) {}
+2021-11-03 17:25:58 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1494 and 1503 lost!',) {}
+2021-11-03 17:25:58 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1503 and 1509 lost!',) {}
+2021-11-03 17:25:58 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1499 and 1505 lost!',) {}
+2021-11-03 17:25:58 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1511 and 1519 lost!',) {}
+2021-11-03 17:25:58 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1515 and 1523 lost!',) {}
+2021-11-03 17:25:58 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1523 and 1529 lost!',) {}
+2021-11-03 17:25:58 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1519 and 1525 lost!',) {}
+2021-11-03 17:25:59 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1530 and 1539 lost!',) {}
+2021-11-03 17:25:59 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1534 and 1543 lost!',) {}
+2021-11-03 17:25:59 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1543 and 1549 lost!',) {}
+2021-11-03 17:25:59 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1539 and 1545 lost!',) {}
+2021-11-03 17:25:59 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1554 and 1562 lost!',) {}
+2021-11-03 17:26:00 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1551 and 1558 lost!',) {}
+2021-11-03 17:26:00 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1562 and 1569 lost!',) {}
+2021-11-03 17:26:00 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1558 and 1565 lost!',) {}
+2021-11-03 17:26:00 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1573 and 1580 lost!',) {}
+2021-11-03 17:26:00 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1568 and 1578 lost!',) {}
+2021-11-03 17:26:00 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1580 and 1589 lost!',) {}
+2021-11-03 17:26:00 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1579 and 1585 lost!',) {}
+2021-11-03 17:26:00 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1588 and 1598 lost!',) {}
+2021-11-03 17:26:01 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1593 and 1609 lost!',) {}
+2021-11-03 17:26:01 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1599 and 1605 lost!',) {}
+2021-11-03 17:26:01 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1608 and 1617 lost!',) {}
+2021-11-03 17:26:01 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1612 and 1622 lost!',) {}
+2021-11-03 17:26:01 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1622 and 1629 lost!',) {}
+2021-11-03 17:26:01 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1617 and 1625 lost!',) {}
+2021-11-03 17:26:02 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1631 and 1638 lost!',) {}
+2021-11-03 17:26:02 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1635 and 1649 lost!',) {}
+2021-11-03 17:26:02 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1639 and 1645 lost!',) {}
+2021-11-03 17:26:02 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1654 and 1662 lost!',) {}
+2021-11-03 17:26:02 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1651 and 1658 lost!',) {}
+2021-11-03 17:26:02 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1662 and 1669 lost!',) {}
+2021-11-03 17:26:02 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1659 and 1665 lost!',) {}
+2021-11-03 17:26:03 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1671 and 1678 lost!',) {}
+2021-11-03 17:26:03 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1675 and 1689 lost!',) {}
+2021-11-03 17:26:03 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1679 and 1685 lost!',) {}
+2021-11-03 17:26:03 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1687 and 1698 lost!',) {}
+2021-11-03 17:26:03 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1690 and 1709 lost!',) {}
+2021-11-03 17:26:03 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1699 and 1705 lost!',) {}
+2021-11-03 17:26:04 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1711 and 1719 lost!',) {}
+2021-11-03 17:26:04 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1714 and 1723 lost!',) {}
+2021-11-03 17:26:04 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1723 and 1729 lost!',) {}
+2021-11-03 17:26:04 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1719 and 1725 lost!',) {}
+2021-11-03 17:26:04 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1731 and 1739 lost!',) {}
+2021-11-03 17:26:04 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1734 and 1743 lost!',) {}
+2021-11-03 17:26:04 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1743 and 1749 lost!',) {}
+2021-11-03 17:26:04 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1739 and 1745 lost!',) {}
+2021-11-03 17:26:05 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1751 and 1759 lost!',) {}
+2021-11-03 17:26:05 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1754 and 1763 lost!',) {}
+2021-11-03 17:26:05 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1763 and 1769 lost!',) {}
+2021-11-03 17:26:05 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1759 and 1765 lost!',) {}
+2021-11-03 17:26:05 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1770 and 1778 lost!',) {}
+2021-11-03 17:26:05 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1774 and 1789 lost!',) {}
+2021-11-03 17:26:05 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1779 and 1785 lost!',) {}
+2021-11-03 17:26:06 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1792 and 1798 lost!',) {}
+2021-11-03 17:26:06 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1795 and 1809 lost!',) {}
+2021-11-03 17:26:06 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1799 and 1805 lost!',) {}
+2021-11-03 17:26:07 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1808 and 1818 lost!',) {}
+2021-11-03 17:26:07 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1813 and 1829 lost!',) {}
+2021-11-03 17:26:07 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1819 and 1825 lost!',) {}
+2021-11-03 17:26:07 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1836 and 1843 lost!',) {}
+2021-11-03 17:26:07 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1832 and 1839 lost!',) {}
+2021-11-03 17:26:07 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1843 and 1850 lost!',) {}
+2021-11-03 17:26:07 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1839 and 1846 lost!',) {}
+2021-11-03 17:26:08 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1850 and 1859 lost!',) {}
+2021-11-03 17:26:08 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1855 and 1870 lost!',) {}
+2021-11-03 17:26:08 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1860 and 1866 lost!',) {}
+2021-11-03 17:26:08 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1873 and 1879 lost!',) {}
+2021-11-03 17:26:08 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1876 and 1884 lost!',) {}
+2021-11-03 17:26:08 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1884 and 1890 lost!',) {}
+2021-11-03 17:26:08 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1879 and 1886 lost!',) {}
+2021-11-03 17:26:09 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1895 and 1904 lost!',) {}
+2021-11-03 17:26:09 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1892 and 1900 lost!',) {}
+2021-11-03 17:26:09 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1904 and 1910 lost!',) {}
+2021-11-03 17:26:09 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1900 and 1906 lost!',) {}
+2021-11-03 17:26:09 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1913 and 1924 lost!',) {}
+2021-11-03 17:26:09 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1907 and 1920 lost!',) {}
+2021-11-03 17:26:09 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1924 and 1930 lost!',) {}
+2021-11-03 17:26:09 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1920 and 1926 lost!',) {}
+2021-11-03 17:26:10 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1932 and 1939 lost!',) {}
+2021-11-03 17:26:10 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1935 and 1944 lost!',) {}
+2021-11-03 17:26:10 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1939 and 1946 lost!',) {}
+2021-11-03 17:26:10 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1944 and 1950 lost!',) {}
+2021-11-03 17:26:10 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1950 and 1952 lost!',) {}
+2021-11-03 17:26:10 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1952 and 1959 lost!',) {}
+2021-11-03 17:26:10 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1955 and 1964 lost!',) {}
+2021-11-03 17:26:10 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1964 and 1970 lost!',) {}
+2021-11-03 17:26:10 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1959 and 1966 lost!',) {}
+2021-11-03 17:26:11 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1974 and 1983 lost!',) {}
+2021-11-03 17:26:11 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1969 and 1979 lost!',) {}
+2021-11-03 17:26:11 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1984 and 1990 lost!',) {}
+2021-11-03 17:26:11 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1979 and 1986 lost!',) {}
+2021-11-03 17:26:11 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 1995 and 2004 lost!',) {}
+2021-11-03 17:26:11 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 1991 and 2000 lost!',) {}
+2021-11-03 17:26:11 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2004 and 2010 lost!',) {}
+2021-11-03 17:26:11 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2000 and 2006 lost!',) {}
+2021-11-03 17:26:12 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2011 and 2019 lost!',) {}
+2021-11-03 17:26:12 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2016 and 2024 lost!',) {}
+2021-11-03 17:26:12 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2024 and 2030 lost!',) {}
+2021-11-03 17:26:12 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2019 and 2026 lost!',) {}
+2021-11-03 17:26:13 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2033 and 2042 lost!',) {}
+2021-11-03 17:26:13 Sw_SVCU/Cfg2_SwRTC_SVCU_0054.py 24 LogPath_set path_set     Log.path_set(dir_path)\n (<class 'udp_loglib.Log'>, 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU/Log/Cfg2_SwRTC_SVCU_0054/03') {}
+2021-11-03 17:26:13 udp_loglib.py 1380 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg2_SwRTC_SVCU_0054\\03/',) {}
+2021-11-03 17:26:13 udp_loglib.py 1299 tag_send __init__         frame = UdpSendFrame()\n () {}
+2021-11-03 17:26:13 Sw_SVCU/Cfg2_SwRTC_SVCU_0054.py 44 step3 tst_set     form.tst_set(dst_slot, Tag.tag_send('00540211'))\n ('5', <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 17:26:13 udp_loglib.py 1223 _set __init__         frame = UdpSendFrame()\n () {}
+2021-11-03 17:26:13 udp_loglib.py 1747 tst_set tst_set             self.tst_set(slots, Conf.allFlagSet(1), False, False)\n ('5', <udp_loglib.UdpSendFrame object >, False, False) {}
+2021-11-03 17:26:13 udp_loglib.py 1765 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 17:26:13 udp_loglib.py 1765 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 17:26:13 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2028 and 2038 lost!',) {}
+2021-11-03 17:26:13 udp_loglib.py 1891 _wireshark_recv start                 p_new = self.wireShark.start(outfile='wireshark_recv.pcapng', block=False)\n () {'outfile': 'wireshark_recv.pcapng', 'block': False}
+2021-11-03 17:26:13 wireShark.py 103 start mPrint             self.print('%s' % self.get_path(outfile))\n ('c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg2_SwRTC_SVCU_0054\\03//wireshark_recv.pcapng',) {}
+2021-11-03 17:26:13 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2042 and 2050 lost!',) {}
+2021-11-03 17:26:13 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2038 and 2046 lost!',) {}
+2021-11-03 17:26:13 udp_loglib.py 1771 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2021-11-03 17:26:13 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2051 and 2059 lost!',) {}
+2021-11-03 17:26:13 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:26:13 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:26:13 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2056 and 2064 lost!',) {}
+2021-11-03 17:26:13 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:26:13 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:26:13 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:26:13 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2064 and 2070 lost!',) {}
+2021-11-03 17:26:13 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:26:14 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2059 and 2066 lost!',) {}
+2021-11-03 17:26:14 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:26:14 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:26:14 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:26:14 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:26:14 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:26:14 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:26:14 udp_loglib.py 1893 _wireshark_recv spawn                     gevent.spawn(kill_p_old, p_old)\n (<class 'udp_loglib.myGevent'>, <function TestPlatForm._wireshark_recv.<locals>.kill_p_old >, <Popen >) {}
+2021-11-03 17:26:14 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2070 and 2079 lost!',) {}
+2021-11-03 17:26:14 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2075 and 2084 lost!',) {}
+2021-11-03 17:26:14 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2079 and 2086 lost!',) {}
+2021-11-03 17:26:14 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2084 and 2090 lost!',) {}
+2021-11-03 17:26:15 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2095 and 2104 lost!',) {}
+2021-11-03 17:26:15 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2090 and 2100 lost!',) {}
+2021-11-03 17:26:15 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2104 and 2110 lost!',) {}
+2021-11-03 17:26:15 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2100 and 2106 lost!',) {}
+2021-11-03 17:26:15 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2109 and 2119 lost!',) {}
+2021-11-03 17:26:15 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2112 and 2124 lost!',) {}
+2021-11-03 17:26:15 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2124 and 2130 lost!',) {}
+2021-11-03 17:26:15 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2119 and 2126 lost!',) {}
+2021-11-03 17:26:16 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2130 and 2139 lost!',) {}
+2021-11-03 17:26:16 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2134 and 2144 lost!',) {}
+2021-11-03 17:26:16 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2144 and 2150 lost!',) {}
+2021-11-03 17:26:16 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2139 and 2146 lost!',) {}
+2021-11-03 17:26:16 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2150 and 2159 lost!',) {}
+2021-11-03 17:26:16 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2155 and 2164 lost!',) {}
+2021-11-03 17:26:16 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2164 and 2170 lost!',) {}
+2021-11-03 17:26:16 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2159 and 2166 lost!',) {}
+2021-11-03 17:26:17 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2174 and 2182 lost!',) {}
+2021-11-03 17:26:17 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2170 and 2178 lost!',) {}
+2021-11-03 17:26:17 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2182 and 2190 lost!',) {}
+2021-11-03 17:26:17 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2178 and 2186 lost!',) {}
+2021-11-03 17:26:17 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2195 and 2204 lost!',) {}
+2021-11-03 17:26:17 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2191 and 2200 lost!',) {}
+2021-11-03 17:26:17 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2204 and 2210 lost!',) {}
+2021-11-03 17:26:17 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2200 and 2206 lost!',) {}
+2021-11-03 17:26:18 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2209 and 2219 lost!',) {}
+2021-11-03 17:26:18 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2213 and 2224 lost!',) {}
+2021-11-03 17:26:18 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2224 and 2230 lost!',) {}
+2021-11-03 17:26:18 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2219 and 2226 lost!',) {}
+2021-11-03 17:26:18 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2235 and 2244 lost!',) {}
+2021-11-03 17:26:18 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2231 and 2240 lost!',) {}
+2021-11-03 17:26:18 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2244 and 2250 lost!',) {}
+2021-11-03 17:26:18 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2240 and 2246 lost!',) {}
+2021-11-03 17:26:19 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2255 and 2263 lost!',) {}
+2021-11-03 17:26:19 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2264 and 2270 lost!',) {}
+2021-11-03 17:26:19 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2250 and 2266 lost!',) {}
+2021-11-03 17:26:19 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2274 and 2284 lost!',) {}
+2021-11-03 17:26:19 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2270 and 2280 lost!',) {}
+2021-11-03 17:26:19 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2284 and 2290 lost!',) {}
+2021-11-03 17:26:19 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2280 and 2286 lost!',) {}
+2021-11-03 17:26:20 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2296 and 2304 lost!',) {}
+2021-11-03 17:26:20 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2291 and 2300 lost!',) {}
+2021-11-03 17:26:20 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2304 and 2310 lost!',) {}
+2021-11-03 17:26:20 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2300 and 2306 lost!',) {}
+2021-11-03 17:26:20 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2309 and 2319 lost!',) {}
+2021-11-03 17:26:20 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2313 and 2324 lost!',) {}
+2021-11-03 17:26:20 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2324 and 2330 lost!',) {}
+2021-11-03 17:26:20 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2319 and 2326 lost!',) {}
+2021-11-03 17:26:20 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2333 and 2344 lost!',) {}
+2021-11-03 17:26:20 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2328 and 2340 lost!',) {}
+2021-11-03 17:26:20 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2340 and 2346 lost!',) {}
+2021-11-03 17:26:20 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2344 and 2350 lost!',) {}
+2021-11-03 17:26:21 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2349 and 2355 lost!',) {}
+2021-11-03 17:26:21 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2353 and 2364 lost!',) {}
+2021-11-03 17:26:21 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2355 and 2360 lost!',) {}
+2021-11-03 17:26:21 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2364 and 2370 lost!',) {}
+2021-11-03 17:26:21 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2360 and 2366 lost!',) {}
+2021-11-03 17:26:21 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2370 and 2379 lost!',) {}
+2021-11-03 17:26:21 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2375 and 2384 lost!',) {}
+2021-11-03 17:26:21 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2384 and 2390 lost!',) {}
+2021-11-03 17:26:21 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2379 and 2386 lost!',) {}
+2021-11-03 17:26:21 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_5,CPUA not recv respond, msg 10FF120F00000000030001000169B6',) {}
+2021-11-03 17:26:21 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 17:26:21 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 17:26:21 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_5,CPUA not recv respond, msg 10FF100F0000540211000000000EDC',) {}
+2021-11-03 17:26:22 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 17:26:22 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 17:26:22 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2391 and 2399 lost!',) {}
+2021-11-03 17:26:22 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2396 and 2404 lost!',) {}
+2021-11-03 17:26:22 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2404 and 2410 lost!',) {}
+2021-11-03 17:26:22 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2399 and 2406 lost!',) {}
+2021-11-03 17:26:22 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2413 and 2418 lost!',) {}
+2021-11-03 17:26:22 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2409 and 2419 lost!',) {}
+2021-11-03 17:26:22 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2418 and 2424 lost!',) {}
+2021-11-03 17:26:22 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2424 and 2430 lost!',) {}
+2021-11-03 17:26:22 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2419 and 2426 lost!',) {}
+2021-11-03 17:26:22 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2429 and 2439 lost!',) {}
+2021-11-03 17:26:23 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2434 and 2444 lost!',) {}
+2021-11-03 17:26:23 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2444 and 2450 lost!',) {}
+2021-11-03 17:26:23 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2439 and 2446 lost!',) {}
+2021-11-03 17:26:23 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2450 and 2458 lost!',) {}
+2021-11-03 17:26:23 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2454 and 2463 lost!',) {}
+2021-11-03 17:26:23 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2463 and 2470 lost!',) {}
+2021-11-03 17:26:23 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2458 and 2466 lost!',) {}
+2021-11-03 17:26:24 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2470 and 2479 lost!',) {}
+2021-11-03 17:26:24 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2475 and 2490 lost!',) {}
+2021-11-03 17:26:24 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2480 and 2486 lost!',) {}
+2021-11-03 17:26:24 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2489 and 2499 lost!',) {}
+2021-11-03 17:26:24 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2494 and 2510 lost!',) {}
+2021-11-03 17:26:24 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2500 and 2506 lost!',) {}
+2021-11-03 17:26:25 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2511 and 2520 lost!',) {}
+2021-11-03 17:26:25 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2515 and 2524 lost!',) {}
+2021-11-03 17:26:25 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2524 and 2530 lost!',) {}
+2021-11-03 17:26:25 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2520 and 2526 lost!',) {}
+2021-11-03 17:26:25 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2528 and 2539 lost!',) {}
+2021-11-03 17:26:25 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2532 and 2550 lost!',) {}
+2021-11-03 17:26:25 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2540 and 2546 lost!',) {}
+2021-11-03 17:26:25 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2548 and 2560 lost!',) {}
+2021-11-03 17:26:25 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2551 and 2564 lost!',) {}
+2021-11-03 17:26:25 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2564 and 2570 lost!',) {}
+2021-11-03 17:26:25 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2560 and 2566 lost!',) {}
+2021-11-03 17:26:25 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2567 and 2580 lost!',) {}
+2021-11-03 17:26:25 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2571 and 2584 lost!',) {}
+2021-11-03 17:26:25 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2584 and 2590 lost!',) {}
+2021-11-03 17:26:26 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2580 and 2586 lost!',) {}
+2021-11-03 17:26:26 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2590 and 2599 lost!',) {}
+2021-11-03 17:26:26 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2595 and 2610 lost!',) {}
+2021-11-03 17:26:26 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2600 and 2606 lost!',) {}
+2021-11-03 17:26:26 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2611 and 2620 lost!',) {}
+2021-11-03 17:26:26 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2615 and 2624 lost!',) {}
+2021-11-03 17:26:26 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2624 and 2630 lost!',) {}
+2021-11-03 17:26:26 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2620 and 2626 lost!',) {}
+2021-11-03 17:26:27 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2631 and 2639 lost!',) {}
+2021-11-03 17:26:27 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2635 and 2650 lost!',) {}
+2021-11-03 17:26:27 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2640 and 2646 lost!',) {}
+2021-11-03 17:26:27 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2651 and 2659 lost!',) {}
+2021-11-03 17:26:27 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2656 and 2670 lost!',) {}
+2021-11-03 17:26:27 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2660 and 2666 lost!',) {}
+2021-11-03 17:26:28 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2671 and 2680 lost!',) {}
+2021-11-03 17:26:28 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2675 and 2684 lost!',) {}
+2021-11-03 17:26:28 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2684 and 2690 lost!',) {}
+2021-11-03 17:26:28 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2680 and 2686 lost!',) {}
+2021-11-03 17:26:28 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2695 and 2697 lost!',) {}
+2021-11-03 17:26:28 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2691 and 2700 lost!',) {}
+2021-11-03 17:26:28 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2697 and 2704 lost!',) {}
+2021-11-03 17:26:28 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2704 and 2710 lost!',) {}
+2021-11-03 17:26:28 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2700 and 2706 lost!',) {}
+2021-11-03 17:26:29 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2709 and 2716 lost!',) {}
+2021-11-03 17:26:29 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2716 and 2720 lost!',) {}
+2021-11-03 17:26:29 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2713 and 2724 lost!',) {}
+2021-11-03 17:26:29 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2724 and 2730 lost!',) {}
+2021-11-03 17:26:29 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2720 and 2726 lost!',) {}
+2021-11-03 17:26:29 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2729 and 2739 lost!',) {}
+2021-11-03 17:26:29 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2734 and 2750 lost!',) {}
+2021-11-03 17:26:29 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2740 and 2746 lost!',) {}
+2021-11-03 17:26:30 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2749 and 2759 lost!',) {}
+2021-11-03 17:26:30 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2753 and 2770 lost!',) {}
+2021-11-03 17:26:30 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2760 and 2766 lost!',) {}
+2021-11-03 17:26:30 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2769 and 2779 lost!',) {}
+2021-11-03 17:26:30 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2772 and 2790 lost!',) {}
+2021-11-03 17:26:30 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2780 and 2786 lost!',) {}
+2021-11-03 17:26:30 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_5,CPUA not recv respond, msg 10FF120F00000000030001000169B6',) {}
+2021-11-03 17:26:30 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 17:26:30 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 17:26:30 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_5,CPUA not recv respond, msg 10FF100F0000540211000000000EDC',) {}
+2021-11-03 17:26:30 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 17:26:30 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 17:26:31 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2792 and 2799 lost!',) {}
+2021-11-03 17:26:31 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2795 and 2810 lost!',) {}
+2021-11-03 17:26:31 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2800 and 2806 lost!',) {}
+2021-11-03 17:26:31 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2810 and 2820 lost!',) {}
+2021-11-03 17:26:31 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2815 and 2824 lost!',) {}
+2021-11-03 17:26:31 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2824 and 2830 lost!',) {}
+2021-11-03 17:26:31 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2820 and 2826 lost!',) {}
+2021-11-03 17:26:32 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2832 and 2839 lost!',) {}
+2021-11-03 17:26:32 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2837 and 2845 lost!',) {}
+2021-11-03 17:26:32 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2845 and 2852 lost!',) {}
+2021-11-03 17:26:32 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2839 and 2847 lost!',) {}
+2021-11-03 17:26:32 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2849 and 2860 lost!',) {}
+2021-11-03 17:26:32 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2855 and 2872 lost!',) {}
+2021-11-03 17:26:32 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2861 and 2867 lost!',) {}
+2021-11-03 17:26:32 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2870 and 2879 lost!',) {}
+2021-11-03 17:26:32 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2876 and 2885 lost!',) {}
+2021-11-03 17:26:33 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2885 and 2892 lost!',) {}
+2021-11-03 17:26:33 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2879 and 2887 lost!',) {}
+2021-11-03 17:26:33 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2893 and 2900 lost!',) {}
+2021-11-03 17:26:33 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2898 and 2906 lost!',) {}
+2021-11-03 17:26:33 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2906 and 2912 lost!',) {}
+2021-11-03 17:26:33 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2900 and 2907 lost!',) {}
+2021-11-03 17:26:34 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2912 and 2920 lost!',) {}
+2021-11-03 17:26:34 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2917 and 2926 lost!',) {}
+2021-11-03 17:26:34 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2926 and 2932 lost!',) {}
+2021-11-03 17:26:34 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2920 and 2927 lost!',) {}
+2021-11-03 17:26:34 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2931 and 2935 lost!',) {}
+2021-11-03 17:26:34 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2936 and 2941 lost!',) {}
+2021-11-03 17:26:34 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2935 and 2940 lost!',) {}
+2021-11-03 17:26:34 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2941 and 2946 lost!',) {}
+2021-11-03 17:26:34 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2946 and 2952 lost!',) {}
+2021-11-03 17:26:34 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2940 and 2947 lost!',) {}
+2021-11-03 17:26:35 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2957 and 2966 lost!',) {}
+2021-11-03 17:26:35 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2953 and 2961 lost!',) {}
+2021-11-03 17:26:35 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2966 and 2972 lost!',) {}
+2021-11-03 17:26:35 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2961 and 2967 lost!',) {}
+2021-11-03 17:26:35 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2976 and 2986 lost!',) {}
+2021-11-03 17:26:35 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2971 and 2981 lost!',) {}
+2021-11-03 17:26:35 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2986 and 2992 lost!',) {}
+2021-11-03 17:26:35 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2981 and 2987 lost!',) {}
+2021-11-03 17:26:35 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2989 and 2992 lost!',) {}
+2021-11-03 17:26:35 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2995 and 2998 lost!',) {}
+2021-11-03 17:26:36 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 2998 and 3006 lost!',) {}
+2021-11-03 17:26:36 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 2992 and 3001 lost!',) {}
+2021-11-03 17:26:36 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3006 and 3012 lost!',) {}
+2021-11-03 17:26:36 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3001 and 3007 lost!',) {}
+2021-11-03 17:26:36 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3015 and 3026 lost!',) {}
+2021-11-03 17:26:36 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3010 and 3021 lost!',) {}
+2021-11-03 17:26:36 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3026 and 3032 lost!',) {}
+2021-11-03 17:26:36 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3021 and 3027 lost!',) {}
+2021-11-03 17:26:36 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3030 and 3040 lost!',) {}
+2021-11-03 17:26:36 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3035 and 3046 lost!',) {}
+2021-11-03 17:26:36 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3046 and 3052 lost!',) {}
+2021-11-03 17:26:37 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3040 and 3047 lost!',) {}
+2021-11-03 17:26:37 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3053 and 3060 lost!',) {}
+2021-11-03 17:26:37 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3058 and 3066 lost!',) {}
+2021-11-03 17:26:37 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3066 and 3072 lost!',) {}
+2021-11-03 17:26:37 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3060 and 3067 lost!',) {}
+2021-11-03 17:26:37 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3071 and 3080 lost!',) {}
+2021-11-03 17:26:37 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3077 and 3086 lost!',) {}
+2021-11-03 17:26:37 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3086 and 3092 lost!',) {}
+2021-11-03 17:26:38 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3080 and 3087 lost!',) {}
+2021-11-03 17:26:38 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3097 and 3106 lost!',) {}
+2021-11-03 17:26:38 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3091 and 3101 lost!',) {}
+2021-11-03 17:26:38 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3106 and 3112 lost!',) {}
+2021-11-03 17:26:38 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3101 and 3107 lost!',) {}
+2021-11-03 17:26:38 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3111 and 3120 lost!',) {}
+2021-11-03 17:26:38 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3117 and 3126 lost!',) {}
+2021-11-03 17:26:38 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3126 and 3132 lost!',) {}
+2021-11-03 17:26:38 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3120 and 3127 lost!',) {}
+2021-11-03 17:26:39 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3138 and 3146 lost!',) {}
+2021-11-03 17:26:39 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3132 and 3141 lost!',) {}
+2021-11-03 17:26:39 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3146 and 3152 lost!',) {}
+2021-11-03 17:26:39 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3141 and 3147 lost!',) {}
+2021-11-03 17:26:39 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_5,CPUA not recv respond, msg 10FF120F00000000030001000169B6',) {}
+2021-11-03 17:26:39 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 17:26:39 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 17:26:39 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_5,CPUA not recv respond, msg 10FF100F0000540211000000000EDC',) {}
+2021-11-03 17:26:39 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 17:26:39 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 17:26:39 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3150 and 3160 lost!',) {}
+2021-11-03 17:26:40 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3155 and 3166 lost!',) {}
+2021-11-03 17:26:40 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3166 and 3172 lost!',) {}
+2021-11-03 17:26:40 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3160 and 3167 lost!',) {}
+2021-11-03 17:26:40 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3172 and 3180 lost!',) {}
+2021-11-03 17:26:40 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3178 and 3186 lost!',) {}
+2021-11-03 17:26:40 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3186 and 3192 lost!',) {}
+2021-11-03 17:26:40 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3180 and 3187 lost!',) {}
+2021-11-03 17:26:40 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3197 and 3206 lost!',) {}
+2021-11-03 17:26:40 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3191 and 3201 lost!',) {}
+2021-11-03 17:26:40 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3206 and 3212 lost!',) {}
+2021-11-03 17:26:40 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3201 and 3207 lost!',) {}
+2021-11-03 17:26:41 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3207 and 3220 lost!',) {}
+2021-11-03 17:26:41 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3213 and 3226 lost!',) {}
+2021-11-03 17:26:41 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3226 and 3232 lost!',) {}
+2021-11-03 17:26:41 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3220 and 3227 lost!',) {}
+2021-11-03 17:26:41 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3230 and 3240 lost!',) {}
+2021-11-03 17:26:41 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3235 and 3246 lost!',) {}
+2021-11-03 17:26:41 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3246 and 3252 lost!',) {}
+2021-11-03 17:26:41 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3240 and 3247 lost!',) {}
+2021-11-03 17:26:41 udp_loglib.py 873 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff10320f00000000030001000169b6') {}
+2021-11-03 17:26:41 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3251 and 3260 lost!',) {}
+2021-11-03 17:26:42 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3257 and 3266 lost!',) {}
+2021-11-03 17:26:42 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3266 and 3272 lost!',) {}
+2021-11-03 17:26:42 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3260 and 3267 lost!',) {}
+2021-11-03 17:26:42 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3272 and 3286 lost!',) {}
+2021-11-03 17:26:42 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3267 and 3280 lost!',) {}
+2021-11-03 17:26:42 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUA log between 3286 and 3295 lost!',) {}
+2021-11-03 17:26:42 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_5 CPUB log between 3280 and 3289 lost!',) {}
+2021-11-03 17:26:42 udp_loglib.py 1356 _default_run mPrint                 Public.mPrint(tempMsg)\n ('1_2P CPUB log between 1480 and 1484 lost!',) {}
+2021-11-03 17:26:48 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_5,CPUA not recv respond, msg 10FF100F0000540211000000000EDC',) {}
+2021-11-03 17:26:48 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 17:26:48 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 17:26:56 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_5,CPUA not recv respond, msg 10FF100F0000540211000000000EDC',) {}
+2021-11-03 17:26:56 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 17:26:56 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 17:27:04 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_5,CPUA not recv respond, msg 10FF100F0000540211000000000EDC',) {}
+2021-11-03 17:27:04 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 17:27:04 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 17:27:12 udp_loglib.py 699 respondCheck mPrint                     Public.mPrint('the msg to %s,%s not recv respond, msg %s' %\n ('the msg to 1_5,CPUA not recv respond, msg 10FF100F0000540211000000000EDC',) {}
+2021-11-03 17:27:12 udp_loglib.py 702 respondCheck _reSend                     TestPlatForm.form._reSend(\n (<udp_loglib.UdpSendFrame object >,) {}
+2021-11-03 17:27:12 udp_loglib.py 1804 _reSend resigeter         FrameLib.resigeter(frame)   (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 17:27:16 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:27:16 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:27:16 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:27:16 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:27:16 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:27:16 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:27:17 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:27:17 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:27:17 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:27:17 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:27:17 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:27:17 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:27:17 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:27:17 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 17:27:18 udp_loglib.py 90 normal_end mPrint         cls.mPrint('normal end')\n ('normal end',) {}
+2021-11-03 17:27:18 main.py 164 main mPrint                 Public.mPrint(testcase_log)\n ('2021-11-03 17:27:17 execption at testcase c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU/Cfg2_SwRTC_SVCU_0054.py the msg to 1_5, CPUA not recv respond, msg 10FF100F0000540211000000000EDC',) {}
+2021-11-03 17:27:18 main.py 182 thead_start program_end             Public.program_end(e)\n (<class 'udp_loglib.Public'>, Exception('the msg to 1_5, CPUA not recv respond, msg 10FF100F0000540211000000000EDC')) {}
+2021-11-03 17:27:18 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('Traceback (most recent call last):\n',) {'mode': 2}
+2021-11-03 17:27:18 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\main.py", line 180, in thead_start\n',) {'mode': 2}
+2021-11-03 17:27:18 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('    main()\n',) {'mode': 2}
+2021-11-03 17:27:18 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\main.py", line 167, in main\n',) {'mode': 2}
+2021-11-03 17:27:18 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('    raise e\n',) {'mode': 2}
+2021-11-03 17:27:18 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\main.py", line 157, in main\n',) {'mode': 2}
+2021-11-03 17:27:18 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('    ret = mod.main() # ÷¥––”√¿˝µƒ main ∑Ω∑®\n',) {'mode': 2}
+2021-11-03 17:27:18 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU/Cfg2_SwRTC_SVCU_0054.py", line 69, in main\n',) {'mode': 2}
+2021-11-03 17:27:18 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('    step3()\n',) {'mode': 2}
+2021-11-03 17:27:18 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU/Cfg2_SwRTC_SVCU_0054.py", line 44, in step3\n',) {'mode': 2}
+2021-11-03 17:27:18 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ("    form.tst_set(dst_slot, Tag.tag_send('00540211'))\n",) {'mode': 2}
+2021-11-03 17:27:18 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\py_lib\\FuncLog.py", line 57, in run\n',) {'mode': 2}
+2021-11-03 17:27:18 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('    return func(*args, **kwargs)\n',) {'mode': 2}
+2021-11-03 17:27:18 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\udp_loglib.py", line 1771, in tst_set\n',) {'mode': 2}
+2021-11-03 17:27:18 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('    FrameLib.respondCheck()\n',) {'mode': 2}
+2021-11-03 17:27:18 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\py_lib\\FuncLog.py", line 57, in run\n',) {'mode': 2}
+2021-11-03 17:27:18 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('    return func(*args, **kwargs)\n',) {'mode': 2}
+2021-11-03 17:27:18 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\udp_loglib.py", line 694, in respondCheck\n',) {'mode': 2}
+2021-11-03 17:27:18 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ("    raise Exception('the msg to %s, %s not recv respond, msg %s' %\n",) {'mode': 2}
+2021-11-03 17:27:18 udp_loglib.py 115 program_end mPrint             mPrint(line, mode=2)\n ('Exception: the msg to 1_5, CPUA not recv respond, msg 10FF100F0000540211000000000EDC\n',) {'mode': 2}

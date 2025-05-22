@@ -1,0 +1,19 @@
+2021-11-03 12:25:53 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 12:25:54 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 12:25:54 udp_loglib.py 1209 _set __init__         frame = UdpSendFrame()\n () {}
+2021-11-03 12:25:54 Sw_SVCU/Cfg2_SwRTC_SVCU_0054.py 36 step2 tst_set     form.tst_set('5', Conf.AllowFaultFifter())\n ('5', <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 12:25:54 udp_loglib.py 1755 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-03 12:25:54 udp_loglib.py 1761 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2021-11-03 12:25:54 udp_loglib.py 336 run program_end             Public.program_end(e)\n (<class 'udp_loglib.Public'>, Exception(1)) {}
+2021-11-03 12:25:54 threadpool.py 157 _before_run_task none_func         _sys.settrace(_get_thread_trace())\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 12:25:54 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('Traceback (most recent call last):\n',) {'mode': 2}
+2021-11-03 12:25:54 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\udp_loglib.py", line 334, in run\n',) {'mode': 2}
+2021-11-03 12:25:54 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('    rt_val[0] = func(*args, **kwargs)\n',) {'mode': 2}
+2021-11-03 12:25:54 threadpool.py 162 _after_run_task none_func         _sys.settrace(None)\n (<class 'udp_loglib.Public'>, None) {}
+2021-11-03 12:25:54 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\udp_loglib.py", line 1881, in _wireshark_recv\n',) {'mode': 2}
+2021-11-03 12:25:54 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ("    p_new = self.wireShark.start(outfile='wireshark_recv.pcapng', block=False)\n",) {'mode': 2}
+2021-11-03 12:25:54 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\py_lib\\FuncLog.py", line 57, in run\n',) {'mode': 2}
+2021-11-03 12:25:54 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('    return func(*args, **kwargs)\n',) {'mode': 2}
+2021-11-03 12:25:54 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\py_lib\\wireShark.py", line 126, in start\n',) {'mode': 2}
+2021-11-03 12:25:54 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('    raise Exception(p.returncode)\n',) {'mode': 2}
+2021-11-03 12:25:54 udp_loglib.py 113 program_end mPrint             mPrint(line, mode=2)\n ('Exception: 1\n',) {'mode': 2}

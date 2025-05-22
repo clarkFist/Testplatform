@@ -1,0 +1,1 @@
+../Flash_basic_conf.bat %~dp0Guest_board_electronic_stamp.cfg

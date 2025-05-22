@@ -1,0 +1,205 @@
+##############################################################################################
+#
+#                 ii.                                         ;9ABH,          
+#                SA391,                                    .r9GG35&G          
+#                &#ii13Gh;                               i3X31i;:,rB1         
+#                iMs,:,i5895,                         .5G91:,:;:s1:8A         
+#                 33::::,,;5G5,                     ,58Si,,:::,sHX;iH1        
+#                  Sr.,:;rs13BBX35hh11511h5Shhh5S3GAXS:.,,::,,1AG3i,GG        
+#                  .G51S511sr;;iiiishS8G89Shsrrsh59S;.,,,,,..5A85Si,h8        
+#                 :SB9s:,............................,,,.,,,SASh53h,1G.       
+#              .r18S;..,,,,,,,,,,,,,,,,,,,,,,,,,,,,,....,,.1H315199,rX,       
+#            ;S89s,..,,,,,,,,,,,,,,,,,,,,,,,....,,.......,,,;r1ShS8,;Xi       
+#          i55s:.........,,,,,,,,,,,,,,,,.,,,......,.....,,....r9&5.:X1       
+#         59;.....,.     .,,,,,,,,,,,...        .............,..:1;.:&s       
+#        s8,..;53S5S3s.   .,,,,,,,.,..      i15S5h1:.........,,,..,,:99       
+#        93.:39s:rSGB@A;  ..,,,,.....    .SG3hhh9G&BGi..,,,,,,,,,,,,.,83      
+#        G5.G8  9#@@@@@X. .,,,,,,.....  iA9,.S&B###@@Mr...,,,,,,,,..,.;Xh     
+#        Gs.X8 S@@@@@@@B:..,,,,,,,,,,. rA1 ,A@@@@@@@@@H:........,,,,,,.iX:    
+#       ;9. ,8A#@@@@@@#5,.,,,,,,,,,... 9A. 8@@@@@@@@@@M;    ....,,,,,,,,S8    
+#       X3    iS8XAHH8s.,,,,,,,,,,...,..58hH@@@@@@@@@Hs       ...,,,,,,,:Gs   
+#      r8,        ,,,...,,,,,,,,,,.....  ,h8XABMMHX3r.          .,,,,,,,.rX:  
+#     :9, .    .:,..,:;;;::,.,,,,,..          .,,.               ..,,,,,,.59  
+#    .Si      ,:.i8HBMMMMMB&5,....                    .            .,,,,,.sMr
+#    SS       :: h@@@@@@@@@@#; .                     ...  .         ..,,,,iM5
+#    91  .    ;:.,1&@@@@@@MXs.                            .          .,,:,:&S
+#    hS ....  .:;,,,i3MMS1;..,..... .  .     ...                     ..,:,.99
+#    ,8; ..... .,:,..,8Ms:;,,,...                                     .,::.83
+#     s&: ....  .sS553B@@HX3s;,.    .,;13h.                            .:::&1
+#      SXr  .  ...;s3G99XA&X88Shss11155hi.                             ,;:h&,
+#       iH8:  . ..   ,;iiii;,::,,,,,.                                 .;irHA  
+#        ,8X5;   .     .......                                       ,;iih
+#           1831,                                                 .,;irr
+#             ;5A8r.                                            .:;iii
+#               :X@H3s.......                                .,:;iii
+#                r#h:;,...,,.. .,,:;;;;;:::,...              .:;;;
+#               ,M8 ..,....,.....,,::::::,,...         .     .,;;;
+#               8B;.,,,,,,,.,.....          .           ..   .:;;;;
+#              i@5,:::,,,,,,,,.... .                   . .:::;;;;;i;
+#              9Bi,:,,,,......                        ..r91;;;;;iir;;
+#  
+##############################################################################################
+# path to Codewarrior compiler
+CW_PATH = C:/Freescale/CW_MCU_v10.4/MCU
+CW_TOOL_PATH = $(CW_PATH)/ColdFire_Tools/Command_Line_Tools
+
+# Path Definition for Compiler
+CC   = $(CW_TOOL_PATH)/mwccmcf
+AS   = $(CW_TOOL_PATH)/mwasmmcf
+
+# Path Definition for linkers
+LD   = $(CW_TOOL_PATH)/mwldmcf
+
+# Path Definition for Objcopy
+CP   = $(CW_TOOL_PATH)/mwldmcf
+
+# Default to Flash target
+ifndef TYPE
+TYPE = ROM
+endif
+
+# Options for the target ROM or RAM
+ifeq ($(TYPE),ROM)
+	TARGET = VCU_CW_ROM
+	LCF = "MCF54415_CW_LD_AB_ROM.lcf"
+else
+	TARGET = VCU_CW_RAM
+	LCF = "MCF54415_CW_LD_AB_RAM.lcf"
+endif
+
+# Module List
+OS_MODULE = ../src/ReWorkCert/ucos ../src/ReWorkCert/App ../src/ReWorkCert/ReWorksCert/kernel/include \
+	../src/ReWorkCert/uC-CPU ../src/ReWorkCert/uC-CPU/ColdFire ../src/ReWorkCert/uC-LIB ../src/ReWorkCert/BSP \
+	../src/ReWorkCert/kconfig ../src/ReWorkCert/ports ../src/ReWorkCert/ReWorksCert/arch/coldfire/include
+
+PRJ_MODULE = ../src/Project_Headers ../src/Project_Settings/Startup_Code
+	
+APP_MODULENAME = VOOB
+
+KERNEL_MODULENAME = BIT CAN CONF Drv_Lib FCODE FileSys FLASH GDF Interface IpStack MATH OSW PRINT RECORD SCHED SDB STD VOTE WDG
+
+MODULE = $(addprefix ../src/,$(KERNEL_MODULENAME) $(APP_MODULENAME))
+
+ASM_MODULE = ../src/Drv_Lib/vcu_cau ../src/Drv_Lib
+
+OBJSDIR = ../obj
+##############################################################################################
+CFILES = $(foreach n,$(MODULE),$(wildcard ./$(n)/*.c))
+CFILES += $(wildcard ./*.c)
+
+SFILES = $(foreach n,$(MODULE),$(wildcard ./$(n)/*.s))
+SFILES += $(wildcard ./*.s)
+
+OPTI_CFILES = $(foreach n,$(MODULE),$(wildcard ./$(n)/*.C))
+OPTI_CFILES += $(wildcard ./*.C)
+
+OPTI_SFILES = $(foreach n,$(MODULE),$(wildcard ./$(n)/*.S))
+OPTI_SFILES += $(wildcard ./*.S)
+
+ALLFILES = $(CFILES) $(SFILES) $(OPTI_CFILES) $(OPTI_SFILES)
+
+COBJ = $(patsubst %.c,%.o,$(CFILES))
+SOBJ = $(patsubst %.s,%.o,$(SFILES))
+
+OPTI_COBJ = $(patsubst %.C,%.o,$(OPTI_CFILES))
+OPTI_SOBJ = $(patsubst %.S,%.o,$(OPTI_SFILES))
+
+SRC = $(COBJ) $(OPTI_COBJ)
+ASRC = $(SOBJ) $(OPTI_SOBJ)
+
+ELFOBJ = $(TARGET).elf
+##############################################################################################
+ASMINCDIR = $(addprefix -ir ,$(ASM_MODULE))
+
+INCDIR = $(addprefix -i ,$(OS_MODULE) $(PRJ_MODULE)) 
+INCDIR += $(addprefix -ir ,$(MODULE))
+
+#OBJS    = $(ASRC:.s=.o) $(ASRC:.S=.o)
+OBJS    = $(SRC:.c=.o) $(SRC:.C=.o)
+
+# C compiler options
+
+CFLAGS = -sym full -msgstyle parseable -proc 54418 -c -nostdinc -nosyspath -enc ascii $(INCDIR) \
+-DALSTOM_CONFIG_CPU_A -warn illpragmas -warn unwanted -warn extended -warn hidevirtual -warn implicitconv \
+-warn unusedarg -warn unusedvar -warn extracomma -warn emptydecl -warn structclass -opt level=0 -opt space -ipa off \
+-inline on -align coldfire -model farCode -model farData -fp soft -a6 -nocoloring -noscheduling -nopeephole \
+-requireprotos -bool off -Cpp_Exceptions off -RTTI off -enum int -char unsigned -str nopool -str reuse -abi standard
+ 
+#asm compiler options
+ASFLAGS = -sym full -msgstyle parseable -proc 54418 -nosyspath $(ASMINCDIR) -g
+
+#linker options
+#LDFLAGS = -sym full -msgstyle parseable -proc 54415 -lavender model=ewl ,print=int ,scan=int ,io=raw -nostdlib \
+# $(LCF) -m __startup \
+# -L"$(CW_PATH)/ColdFire_Support/ewl/lib" -force_active __vect -application \
+# -map -map keep -srec -sreclength 252 -sreceol dos -w on
+
+# objcopy flags
+#OBFLAGS = -g -nostdlib $(LCF) -map closure -proc 54415 \
+#OBFLAGS += -w off -msgstyle gcc -srec
+#OBFLAGS += -o $(ELFOBJ) -L"$(CW_PATH)/ColdFire_Support/ewl/lib" 
+
+.SECONDEXPANSION:
+#.SUFFIXES: .c .s 
+
+all : $(OBJS) $(ELFOBJ) $(TARGET).S19 done
+all_o : $(OBJS)
+all_e : $(ELFOBJ)
+all_s19 : $(TARGET).S19 done
+
+
+#General rules for compiling/assembling source code
+%.o : %.s
+	@echo "Compile " $<
+	$(AS) -c $(ASFLAGS) -o $@ $<
+
+%.o : %.S
+	@echo "Compile " $<
+	$(AS) -c $(ASFLAGS) -o $@ $<
+
+%.o : %.c
+	$(CC) -c $(CFLAGS) $< -o $@
+
+%.o : %.C
+	$(CC) -c $(CFLAGS) $< -o $@
+	
+%.elf: $(OBJS)
+	$(LD) -lcf $(LCF) $(LDFLAGS) $^ -o $@
+
+%.S19: %.elf
+	$(S19) $< $@
+
+showflag:
+	@echo "CC is : $(CC)"
+	@echo "CFlag is : $(CFLAGS)"
+	@echo "ASM is : $(AS)"	
+	@echo "AFlag is : $(ASFLAGS)"
+	
+done:
+#	@mv -rf $(OBJSDIR)/*.o
+	@mv $(OBJS) $(OBJSDIR)
+#	@cp ./.dep $(OBJSDIR)
+	@echo VCU_OK!
+
+clean_elf:
+	rm -rf $(TARGET).elf
+	rm -rf $(TARGET).map
+	rm -rf $(TARGET).S19
+
+clean:	
+	rm -rf $(TARGET).elf
+	rm -rf $(TARGET).map
+	rm -rf $(TARGET).S19
+	rm -rf $(foreach n,$(MODULE),$(wildcard ./$(n)/*.bak))
+	rm -rf $(foreach n,$(MODULE),$(wildcard ./$(n)/*.o))
+	rm -rf ../obj/*.*
+	rm -rf ../obj/.dep
+	rm -rf ./.dep
+
+# 
+# Include the dependency files, should be the last of the makefile
+#
+-include $(shell mkdir .dep 2> nul) $(wildcard .dep/*)
+
+
+# *** EOF ***

@@ -1,0 +1,224 @@
+]0;MINGW32:~
+[32mMSTEP@MSTEP-PC [33m~[0m
+$ cd /C/Users/MSTEP/Desktop/mnt115/mVCU_DEV_GUEST/build/
+]0;MINGW32:/C/Users/MSTEP/Desktop/mnt115/mVCU_DEV_GUEST/build
+[32mMSTEP@MSTEP-PC [33m/C/Users/MSTEP/Desktop/mnt115/mVCU_DEV_GUEST/build[0m
+$ 
+]0;MINGW32:/C/Users/MSTEP/Desktop/mnt115/mVCU_DEV_GUEST/build
+[32mMSTEP@MSTEP-PC [33m/C/Users/MSTEP/Desktop/mnt115/mVCU_DEV_GUEST/build[0m
+$ make.sh
+Compile  ../guest/demo/src/com/com.c
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\com.c|174|32|16|5603|16)
+=    MSTEPINC_E_ParamSectorState paramSectorState;  
+>variable / argument 'paramSectorState' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\com.c|169|12|18|5383|18)
+=    BOOLEAN bNewParamAvailable;  
+>variable / argument 'bNewParamAvailable' is not used in function
+Compile  ../guest/demo/src/com/com4_mnt.c
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\com4_mnt.c|179|58|1|5098|1)
+=     (INT32S)STD_F_Strlen(COM4_C_MNT_SUBSERVICE_MONI_NAME)))  
+>implicit arithmetic conversion from 'int' to 'unsigned int'
+Compile  ../guest/demo/src/com/guest.c
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|285|0|7|11254|7)
+=BOOLEAN GUEST_F_ReprogAutho(void)  
+>function has no prototype
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|500|41|1|19164|1)
+=BOOLEAN GUEST_F_Srtt_RxProcess(INT8U EqId, INT8U* pData, INT16U dataSize, INT16U* pOffset)  
+>variable / argument 'EqId' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|500|55|1|19178|1)
+=BOOLEAN GUEST_F_Srtt_RxProcess(INT8U EqId, INT8U* pData, INT16U dataSize, INT16U* pOffset)  
+>variable / argument 'pData' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|500|64|1|19195|1)
+=GUEST_F_Srtt_RxProcess(INT8U EqId, INT8U* pData, INT16U dataSize, INT16U* pOffset)  
+>variable / argument 'dataSize' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|500|64|1|19212|1)
+=ocess(INT8U EqId, INT8U* pData, INT16U dataSize, INT16U* pOffset)  
+>variable / argument 'pOffset' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|505|41|1|19279|1)
+=BOOLEAN GUEST_F_Srtt_TxProcess(INT8U EqId, INT8U* pData, INT16U buffSize, INT16U* pOffset)  
+>variable / argument 'EqId' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|505|55|1|19293|1)
+=BOOLEAN GUEST_F_Srtt_TxProcess(INT8U EqId, INT8U* pData, INT16U buffSize, INT16U* pOffset)  
+>variable / argument 'pData' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|505|64|1|19310|1)
+=GUEST_F_Srtt_TxProcess(INT8U EqId, INT8U* pData, INT16U buffSize, INT16U* pOffset)  
+>variable / argument 'buffSize' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|505|64|1|19327|1)
+=ocess(INT8U EqId, INT8U* pData, INT16U buffSize, INT16U* pOffset)  
+>variable / argument 'pOffset' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|510|33|1|19387|1)
+=void GUEST_F_TxProcess(INT8U EqId, const INT8U* pData, INT16U dataSize)  
+>variable / argument 'EqId' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|510|53|1|19407|1)
+=void GUEST_F_TxProcess(INT8U EqId, const INT8U* pData, INT16U dataSize)  
+>variable / argument 'pData' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|510|64|1|19424|1)
+=UEST_F_TxProcess(INT8U EqId, const INT8U* pData, INT16U dataSize)  
+>variable / argument 'dataSize' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|515|37|1|19482|1)
+=INT32U GUEST_F_GetSrttTime(INT8U EqId)  
+>variable / argument 'EqId' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|521|41|1|19623|1)
+=INT32U GUEST_F_GetNetLapseTime(INT8U EqId)  
+>variable / argument 'EqId' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|537|36|1|19884|1)
+=void GUEST_F_FSFB2_RxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)  
+>variable / argument 'EqId' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|537|62|1|19910|1)
+=void GUEST_F_FSFB2_RxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)  
+>variable / argument 'pData' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|537|64|1|19927|1)
+=FB2_RxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)  
+>variable / argument 'dataSize' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|542|36|1|20091|1)
+=void GUEST_F_FSFB2_TxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)  
+>variable / argument 'EqId' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|542|62|1|20117|1)
+=void GUEST_F_FSFB2_TxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)  
+>variable / argument 'pData' is not used in function
+mwccmcf.exe|Compiler| |Warning 
+(C:\Users\MSTEP\Desktop\mnt115\mVCU_DEV_GUEST\guest\demo\src\com\guest.c|542|64|1|20134|1)
+=FB2_TxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)  
+>variable / argument 'dataSize' is not used in function
+---------- CPU_A GUEST_NOETH Done 
+Compile  ../guest/demo/src/com/com.c
+../guest/demo/src/com/com.c: In function 'COM_F_MainLoop':
+../guest/demo/src/com/com.c:223:26: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
+             if (cpuUsage >= 0x0u)
+                          ^~
+../guest/demo/src/com/com.c:174:33: warning: unused variable 'paramSectorState' [-Wunused-variable]
+     MSTEPINC_E_ParamSectorState paramSectorState;
+                                 ^~~~~~~~~~~~~~~~
+../guest/demo/src/com/com.c:172:12: warning: unused variable 'pSectorBuffer' [-Wunused-variable]
+     INT8U* pSectorBuffer = NULL;  //var4，参数定义有问题???????????????????
+            ^~~~~~~~~~~~~
+../guest/demo/src/com/com.c:171:12: warning: unused variable 'sectorReparamCounter' [-Wunused-variable]
+     INT32U sectorReparamCounter = 0u; //var8
+            ^~~~~~~~~~~~~~~~~~~~
+../guest/demo/src/com/com.c:169:13: warning: unused variable 'bNewParamAvailable' [-Wunused-variable]
+     BOOLEAN bNewParamAvailable;
+             ^~~~~~~~~~~~~~~~~~
+../guest/demo/src/com/com.c:168:11: warning: unused variable 'paramSectorNum' [-Wunused-variable]
+     INT8U paramSectorNum = 0u;
+           ^~~~~~~~~~~~~~
+Compile  ../guest/demo/src/com/com4_mnt.c
+Compile  ../guest/demo/src/com/guest.c
+../guest/demo/src/com/guest.c: In function 'GUEST_F_Srtt_RxProcess':
+../guest/demo/src/com/guest.c:500:38: warning: unused parameter 'EqId' [-Wunused-parameter]
+ BOOLEAN GUEST_F_Srtt_RxProcess(INT8U EqId, INT8U* pData, INT16U dataSize, INT16U* pOffset)
+                                      ^~~~
+../guest/demo/src/com/guest.c:500:51: warning: unused parameter 'pData' [-Wunused-parameter]
+ BOOLEAN GUEST_F_Srtt_RxProcess(INT8U EqId, INT8U* pData, INT16U dataSize, INT16U* pOffset)
+                                                   ^~~~~
+../guest/demo/src/com/guest.c:500:65: warning: unused parameter 'dataSize' [-Wunused-parameter]
+ BOOLEAN GUEST_F_Srtt_RxProcess(INT8U EqId, INT8U* pData, INT16U dataSize, INT16U* pOffset)
+                                                                 ^~~~~~~~
+../guest/demo/src/com/guest.c:500:83: warning: unused parameter 'pOffset' [-Wunused-parameter]
+ BOOLEAN GUEST_F_Srtt_RxProcess(INT8U EqId, INT8U* pData, INT16U dataSize, INT16U* pOffset)
+                                                                                   ^~~~~~~
+../guest/demo/src/com/guest.c: In function 'GUEST_F_Srtt_TxProcess':
+../guest/demo/src/com/guest.c:505:38: warning: unused parameter 'EqId' [-Wunused-parameter]
+ BOOLEAN GUEST_F_Srtt_TxProcess(INT8U EqId, INT8U* pData, INT16U buffSize, INT16U* pOffset)
+                                      ^~~~
+../guest/demo/src/com/guest.c:505:51: warning: unused parameter 'pData' [-Wunused-parameter]
+ BOOLEAN GUEST_F_Srtt_TxProcess(INT8U EqId, INT8U* pData, INT16U buffSize, INT16U* pOffset)
+                                                   ^~~~~
+../guest/demo/src/com/guest.c:505:65: warning: unused parameter 'buffSize' [-Wunused-parameter]
+ BOOLEAN GUEST_F_Srtt_TxProcess(INT8U EqId, INT8U* pData, INT16U buffSize, INT16U* pOffset)
+                                                                 ^~~~~~~~
+../guest/demo/src/com/guest.c:505:83: warning: unused parameter 'pOffset' [-Wunused-parameter]
+ BOOLEAN GUEST_F_Srtt_TxProcess(INT8U EqId, INT8U* pData, INT16U buffSize, INT16U* pOffset)
+                                                                                   ^~~~~~~
+../guest/demo/src/com/guest.c: In function 'GUEST_F_TxProcess':
+../guest/demo/src/com/guest.c:510:30: warning: unused parameter 'EqId' [-Wunused-parameter]
+ void GUEST_F_TxProcess(INT8U EqId, const INT8U* pData, INT16U dataSize)
+                              ^~~~
+../guest/demo/src/com/guest.c:510:49: warning: unused parameter 'pData' [-Wunused-parameter]
+ void GUEST_F_TxProcess(INT8U EqId, const INT8U* pData, INT16U dataSize)
+                                                 ^~~~~
+../guest/demo/src/com/guest.c:510:63: warning: unused parameter 'dataSize' [-Wunused-parameter]
+ void GUEST_F_TxProcess(INT8U EqId, const INT8U* pData, INT16U dataSize)
+                                                               ^~~~~~~~
+../guest/demo/src/com/guest.c: In function 'GUEST_F_GetSrttTime':
+../guest/demo/src/com/guest.c:515:34: warning: unused parameter 'EqId' [-Wunused-parameter]
+ INT32U GUEST_F_GetSrttTime(INT8U EqId)
+                                  ^~~~
+../guest/demo/src/com/guest.c: In function 'GUEST_F_GetNetLapseTime':
+../guest/demo/src/com/guest.c:521:38: warning: unused parameter 'EqId' [-Wunused-parameter]
+ INT32U GUEST_F_GetNetLapseTime(INT8U EqId)
+                                      ^~~~
+../guest/demo/src/com/guest.c: In function 'GUEST_F_FSFB2_RxData':
+../guest/demo/src/com/guest.c:537:33: warning: unused parameter 'EqId' [-Wunused-parameter]
+ void GUEST_F_FSFB2_RxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)
+                                 ^~~~
+../guest/demo/src/com/guest.c:537:58: warning: unused parameter 'pData' [-Wunused-parameter]
+ void GUEST_F_FSFB2_RxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)
+                                                          ^~~~~
+../guest/demo/src/com/guest.c:537:72: warning: unused parameter 'dataSize' [-Wunused-parameter]
+ void GUEST_F_FSFB2_RxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)
+                                                                        ^~~~~~~~
+../guest/demo/src/com/guest.c: In function 'GUEST_F_FSFB2_TxData':
+../guest/demo/src/com/guest.c:542:33: warning: unused parameter 'EqId' [-Wunused-parameter]
+ void GUEST_F_FSFB2_TxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)
+                                 ^~~~
+../guest/demo/src/com/guest.c:542:58: warning: unused parameter 'pData' [-Wunused-parameter]
+ void GUEST_F_FSFB2_TxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)
+                                                          ^~~~~
+../guest/demo/src/com/guest.c:542:72: warning: unused parameter 'dataSize' [-Wunused-parameter]
+ void GUEST_F_FSFB2_TxData(INT8U EqId, const INT8U* const pData, INT32U dataSize)
+                                                                        ^~~~~~~~
+At top level:
+../guest/demo/src/com/guest.c:243:33: warning: 'GUEST_TFTP_V_CurrentCommand' defined but not used [-Wunused-variable]
+ static GUEST_TFTP_E_CommandType GUEST_TFTP_V_CurrentCommand = GUEST_TFTP_C_CMD_NOTHING;
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../guest/demo/src/com/guest.c:238:14: warning: 'g_SelfTest' defined but not used [-Wunused-variable]
+ static INT8U g_SelfTest = ALSTOM_C_NOT_RUNNING;
+              ^~~~~~~~~~
+../guest/demo/src/com/guest.c:212:28: warning: 'GUEST_V_FF_CB' defined but not used [-Wunused-variable]
+ static GUEST_T_FF_CB       GUEST_V_FF_CB           =
+                            ^~~~~~~~~~~~~
+../guest/demo/src/com/guest.c:129:14: warning: 'GUEST_C_ApplicationSwVersion' defined but not used [-Wunused-variable]
+ static INT8U GUEST_C_ApplicationSwVersion[15];
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------- CPU_B GUEST_NOETH Done 
+Build CPU_A library CW...
+Build CPU_B library GCC...
+Linking for CPU_A... 
+Linking for CPU_B... 
+Software data identification for CPU_A: 0xf977037d
+Software data identification for CPU_B: 0x519474c9
+Generate Bin for CPU_A... 
+Generate S19 for CPU_A... 
+Generate Bin for CPU_B... 
+Generate S19 for CPU_B... 
+*** GUEST_NOETH CPU_A Done ***
+using little bits
+*** Target is in ./out/CPU_A/ ***
+*** GUEST_NOETH CPU_B Done ***
+using little bits
+*** Target is in ./out/CPU_B/ ***
+]0;MINGW32:/C/Users/MSTEP/Desktop/mnt115/mVCU_DEV_GUEST/build
+[32mMSTEP@MSTEP-PC [33m/C/Users/MSTEP/Desktop/mnt115/mVCU_DEV_GUEST/build[0m
+$ logout

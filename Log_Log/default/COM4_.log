@@ -1,0 +1,5 @@
+2023-05-26 16:09:38 COM4_ 174 chanel1 0x0003A777 tst_tsk.c:254> Abe-start
+2023-05-26 16:09:38 COM4_ 175 chanel2 0x0003A775 ../src/tst/tst_tsk.c:254> Abe-start
+2023-05-26 16:09:39 COM4_ Abe-start
+2023-05-26 16:09:39 COM4_ 176 chanel1 0x0003A838 Schedule.c:871>main cycle 0x00003A98
+2023-05-26 16:09:48 COM4_ Abe-start

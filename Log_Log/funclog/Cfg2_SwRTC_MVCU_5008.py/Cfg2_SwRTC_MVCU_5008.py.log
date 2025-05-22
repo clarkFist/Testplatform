@@ -1,0 +1,4 @@
+2022-09-22 15:55:09 Cfg2_SwRTC_MVCU_5008.py 63 <module> __init__     form = TestPlatForm(18125, 18125)\n (18125, 18125) {}
+2022-09-22 15:55:09 udp_loglib.py 1562 __init__ spawn         gevent.spawn(gevent.empty)   (<class 'udp_loglib.myGevent'>, <function myGevent.empty >) {}
+2022-09-22 15:55:09 udp_loglib.py 820 __init__ mPrint             mPrint("may not have the local ip %s" % localAddr[0])\n ('may not have the local ip 20.1.1.100',) {}
+2022-09-22 15:55:09 udp_loglib.py 821 __init__ mPrint             mPrint("Error creating socket: %s" % e)\n ('Error creating socket: [WinError 10049] 在其上下文中，该请求的地址无效。',) {}

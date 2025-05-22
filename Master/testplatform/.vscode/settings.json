@@ -1,0 +1,25 @@
+{
+    "python.pythonPath": "venv\\Scripts\\python.exe",
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": ["--max-line-length=248","--ignore=E402,E401,E261,E256,E302,E305,W291,E265,W293,F401,E251,E201,E202,E262,W292"], // 设置单行最长字符限制
+    "python.linting.pylintEnabled": false, // 关闭pylint工具
+    "python.autoComplete.extraPaths": [
+        "${workspaceFolder}/py_lib",
+        "${workspaceFolder}/case_test",
+    ],
+    "python.linting.enabled": true,
+    "python.venvPath": "${workspaceFolder}/venv",
+    "python.venvFolders": [
+        "venv",
+        ".Lib",
+        ".Scripts"
+    ],
+    "python.formatting.provider": "yapf",
+    "python.formatting.yapfArgs": ["--style","column_limit: 248"],
+    // "python.jediEnabled": true,
+    "python.languageServer": "Jedi",
+    "workbench.colorCustomizations": {
+        "debugConsole.infoForeground": "#cfbf29",
+    },
+    "workbench.colorTheme": "Visual Studio Light"
+}

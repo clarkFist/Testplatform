@@ -1,0 +1,2 @@
+cd /C/Users/MSTEP/Desktop/mnt/sVCU_DEV_GUEST/build/
+make.sh

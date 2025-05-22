@@ -1,0 +1,53 @@
+2022-10-28 19:02:04 Cfg_SwRTC_SVCU_1082.py 74 <module> __init__     form = TestPlatForm(18125, 18125)\n (18125, 18125) {}
+2022-10-28 19:02:04 udp_loglib.py 1562 __init__ spawn         gevent.spawn(gevent.empty)   (<class 'udp_loglib.myGevent'>, <function myGevent.empty >) {}
+2022-10-28 19:02:05 udp_loglib.py 1997 _set_client mPrint                 mPrint('use mvcu p')\n ('use mvcu p',) {}
+2022-10-28 19:02:05 udp_loglib.py 2012 gevent_join spawn         greenlet_list = [gevent.spawn(greenlet_list)]\n (<class 'udp_loglib.myGevent'>, <function confSet >) {}
+2022-10-28 19:02:05 udp_loglib.py 2019 gevent_join spawn         gevent.spawn(form._log_recv, *(form.clientP, )),   (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._log_recv of <udp_loglib.TestPlatForm object >>, <udp_loglib.UdpClient object >) {}
+2022-10-28 19:02:05 udp_loglib.py 2020 gevent_join spawn         gevent.spawn(form._log_recv, *(form.clientS, )),   (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._log_recv of <udp_loglib.TestPlatForm object >>, <udp_loglib.UdpClient object >) {}
+2022-10-28 19:02:05 udp_loglib.py 2021 gevent_join spawn         gevent.spawn(form._serial_recv),\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._serial_recv of <udp_loglib.TestPlatForm object >>) {}
+2022-10-28 19:02:05 udp_loglib.py 2022 gevent_join spawn         gevent.spawn(form._mib_recv),\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._mib_recv of <udp_loglib.TestPlatForm object >>) {}
+2022-10-28 19:02:05 udp_loglib.py 2023 gevent_join spawn         gevent.spawn(form._wireshark_recv)]\n (<class 'udp_loglib.myGevent'>, <bound method TestPlatForm._wireshark_recv of <udp_loglib.TestPlatForm object >>) {}
+2022-10-28 19:02:05 udp_loglib.py 2026 gevent_join joinall     gevent.joinall(default_list)\n (<class 'udp_loglib.myGevent'>, [<Greenlet >>(<bound method TestPlatForm._log_recv of <udp_logli, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._log_recv of <udp_logli, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._serial_recv of <udp_lo, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._mib_recv of <udp_logli, [FrameInfo(frame=<frame >, <Greenlet >>(<bound method TestPlatForm._wireshark_recv of <udp, [FrameInfo(frame=<frame >, <Greenlet >>(<function confSet >, [FrameInfo(frame=<frame >]) {}
+2022-10-28 19:02:05 Cfg_SwRTC_SVCU_1082.py 25 LogPath_set path_set     Log.path_set(dir_path)\n (<class 'udp_loglib.Log'>, 'f:\\Testplatform\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU/Log/Cfg_SwRTC_SVCU_1082/default') {}
+2022-10-28 19:02:05 udp_loglib.py 1479 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to f:\\Testplatform\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg_SwRTC_SVCU_1082\\default/',) {}
+2022-10-28 19:02:05 Cfg_SwRTC_SVCU_1082.py 81 confSet respondCheck         FrameLib.respondCheck()   (<class 'udp_loglib.FrameLib'>,) {}
+2022-10-28 19:02:05 udp_loglib.py 667 respondCheck mPrint                 Public.mPrint('set success TP Ver-3.0.5')\n ('set success TP Ver-3.0.5',) {}
+2022-10-28 19:02:05 udp_loglib.py 378 run _log_recv             rt_val = func(*args, **kwargs)\n (<udp_loglib.UdpClient object >,) {}
+2022-10-28 19:02:05 udp_loglib.py 1820 _log_recv mPrint         mPrint('recv start %s,%s' % client.remote)\n ('recv start 20.2.1.10,18125',) {}
+2022-10-28 19:02:05 udp_loglib.py 378 run _log_recv             rt_val = func(*args, **kwargs)\n (<udp_loglib.UdpClient object >,) {}
+2022-10-28 19:02:05 udp_loglib.py 1820 _log_recv mPrint         mPrint('recv start %s,%s' % client.remote)\n ('recv start 20.1.1.10,18125',) {}
+2022-10-28 19:02:05 serialread.py 121 open_all funclog.write             funclog.wirte(port, outfile)\n ('COM3', None) {}
+2022-10-28 19:02:05 serialread.py 121 open_all funclog.write             funclog.wirte(port, outfile)\n ('COM6', None) {}
+2022-10-28 19:02:05 udp_loglib.py 1853 _serial_recv mPrint                     mPrint('start listen', self._SerialRead.queue_dict.keys())\n ('start listen', dict_keys(['COM3', 'COM6'])) {}
+2022-10-28 19:02:05 udp_loglib.py 1933 _mib_recv get_value                 self.mib.get_value('lruDefaultCode', outfile= 'auto_getmib.log', raise_error=False)\n ('lruDefaultCode',) {'outfile': 'auto_getmib.log', 'raise_error': False}
+2022-10-28 19:02:05 udp_loglib.py 1351 _set __init__         frame = UdpSendFrame()\n () {}
+2022-10-28 19:02:05 Cfg_SwRTC_SVCU_1082.py 58 step3 tst_set     form.tst_set('3', Conf.TriggerFaultFifter())\n ('3', <udp_loglib.UdpSendFrame object >) {}
+2022-10-28 19:02:05 udp_loglib.py 580 frameSendCallBack before_dump             return self._frameSendCallBack(slots)\n ([3],) {}
+2022-10-28 19:02:05 udp_loglib.py 1351 _set __init__         frame = UdpSendFrame()\n () {}
+2022-10-28 19:02:05 udp_loglib.py 1793 before_dump tst_set         self.tst_set(slots, Conf.notReprogOnDump(), openflag = False, autowait=False)  ([3], <udp_loglib.UdpSendFrame object >) {'openflag': False, 'autowait': False}
+2022-10-28 19:02:05 udp_loglib.py 1782 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2022-10-28 19:02:05 udp_loglib.py 1351 _set __init__         frame = UdpSendFrame()\n () {}
+2022-10-28 19:02:05 udp_loglib.py 1794 before_dump tst_set         self.tst_set(slots, Conf.notBurnFuse(), openflag = False, autowait=False)  ([3], <udp_loglib.UdpSendFrame object >) {'openflag': False, 'autowait': False}
+2022-10-28 19:02:05 udp_loglib.py 1782 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2022-10-28 19:02:05 serialread.py 149 port_open mPrint             self.print('port %s cannot open' % port )\n ('port COM3 cannot open',) {}
+2022-10-28 19:02:05 serialread.py 149 port_open mPrint             self.print('port %s cannot open' % port )\n ('port COM6 cannot open',) {}
+2022-10-28 19:02:05 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.2.1.10'}
+2022-10-28 19:02:06 FuncLog.py 34 run _get                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.1',) {'snmpip': '20.1.1.10'}
+2022-10-28 19:02:06 udp_loglib.py 1915 _wireshark_recv start                 p_new = self.wireShark.start(outfile='wireshark_recv.pcapng', block=False)\n () {'outfile': 'wireshark_recv.pcapng', 'block': False}
+2022-10-28 19:02:06 wireShark.py 103 start mPrint             self.print('%s' % self.get_path(outfile))\n ('f:\\Testplatform\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg_SwRTC_SVCU_1082\\default/wireshark_recv.pcapng',) {}
+2022-10-28 19:02:06 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 30) {'snmpip': '20.2.1.10'}
+2022-10-28 19:02:06 FuncLog.py 34 run _walk                     caller = getframeinfo(_stack[0][0])\n ('1.3.6.1.4.1.13933.100.3.2.1.4', 30) {'snmpip': '20.1.1.10'}
+2022-10-28 19:02:06 udp_loglib.py 839 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff0c320f0200000003000000009083') {}
+2022-10-28 19:02:06 udp_loglib.py 1815 before_dump respondCheck         FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2022-10-28 19:02:06 udp_loglib.py 406 empty buzy                     buzy(count, (cur_time - temp))\n (4, 1.2101008892059326) {}
+2022-10-28 19:02:06 udp_loglib.py 397 buzy mPrint             Public.mPrint('block', count, round(ttime, 2))\n ('block', 4, 1.21) {}
+2022-10-28 19:02:06 wireShark.py 73 __find_Conn mPrint             self.print('“‘Ã´Õ¯  ≈‰∆˜: %s' % self._Conn)\n ('“‘Ã´Õ¯  ≈‰∆˜: blue',) {}
+2022-10-28 19:02:07 udp_loglib.py 839 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff0c320f0200000005000100017a17') {}
+2022-10-28 19:02:07 udp_loglib.py 667 respondCheck mPrint                 Public.mPrint('set success TP Ver-3.0.5')\n ('set success TP Ver-3.0.5',) {}
+2022-10-28 19:02:07 udp_loglib.py 1782 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2022-10-28 19:02:07 udp_loglib.py 1788 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2022-10-28 19:02:08 udp_loglib.py 839 recv _reply_Recv             Reply._reply_Recv(string)\n (<class 'udp_loglib.Reply'>, 'ff0c320f0200000002000100011dc3') {}
+2022-10-28 19:02:08 udp_loglib.py 667 respondCheck mPrint                 Public.mPrint('set success TP Ver-3.0.5')\n ('set success TP Ver-3.0.5',) {}
+2022-10-28 19:02:08 Cfg_SwRTC_SVCU_1082.py 85 confSet normal_end         Public.normal_end()\n (<class 'udp_loglib.Public'>,) {}
+2022-10-28 19:02:08 udp_loglib.py 89 normal_end mPrint         cls.mPrint('normal end')\n ('normal end',) {}
+2022-10-28 19:02:08 Cfg_SwRTC_SVCU_1082.py 86 confSet mPrint         Public.mPrint('exit')\n ('exit',) {}

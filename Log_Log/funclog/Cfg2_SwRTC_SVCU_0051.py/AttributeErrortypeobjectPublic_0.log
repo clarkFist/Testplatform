@@ -1,0 +1,34 @@
+2021-11-01 16:38:29 udp_loglib.py 100 wdg mPrint             Public.mPrint("program end")\n ('program end',) {}
+2021-11-01 16:38:29 udp_loglib.py 1572 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2021-11-01 16:38:29 Cfg2_SwRTC_SVCU_0051.py 24 LogPath_set path_set     Log.path_set(dir_path)\n (<class 'udp_loglib.Log'>, 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU/Log/Cfg2_SwRTC_SVCU_0051/03') {}
+2021-11-01 16:38:29 udp_loglib.py 1293 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg2_SwRTC_SVCU_0051\\03/',) {}
+2021-11-01 16:38:29 udp_loglib.py 1212 tag_send __init__         frame = UdpSendFrame()\n () {}
+2021-11-01 16:38:29 Cfg2_SwRTC_SVCU_0051.py 37 step3 tst_set     form.tst_set(dst_slot, Tag.tag_send('00510311'))\n ('8', <udp_loglib.UdpSendFrame object >) {}
+2021-11-01 16:38:29 udp_loglib.py 1136 _set __init__         frame = UdpSendFrame()\n () {}
+2021-11-01 16:38:29 udp_loglib.py 1551 tst_set tst_set             self.tst_set(slot, Conf.allFlagSet(1), False, False)\n ('8', <udp_loglib.UdpSendFrame object >, False, False) {}
+2021-11-01 16:38:29 udp_loglib.py 1566 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-01 16:38:30 udp_loglib.py 1566 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-01 16:38:30 udp_loglib.py 1572 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2021-11-01 16:38:30 Cfg2_SwRTC_SVCU_0051.py 24 LogPath_set path_set     Log.path_set(dir_path)\n (<class 'udp_loglib.Log'>, 'c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU/Log/Cfg2_SwRTC_SVCU_0051/04') {}
+2021-11-01 16:38:30 udp_loglib.py 1293 path_set mPrint         mPrint('Log path set to %s' % cls._root)\n ('Log path set to c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Log\\Cfg2_SwRTC_SVCU_0051\\04/',) {}
+2021-11-01 16:38:30 udp_loglib.py 1212 tag_send __init__         frame = UdpSendFrame()\n () {}
+2021-11-01 16:38:30 Cfg2_SwRTC_SVCU_0051.py 43 step4 tst_set     form.tst_set(dst_slot, Tag.tag_send('00510211'))\n ('8', <udp_loglib.UdpSendFrame object >) {}
+2021-11-01 16:38:30 udp_loglib.py 1136 _set __init__         frame = UdpSendFrame()\n () {}
+2021-11-01 16:38:30 udp_loglib.py 1551 tst_set tst_set             self.tst_set(slot, Conf.allFlagSet(1), False, False)\n ('8', <udp_loglib.UdpSendFrame object >, False, False) {}
+2021-11-01 16:38:30 udp_loglib.py 1566 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-01 16:38:31 udp_loglib.py 1566 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-01 16:38:31 udp_loglib.py 1572 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2021-11-01 16:38:31 udp_loglib.py 1212 tag_send __init__         frame = UdpSendFrame()\n () {}
+2021-11-01 16:38:31 Cfg2_SwRTC_SVCU_0051.py 44 step4 tst_set     form.tst_set(dst_slot, Tag.tag_send('00510311'))\n ('8', <udp_loglib.UdpSendFrame object >) {}
+2021-11-01 16:38:31 udp_loglib.py 1136 _set __init__         frame = UdpSendFrame()\n () {}
+2021-11-01 16:38:31 udp_loglib.py 1551 tst_set tst_set             self.tst_set(slot, Conf.allFlagSet(1), False, False)\n ('8', <udp_loglib.UdpSendFrame object >, False, False) {}
+2021-11-01 16:38:31 udp_loglib.py 1566 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-01 16:38:32 udp_loglib.py 1566 tst_set resigeter                 FrameLib.resigeter(frame.copy())\n (<class 'udp_loglib.FrameLib'>, <udp_loglib.UdpSendFrame object >) {}
+2021-11-01 16:38:33 udp_loglib.py 1572 tst_set respondCheck             FrameLib.respondCheck()\n (<class 'udp_loglib.FrameLib'>,) {}
+2021-11-01 16:38:33 udp_loglib.py 335 run program_end             Public.program_end(e)\n (<class 'udp_loglib.Public'>, AttributeError("type object 'Public' has no attribute 'thread_end'")) {}
+2021-11-01 16:38:33 udp_loglib.py 111 program_end mPrint             mPrint(line, mode=2)\n ('Traceback (most recent call last):\n',) {'mode': 2}
+2021-11-01 16:38:33 udp_loglib.py 111 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\udp_loglib.py", line 333, in run\n',) {'mode': 2}
+2021-11-01 16:38:33 udp_loglib.py 111 program_end mPrint             mPrint(line, mode=2)\n ('    rt_val[0] = func(*args, **kwargs)\n',) {'mode': 2}
+2021-11-01 16:38:33 udp_loglib.py 111 program_end mPrint             mPrint(line, mode=2)\n ('  File "c:\\Users\\test2\\Desktop\\testplaatform1025\\Master\\testplatform\\case_test\\testcase\\Sw_SVCU\\Cfg2_SwRTC_SVCU_0051.py", line 63, in confSet\n',) {'mode': 2}
+2021-11-01 16:38:33 udp_loglib.py 111 program_end mPrint             mPrint(line, mode=2)\n ('    Public.thread_end()\n',) {'mode': 2}
+2021-11-01 16:38:33 udp_loglib.py 111 program_end mPrint             mPrint(line, mode=2)\n ("AttributeError: type object 'Public' has no attribute 'thread_end'\n",) {'mode': 2}

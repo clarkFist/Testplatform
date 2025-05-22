@@ -1,0 +1,2 @@
+---- _0061 Æ¥Åä (1 in 0 ÎÄ¼þ) ----
+Guest.c (demo\src\voob):    if(TRUE == IsTagOpen(VCU_SyRTC_0001_1)||TRUE == IsTagOpen(VCU_SyRTC_0061_1)||TRUE == IsTagOpen(VCU_SyRTC_0006_2)||TRUE == IsTagOpen(VCU_SyRTC_02029_1))
