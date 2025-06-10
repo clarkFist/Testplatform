@@ -1,0 +1,6 @@
+gevent
+pysnmp
+pyserial
+pywin32
+flake8
+yapf

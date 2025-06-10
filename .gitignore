@@ -1,0 +1,36 @@
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+ENV/
+env/
+
+# Log and temporary files
+*.log
+Log_Log/
+log/
+*/log/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Python virtual environment config
+pyvenv.cfg
+
+# Binary archives
+*.zip
+*.tar.gz
+*.rar
+
+# Ignore site-packages if accidentally added
+site-packages/
