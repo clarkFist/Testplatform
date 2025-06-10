@@ -382,44 +382,74 @@ class TestPlatForm(object):
           无返回值
         """
 
+        # 检查消息类型是否需要自动设置标志
+        # 如果frame的消息类型在Tag列表中，且openflag为True，则自动打开udp和all标志
         if frame.mtype in [
                 Tag
-        ] and openflag is True:  #若flag 为True 会默认为允许的类型打开 udp 和 all 标志
+        ] and openflag is True:  # 若flag为True会默认为允许的类型打开udp和all标志
+            # 递归调用自身，设置allFlag为1，关闭openflag和autowait避免无限递归
             self.tst_set(slots, Conf.allFlagSet(1), False, False)
 
+        # 处理slots参数，统一转换为列表格式
         if isinstance(slots, list):
+            # 如果slots已经是列表，直接使用
             moudle_3s = slots
         else:
+            # 如果slots是字符串格式（如'3-8,2.16，9'），解析为列表
             moudle_3s = VCU.inputsplit(slots)
 
-        if self.lru_auto:  # 将此标志位置为true 时 将会自动根据mib的信息过滤槽道号，但mib信息可能延迟
+        # 自动过滤不可用的槽道号（如果启用了lru_auto功能）
+        if self.lru_auto:  # 将此标志位置为true时将会自动根据mib的信息过滤槽道号，但mib信息可能延迟
+            # 通过MIB信息获取当前可用的VCU槽道，过滤掉不可用的
             moudle_3s = self._VCUs_available(moudle_3s)
 
+        # 执行帧发送前的回调函数，可能用于预处理或日志记录
         frame.frameSendCallBack(moudle_3s)
 
+        # 筛选出SVCU槽道（排除MVCU槽道16和2）
+        # SVCU: Service VCU（服务VCU），MVCU: Master VCU（主VCU）
         svcus = [slot for slot in moudle_3s if slot != 16 and slot != 2]
+        
+        # 处理dump标志和消息记录逻辑
         if self.__dump_flag[0] and time.time() - self.__dump_flag[1] < 60:
+            # 如果在dump状态且时间未超过60秒，重置dump标志并关闭记录
             self.__dump_flag = (False, time.time())
             frame.isRecord = False
         elif frame.isRecord:
+            # 如果需要记录消息，将所有SVCU槽道添加到记录集合中
             for i in svcus:
-                self.__svcu_set.add(i) # self.__svcu_set
+                self.__svcu_set.add(i)  # 记录活跃的SVCU槽道
         
-        for moudle_3 in set(moudle_3s):
-            node1, node2 = VCU.moudle_3toNode(moudle_3)  #cpuA,B
-            frame.srcNodeID = 'FF'
-            frame.dstNodeID = node1
-            if frame.mtype._mtype[0] == '1':  #若需要回复，一段时间未收到回复则重发
-                frame.crc = '0000'  # 表示crc 使用crc16
+        # 遍历所有目标模块，逐个发送消息帧
+        for moudle_3 in set(moudle_3s):  # 使用set去重，避免重复发送
+            # 获取模块对应的两个CPU节点ID（通常是CPUA和CPUB）
+            node1, node2 = VCU.moudle_3toNode(moudle_3)  # cpuA,B
+            
+            # 设置帧的源节点ID和目标节点ID
+            frame.srcNodeID = 'FF'  # 源节点ID固定为FF（表示测试平台）
+            frame.dstNodeID = node1  # 目标节点ID设为CPUA
+            
+            # 处理需要应答的消息类型（消息类型第一位为'1'表示需要应答）
+            if frame.mtype._mtype[0] == '1':  # 若需要回复，一段时间未收到回复则重发
+                # 初始化CRC校验码
+                frame.crc = '0000'  # 表示crc使用crc16算法
+                # 计算并设置CRC校验码（CRC字段本身不参与CRC计算）
                 frame.crc = Public.crc16(frame.data,
-                                         int(frame.len, 16) - len(frame.crc) // 2)  # crc 不参与crc计算
+                                         int(frame.len, 16) - len(frame.crc) // 2)  # crc不参与crc计算
+                # 注册帧到重发机制，如果未收到应答会自动重发
                 FrameLib.resigeter(frame.copy())
-            if (int(frame.dstNodeID, 16) // 2) % 2 == 0: # moudleid 为偶数，则槽道号为奇数
-                self._client_even.send(frame)  #通过1——16
+            
+            # 根据目标节点ID的奇偶性选择发送通道
+            # 节点ID为偶数时，对应奇数槽道，使用even客户端（通过槽道1-16）
+            # 节点ID为奇数时，对应偶数槽道，使用odd客户端（通过槽道1-2）
+            if (int(frame.dstNodeID, 16) // 2) % 2 == 0:  # moudleid为偶数，则槽道号为奇数
+                self._client_even.send(frame)  # 通过MVCU_S（槽道16）发送
             else:
-                self._client_odd.send(frame) #通过1——2
+                self._client_odd.send(frame)  # 通过MVCU_P（槽道2）发送
+        
+        # 如果启用了自动等待，检查所有消息是否都收到了应答
         if autowait:
-            FrameLib.respondCheck()
+            FrameLib.respondCheck()  # 检查命令发送是否成功，等待应答确认
 
     @funclog
     def before_dump(self, slots):
