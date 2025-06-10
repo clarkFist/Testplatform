@@ -2,45 +2,47 @@
 
 ## 项目简介
 
-该仓库包含用于VCU相关测试的脚本和工具，集成了日志管理、自动化测试、在线更新以及Wireshark协议解析等功能。主要代码位于 `udp_loglib.py` 与 `vcu_test.py`，提供了通过UDP与设备交互的能力，并支持日志收集及事件分析。
+该项目为 VCU（Vehicle Control Unit） 测试提供统一的脚本及工具集合，涵盖日志收集、协议解析、自动化执行等功能。核心脚本 `udp_loglib.py` 与 `vcu_test.py` 提供通过 UDP 与设备交互的能力，并集成 Wireshark 协议解析以及日志管理界面，方便开发人员快速搭建测试环境。
+
+## 项目作用
+
+- **统一测试流程**：通过封装常用指令、日志处理和事件解析，简化 VCU 调试与验证工作。
+- **易于扩展**：脚本使用 Python 编写，可根据实际需求二次开发或集成到现有系统。
+- **辅助定位问题**：结合 Wireshark 插件与图形化日志界面，便于实时观察通信数据与错误信息。
 
 ## 目录结构
 
-- `Log_Log/`：测试日志与数据库文件存放位置。
-- `Master/`：历史版本的脚本及配置，内部包含与根目录相似的 `testplatform` 结构。
-- `scripts/`：批量推送、更新等辅助脚本，参见其中的 `README.md` 获取详细说明。
-- `tests/`：基于 `unittest` 的单元测试，验证核心库的功能。
-- `update_test/`：示例更新脚本及文件，用于部署新的测试环境。
-- `wireshark/`：Wireshark 协议解析脚本及安装包，便于分析抓包数据。
+- `Log_Log/`：测试日志及数据库文件的默认存放目录。
+- `Master/`：存放历史版本脚本及配置，结构与当前项目相似，主要用于备份参考。
+- `scripts/`：提供批量推送、环境更新等辅助脚本，详见 `scripts/README.md`。
+- `rssp1/`：包含 RSSP1 协议模拟器及相关构建文件，常用于联调测试。
+- `tests/`：基于 `unittest` 的单元测试代码。
+- `update_test/`：示例更新脚本及文件，用于部署新的测试目录。
+- `wireshark/`：Wireshark 协议解析脚本及安装包，用于分析抓包数据。
+- 其他文件：如 `log_manger.pyw`（日志管理界面）、`lru_print.py`（LRU 信息转换），以及多种批处理脚本（`.bat`）等。
 
-## 主要功能
+## 如何运行
 
-1. **UDP 日志库 (`udp_loglib.py`)**
-   - 定义 `TestPlatForm` 类，用于发送测试指令、抓取dump、收集EventLog 等。
-   - 提供 `Log` 类记录和存储日志，可保存到文件或数据库。
-   - 实现 `Conf`、`Reply` 等消息格式解析与封装，便于与设备通信。
-2. **日志管理界面 (`log_manger.pyw`)**
-   - 基于 `tkinter` 的图形界面，可实时展示日志信息并与测试脚本交互。
-3. **自动化测试入口 (`vcu_test.py`)**
-   - 初始化测试环境，配置端口、Wireshark 抓包及在线更新等功能。
-4. **辅助工具**
-   - `scripts/batch_push.py`：按批次提交并推送代码，适合大文件或不稳定网络环境。
-   - `update_test/update_test.py`：对比并更新测试目录的脚本，支持保留自定义配置区域。
-
-## 使用方法
-
-1. 安装 Python 3.10 环境（见 `pyvenv.cfg`）。
-2. 执行 `vcu_test.py` 进入测试平台，根据需要调用各类接口发送指令或获取日志。
-3. 如需查看或管理日志，可运行 `log_manger.pyw` 启动图形界面。
-4. 更多脚本参数及推送流程，请参考 `scripts/README.md`。
+1. **准备环境**：建议使用 Python 3.10（参考 `pyvenv.cfg`）。
+2. **安装依赖**：进入虚拟环境后自行安装 `gevent`、`tkinter` 等必要库。
+3. **启动测试平台**：
+   ```bash
+   python vcu_test.py
+   ```
+   脚本默认监听 UDP 18125 端口并根据配置与设备通信。
+4. **查看日志**：若需图形化查看或管理日志，可执行：
+   ```bash
+   python log_manger.pyw
+   ```
+5. **更新测试目录**（可选）：
+   ```bash
+   python update_test/update_test.py
+   ```
+6. **运行单元测试**：
+   ```bash
+   python -m unittest tests/test_loglib.py
+   ```
 
 ## 贡献与测试
 
-提交代码前建议运行 `tests/test_loglib.py`，确保核心库功能正常：
-
-```bash
-python -m unittest tests/test_loglib.py
-```
-
-如需批量推送，请使用 `scripts/batch_push.py` 按说明操作。
-
+欢迎提交 Issue 与 PR。在提交代码前建议运行上方的单元测试以确保核心功能正常；如需分批推送，可使用 `scripts/batch_push.py`。
