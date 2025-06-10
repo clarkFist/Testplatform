@@ -1,25 +1,50 @@
-        
-        如果show_flag为True则打印到控制台
-        如果定义了tcp则转发消息
-        '''
-        if self.show_flag:
-            self.print(self.src_lru, self.msg)  # 打印到控制台
-
 """
 udp_loglib 模块提供与VCU通信、日志处理及配置管理的核心实现。
 其中定义了发送/接收帧结构、日志类以及测试平台 `TestPlatForm` 等。
+
+如果show_flag为True则打印到控制台
+如果定义了tcp则转发消息
 """
+
+import os
+import threading
+import time
+import re
+import json
+import subprocess
+import gevent
+from gevent import greenlet
+import gevent.sleep as g_sleep
+
+class Log:
+    """日志处理类"""
+    _root = './'
+    
+    def __init__(self):
+        """初始化日志对象"""
+        self.show_flag = True
+        self.msg = ''
+        self.src_lru = ''
+        
+    def _run_list(self):
+        """执行日志处理
+        
+        如果show_flag为True则打印到控制台
+        如果定义了tcp则转发消息
+        """
+        if self.show_flag:
+            self.print(self.src_lru, self.msg)  # 打印到控制台
+
         if hasattr(Log, 'tcp'):
             Log.tcp.send(self.src_lru, self.msg)  # 转发消息到TCP客户端
     
     @classmethod
-    @funclog
     def path_set(cls, path):
-        '''设置日志保存路径
+        """设置日志保存路径
         
         参数:
           path: 新的日志保存路径
-        '''
+        """
         with threading.Lock():  # 线程安全操作
             cls._root = os.path.abspath(path) + '/'  # 设置路径
             if not os.path.exists(cls._root):
@@ -32,19 +57,19 @@ udp_loglib 模块提供与VCU通信、日志处理及配置管理的核心实现
         
     @classmethod
     def path_get(cls):
-        '''获取当前日志保存路径
+        """获取当前日志保存路径
         
         返回:
           当前日志保存的根路径
-        '''
+        """
         return cls._root 
 
     def _store(self, msg=''):
-        '''存储日志消息到文件
+        """存储日志消息到文件
         
         参数:
           msg: 要存储的消息，默认为self.msg
-        '''
+        """
         dst = self.path_get() + self.src_lru + '.log'
         if len(msg) == 0:
             msg = self.msg
@@ -55,29 +80,28 @@ udp_loglib 模块提供与VCU通信、日志处理及配置管理的核心实现
             f.write(VCU.gettime() + ' ' + self.src_lru + ' ' + msg + '\r\n')
 
 class Reply(Default):
-    '''回复消息类，处理确认回复消息
+    """回复消息类，处理确认回复消息
     
     注意: Reply目前未作为常规消息，在UDP接收处特殊处理
-    '''
+    """
     _struct = [('tstData', 1, '')]  # 结构体定义，参考UdpFrame.parse_data方法
     _mtype = '3X'  # 消息类型标识(不会用到)
     _toRun_list = []  # 执行操作列表(不会用到)
     
     def __init__(self):
-        '''初始化回复消息对象'''
+        """初始化回复消息对象"""
         pass
         
     @classmethod
-    @funclog
     def _reply_Send(cls, string):
-        '''生成回复消息
+        """生成回复消息
         
         参数:
           string: 原始消息字符串
           
         返回:
           回复消息字符串
-        '''
+        """
         frame = UdpRecvFrame(string, cls)  # 解析源消息
 
         srcNodeID = 'FF'  # 本机节点ID
@@ -96,13 +120,12 @@ class Reply(Default):
         return data
 
     @classmethod
-    @funclog
     def _reply_Recv(cls, string):
-        '''处理收到的回复消息
+        """处理收到的回复消息
         
         参数:
           string: 回复消息字符串
-        '''
+        """
         frame = UdpRecvFrame(string, cls)  # 解析回复消息
         
         # 提取关键信息
@@ -117,17 +140,18 @@ class Reply(Default):
             mPrint('_reply_Recv', time.time() - FrameLib.respond_list[0][1])
 
     def _default_run(self, frame):
-        '''处理接收到的回复消息
+        """处理接收到的回复消息
         
         参数:
           frame: 回复帧对象
-        '''
+        """
         Reply.tstData = self.tstData  # 保存消息内容
         # 过滤终端控制字符，处理换行符
         self.info = re.sub('\x1b[^mABCDHJKsuIh]*[mABCDHJKsuIh]', '',
                            self.info).replace('\n', '\\n').replace('\r', '')
 
         # 添加到回复列表
+        flag = frame.srcNodeID + frame.dataType[1] + self.tstData
         FrameLib.respond_list.append((flag.upper(), time.time()))
         
         # 清理过期的回复记录
@@ -140,23 +164,26 @@ class Reply(Default):
 class TestPlatForm(object):
     @funclog
     def __init__(self, srcPort: int, dstPort: int, set_client = True):
-        '''description: 发送测试命令的基本类
+        """发送测试命令的基本类
+        
         Attributes: 
           lru_auto: bool 若为 True 发送l指令时会自动过滤不可用槽道
           Serial_Flag: bool 若为True 则会自动保存可用的串口消息
-          mib: Mib  可通过此属性获取mib 信息 rt = self.mib.get_value('LruDefaultCode'， outfile = None)
+          mib: Mib  可通过此属性获取mib 信息 rt = self.mib.get_value('LruDefaultCode', outfile = None)
           wireShark: Wireshark self.wireshark.start(...) 开始抓包
           update: func 在线更新镜像的函数
           update_cfg: func 在线更新配置的函数
           vmtool: VMTool 与虚拟机交互的实例
+          
         Arguments:
-          self:instance 调用该函数的实例，无需手动赋值
-          srcPort:int 本地端口号
-          dstPort:int VCU 端口号
-          set_client： 自动设置udp client 默认为[]
+          self: instance 调用该函数的实例，无需手动赋值
+          srcPort: int 本地端口号
+          dstPort: int VCU 端口号
+          set_client: 自动设置udp client 默认为[]
+          
         Returns: Type:None
           无返回值
-        '''
+        """
    
         myAssert(not hasattr(TestPlatForm, 'form') )
         gevent.spawn(gevent.empty)  #空协程，统计空闲时间
@@ -202,9 +229,11 @@ class TestPlatForm(object):
 
     @funclog
     def get_eventlog(self, moudle_3):
-        '''获取 vcu eventlog 结果自动保存在'EventLog' 文件夹
+        """获取 vcu eventlog 结果自动保存在'EventLog' 文件夹
+        
+        Args:
             moudle_3: str|list 目标槽道
-        '''
+        """
         if not isinstance(moudle_3, list):
             moudle_3 = VCU.inputsplit(moudle_3)
         dirname = Log.path_get() + '\\EventLog'
@@ -240,16 +269,18 @@ class TestPlatForm(object):
 
     @funclog       
     def get_funcMode(self, slots) -> dict:
-        '''description: 获取功能模式
+        """获取功能模式
+        
         Arguments:
-          self:instance 调用该函数的实例，无需手动赋值
+          self: instance 调用该函数的实例，无需手动赋值
           slots: str|list 所需获取的槽道号
+          
         Returns: Type:dict
           dict[slot] = funcmode
-        '''
+        """
         from trys import Trys
 
-        '''通过viv 获取功能模式， vcu boot -> limation ->normal'''
+        # 通过viv 获取功能模式， vcu boot -> limation ->normal
         funcMode_dict = {0: 'NORMAL', 1: 'NORMAL', 2: 'NORMAL', 3: 'LIMATION', 4: 'LIMATION', 5: 'LIMATION', 6: 'BOOT_FAILED', 7: 'REPROG', 8: 'BOOT', -1: 'VIV_ERROR'}
 
         if not isinstance(slots, list):
@@ -268,7 +299,7 @@ class TestPlatForm(object):
 
     @funclog
     def get_active_mvcu(self) -> int:
-        '''获取主mvcu 的槽道号'''
+        """获取主mvcu 的槽道号"""
         from trys import Trys
         funcMode_dict = {0: 'MVCUA', 3: 'MVCUA', 1: 'MVCUS', 4: 'MVCUS'}
 
@@ -288,7 +319,7 @@ class TestPlatForm(object):
 
     @funclog
     def get_standby_mvcu(self) -> int:
-        '''获取备mvcu 的槽道号'''
+        """获取备mvcu 的槽道号"""
         from trys import Trys
         funcMode_dict = {0: 'MVCUA', 3: 'MVCUA', 1: 'MVCUS', 4: 'MVCUS'}
 
@@ -308,23 +339,25 @@ class TestPlatForm(object):
 
     @property
     def lru_auto(self):
-        '''为True 后 会自动过滤掉不可用的槽道，但因mib 信息存在延迟，可能会不准，耗时根据配置，最大额外耗时为7秒左右'''
+        """为True 后 会自动过滤掉不可用的槽道，但因mib 信息存在延迟，可能会不准，耗时根据配置，最大额外耗时为7秒左右"""
         return self._lru_auto
 
     @lru_auto.setter
     def lru_auto(self, val: bool):
-        '''为True 后 会自动过滤掉不可用的槽道，但因mib 信息存在延迟，可能会不准，耗时根据配置，最大额外耗时为7秒左右'''
+        """为True 后 会自动过滤掉不可用的槽道，但因mib 信息存在延迟，可能会不准，耗时根据配置，最大额外耗时为7秒左右"""
         self._lru_auto = val
 
     @funclog
     def _VCUs_available(self, moudle_3s: list) -> list:
-        '''description:获取可用的槽道号        
+        """获取可用的槽道号
+        
         Arguments:
-          self:instance 调用该函数的实例，无需手动赋值
-          moudle_3s：list 原始list 
+          self: instance 调用该函数的实例，无需手动赋值
+          moudle_3s: list 原始list 
+          
         Returns: Type:list
           返回原始list 中可用的 槽道号 
-        '''
+        """
         self._avais = self.mib.VCUs_available(moudle_3s)
 
         moudle_3s_temp = [m for m in moudle_3s if m not in self._avais]
@@ -334,19 +367,20 @@ class TestPlatForm(object):
 
     @funclog
     def tst_set(self, slots: str, frame: UdpSendFrame, openflag=True, autowait = True) -> None:
-        '''description:向VCU发送指令
+        """向VCU发送指令
         
         Attributes: self, slot, func, frame, openflag, autowait
         
         Arguments:
-          self:instance 调用该函数的实例，无需手动赋值
-          slot:str 格式为'3-8,2.16，9'，-表示连续，[,，.]表示离散，数字为moudleID - 3
-          frame:UdpSendFrame 
-          openflag:bool 如果为真且该 func 被允许，将自动打开allFlag，默认为TRUE，无需显式赋值
-          autowait:nool 如果为真则命令发送后会自动调用FrameLib.respondCheck() （检查命令是否发送成功）
+          self: instance 调用该函数的实例，无需手动赋值
+          slot: str 格式为'3-8,2.16，9'，-表示连续，[,，.]表示离散，数字为moudleID - 3
+          frame: UdpSendFrame 
+          openflag: bool 如果为真且该 func 被允许，将自动打开allFlag，默认为TRUE，无需显式赋值
+          autowait: bool 如果为真则命令发送后会自动调用FrameLib.respondCheck() （检查命令是否发送成功）
+          
         Returns: Type:None
           无返回值
-        '''
+        """
 
         if frame.mtype in [
                 Tag
@@ -389,7 +423,7 @@ class TestPlatForm(object):
 
     @funclog
     def before_dump(self, slots):
-        '''在板卡宕机前调用，'''
+        """在板卡宕机前调用"""
         self.tst_set(slots, Conf.notReprogOnDump(), openflag = False, autowait=False) # 临时关闭dump 破坏reporg
         self.tst_set(slots, Conf.notBurnFuse(), openflag = False, autowait=False) # 临时关闭dump 破坏reporg
         if isinstance(slots, list):
@@ -536,17 +570,18 @@ class TestPlatForm(object):
                 count = 0
 
     def _set_client(self, mode = [], dst_svcu = None, retry = 3):
-        '''description: 指定发送消息的MVCU，当使用两个mvcu 时 发送给奇数槽道的svcu的消息会通过 mvcuS 转发， 发送给偶数svcu 的槽道的消息会通过mvcuP 转发
+        """指定发送消息的MVCU，当使用两个mvcu 时 发送给奇数槽道的svcu的消息会通过 mvcuS 转发， 发送给偶数svcu 的槽道的消息会通过mvcuP 转发
         
         Attributes: None
         
         Arguments:
-          self:instance 调用该函数的实例，无需手动赋值
-          mode:str|list 格式为 '2' '16' '2,16' [2,16] [] 若为空则自动选择
-          retry:int 重新连接次数， 若无需重连则设为0
+          self: instance 调用该函数的实例，无需手动赋值
+          mode: str|list 格式为 '2' '16' '2,16' [2,16] [] 若为空则自动选择
+          retry: int 重新连接次数， 若无需重连则设为0
+          
         Returns: Type:None
           无返回值
-        '''
+        """
         if hasattr(self, '_active_svcu') and dst_svcu is None:
             dst_svcu = self._active_svcu
 
@@ -607,7 +642,7 @@ class TestPlatForm(object):
             self.tst_set(dst_svcu, Conf.serialFlagSet(1))           
 
 def gevent_join(greenlet_list):
-    '''启动协程'''
+    """启动协程"""
     form = TestPlatForm.form
 
     if not isinstance(greenlet_list, list):
@@ -644,15 +679,16 @@ if __name__ == "__main__":
         g_list.append(g)
     time.sleep(10)
     viv._cop_close('A')
+    
 class Conf(Default):
-    '''配置消息类，用于设备配置
+    """配置消息类，用于设备配置
     
     属性:
       _struct: 结构体定义
       _mtype: 消息类型
       _toRun_list: 要执行的方法列表
       _lru: LRU文件路径
-    '''
+    """
     _struct = [('cmdCode', 2, ''),  # 命令代码
                ('para1', 4, ''),    # 参数1
                ('para2', 4, ''),    # 参数2
@@ -669,14 +705,14 @@ class Conf(Default):
     
     @classmethod
     def getmode(cls, lru=''):
-        '''获取LRU的测试模式
+        """获取LRU的测试模式
         
         参数:
           lru: LRU标识符，默认为空
           
         返回:
           测试模式设置
-        '''
+        """
         if not lru:
             return
         # 检查是否存在配置文件
@@ -695,12 +731,12 @@ class Conf(Default):
 
     @classmethod
     def setmode(cls, lru, mode):
-        '''设置LRU的测试模式
+        """设置LRU的测试模式
         
         参数:
           lru: LRU标识符
           mode: 要设置的模式
-        '''
+        """
         if not lru:
             return
         # 检查是否存在配置文件
@@ -729,11 +765,11 @@ class Conf(Default):
             mPrint(f'Conf.setmode write error: {e}')
     
     def _conf_run(self, frame):
-        '''配置处理方法
+        """配置处理方法
         
         参数:
           frame: 配置帧对象
-        '''
+        """
         from VCU.src.model_list import model_list
         
         # 组合LRU标识符
