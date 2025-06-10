@@ -5,6 +5,10 @@
         if self.show_flag:
             self.print(self.src_lru, self.msg)  # 打印到控制台
 
+"""
+udp_loglib 模块提供与VCU通信、日志处理及配置管理的核心实现。
+其中定义了发送/接收帧结构、日志类以及测试平台 `TestPlatForm` 等。
+"""
         if hasattr(Log, 'tcp'):
             Log.tcp.send(self.src_lru, self.msg)  # 转发消息到TCP客户端
     
@@ -412,7 +416,7 @@ class TestPlatForm(object):
    
     @funclog
     def _log_recv(self, client: UdpClient):
-        '''接收client的 消息'''
+        """从指定UDP客户端持续接收日志并解析。"""
         mPrint('recv start %s,%s' % client.remote)
         Public.thread_flag['recv'] = Public.thread_flag.get('recv', True)
         while Public.thread_flag['recv']:
@@ -427,7 +431,7 @@ class TestPlatForm(object):
                  
     @funclog
     def _reSend(self, frame: UdpSendFrame):
-        '''发送失败时再次发送'''
+        """在未收到应答时重新发送指定帧。"""
         dst = frame.dstNodeID
         frame.isRecord = frame.isRecord # 重注册
         FrameLib.resigeter(frame)  # 重注册
@@ -438,7 +442,7 @@ class TestPlatForm(object):
             self._client_odd.send(frame)
 
     def _serial_recv(self):
-        '''若self.Serial_Flag 为 true 则接收所有串口log'''
+        """监听串口日志并转为统一的日志对象。"""
         Public.thread_flag['serial_recv'] = Public.thread_flag.get('serial_recv', True)
         flag = True
         while Public.thread_flag['serial_recv']:
@@ -486,6 +490,7 @@ class TestPlatForm(object):
         self._SerialRead.close_all()
 
     def _wireshark_recv(self):
+        """周期性抓取网络报文并保存到当前日志目录。"""
         Public.thread_flag['_wireshark_recv'] = Public.thread_flag.get('_wireshark_recv', True)
         temp_path = ''
         p_new = None
@@ -515,6 +520,7 @@ class TestPlatForm(object):
                 g_sleep(1)
 
     def _mib_recv(self):
+        """定时获取MIB信息，用于判断槽位状态。"""
         Public.thread_flag['_mib_recv'] = Public.thread_flag.get('_mib_recv', True)
         temp_path = ''
         count = 0

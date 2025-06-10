@@ -2,6 +2,10 @@
 # _*_ coding: utf-8 _*_
 from __future__ import print_function
 import sys, os
+"""
+VCU_test 脚本入口，用于演示如何初始化測试平台并向VCU发送测试指令。
+可根据需要打开日志管理界面，配置日志保存路径等。
+"""
 from udp_loglib import Log, Conf, Tag, TestPlatForm, TcpServer, gevent, FrameLib
 from udp_loglib import g_sleep as sleep, myAssert
 import udp_loglib
@@ -11,6 +15,7 @@ import time
 time.sleep = udp_loglib.gevent.sleep
 
 def init():
+    """初始化日志及GUI界面等运行环境。"""
     if sys.version_info < (3, 0):
         import tkFileDialog as filedialog
     else:
@@ -26,6 +31,7 @@ def init():
 
 
 def log_path(arg):
+    """根据输入的标签构建日志保存路径并设置。"""
     p1 = arg[:4]
     p2 = arg[4:6]
     path = "%s/Log_Log/%s/%s" % (os.path.dirname(__file__), p1, p2)
@@ -33,6 +39,7 @@ def log_path(arg):
 
 
 def tag_send(slot, arg):
+    """发送带标签的测试命令并更新日志路径。"""
     log_path(arg)
     TestPlatForm.form.tst_set(slot, Tag.tag_send(arg))
 
@@ -47,7 +54,8 @@ if __name__ == "__main__":
     form._set_client(mode=[2])
 
     def confSet():
-form.Serial_Flag = True
+        """与用户交互的循环，可动态执行测试命令。"""
+        form.Serial_Flag = True
         form.update('ver', 5, '', savepath=Log.path_get())
         form.tst_set(2, Tag.tag_send('000105'))
         #return
