@@ -12,7 +12,7 @@ def resovleArgv(argv):
         path = argv[0]
         title = argv[1]
     return path,title
-
+# 接受消息
 def recv():
     global name
     global client
