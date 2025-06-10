@@ -36,7 +36,7 @@ def push_local_changes(remote="origin", branch="main", commit_msg="Auto commit",
     print('Failed to push after several attempts.')
     return False
 
-
+  
 if __name__ == '__main__':
     remote = sys.argv[1] if len(sys.argv) > 1 else 'origin'
     branch = sys.argv[2] if len(sys.argv) > 2 else 'main'
