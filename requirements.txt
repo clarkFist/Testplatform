@@ -1,6 +1,7 @@
-gevent
-pysnmp
-pyserial
-pywin32
+colorama
 flake8
+gevent
+pyserial
+pysnmp
+pywin32
 yapf
