@@ -13,3 +13,6 @@
    │  python-3.10.0-amd64.exe # 64 位 python 3.10
    │  python-2.7.8.msi # 32 位 python 2.7.8
    └─ VSCode-win32-x64-1.61.1.zip # vscode 集成python
+
+
+print("he
