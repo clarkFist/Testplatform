@@ -1,0 +1,78 @@
+{
+  "description": "VCU设备配置文件",
+  "devices": {
+    "VCU_2": {
+      "slot_id": "2",
+      "name": "主系VCU",
+      "ip": "20.2.1.10",
+      "local_ip": "20.2.1.100",
+      "port": 18125,
+      "enabled": true,
+      "description": "主系统VCU设备"
+    },
+    "VCU_16": {
+      "slot_id": "16", 
+      "name": "备系VCU",
+      "ip": "20.1.1.10",
+      "local_ip": "20.1.1.100",
+      "port": 18125,
+      "enabled": true,
+      "description": "备用系统VCU设备"
+    }
+  },
+  "switch_groups": {
+    "vcu_control": {
+      "name": "VCU控制",
+      "switches": [
+        {
+          "name": "VCU_SyRTC_0001_01",
+          "type": "enum",
+          "description": "系统实时时钟桩001"
+        },
+        {
+          "name": "VCU_SyRTC_0002_01", 
+          "type": "enum",
+          "description": "系统实时时钟桩002"
+        }
+      ]
+    },
+    "safety_control": {
+      "name": "安全控制",
+      "switches": [
+        {
+          "name": "SAFETY_MODE_ENABLE",
+          "type": "macro",
+          "description": "安全模式启用"
+        },
+        {
+          "name": "EMERGENCY_STOP",
+          "type": "enum", 
+          "description": "紧急停止"
+        }
+      ]
+    },
+    "debug": {
+      "name": "调试功能",
+      "switches": [
+        {
+          "name": "DEBUG_LOG_ENABLE",
+          "type": "macro",
+          "description": "调试日志启用"
+        },
+        {
+          "name": "VERBOSE_OUTPUT",
+          "type": "enum",
+          "description": "详细输出"
+        }
+      ]
+    }
+  },
+  "default_states": {
+    "VCU_SyRTC_0001_01": "closed",
+    "VCU_SyRTC_0002_01": "closed", 
+    "SAFETY_MODE_ENABLE": "open",
+    "EMERGENCY_STOP": "closed",
+    "DEBUG_LOG_ENABLE": "closed",
+    "VERBOSE_OUTPUT": "closed"
+  }
+} 
