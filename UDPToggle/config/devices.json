@@ -1,78 +1,309 @@
 {
-  "description": "VCU设备配置文件",
+  "description": "VCU设备配置文件 - 兼容版本，包含MVCU和SVCU设备",
   "devices": {
-    "VCU_2": {
+    "MVCU1_2": {
       "slot_id": "2",
-      "name": "主系VCU",
+      "name": "主控单元MVCU1_2",
       "ip": "20.2.1.10",
       "local_ip": "20.2.1.100",
       "port": 18125,
       "enabled": true,
-      "description": "主系统VCU设备"
+      "description": "主系统VCU设备 - 槽位2"
     },
-    "VCU_16": {
-      "slot_id": "16", 
-      "name": "备系VCU",
+    "MVCU1_16": {
+      "slot_id": "16",
+      "name": "主控单元MVCU1_16",
       "ip": "20.1.1.10",
       "local_ip": "20.1.1.100",
       "port": 18125,
       "enabled": true,
-      "description": "备用系统VCU设备"
+      "description": "备用系统VCU设备 - 槽位16"
+    },
+    "SVCU1_3": {
+      "slot_id": "3",
+      "name": "从控单元SVCU1_3",
+      "ip": "20.2.1.10",
+      "local_ip": "20.2.1.101",
+      "port": 18125,
+      "enabled": true,
+      "description": "从系统VCU设备 - 槽位3"
+    }
+  },
+  "switches": {
+    "SYSTEM_INIT_COMPLETE_FLAG": {
+      "name": "SYSTEM_INIT_COMPLETE_FLAG",
+      "type": "macro",
+      "current_state": "open",
+      "description": "系统初始化完成标志",
+      "group": "system_control"
+    },
+    "SYSTEM_RUNNING_FLAG": {
+      "name": "SYSTEM_RUNNING_FLAG",
+      "type": "macro",
+      "current_state": "open",
+      "description": "系统运行状态标志",
+      "group": "system_control"
+    },
+    "SYSTEM_SHUTDOWN_FLAG": {
+      "name": "SYSTEM_SHUTDOWN_FLAG",
+      "type": "macro",
+      "current_state": "closed",
+      "description": "系统关闭标志",
+      "group": "system_control"
+    },
+    "SYSTEM_ERROR_FLAG": {
+      "name": "SYSTEM_ERROR_FLAG",
+      "type": "macro",
+      "current_state": "closed",
+      "description": "系统错误标志",
+      "group": "system_control"
+    },
+    "MODULE_VCU_READY_FLAG": {
+      "name": "MODULE_VCU_READY_FLAG",
+      "type": "macro",
+      "current_state": "open",
+      "description": "VCU模块就绪标志",
+      "group": "module_ready"
+    },
+    "MODULE_COMM_READY_FLAG": {
+      "name": "MODULE_COMM_READY_FLAG",
+      "type": "macro",
+      "current_state": "open",
+      "description": "通信模块就绪标志",
+      "group": "module_ready"
+    },
+    "MODULE_LOG_READY_FLAG": {
+      "name": "MODULE_LOG_READY_FLAG",
+      "type": "macro",
+      "current_state": "open",
+      "description": "日志模块就绪标志",
+      "group": "module_ready"
+    },
+    "MODULE_MONITOR_READY_FLAG": {
+      "name": "MODULE_MONITOR_READY_FLAG",
+      "type": "macro",
+      "current_state": "closed",
+      "description": "监控模块就绪标志",
+      "group": "module_ready"
+    },
+    "UDP_COMM_ENABLE": {
+      "name": "UDP_COMM_ENABLE",
+      "type": "macro",
+      "current_state": "open",
+      "description": "UDP通信启用",
+      "group": "network_communication"
+    },
+    "UDP_BROADCAST_ENABLE": {
+      "name": "UDP_BROADCAST_ENABLE",
+      "type": "macro",
+      "current_state": "closed",
+      "description": "UDP广播启用",
+      "group": "network_communication"
+    },
+    "UDP_MULTICAST_ENABLE": {
+      "name": "UDP_MULTICAST_ENABLE",
+      "type": "macro",
+      "current_state": "closed",
+      "description": "UDP组播启用",
+      "group": "network_communication"
+    },
+    "TCP_COMM_ENABLE": {
+      "name": "TCP_COMM_ENABLE",
+      "type": "macro",
+      "current_state": "closed",
+      "description": "TCP通信启用",
+      "group": "network_communication"
+    },
+    "TCP_KEEPALIVE_ENABLE": {
+      "name": "TCP_KEEPALIVE_ENABLE",
+      "type": "macro",
+      "current_state": "open",
+      "description": "TCP保活启用",
+      "group": "network_communication"
+    },
+    "SERIAL_COMM_ENABLE": {
+      "name": "SERIAL_COMM_ENABLE",
+      "type": "macro",
+      "current_state": "closed",
+      "description": "串口通信启用",
+      "group": "network_communication"
+    },
+    "DATA_CRC_CHECK_ENABLE": {
+      "name": "DATA_CRC_CHECK_ENABLE",
+      "type": "macro",
+      "current_state": "open",
+      "description": "CRC校验启用",
+      "group": "data_processing"
+    },
+    "DATA_CHECKSUM_ENABLE": {
+      "name": "DATA_CHECKSUM_ENABLE",
+      "type": "macro",
+      "current_state": "open",
+      "description": "校验和启用",
+      "group": "data_processing"
+    },
+    "DATA_ENCRYPTION_ENABLE": {
+      "name": "DATA_ENCRYPTION_ENABLE",
+      "type": "macro",
+      "current_state": "closed",
+      "description": "数据加密启用",
+      "group": "data_processing"
+    },
+    "DATA_COMPRESSION_ENABLE": {
+      "name": "DATA_COMPRESSION_ENABLE",
+      "type": "macro",
+      "current_state": "closed",
+      "description": "数据压缩启用",
+      "group": "data_processing"
+    },
+    "DATA_BACKUP_ENABLE": {
+      "name": "DATA_BACKUP_ENABLE",
+      "type": "macro",
+      "current_state": "open",
+      "description": "数据备份启用",
+      "group": "data_processing"
+    },
+    "DATA_CACHE_ENABLE": {
+      "name": "DATA_CACHE_ENABLE",
+      "type": "macro",
+      "current_state": "open",
+      "description": "数据缓存启用",
+      "group": "data_processing"
+    },
+    "ERROR_REPORT_ENABLE": {
+      "name": "ERROR_REPORT_ENABLE",
+      "type": "macro",
+      "current_state": "open",
+      "description": "错误报告启用",
+      "group": "error_handling"
+    },
+    "ERROR_AUTO_RECOVERY_ENABLE": {
+      "name": "ERROR_AUTO_RECOVERY_ENABLE",
+      "type": "macro",
+      "current_state": "open",
+      "description": "错误自动恢复启用",
+      "group": "error_handling"
+    },
+    "ERROR_STACK_TRACE_ENABLE": {
+      "name": "ERROR_STACK_TRACE_ENABLE",
+      "type": "macro",
+      "current_state": "closed",
+      "description": "错误堆栈跟踪启用",
+      "group": "error_handling"
+    },
+    "FAULT_INJECTION_ENABLE": {
+      "name": "FAULT_INJECTION_ENABLE",
+      "type": "macro",
+      "current_state": "closed",
+      "description": "故障注入启用",
+      "group": "error_handling"
+    },
+    "FAULT_SIMULATION_ENABLE": {
+      "name": "FAULT_SIMULATION_ENABLE",
+      "type": "macro",
+      "current_state": "closed",
+      "description": "故障仿真启用",
+      "group": "error_handling"
+    },
+    "PERF_CPU_MONITOR_ENABLE": {
+      "name": "PERF_CPU_MONITOR_ENABLE",
+      "type": "macro",
+      "current_state": "closed",
+      "description": "CPU性能监控启用",
+      "group": "performance_monitor"
+    },
+    "PERF_MEMORY_MONITOR_ENABLE": {
+      "name": "PERF_MEMORY_MONITOR_ENABLE",
+      "type": "macro",
+      "current_state": "closed",
+      "description": "内存性能监控启用",
+      "group": "performance_monitor"
+    },
+    "PERF_NETWORK_MONITOR_ENABLE": {
+      "name": "PERF_NETWORK_MONITOR_ENABLE",
+      "type": "macro",
+      "current_state": "closed",
+      "description": "网络性能监控启用",
+      "group": "performance_monitor"
+    },
+    "PERF_FAST_PATH_ENABLE": {
+      "name": "PERF_FAST_PATH_ENABLE",
+      "type": "macro",
+      "current_state": "open",
+      "description": "快速路径优化启用",
+      "group": "performance_monitor"
+    },
+    "PERF_CACHE_OPTIMIZE_ENABLE": {
+      "name": "PERF_CACHE_OPTIMIZE_ENABLE",
+      "type": "macro",
+      "current_state": "open",
+      "description": "缓存优化启用",
+      "group": "performance_monitor"
+    },
+    "DEBUG_LOG_ENABLE": {
+      "name": "DEBUG_LOG_ENABLE",
+      "type": "macro",
+      "current_state": "closed",
+      "description": "调试日志启用",
+      "group": "debug_features"
+    },
+    "VERBOSE_OUTPUT": {
+      "name": "VERBOSE_OUTPUT",
+      "type": "enum",
+      "current_state": "closed",
+      "description": "详细输出模式",
+      "group": "debug_features"
+    },
+    "TEMP_TEST_SWITCH_A": {
+      "name": "TEMP_TEST_SWITCH_A",
+      "type": "macro",
+      "current_state": "open",
+      "description": "临时测试开关A",
+      "group": "debug_features"
+    },
+    "TEMP_TEST_SWITCH_B": {
+      "name": "TEMP_TEST_SWITCH_B",
+      "type": "macro",
+      "current_state": "closed",
+      "description": "临时测试开关B",
+      "group": "debug_features"
+    },
+    "TEMP_TEST_SWITCH_C": {
+      "name": "TEMP_TEST_SWITCH_C",
+      "type": "macro",
+      "current_state": "closed",
+      "description": "临时测试开关C",
+      "group": "debug_features"
     }
   },
   "switch_groups": {
-    "vcu_control": {
-      "name": "VCU控制",
-      "switches": [
-        {
-          "name": "VCU_SyRTC_0001_01",
-          "type": "enum",
-          "description": "系统实时时钟桩001"
-        },
-        {
-          "name": "VCU_SyRTC_0002_01", 
-          "type": "enum",
-          "description": "系统实时时钟桩002"
-        }
-      ]
+    "system_control": {
+      "name": "系统控制",
+      "description": "系统级别的控制开关"
     },
-    "safety_control": {
-      "name": "安全控制",
-      "switches": [
-        {
-          "name": "SAFETY_MODE_ENABLE",
-          "type": "macro",
-          "description": "安全模式启用"
-        },
-        {
-          "name": "EMERGENCY_STOP",
-          "type": "enum", 
-          "description": "紧急停止"
-        }
-      ]
+    "module_ready": {
+      "name": "模块状态",
+      "description": "各个模块的就绪状态"
     },
-    "debug": {
+    "network_communication": {
+      "name": "网络通信",
+      "description": "网络通信相关开关"
+    },
+    "data_processing": {
+      "name": "数据处理",
+      "description": "数据处理和验证开关"
+    },
+    "error_handling": {
+      "name": "错误处理",
+      "description": "错误处理和故障恢复开关"
+    },
+    "performance_monitor": {
+      "name": "性能监控",
+      "description": "性能监控和优化开关"
+    },
+    "debug_features": {
       "name": "调试功能",
-      "switches": [
-        {
-          "name": "DEBUG_LOG_ENABLE",
-          "type": "macro",
-          "description": "调试日志启用"
-        },
-        {
-          "name": "VERBOSE_OUTPUT",
-          "type": "enum",
-          "description": "详细输出"
-        }
-      ]
+      "description": "调试和测试功能开关"
     }
-  },
-  "default_states": {
-    "VCU_SyRTC_0001_01": "closed",
-    "VCU_SyRTC_0002_01": "closed", 
-    "SAFETY_MODE_ENABLE": "open",
-    "EMERGENCY_STOP": "closed",
-    "DEBUG_LOG_ENABLE": "closed",
-    "VERBOSE_OUTPUT": "closed"
   }
 } 

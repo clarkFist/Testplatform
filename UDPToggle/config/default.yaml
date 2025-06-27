@@ -1,0 +1,67 @@
+# VCU测试开关桩管理工具 - 默认配置文件
+version: "2.0.0"
+
+app:
+  name: "VCU测试开关桩管理工具"
+  window_title: "VCU测试开关桩管理工具 v2.0.0"
+  window_size: "1200x800"
+  theme: "clam"
+
+server:
+  host: "0.0.0.0"
+  port: 8080
+  debug: false
+
+vcu:
+  udp_port: 18125
+  timeout: 5.0
+  retry_count: 3
+  heartbeat_interval: 10.0
+  connection_timeout: 30.0
+
+devices:
+  auto_connect: true
+  connection_retry_interval: 5.0
+  max_retry_attempts: 3
+  startup_auto_load: true
+  auto_load_yaml_samples: true  # 启用自动加载示例YAML文件
+  default_device_list: 
+    - "MVCU1_2"
+    - "MVCU1_16" 
+    - "SVCU1_3"
+  slot_ip:
+    "2": "20.2.1.10"
+    "3": "20.2.1.10"
+    "16": "20.1.1.10"
+  local_ip:
+    "2": "20.2.1.100"
+    "3": "20.2.1.101"
+    "16": "20.1.1.100"
+
+logging:
+  level: "INFO"
+  max_file_size: "10MB"
+  backup_count: 5
+  log_dir: "logs"
+  console_output: true
+  file_output: true
+
+features:
+  auto_reconnect: true
+  monitor_startup: true
+  serial_support: true
+  wireshark_integration: false
+  statistics_collection: true
+
+ui:
+  refresh_interval: 2.0
+  auto_refresh: true
+  show_statistics: true
+  group_default: "全部"
+  confirm_operations: true
+
+udp:
+  buffer_size: 4096
+  socket_timeout: 1.0
+  keep_alive: true
+  frame_validation: true 

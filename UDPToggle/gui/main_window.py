@@ -16,7 +16,7 @@ from pathlib import Path
 from core.vcu_controller import vcu_controller, VCUDevice, VCUState
 from core.switch_manager import switch_manager, Switch, SwitchState, SwitchType
 from core.config_manager import config
-from core.c_parser import c_parser, CSwitch
+from core.c_parser import c_parser, CSwitch, parse_file
 
 logger = logging.getLogger(__name__)
 
@@ -45,7 +45,7 @@ class VCUControllerApp:
         self.setup_window()
         self.setup_styles()
         self.create_widgets()
-        self.load_configuration()
+        self.load_default_configuration()
         self.setup_callbacks()
         self.setup_keyboard_shortcuts()
         
@@ -118,6 +118,7 @@ class VCUControllerApp:
         """设置键盘快捷键"""
         # 文件操作
         self.root.bind('<Control-o>', lambda e: self.load_project_file())
+        self.root.bind('<Control-Shift-o>', lambda e: self.load_device_configuration_file())
         self.root.bind('<Control-q>', lambda e: self.on_closing())
         
         # 设备操作
@@ -185,6 +186,8 @@ class VCUControllerApp:
         
         ttk.Button(project_frame, text="📁 加载项目", command=self.load_project_file, 
                   style='Action.TButton').pack(side=tk.LEFT, padx=2)
+        ttk.Button(project_frame, text="🔧 加载配置", command=self.load_device_configuration_file, 
+                  style='Action.TButton').pack(side=tk.LEFT, padx=2)
         
         # 设备操作按钮
         device_frame = ttk.LabelFrame(toolbar_frame, text="设备", padding=5)
@@ -238,6 +241,7 @@ class VCUControllerApp:
         file_menu = tk.Menu(menubar, tearoff=0)
         menubar.add_cascade(label="文件(F)", menu=file_menu, underline=3)
         file_menu.add_command(label="加载项目... (Ctrl+O)", command=self.load_project_file, accelerator="Ctrl+O")
+        file_menu.add_command(label="加载配置... (Ctrl+Shift+O)", command=self.load_device_configuration_file, accelerator="Ctrl+Shift+O")
         file_menu.add_separator()
         file_menu.add_command(label="导出报告...", command=self.export_report)
         file_menu.add_command(label="导出日志...", command=self.export_logs)
@@ -603,12 +607,17 @@ class VCUControllerApp:
     def update_time(self):
         """更新时间显示"""
         try:
-            current_time = time.strftime("时间: %Y-%m-%d %H:%M:%S")
-            self.time_var.set(current_time)
-        except UnicodeEncodeError:
-            # 如果仍有编码问题，使用简化版本
+            # 避免使用Unicode字符，使用简单的文本格式
             current_time = time.strftime("%Y-%m-%d %H:%M:%S")
             self.time_var.set(f"时间: {current_time}")
+        except (UnicodeEncodeError, Exception) as e:
+            # 如果仍有问题，使用最简化版本
+            try:
+                current_time = time.strftime("%H:%M:%S")
+                self.time_var.set(f"时间: {current_time}")
+            except:
+                self.time_var.set("时间: --:--:--")
+        
         self.root.after(1000, self.update_time)
     
     def add_log_entry(self, message: str, level: str = "INFO", color: str = None):
@@ -657,8 +666,8 @@ class VCUControllerApp:
         if len(self.operation_history) > 1000:
             self.operation_history = self.operation_history[-500:]
     
-    def load_configuration(self):
-        """加载配置"""
+    def load_default_configuration(self):
+        """加载默认设备配置（从config/devices.json文件）"""
         try:
             # 加载设备配置
             devices_config_path = Path("config/devices.json")
@@ -692,6 +701,109 @@ class VCUControllerApp:
         except Exception as e:
             logger.error(f"加载配置失败: {e}")
             messagebox.showerror("错误", f"加载配置失败: {e}")
+    
+    def load_device_configuration_file(self):
+        """从文件加载设备配置"""
+        file_path = filedialog.askopenfilename(
+            title="选择设备配置文件",
+            filetypes=[
+                ("JSON files", "*.json"),
+                ("All files", "*.*")
+            ]
+        )
+        
+        if not file_path:
+            return
+        
+        try:
+            self.add_log_entry(f"🔧 开始加载设备配置: {file_path}", "INFO")
+            self.status_var.set("🔧 正在加载设备配置...")
+            
+            with open(file_path, 'r', encoding='utf-8') as f:
+                devices_config = json.load(f)
+            
+            # 验证配置文件格式
+            if "devices" not in devices_config:
+                raise ValueError("配置文件格式错误：缺少 'devices' 字段")
+            
+            # 清除现有设备
+            vcu_controller._devices.clear()
+            
+            # 加载设备配置
+            loaded_count = 0
+            for device_id, device_config in devices_config.get("devices", {}).items():
+                if not all(k in device_config for k in ["slot_id", "name", "ip", "local_ip", "port"]):
+                    logger.warning(f"跳过格式不完整的设备配置: {device_id}")
+                    continue
+                
+                device = VCUDevice(
+                    slot_id=device_config["slot_id"],
+                    name=device_config["name"],
+                    ip=device_config["ip"],
+                    local_ip=device_config["local_ip"],
+                    port=device_config["port"],
+                    enabled=device_config.get("enabled", True),
+                    description=device_config.get("description", "")
+                )
+                vcu_controller.add_device(device)
+                loaded_count += 1
+            
+            # 如果配置文件中包含开关桩配置，询问是否加载
+            if "switches" in devices_config or "switch_groups" in devices_config:
+                if messagebox.askyesno("加载开关桩配置", 
+                                     "配置文件中包含开关桩配置，是否同时加载？"):
+                    # 清除现有开关桩
+                    switch_manager._switches.clear()
+                    switch_manager._groups.clear()
+                    
+                    # 加载开关桩配置
+                    switch_load_success = switch_manager.load_from_config(devices_config)
+                    if switch_load_success:
+                        self.add_log_entry("✅ 开关桩配置也已加载", "SUCCESS")
+                    else:
+                        self.add_log_entry("⚠️ 开关桩配置加载失败", "WARNING")
+            
+            # 刷新界面
+            self.refresh_device_list()
+            self.refresh_switch_list()
+            self.update_group_combo()
+            self.update_statistics()
+            
+            # 显示加载结果
+            self.add_log_entry(f"✅ 设备配置加载成功: {loaded_count} 个设备", "SUCCESS")
+            self.status_var.set(f"🔧 设备配置已加载: {loaded_count} 个设备")
+            
+            # 显示成功消息
+            messagebox.showinfo("加载成功", 
+                              f"设备配置加载成功！\n\n"
+                              f"• 已加载 {loaded_count} 个VCU设备\n"
+                              f"• 配置文件: {Path(file_path).name}")
+            
+            logger.info(f"设备配置加载完成: {loaded_count} 个设备")
+            
+        except FileNotFoundError:
+            error_msg = f"配置文件不存在: {file_path}"
+            logger.error(error_msg)
+            self.add_log_entry(f"❌ {error_msg}", "ERROR")
+            messagebox.showerror("错误", error_msg)
+            
+        except json.JSONDecodeError as e:
+            error_msg = f"配置文件格式错误: {e}"
+            logger.error(error_msg)
+            self.add_log_entry(f"❌ JSON格式错误: {e}", "ERROR")
+            messagebox.showerror("错误", f"配置文件格式错误：\n{e}")
+            
+        except ValueError as e:
+            error_msg = str(e)
+            logger.error(error_msg)
+            self.add_log_entry(f"❌ {error_msg}", "ERROR")
+            messagebox.showerror("错误", error_msg)
+            
+        except Exception as e:
+            error_msg = f"加载设备配置失败: {e}"
+            logger.error(error_msg, exc_info=True)
+            self.add_log_entry(f"❌ {error_msg}", "ERROR")
+            messagebox.showerror("错误", error_msg)
     
     def setup_callbacks(self):
         """设置回调函数"""
@@ -1313,41 +1425,117 @@ class VCUControllerApp:
         # 创建进度对话框
         progress_dialog = tk.Toplevel(self.root)
         progress_dialog.title("解析项目中...")
-        progress_dialog.geometry("450x280")
         progress_dialog.transient(self.root)
         progress_dialog.grab_set()
         progress_dialog.resizable(False, False)
         
-        # 进度信息
-        info_label = ttk.Label(progress_dialog, text="正在解析C文件，请稍候...", font=('Arial', 12, 'bold'))
-        info_label.pack(pady=15)
+        # 设置对话框大小并居中显示
+        dialog_width = 550
+        dialog_height = 380
+        progress_dialog.update_idletasks()  # 确保窗口完全初始化
         
-        path_label = ttk.Label(progress_dialog, text=f"路径: {project_path}", font=('Arial', 9), wraplength=400)
-        path_label.pack(pady=(0, 10))
+        # 获取屏幕尺寸和窗口尺寸
+        screen_width = self.root.winfo_screenwidth()
+        screen_height = self.root.winfo_screenheight()
         
-        progress = ttk.Progressbar(progress_dialog, mode='indeterminate')
-        progress.pack(pady=10, padx=20, fill=tk.X)
+        # 计算居中位置
+        x = (screen_width - dialog_width) // 2
+        y = (screen_height - dialog_height) // 2
+        
+        # 确保窗口不会超出屏幕边界
+        x = max(0, min(x, screen_width - dialog_width))
+        y = max(0, min(y, screen_height - dialog_height))
+        
+        progress_dialog.geometry(f"{dialog_width}x{dialog_height}+{x}+{y}")
+        
+        # 主框架
+        main_frame = ttk.Frame(progress_dialog)
+        main_frame.pack(fill=tk.BOTH, expand=True, padx=20, pady=15)
+        
+        # 标题
+        title_frame = ttk.Frame(main_frame)
+        title_frame.pack(fill=tk.X, pady=(0, 15))
+        
+        info_label = ttk.Label(title_frame, text="正在解析C文件，请稍候...", 
+                              font=('Arial', 14, 'bold'))
+        info_label.pack()
+        
+        # 路径显示
+        path_frame = ttk.LabelFrame(main_frame, text="项目路径", padding=10)
+        path_frame.pack(fill=tk.X, pady=(0, 15))
+        
+        # 使用滚动文本显示路径
+        path_text = tk.Text(path_frame, height=2, wrap=tk.WORD, font=('Arial', 9))
+        path_text.insert(tk.END, project_path)
+        path_text.config(state=tk.DISABLED)
+        path_text.pack(fill=tk.X)
+        
+        # 进度条框架
+        progress_frame = ttk.LabelFrame(main_frame, text="解析进度", padding=10)
+        progress_frame.pack(fill=tk.X, pady=(0, 15))
+        
+        # 进度条
+        progress = ttk.Progressbar(progress_frame, mode='indeterminate')
+        progress.pack(fill=tk.X, pady=(0, 10))
         progress.start()
         
-        # 解析状态标签
-        status_label = ttk.Label(progress_dialog, text="正在扫描文件...", font=('Arial', 9))
-        status_label.pack(pady=5)
+        # 状态标签
+        status_label = ttk.Label(progress_frame, text="正在扫描文件...", 
+                                font=('Arial', 10))
+        status_label.pack()
         
-        result_label = ttk.Label(progress_dialog, text="", font=('Arial', 10))
-        result_label.pack(pady=10)
+        # 结果显示框架
+        result_frame = ttk.LabelFrame(main_frame, text="解析结果", padding=10)
+        result_frame.pack(fill=tk.BOTH, expand=True, pady=(0, 15))
+        
+        result_text = tk.Text(result_frame, height=6, wrap=tk.WORD, font=('Arial', 10))
+        result_scrollbar = ttk.Scrollbar(result_frame, orient=tk.VERTICAL, command=result_text.yview)
+        result_text.configure(yscrollcommand=result_scrollbar.set)
+        
+        result_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        result_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        
+        # 按钮框架（初始隐藏）
+        button_frame = ttk.Frame(main_frame)
+        
+        # 取消按钮（立即显示）
+        cancel_frame = ttk.Frame(main_frame)
+        cancel_frame.pack(fill=tk.X, pady=(0, 5))
+        
+        # 用于控制解析线程
+        cancel_flag = threading.Event()
+        
+        def cancel_parsing():
+            """取消解析操作"""
+            cancel_flag.set()
+            progress.stop()
+            status_label.config(text="正在取消...")
+            progress_dialog.after(500, progress_dialog.destroy)
+        
+        ttk.Button(cancel_frame, text="取消", command=cancel_parsing).pack(side=tk.RIGHT)
         
         def parse_project():
             """在后台线程中解析项目"""
             try:
+                # 检查是否已取消
+                if cancel_flag.is_set():
+                    return
+                
                 # 更新状态
                 self.root.after(0, lambda: status_label.config(text="正在解析文件结构..."))
+                self.root.after(0, lambda: result_text.insert(tk.END, "开始解析项目文件...\n"))
                 
-                # 解析项目
+                # 解析项目（检查取消标志）
                 switches = c_parser.parse_project(project_path)
+                
+                # 再次检查是否已取消
+                if cancel_flag.is_set():
+                    return
                 
                 def update_ui():
                     """更新UI"""
                     progress.stop()
+                    progress.config(mode='determinate', value=100)
                     
                     if switches:
                         # 生成配置数据
@@ -1373,13 +1561,17 @@ class VCUControllerApp:
                             groups_count = len(switch_manager._groups)
                             files_count = len(c_parser.parsed_files)
                             
-                            result_label.config(
-                                text=f"✅ 项目加载成功！\n"
-                                     f"📊 找到 {len(switches)} 个开关桩\n"
-                                     f"📁 解析了 {files_count} 个文件\n"
-                                     f"📂 创建了 {groups_count} 个分组",
-                                foreground=self.colors['success']
-                            )
+                            result_text.delete(1.0, tk.END)
+                            result_text.insert(tk.END, f"✅ 项目加载成功！\n\n")
+                            result_text.insert(tk.END, f"📊 找到 {len(switches)} 个开关桩\n")
+                            result_text.insert(tk.END, f"📁 解析了 {files_count} 个文件\n")
+                            result_text.insert(tk.END, f"📂 创建了 {groups_count} 个分组\n\n")
+                            
+                            if groups_count > 0:
+                                group_names = list(switch_manager._groups.keys())
+                                result_text.insert(tk.END, f"分组列表: {', '.join(group_names)}\n")
+                            
+                            status_label.config(text="解析完成 ✓")
                             
                             # 记录详细日志
                             self.add_log_entry(f"项目加载成功: {len(switches)} 个开关桩, {groups_count} 个组", "SUCCESS")
@@ -1387,33 +1579,34 @@ class VCUControllerApp:
                             
                             # 如果找到了开关桩，自动选择第一个组并刷新显示
                             if groups_count > 0:
-                                group_names = list(switch_manager._groups.keys())
                                 # 优先选择包含更多开关桩的组
                                 best_group = max(group_names, key=lambda g: len(switch_manager.get_switches_by_group(g)))
                                 self.group_var.set(best_group)
                                 self.refresh_switch_list()  # 重新刷新以显示选中的组
                                 self.add_log_entry(f"自动选择了分组: {best_group}", "INFO")
+                                result_text.insert(tk.END, f"已自动选择分组: {best_group}")
                             
                         else:
-                            result_label.config(
-                                text="❌ 项目配置加载失败\n请检查项目文件格式",
-                                foreground=self.colors['danger']
-                            )
+                            result_text.delete(1.0, tk.END)
+                            result_text.insert(tk.END, "❌ 项目配置加载失败\n请检查项目文件格式")
+                            status_label.config(text="配置加载失败 ✗")
                             self.add_log_entry("项目配置加载失败", "ERROR")
                         
                     else:
-                        result_label.config(
-                            text="⚠️ 未找到任何开关桩定义\n"
-                                 f"已扫描 {len(c_parser.parsed_files)} 个文件\n"
-                                 "请检查项目中是否包含相关的宏定义或枚举",
-                            foreground=self.colors['warning']
-                        )
+                        result_text.delete(1.0, tk.END)
+                        result_text.insert(tk.END, f"⚠️ 未找到任何开关桩定义\n\n")
+                        result_text.insert(tk.END, f"已扫描 {len(c_parser.parsed_files)} 个文件\n")
+                        result_text.insert(tk.END, "请检查项目中是否包含相关的宏定义或枚举")
+                        
+                        status_label.config(text="未找到开关桩定义")
                         self.add_log_entry(f"项目解析完成，但未找到开关桩定义 (扫描了{len(c_parser.parsed_files)}个文件)", "WARNING")
                         self.status_var.set("⚠️ 未找到开关桩定义")
                     
-                    # 添加按钮框架
-                    button_frame = ttk.Frame(progress_dialog)
-                    button_frame.pack(pady=15)
+                    # 隐藏取消按钮
+                    cancel_frame.pack_forget()
+                    
+                    # 显示完成按钮
+                    button_frame.pack(fill=tk.X, pady=(0, 5))
                     
                     if switches and len(switches) > 0:
                         ttk.Button(button_frame, text="📋 查看详情", 
@@ -1422,21 +1615,28 @@ class VCUControllerApp:
                     
                     ttk.Button(button_frame, text="✅ 确定", 
                              command=progress_dialog.destroy,
-                             style='Action.TButton').pack(side=tk.LEFT, padx=5)
+                             style='Action.TButton').pack(side=tk.RIGHT, padx=5)
                 
                 self.root.after(0, update_ui)
                 
             except Exception as e:
                 def show_error():
                     progress.stop()
+                    progress.config(mode='determinate', value=0)
                     error_msg = str(e)
-                    result_label.config(text=f"❌ 解析失败\n{error_msg}", foreground=self.colors['danger'])
                     
-                    button_frame = ttk.Frame(progress_dialog)
-                    button_frame.pack(pady=15)
-                    ttk.Button(button_frame, text="❌ 确定", 
+                    result_text.delete(1.0, tk.END)
+                    result_text.insert(tk.END, f"❌ 解析失败\n\n{error_msg}")
+                    status_label.config(text="解析失败 ✗")
+                    
+                    # 隐藏取消按钮
+                    cancel_frame.pack_forget()
+                    
+                    # 显示关闭按钮
+                    button_frame.pack(fill=tk.X, pady=(0, 5))
+                    ttk.Button(button_frame, text="❌ 关闭", 
                              command=progress_dialog.destroy,
-                             style='Action.TButton').pack()
+                             style='Action.TButton').pack(side=tk.RIGHT, padx=5)
                     
                 self.root.after(0, show_error)
                 logger.error(f"解析项目失败: {e}")
@@ -1445,6 +1645,57 @@ class VCUControllerApp:
         
         # 在后台线程中执行解析
         threading.Thread(target=parse_project, daemon=True).start()
+    
+    def load_sample_project(self, file_path: str) -> bool:
+        """自动加载示例项目（供主程序调用）"""
+        try:
+            file_path = Path(file_path)
+            
+            if not file_path.exists():
+                logger.error(f"示例文件不存在: {file_path}")
+                return False
+            
+            self.add_log_entry(f"📁 正在加载示例项目: {file_path.name}", "INFO")
+            
+            # 解析C/C++文件
+            switches, config_data = parse_file(str(file_path))
+            
+            if switches:
+                # 清空现有开关桩
+                switch_manager._switches.clear()
+                switch_manager._groups.clear()
+                
+                # 添加解析出的开关桩
+                for switch in switches:
+                    switch_obj = Switch(
+                        name=switch.name,
+                        switch_type=SwitchType.MACRO if switch.switch_type == "macro" else SwitchType.ENUM,
+                        current_state=SwitchState.OPEN if switch.default_value in ["1", "true", "open"] else SwitchState.CLOSED,
+                        description=switch.description or f"{switch.switch_type.title()} 开关桩",
+                        group=switch.group or "default"
+                    )
+                    switch_manager.add_switch(switch_obj)
+                
+                # 刷新界面
+                self.refresh_switch_list()
+                self.update_group_combo()
+                
+                # 自动选择第一个有内容的组
+                groups = list(switch_manager._groups.keys())
+                if groups:
+                    self.group_var.set(groups[0])
+                    self.refresh_switch_list()
+                
+                logger.info(f"示例项目加载成功: {file_path}")
+                return True
+                
+            else:
+                logger.warning(f"示例文件中未发现开关桩定义: {file_path}")
+                return False
+                
+        except Exception as e:
+            logger.error(f"加载示例项目失败: {e}")
+            return False
     
     def _show_parse_results(self, switches: List[CSwitch], config_data: Dict):
         """显示解析结果详情"""
@@ -1552,16 +1803,16 @@ class VCUControllerApp:
         )
         
         if file_path:
-            try:
-                with open(file_path, 'w', encoding='utf-8') as f:
-                    json.dump(config_data, f, indent=2, ensure_ascii=False)
-                
-                messagebox.showinfo("成功", f"配置已导出到: {file_path}")
-                self.add_log_entry(f"已导出解析配置到: {file_path}", "SUCCESS")
-                
-            except Exception as e:
-                messagebox.showerror("错误", f"导出配置失败: {e}")
-                self.add_log_entry(f"导出配置失败: {e}", "ERROR")
+                try:
+                    with open(file_path, 'w', encoding='utf-8') as f:
+                        json.dump(config_data, f, indent=2, ensure_ascii=False)
+                    
+                    messagebox.showinfo("成功", f"配置已导出到: {file_path}")
+                    self.add_log_entry(f"已导出解析配置到: {file_path}", "SUCCESS")
+                    
+                except Exception as e:
+                    messagebox.showerror("错误", f"导出配置失败: {e}")
+                    self.add_log_entry(f"导出配置失败: {e}", "ERROR")
     
     def save_config_file(self):
         """保存配置文件"""
@@ -1819,7 +2070,7 @@ class VCUControllerApp:
         progress_dialog.geometry("400x150")
         progress_dialog.transient(self.root)
         progress_dialog.grab_set()
-        
+                
         ttk.Label(progress_dialog, text=f"正在测试设备 Slot {slot_id} 的连接...", 
                  font=('Arial', 10)).pack(pady=20)
         
@@ -2190,8 +2441,8 @@ IP地址: {device.ip}
                     logger.error(f"批量操作失败 {switch_name}: {e}")
             
             update_progress(total_count, total_count, "完成")
-            
-            # 刷新界面
+                                
+                                # 刷新界面
             self.root.after(0, self.refresh_switch_list)
             
             # 显示结果
@@ -2221,7 +2472,7 @@ IP地址: {device.ip}
             self.refresh_switch_list()
             self.update_statistics()
             self.update_group_combo()
-            
+                                
             self.add_log_entry("刷新完成", "SUCCESS")
             self.status_var.set("✅ 刷新完成")
         except Exception as e:
@@ -2516,7 +2767,7 @@ IP地址: {device.ip}
                 if switch:
                     switch.group = group_name
             
-            self.refresh_switch_list()
+                self.refresh_switch_list()
             self.update_group_combo()
             self.add_log_entry(f"创建开关桩组 '{group_name}'，包含 {len(selected_switches)} 个开关桩", "SUCCESS")
             dialog.destroy()
@@ -2663,7 +2914,7 @@ IP地址: {device.ip}
                             f.write(f"{timestamp} [{entry['level']}] {entry['message']}\n")
                 
                 messagebox.showinfo("成功", "历史记录导出成功！")
-                
+                                
             except Exception as e:
                 messagebox.showerror("错误", f"导出失败: {e}")
     
@@ -2714,7 +2965,8 @@ VCU测试开关桩管理工具 - 使用说明
 • 实时状态监控和日志记录
 
 == 快捷键说明 ==
-• Ctrl+O: 加载配置文件
+• Ctrl+O: 加载项目文件（开关桩）
+• Ctrl+Shift+O: 加载设备配置文件
 • Ctrl+S: 保存配置文件
 • Ctrl+Q: 退出应用程序
 • F5: 刷新设备列表
@@ -2769,7 +3021,8 @@ VCU测试开关桩管理工具 - 使用说明
 键盘快捷键一览表
 
 == 文件操作 ==
-Ctrl+O          加载配置文件
+Ctrl+O          加载项目文件（开关桩）
+Ctrl+Shift+O    加载设备配置文件
 Ctrl+S          保存配置文件
 Ctrl+Q          退出应用程序
 
@@ -2861,4 +3114,4 @@ Ctrl+F          聚焦到搜索框
                 
             except Exception as e:
                 logger.error(f"保存日志失败: {e}")
-                messagebox.showerror("错误", f"保存日志失败: {e}") 
+                messagebox.showerror("错误", f"保存日志失败: {e}")

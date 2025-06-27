@@ -1,0 +1,31 @@
+{
+  "devices": {
+    "mvcu_001": {
+      "slot_id": "1",
+      "name": "MVCU-主控制器",
+      "ip": "192.168.1.101",
+      "local_ip": "192.168.1.100",
+      "port": 8080,
+      "enabled": true,
+      "description": "主VCU控制器设备"
+    },
+    "svcu_002": {
+      "slot_id": "2",
+      "name": "SVCU-从控制器",
+      "ip": "192.168.1.102",
+      "local_ip": "192.168.1.100",
+      "port": 8080,
+      "enabled": true,
+      "description": "从VCU控制器设备"
+    },
+    "test_003": {
+      "slot_id": "3",
+      "name": "TEST-测试设备",
+      "ip": "192.168.1.103",
+      "local_ip": "192.168.1.100",
+      "port": 8080,
+      "enabled": false,
+      "description": "测试专用VCU设备"
+    }
+  }
+} 

@@ -6,6 +6,11 @@
     "window_size": "1200x800",
     "theme": "clam"
   },
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8080,
+    "debug": false
+  },
   "vcu": {
     "udp_port": 18125,
     "timeout": 5.0,
@@ -14,15 +19,19 @@
     "connection_timeout": 30.0
   },
   "devices": {
-    "auto_connect": false,
+    "auto_connect": true,
     "connection_retry_interval": 5.0,
     "max_retry_attempts": 3,
+    "startup_auto_load": true,
+    "default_device_list": ["MVCU1_2", "MVCU1_16", "SVCU1_3"],
     "slot_ip": {
       "2": "20.2.1.10",
+      "3": "20.2.1.10", 
       "16": "20.1.1.10"
     },
     "local_ip": {
-      "2": "20.2.1.100", 
+      "2": "20.2.1.100",
+      "3": "20.2.1.101",
       "16": "20.1.1.100"
     }
   },

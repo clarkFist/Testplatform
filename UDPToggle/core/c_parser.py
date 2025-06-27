@@ -351,4 +351,18 @@ class CFileParser:
 
 
 # 全局解析器实例
-c_parser = CFileParser() 
+c_parser = CFileParser()
+
+def parse_file(file_path: str) -> Tuple[List[CSwitch], Dict]:
+    """
+    解析单个文件的公共接口
+    
+    Args:
+        file_path: 文件路径
+        
+    Returns:
+        (开关桩列表, 配置数据)
+    """
+    switches = c_parser.parse_project(file_path)
+    config_data = c_parser.export_to_config()
+    return switches, config_data 
