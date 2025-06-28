@@ -1,5 +1,546 @@
 ---
-description:
-globs:
-alwaysApply: false
+description: 
+globs: 
+alwaysApply: true
 ---
+# UDPToggle 项目开发规范 (Rules)
+
+## 📋 项目概述
+
+**UDPToggle** 是一个专业的VCU测试开关桩管理桌面应用程序，基于UDP通信协议实现对VCU设备的远程控制和监控。
+
+### 核心特性
+- 专业UDP通信协议栈实现
+- 现代化桌面GUI界面 (tkinter)
+- 多VCU设备管理和监控
+- 开关桩批量操作和状态跟踪
+- C源代码开关桩自动解析
+- 灵活的配置管理系统
+- 完整的日志和统计功能
+
+## 🏗️ 项目架构规范
+
+### 模块化设计原则
+```
+UDPToggle/                    # 实际项目根目录
+├── core/                     # 核心业务逻辑模块
+│   ├── vcu_controller.py     # VCU设备控制器
+│   ├── udp_client.py         # UDP通信客户端
+│   ├── switch_manager.py     # 开关桩管理器
+│   ├── config_manager.py     # 配置管理器
+│   └── c_parser.py          # C文件解析器
+├── gui/                      # 图形用户界面模块
+│   ├── main_window.py        # 主窗口实现
+│   ├── modern_*.py          # 现代化UI组件
+│   └── __init__.py
+├── config/                   # 配置文件目录
+│   ├── default.json         # 默认配置
+│   └── devices.json         # 设备配置
+├── tests/                    # 测试文件目录
+├── plugins/                  # 插件系统目录
+├── logs/                     # 日志文件目录
+├── DOC/                      # 项目文档目录
+├── main.py                   # 程序入口点
+├── main_modern_simple.py     # 现代化版本入口
+├── requirements.txt          # Python依赖
+└── README.md                # 项目说明文档
+```
+
+### 架构设计原则
+1. **关注点分离**: core(业务逻辑) + gui(界面) + config(配置)
+2. **模块独立性**: 每个模块具有明确的职责边界
+3. **可扩展性**: 支持插件系统，便于功能扩展
+4. **配置驱动**: 通过配置文件控制应用行为
+5. **异步通信**: UDP通信采用异步模式，避免界面阻塞
+
+## 📝 代码规范
+
+### Python代码规范
+```python
+# 1. 文件头部注释格式
+"""
+模块名称
+
+模块功能描述，包括主要职责和用途。
+"""
+
+# 2. 导入顺序
+import sys           # 标准库
+import logging       # 标准库
+from pathlib import Path
+
+import tkinter as tk # 第三方库
+from typing import Dict, List, Optional
+
+from .config_manager import config  # 本地模块
+
+# 3. 类和函数命名
+class VCUController:  # 类名使用PascalCase
+    def send_command(self):  # 方法名使用snake_case
+        pass
+
+# 4. 常量定义
+UDP_PORT = 18125     # 常量使用UPPER_CASE
+MAX_RETRY_COUNT = 3
+
+# 5. 类型注解（必须）
+def connect_device(self, slot_id: str) -> bool:
+    """
+    连接VCU设备
+    
+    Args:
+        slot_id: 设备槽位ID
+        
+    Returns:
+        是否连接成功
+    """
+    pass
+```
+
+### 日志规范
+```python
+import logging
+
+logger = logging.getLogger(__name__)
+
+# 日志级别使用原则
+logger.debug("详细的调试信息")      # 开发调试时使用
+logger.info("常规操作信息")        # 重要操作记录
+logger.warning("警告信息")         # 可能的问题
+logger.error("错误信息", exc_info=True)  # 错误记录，包含堆栈
+```
+
+### 异常处理规范
+```python
+# 1. 具体异常捕获
+try:
+    result = risky_operation()
+except ConnectionError as e:
+    logger.error(f"连接失败: {e}")
+    return False
+except ValueError as e:
+    logger.error(f"参数错误: {e}")
+    return False
+
+# 2. 资源管理
+with client_manager.get_client(slot_id) as client:
+    client.send_command(data)
+
+# 3. 避免裸露的except:
+# 错误示例：
+# except:
+#     pass
+
+# 正确示例：
+except Exception as e:
+    logger.error(f"未预期的错误: {e}", exc_info=True)
+```
+
+## 🔧 核心模块设计规范
+
+### VCU控制器 (vcu_controller.py)
+```python
+# 职责：
+# - VCU设备生命周期管理
+# - UDP命令发送和响应处理
+# - 设备状态监控和心跳检测
+# - 统计信息收集
+
+class VCUController:
+    """单一职责：VCU设备控制和监控"""
+    
+    def add_device(self, device: VCUDevice) -> bool:
+        """添加设备到管理列表"""
+    
+    def send_switch_command(self, slot_id: str, switch_name: str, 
+                          switch_value: bool) -> bool:
+        """发送开关桩命令"""
+    
+    def start_monitoring(self) -> None:
+        """启动设备状态监控"""
+```
+
+### UDP客户端 (udp_client.py)
+```python
+# 职责：
+# - UDP协议栈实现
+# - 数据帧编解码
+# - 连接管理和错误处理
+# - 消息队列管理
+
+class UDPClient:
+    """专注于UDP通信的底层实现"""
+    
+    def send_command(self, data_type: DataType, data: bytes) -> bool:
+        """发送UDP命令"""
+    
+    def _encode_frame(self, frame: UDPFrame) -> bytes:
+        """编码UDP数据帧"""
+```
+
+### 开关桩管理器 (switch_manager.py)
+```python
+# 职责：
+# - 开关桩定义管理
+# - 批量操作支持
+# - 状态跟踪和同步
+# - 分组管理
+
+class SwitchManager:
+    """开关桩业务逻辑管理"""
+    
+    def apply_switches(self, switches: Dict[str, bool]) -> Dict[str, bool]:
+        """批量应用开关桩状态"""
+    
+    def get_switches_by_group(self, group: str) -> List[Switch]:
+        """按组获取开关桩"""
+```
+
+### C文件解析器 (c_parser.py)
+```python
+# 职责：
+# - C源代码解析
+# - 开关桩定义提取
+# - 配置文件生成
+# - 智能模式识别
+
+class CFileParser:
+    """C源代码开关桩解析"""
+    
+    def parse_project(self, project_path: str) -> List[CSwitch]:
+        """解析项目中的开关桩定义"""
+    
+    def export_to_config(self) -> Dict:
+        """导出为配置格式"""
+```
+
+## 🎨 GUI设计规范
+
+### 界面架构
+```python
+# gui/main_window.py - 主窗口实现
+class VCUControllerApp:
+    """主应用程序窗口"""
+    
+    def __init__(self, root: tk.Tk):
+        self.setup_ui()          # 界面初始化
+        self.setup_callbacks()   # 回调设置
+        self.setup_monitoring()  # 监控启动
+    
+    def setup_ui(self):
+        """界面布局设置"""
+        # 左侧：设备管理面板
+        # 右侧：开关桩操作面板
+        # 底部：状态栏和控制按钮
+```
+
+### 现代化UI组件
+```python
+# gui/modern_components.py - 现代化组件
+class ModernFrame(ttk.Frame):
+    """现代化样式框架"""
+    
+class ModernTreeview(ttk.Treeview):
+    """现代化表格组件"""
+    
+# gui/modern_theme.py - 主题管理
+class ModernTheme:
+    """现代化主题配置"""
+    COLORS = {
+        'primary': '#3B82F6',
+        'background': '#FFFFFF',
+        'surface': '#F8FAFC'
+    }
+```
+
+### UI更新规范
+```python
+# 1. 线程安全的UI更新
+def update_device_status(self, slot_id: str, status: VCUState):
+    """更新设备状态显示"""
+    def update():
+        # UI更新代码
+        pass
+    
+    # 确保在主线程中更新UI
+    self.root.after(0, update)
+
+# 2. 数据绑定模式
+class DeviceListView:
+    def __init__(self):
+        self.data_source = []  # 数据源
+        self.tree_view = ttk.Treeview()  # 视图组件
+    
+    def refresh_data(self, devices: List[VCUDevice]):
+        """刷新数据显示"""
+        self._clear_tree()
+        self._populate_tree(devices)
+```
+
+## ⚙️ 配置管理规范
+
+### 配置文件结构
+```json
+// config/default.json - 应用默认配置
+{
+  "version": "2.0.0",
+  "app": {
+    "name": "VCU测试开关桩管理工具",
+    "window_title": "VCU测试开关桩管理工具 v2.0.0"
+  },
+  "vcu": {
+    "udp_port": 18125,
+    "timeout": 5.0,
+    "heartbeat_interval": 10.0
+  },
+  "logging": {
+    "level": "INFO",
+    "max_file_size": "10MB"
+  }
+}
+
+// config/devices.json - 设备配置
+{
+  "devices": {
+    "VCU_2": {
+      "slot_id": "2",
+      "name": "主系VCU",
+      "ip": "20.2.1.10",
+      "enabled": true
+    }
+  },
+  "switch_groups": {
+    "vcu_control": {
+      "name": "VCU控制",
+      "switches": [...]
+    }
+  }
+}
+```
+
+### 配置访问模式
+```python
+from core.config_manager import config
+
+# 1. 配置读取
+udp_port = config.get('vcu.udp_port', 18125)
+log_level = config.get('logging.level', 'INFO')
+
+# 2. 配置修改
+config.set('vcu.timeout', 10.0)
+config.save_to_file('config/default.json')
+
+# 3. 配置验证
+if not config.validate():
+    logger.error("配置验证失败")
+```
+
+## 🔌 UDP通信协议规范
+
+### 数据帧格式
+```
++----------+----------+----------+----------+----------+
+| 目标节点  | 源节点    | 数据类型  | 数据长度  | 数据内容  |
+| (1字节)  | (1字节)   | (1字节)  | (1字节)  | (变长)   |
++----------+----------+----------+----------+----------+
+```
+
+### 数据类型定义
+```python
+class DataType(Enum):
+    TAG = 0x00      # 开关桩数据
+    CONF = 0x02     # 配置数据  
+    LOG = 0x0E      # 日志数据
+    MAINT = 0x04    # 维护数据
+
+# 命令格式规范
+def build_switch_command(switch_name: str, switch_value: bool) -> bytes:
+    """
+    开关桩命令格式：
+    [命令类型:1字节][名称长度:1字节][开关名称:变长][开关值:1字节]
+    """
+    name_bytes = switch_name.encode('utf-8')
+    return bytes([0x01, len(name_bytes)]) + name_bytes + bytes([1 if switch_value else 0])
+```
+
+## 🧪 测试规范
+
+### 单元测试
+```python
+# tests/test_vcu_controller.py
+import unittest
+from unittest.mock import Mock, patch
+
+class TestVCUController(unittest.TestCase):
+    def setUp(self):
+        """测试前设置"""
+        self.controller = VCUController()
+    
+    def test_add_device(self):
+        """测试添加设备"""
+        device = VCUDevice(slot_id="2", name="Test VCU", ...)
+        result = self.controller.add_device(device)
+        self.assertTrue(result)
+    
+    @patch('core.udp_client.UDPClient')
+    def test_send_switch_command(self, mock_client):
+        """测试发送开关桩命令"""
+        # 模拟测试
+        pass
+```
+
+### 集成测试
+```python
+# tests/test_integration.py
+class TestIntegration(unittest.TestCase):
+    """集成测试，测试各模块协作"""
+    
+    def test_full_workflow(self):
+        """测试完整工作流程"""
+        # 1. 加载配置
+        # 2. 创建VCU控制器
+        # 3. 添加设备
+        # 4. 发送命令
+        # 5. 验证结果
+        pass
+```
+
+## 📊 性能和监控规范
+
+### 性能指标
+```python
+# 关键性能指标 (KPI)
+PERFORMANCE_TARGETS = {
+    'udp_response_time': 100,      # UDP响应时间 < 100ms
+    'ui_refresh_rate': 2.0,        # UI刷新频率 2秒
+    'memory_usage': 100,           # 内存使用 < 100MB
+    'cpu_usage': 5.0,              # CPU使用率 < 5%
+}
+
+# 性能监控
+class PerformanceMonitor:
+    def track_udp_latency(self, latency_ms: float):
+        """跟踪UDP延迟"""
+    
+    def track_memory_usage(self):
+        """跟踪内存使用"""
+```
+
+### 日志和调试
+```python
+# 日志配置
+LOGGING_CONFIG = {
+    'level': 'INFO',
+    'format': '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    'handlers': ['file', 'console'],
+    'file_rotation': '10MB'
+}
+
+# 调试模式
+if config.get('app.debug', False):
+    logging.getLogger().setLevel(logging.DEBUG)
+    # 启用详细日志输出
+```
+
+## 🚀 部署和发布规范
+
+### 依赖管理
+```python
+# requirements.txt
+# 核心依赖
+tkinter>=8.6  # GUI框架 (通常随Python安装)
+
+# 开发依赖
+pytest>=6.0
+black>=21.0   # 代码格式化
+mypy>=0.800   # 类型检查
+```
+
+### 打包和分发
+```bash
+# 1. 代码检查
+python -m black .
+python -m mypy .
+python -m pytest
+
+# 2. 版本发布
+# 更新version in config/default.json
+# 更新README.md
+# 创建Git tag
+
+# 3. 分发包
+# 创建可执行文件或安装包
+```
+
+## 📋 开发工作流程
+
+### 功能开发流程
+1. **需求分析**: 明确功能需求和技术方案
+2. **架构设计**: 确定模块划分和接口设计
+3. **代码实现**: 按照代码规范实现功能
+4. **单元测试**: 编写和执行单元测试
+5. **集成测试**: 验证模块间协作
+6. **文档更新**: 更新相关文档
+
+### 代码审查检查清单
+- [ ] 代码风格符合项目规范
+- [ ] 类型注解完整
+- [ ] 异常处理适当
+- [ ] 日志记录充分
+- [ ] 单元测试覆盖
+- [ ] 性能影响评估
+- [ ] 配置项正确
+- [ ] 文档更新
+
+## 📚 参考项目说明
+
+**重要说明**: `@/UDPToggle` 是实际项目目录，包含完整的项目实现。项目外的其他文件仅作为参考和测试用途。
+
+### 项目外参考文件
+- `/Master/testplatform/` - 测试平台参考实现
+- `/Master/TtestPlatForm/` - 另一版本测试平台
+- `/scripts/` - 辅助脚本
+- `/wireshark/` - 协议解析脚本
+
+这些参考文件可用于：
+- 了解历史实现方案
+- 获取协议定义参考
+- 学习测试用例设计
+- 但不应直接应用到UDPToggle项目中
+
+## 🔍 故障排除指南
+
+### 常见问题和解决方案
+1. **UDP连接失败**
+   - 检查IP地址和端口配置
+   - 验证网络连通性
+   - 查看防火墙设置
+
+2. **界面响应缓慢**
+   - 检查UI更新频率设置
+   - 优化数据刷新逻辑
+   - 考虑异步处理
+
+3. **内存泄漏**
+   - 检查事件监听器的注销
+   - 验证线程生命周期管理
+   - 监控资源使用情况
+
+### 调试技巧
+```python
+# 1. 启用详细日志
+config.set('logging.level', 'DEBUG')
+
+# 2. 使用性能分析
+import cProfile
+cProfile.run('main()')
+
+# 3. 内存分析
+import tracemalloc
+tracemalloc.start()
+# ... 运行代码 ...
+current, peak = tracemalloc.get_traced_memory()
+```
+
+---
+

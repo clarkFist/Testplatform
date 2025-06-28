@@ -1,0 +1,28 @@
+version: 2.0.0
+server:
+  host: 0.0.0.0
+  port: 8080
+  debug: true
+vcu:
+  udp_port: 18125
+  timeout: 5.0
+  retry_count: 3
+  heartbeat_interval: 10.0
+devices:
+  slot_ip:
+    '2': 20.2.1.10
+    '16': 20.1.1.10
+  local_ip:
+    '2': 20.2.1.100
+    '16': 20.1.1.100
+logging:
+  level: INFO
+  max_file_size: 10MB
+  backup_count: 5
+  log_dir: logs
+features:
+  auto_reconnect: true
+  web_ui: true
+  rest_api: true
+  serial_support: true
+  wireshark_integration: false

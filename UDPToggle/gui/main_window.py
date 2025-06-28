@@ -13,6 +13,14 @@ import logging
 from typing import Dict, Any, Optional, List
 from pathlib import Path
 
+# YAML支持 - 可选导入
+try:
+    import yaml
+    YAML_AVAILABLE = True
+except ImportError:
+    YAML_AVAILABLE = False
+    yaml = None
+
 from core.vcu_controller import vcu_controller, VCUDevice, VCUState
 from core.switch_manager import switch_manager, Switch, SwitchState, SwitchType
 from core.config_manager import config
@@ -45,11 +53,51 @@ class VCUControllerApp:
         self.setup_window()
         self.setup_styles()
         self.create_widgets()
+        
+        # 显示配置加载状态
+        self._show_config_status()
+        
         self.load_default_configuration()
         self.setup_callbacks()
         self.setup_keyboard_shortcuts()
         
         logger.info("主窗口已初始化")
+    
+    def _show_config_status(self):
+        """显示配置加载状态"""
+        try:
+            config_status = config.get_config_status() if hasattr(config, 'get_config_status') else None
+            
+            # 在日志中显示配置状态
+            if config_status and config_status.get('loaded', False):
+                self.add_log_entry("🔧 配置系统初始化完成", "SUCCESS")
+                self.add_log_entry(f"📋 配置来源: {config_status['source']}", "INFO") 
+                self.add_log_entry(f"🏷️ 系统版本: {config_status['version']}", "INFO")
+                
+                if config_status.get('validation_passed', False):
+                    self.add_log_entry("✅ 配置验证通过", "SUCCESS")
+                else:
+                    self.add_log_entry("⚠️ 配置验证失败", "WARNING")
+            else:
+                self.add_log_entry("🔧 配置系统已初始化", "SUCCESS")
+                self.add_log_entry("📋 使用默认配置", "INFO")
+                
+            # 显示YAML支持状态
+            if YAML_AVAILABLE:
+                self.add_log_entry("📄 YAML配置格式: ✅ 支持", "SUCCESS")
+            else:
+                self.add_log_entry("📄 YAML配置格式: ❌ 不支持 (缺少PyYAML库)", "WARNING")
+                self.add_log_entry("💡 提示: 安装PyYAML以支持YAML格式: pip install PyYAML", "INFO")
+                
+            # 显示关键配置信息
+            app_name = config.get('app.name', '未知应用')
+            udp_port = config.get('vcu.udp_port', 'N/A')
+            self.add_log_entry(f"🚀 {app_name} 已启动", "INFO")
+            self.add_log_entry(f"🌐 UDP通信端口: {udp_port}", "INFO")
+            
+        except Exception as e:
+            logger.error(f"显示配置状态失败: {e}")
+            self.add_log_entry("⚠️ 无法获取配置状态信息", "WARNING")
     
     def setup_window(self):
         """设置主窗口"""
@@ -118,7 +166,6 @@ class VCUControllerApp:
         """设置键盘快捷键"""
         # 文件操作
         self.root.bind('<Control-o>', lambda e: self.load_project_file())
-        self.root.bind('<Control-Shift-o>', lambda e: self.load_device_configuration_file())
         self.root.bind('<Control-q>', lambda e: self.on_closing())
         
         # 设备操作
@@ -186,8 +233,15 @@ class VCUControllerApp:
         
         ttk.Button(project_frame, text="📁 加载项目", command=self.load_project_file, 
                   style='Action.TButton').pack(side=tk.LEFT, padx=2)
-        ttk.Button(project_frame, text="🔧 加载配置", command=self.load_device_configuration_file, 
-                  style='Action.TButton').pack(side=tk.LEFT, padx=2)
+        
+        # 加载设备列表（YAML）按钮
+        if YAML_AVAILABLE:
+            ttk.Button(project_frame, text="📱 加载设备列表（YAML）", command=self.load_device_list_yaml, 
+                      style='Action.TButton').pack(side=tk.LEFT, padx=2)
+        else:
+            yaml_button = ttk.Button(project_frame, text="📱 加载设备列表（YAML）", command=self._show_yaml_install_help, 
+                                   style='Action.TButton', state='disabled')
+            yaml_button.pack(side=tk.LEFT, padx=2)
         
         # 设备操作按钮
         device_frame = ttk.LabelFrame(toolbar_frame, text="设备", padding=5)
@@ -241,7 +295,13 @@ class VCUControllerApp:
         file_menu = tk.Menu(menubar, tearoff=0)
         menubar.add_cascade(label="文件(F)", menu=file_menu, underline=3)
         file_menu.add_command(label="加载项目... (Ctrl+O)", command=self.load_project_file, accelerator="Ctrl+O")
-        file_menu.add_command(label="加载配置... (Ctrl+Shift+O)", command=self.load_device_configuration_file, accelerator="Ctrl+Shift+O")
+        
+        # YAML设备列表子菜单
+        if YAML_AVAILABLE:
+            file_menu.add_command(label="加载设备列表（YAML）...", command=self.load_device_list_yaml)
+        else:
+            file_menu.add_command(label="加载设备列表（YAML）... (需要PyYAML)", command=self._show_yaml_install_help, state='disabled')
+        
         file_menu.add_separator()
         file_menu.add_command(label="导出报告...", command=self.export_report)
         file_menu.add_command(label="导出日志...", command=self.export_logs)
@@ -667,72 +727,45 @@ class VCUControllerApp:
             self.operation_history = self.operation_history[-500:]
     
     def load_default_configuration(self):
-        """加载默认设备配置（从config/devices.json文件）"""
+        """加载默认设备配置（从config_manager或config/devices.json文件）"""
         try:
-            # 加载设备配置
+            # 首先尝试从config_manager获取设备配置
+            device_config = config.get_device_config()
+            if device_config and 'devices' in device_config:
+                self.add_log_entry("🔧 从配置管理器加载设备配置...", "INFO")
+                self.load_devices_from_config(device_config)
+                return
+            
+            # 如果config_manager中没有设备配置，尝试加载传统的JSON文件
             devices_config_path = Path("config/devices.json")
             if devices_config_path.exists():
+                self.add_log_entry("🔧 从JSON文件加载设备配置...", "INFO")
                 with open(devices_config_path, 'r', encoding='utf-8') as f:
                     devices_config = json.load(f)
                 
-                # 加载VCU设备
-                for device_id, device_config in devices_config.get("devices", {}).items():
-                    device = VCUDevice(
-                        slot_id=device_config["slot_id"],
-                        name=device_config["name"],
-                        ip=device_config["ip"],
-                        local_ip=device_config["local_ip"],
-                        port=device_config["port"],
-                        enabled=device_config.get("enabled", True),
-                        description=device_config.get("description", "")
-                    )
-                    vcu_controller.add_device(device)
-                
-                # 加载开关桩配置
-                switch_manager.load_from_config(devices_config)
-                
-                self.refresh_device_list()
-                self.refresh_switch_list()
-                self.update_group_combo()
-                
-                logger.info("配置加载完成")
-                self.status_var.set("配置加载完成")
+                self.load_devices_from_config(devices_config)
+            else:
+                self.add_log_entry("ℹ️ 未找到设备配置文件", "INFO")
             
         except Exception as e:
             logger.error(f"加载配置失败: {e}")
+            self.add_log_entry(f"❌ 加载配置失败: {e}", "ERROR")
             messagebox.showerror("错误", f"加载配置失败: {e}")
     
-    def load_device_configuration_file(self):
-        """从文件加载设备配置"""
-        file_path = filedialog.askopenfilename(
-            title="选择设备配置文件",
-            filetypes=[
-                ("JSON files", "*.json"),
-                ("All files", "*.*")
-            ]
-        )
-        
-        if not file_path:
-            return
-        
+    def load_devices_from_config(self, devices_config: Dict[str, Any]):
+        """从配置字典加载设备和开关桩配置"""
         try:
-            self.add_log_entry(f"🔧 开始加载设备配置: {file_path}", "INFO")
-            self.status_var.set("🔧 正在加载设备配置...")
-            
-            with open(file_path, 'r', encoding='utf-8') as f:
-                devices_config = json.load(f)
-            
-            # 验证配置文件格式
-            if "devices" not in devices_config:
-                raise ValueError("配置文件格式错误：缺少 'devices' 字段")
+            loaded_device_count = 0
+            loaded_switch_count = 0
             
             # 清除现有设备
             vcu_controller._devices.clear()
             
-            # 加载设备配置
-            loaded_count = 0
+            # 加载VCU设备
             for device_id, device_config in devices_config.get("devices", {}).items():
-                if not all(k in device_config for k in ["slot_id", "name", "ip", "local_ip", "port"]):
+                # 检查必需字段
+                required_fields = ["slot_id", "name", "ip"]
+                if not all(field in device_config for field in required_fields):
                     logger.warning(f"跳过格式不完整的设备配置: {device_id}")
                     continue
                 
@@ -740,28 +773,28 @@ class VCUControllerApp:
                     slot_id=device_config["slot_id"],
                     name=device_config["name"],
                     ip=device_config["ip"],
-                    local_ip=device_config["local_ip"],
-                    port=device_config["port"],
+                    local_ip=device_config.get("local_ip", device_config["ip"]),
+                    port=device_config.get("port", 18125),
                     enabled=device_config.get("enabled", True),
                     description=device_config.get("description", "")
                 )
                 vcu_controller.add_device(device)
-                loaded_count += 1
+                loaded_device_count += 1
+                self.add_log_entry(f"  📱 已加载设备: {device.name} (槽位{device.slot_id})", "INFO")
             
-            # 如果配置文件中包含开关桩配置，询问是否加载
-            if "switches" in devices_config or "switch_groups" in devices_config:
-                if messagebox.askyesno("加载开关桩配置", 
-                                     "配置文件中包含开关桩配置，是否同时加载？"):
-                    # 清除现有开关桩
-                    switch_manager._switches.clear()
-                    switch_manager._groups.clear()
-                    
-                    # 加载开关桩配置
-                    switch_load_success = switch_manager.load_from_config(devices_config)
-                    if switch_load_success:
-                        self.add_log_entry("✅ 开关桩配置也已加载", "SUCCESS")
-                    else:
-                        self.add_log_entry("⚠️ 开关桩配置加载失败", "WARNING")
+            # 加载开关桩配置
+            if "switches" in devices_config:
+                # 清除现有开关桩
+                switch_manager._switches.clear()
+                switch_manager._groups.clear()
+                
+                # 加载开关桩配置
+                switch_load_success = switch_manager.load_from_config(devices_config)
+                if switch_load_success:
+                    loaded_switch_count = len(switch_manager.get_all_switches())
+                    self.add_log_entry(f"  🔧 已加载 {loaded_switch_count} 个开关桩配置", "INFO")
+                else:
+                    self.add_log_entry("  ⚠️ 开关桩配置加载失败", "WARNING")
             
             # 刷新界面
             self.refresh_device_list()
@@ -770,40 +803,163 @@ class VCUControllerApp:
             self.update_statistics()
             
             # 显示加载结果
-            self.add_log_entry(f"✅ 设备配置加载成功: {loaded_count} 个设备", "SUCCESS")
-            self.status_var.set(f"🔧 设备配置已加载: {loaded_count} 个设备")
+            self.add_log_entry(f"✅ 配置加载完成: {loaded_device_count} 个设备, {loaded_switch_count} 个开关桩", "SUCCESS")
+            self.status_var.set(f"🔧 配置已加载: {loaded_device_count} 设备, {loaded_switch_count} 开关桩")
             
-            # 显示成功消息
-            messagebox.showinfo("加载成功", 
-                              f"设备配置加载成功！\n\n"
-                              f"• 已加载 {loaded_count} 个VCU设备\n"
-                              f"• 配置文件: {Path(file_path).name}")
-            
-            logger.info(f"设备配置加载完成: {loaded_count} 个设备")
-            
-        except FileNotFoundError:
-            error_msg = f"配置文件不存在: {file_path}"
-            logger.error(error_msg)
-            self.add_log_entry(f"❌ {error_msg}", "ERROR")
-            messagebox.showerror("错误", error_msg)
-            
-        except json.JSONDecodeError as e:
-            error_msg = f"配置文件格式错误: {e}"
-            logger.error(error_msg)
-            self.add_log_entry(f"❌ JSON格式错误: {e}", "ERROR")
-            messagebox.showerror("错误", f"配置文件格式错误：\n{e}")
-            
-        except ValueError as e:
-            error_msg = str(e)
-            logger.error(error_msg)
-            self.add_log_entry(f"❌ {error_msg}", "ERROR")
-            messagebox.showerror("错误", error_msg)
+            logger.info(f"配置加载完成: {loaded_device_count} 个设备, {loaded_switch_count} 个开关桩")
             
         except Exception as e:
-            error_msg = f"加载设备配置失败: {e}"
-            logger.error(error_msg, exc_info=True)
-            self.add_log_entry(f"❌ {error_msg}", "ERROR")
-            messagebox.showerror("错误", error_msg)
+            logger.error(f"从配置加载设备失败: {e}", exc_info=True)
+            self.add_log_entry(f"❌ 从配置加载设备失败: {e}", "ERROR")
+            raise
+    
+
+    
+    def load_device_list_yaml(self, file_path: str = None) -> bool:
+        """专门用于加载YAML格式的设备列表配置"""
+        if not YAML_AVAILABLE:
+            self.add_log_entry("❌ YAML库未安装，无法加载YAML设备列表", "ERROR")
+            messagebox.showerror("错误", "需要安装PyYAML库来支持YAML格式：\npip install PyYAML")
+            return False
+        
+        if not file_path:
+            # 如果没有指定文件路径，打开文件选择对话框
+            file_path = filedialog.askopenfilename(
+                title="选择YAML设备列表配置文件",
+                filetypes=[
+                    ("YAML设备配置文件", "*.yaml;*.yml"),
+                    ("所有文件", "*.*")
+                ]
+            )
+            
+            if not file_path:
+                return False
+        
+        try:
+            self.add_log_entry(f"📱 开始加载YAML设备列表: {Path(file_path).name}", "INFO")
+            
+            with open(file_path, 'r', encoding='utf-8') as f:
+                yaml_config = yaml.safe_load(f)
+            
+            if not yaml_config:
+                raise ValueError("YAML设备配置文件为空")
+            
+            # 检查是否包含设备信息
+            if "devices" not in yaml_config:
+                self.add_log_entry("⚠️ YAML文件中未找到设备配置信息", "WARNING")
+                messagebox.showwarning("警告", "选择的YAML文件中未找到设备配置信息（devices节点）")
+                return False
+            
+            # 加载设备信息
+            self._load_devices_from_yaml(yaml_config)
+            
+            # 如果配置中包含开关桩信息，也一并加载
+            if "switches" in yaml_config or "switch_groups" in yaml_config:
+                self.add_log_entry("🔧 发现开关桩配置，正在加载...", "INFO")
+                self._load_switches_from_yaml(yaml_config)
+            
+            # 刷新界面
+            self.refresh_device_list()
+            self.refresh_switch_list()
+            self.update_group_combo()
+            self.update_statistics()
+            
+            # 统计加载结果
+            device_count = len(vcu_controller.get_all_devices())
+            switch_count = len(switch_manager.get_all_switches())
+            
+            success_msg = f"✅ YAML设备列表加载成功: {Path(file_path).name}\n"
+            success_msg += f"📱 已加载 {device_count} 个设备"
+            if switch_count > 0:
+                success_msg += f"，🔧 {switch_count} 个开关桩"
+            
+            self.add_log_entry(success_msg, "SUCCESS")
+            
+            # 显示成功对话框
+            result_info = f"设备列表加载成功！\n\n"
+            result_info += f"文件：{Path(file_path).name}\n"
+            result_info += f"设备数量：{device_count} 个\n"
+            if switch_count > 0:
+                result_info += f"开关桩数量：{switch_count} 个\n"
+            result_info += f"\n现在您可以连接这些设备并进行测试。"
+            
+            messagebox.showinfo("加载成功", result_info)
+            return True
+            
+        except Exception as e:
+            logger.error(f"YAML设备列表加载失败: {e}", exc_info=True)
+            self.add_log_entry(f"❌ YAML设备列表加载失败: {e}", "ERROR")
+            messagebox.showerror("错误", f"YAML设备列表加载失败：\n{e}")
+            return False
+    
+    def _load_devices_from_yaml(self, yaml_config: dict):
+        """从YAML配置中加载设备"""
+        devices = yaml_config.get("devices", {})
+        loaded_count = 0
+        
+        vcu_controller._devices.clear()
+        
+        for device_id, device_config in devices.items():
+            try:
+                device = VCUDevice(
+                    slot_id=device_config.get("slot_id", device_id),
+                    name=device_config.get("name", device_id),
+                    ip=device_config.get("ip", ""),
+                    local_ip=device_config.get("local_ip", "192.168.1.100"),
+                    port=device_config.get("port", 18125),
+                    enabled=device_config.get("enabled", True),
+                    description=device_config.get("description", "")
+                )
+                vcu_controller.add_device(device)
+                loaded_count += 1
+                self.add_log_entry(f"  ✅ 设备 {device.name} (Slot: {device.slot_id})", "INFO")
+            except Exception as e:
+                logger.warning(f"加载设备失败: {device_id} - {e}")
+                self.add_log_entry(f"  ⚠️ 设备 {device_id} 加载失败: {e}", "WARNING")
+        
+        self.add_log_entry(f"📱 共加载 {loaded_count} 个设备", "INFO")
+    
+    def _load_switches_from_yaml(self, yaml_config: dict):
+        """从YAML配置中加载开关桩"""
+        try:
+            switch_manager._switches.clear()
+            switch_manager._groups.clear()
+            
+            success = switch_manager.load_from_config(yaml_config)
+            if success:
+                switch_count = len(switch_manager.get_all_switches())
+                group_count = len(switch_manager._groups)
+                self.add_log_entry(f"🔧 共加载 {switch_count} 个开关桩，{group_count} 个分组", "INFO")
+            else:
+                self.add_log_entry("⚠️ 开关桩配置加载失败", "WARNING")
+        except Exception as e:
+            logger.error(f"开关桩配置加载失败: {e}")
+            self.add_log_entry(f"❌ 开关桩配置加载失败: {e}", "ERROR")
+    
+    def check_yaml_support(self) -> bool:
+        """检查YAML支持状态"""
+        return YAML_AVAILABLE
+    
+    def _show_yaml_install_help(self):
+        """显示YAML库安装帮助"""
+        help_message = (
+            "YAML设备列表配置支持\n\n"
+            "当前系统未安装PyYAML库，无法加载YAML格式的设备配置文件。\n\n"
+            "安装方法：\n"
+            "1. 打开命令行或终端\n"
+            "2. 运行以下命令安装PyYAML：\n"
+            "   pip install PyYAML\n\n"
+            "安装完成后重新启动应用程序即可支持YAML格式。\n\n"
+            "YAML格式设备配置的优势：\n"
+            "• 更易读的设备配置文件格式\n"
+            "• 支持注释和详细说明\n"
+            "• 更灵活的设备参数配置\n"
+            "• 更好的可维护性和版本控制支持\n"
+            "• 可以同时包含设备和开关桩配置"
+        )
+        
+        messagebox.showinfo("YAML设备配置支持", help_message)
+        self.add_log_entry("💡 显示了YAML设备配置安装帮助信息", "INFO")
     
     def setup_callbacks(self):
         """设置回调函数"""
@@ -1213,14 +1369,37 @@ class VCUControllerApp:
     
     def connect_all_devices(self):
         """连接所有设备"""
-        devices = vcu_controller.get_all_devices()
-        success_count = 0
-        
-        for slot_id in devices.keys():
-            if vcu_controller.connect_device(slot_id):
-                success_count += 1
-        
-        self.status_var.set(f"已连接 {success_count}/{len(devices)} 个设备")
+        try:
+            devices = vcu_controller.get_all_devices()
+            if not devices:
+                self.add_log_entry("⚠️ 没有可连接的设备", "WARNING")
+                return
+            
+            self.add_log_entry(f"🔗 开始连接 {len(devices)} 个设备...", "INFO")
+            
+            connected_count = 0
+            for slot_id, device in devices.items():
+                if device.enabled:
+                    try:
+                        self.add_log_entry(f"  🔗 正在连接设备: {device.name} (槽位{device.slot_id})", "INFO")
+                        success = vcu_controller.connect_device(slot_id)
+                        if success:
+                            connected_count += 1
+                            self.add_log_entry(f"  ✅ 设备连接成功: {device.name}", "SUCCESS")
+                        else:
+                            self.add_log_entry(f"  ❌ 设备连接失败: {device.name}", "ERROR")
+                    except Exception as e:
+                        self.add_log_entry(f"  ❌ 连接设备 {device.name} 时出错: {e}", "ERROR")
+                else:
+                    self.add_log_entry(f"  ⏭️ 跳过已禁用的设备: {device.name}", "INFO")
+            
+            self.add_log_entry(f"🔗 设备连接完成: {connected_count}/{len(devices)} 个设备连接成功", "INFO")
+            self.refresh_device_list()
+            self.update_statistics()
+            
+        except Exception as e:
+            logger.error(f"连接所有设备失败: {e}", exc_info=True)
+            self.add_log_entry(f"❌ 连接所有设备失败: {e}", "ERROR")
     
     def disconnect_all_devices(self):
         """断开所有设备"""

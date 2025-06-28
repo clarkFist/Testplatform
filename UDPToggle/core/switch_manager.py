@@ -21,6 +21,12 @@ class SwitchType(Enum):
     BOOL = "bool"           # 布尔桩
     INTEGER = "integer"     # 整数桩
     FLOAT = "float"         # 浮点桩
+    CONTROL = "control"     # 控制类型开关桩
+    POWER = "power"         # 电源类型开关桩
+    CONFIG = "config"       # 配置类型开关桩
+    SAFETY = "safety"       # 安全类型开关桩
+    DEBUG = "debug"         # 调试类型开关桩
+    TEST = "test"           # 测试类型开关桩
 
 
 class SwitchState(Enum):
@@ -517,43 +523,154 @@ class SwitchManager:
             是否加载成功
         """
         try:
-            # 加载开关桩组
+            loaded_switch_count = 0
+            loaded_group_count = 0
+            
+            # 清理现有配置（如果需要）
+            # self._switches.clear()
+            # self._groups.clear()
+            
+            # 方法1: 处理新的YAML格式（直接在switches键下定义开关桩）
+            if 'switches' in config_data:
+                logger.info("检测到新格式的开关桩配置，开始加载...")
+                
+                # 首先收集所有组信息
+                groups_found = set()
+                for switch_name, switch_config in config_data['switches'].items():
+                    group_name = switch_config.get('group', 'default')
+                    groups_found.add(group_name)
+                
+                # 创建找到的组（如果不存在）
+                for group_name in groups_found:
+                    if group_name not in self._groups:
+                        group = SwitchGroup(
+                            name=group_name,
+                            description=f"自动创建的组: {group_name}",
+                            switches=[]
+                        )
+                        self.add_group(group)
+                        loaded_group_count += 1
+                
+                # 加载开关桩
+                for switch_name, switch_config in config_data['switches'].items():
+                    try:
+                        # 解析开关桩类型
+                        switch_type_str = switch_config.get('type', 'enum')
+                        try:
+                            switch_type = SwitchType(switch_type_str)
+                        except ValueError:
+                            logger.warning(f"未知的开关桩类型: {switch_type_str}，使用默认类型 'enum'")
+                            switch_type = SwitchType.ENUM
+                        
+                        # 解析默认状态
+                        default_state = SwitchState.CLOSED
+                        if 'default_state' in switch_config:
+                            try:
+                                if switch_config['default_state'] in [True, 'true', 'True', 'open', 'OPEN']:
+                                    default_state = SwitchState.OPEN
+                                elif switch_config['default_state'] in [False, 'false', 'False', 'closed', 'CLOSED']:
+                                    default_state = SwitchState.CLOSED
+                            except:
+                                pass
+                        
+                        # 创建开关桩对象
+                        switch = Switch(
+                            name=switch_name,
+                            switch_type=switch_type,
+                            description=switch_config.get('description', ''),
+                            current_state=default_state,
+                            group=switch_config.get('group', 'default'),
+                            enabled=switch_config.get('enabled', True)
+                        )
+                        
+                        # 添加开关桩
+                        self.add_switch(switch)
+                        loaded_switch_count += 1
+                        
+                        # 将开关桩添加到组中
+                        group_name = switch.group
+                        if group_name in self._groups:
+                            if switch_name not in self._groups[group_name].switches:
+                                self._groups[group_name].switches.append(switch_name)
+                        
+                        logger.debug(f"已加载开关桩: {switch_name} (类型: {switch_type.value}, 组: {group_name})")
+                        
+                    except Exception as e:
+                        logger.error(f"加载开关桩 {switch_name} 失败: {e}")
+                        continue
+            
+            # 方法2: 处理单独定义的开关桩组配置
+            if 'switch_groups' in config_data:
+                logger.info("检测到开关桩组配置，开始加载...")
+                for group_name, group_config in config_data['switch_groups'].items():
+                    if group_name not in self._groups:
+                        group = SwitchGroup(
+                            name=group_name,
+                            description=group_config.get('description', group_config.get('name', '')),
+                            switches=group_config.get('switches', [])
+                        )
+                        self.add_group(group)
+                        loaded_group_count += 1
+                        logger.debug(f"已创建开关桩组: {group_name}")
+                    else:
+                        # 更新现有组的描述
+                        self._groups[group_name].description = group_config.get('description', 
+                                                                               group_config.get('name', ''))
+            
+            # 方法3: 处理旧格式的开关桩组配置（组内包含开关桩定义）
             if 'switch_groups' in config_data:
                 for group_name, group_config in config_data['switch_groups'].items():
-                    group = SwitchGroup(
-                        name=group_name,
-                        description=group_config.get('description', ''),
-                        switches=[s['name'] for s in group_config.get('switches', [])]
-                    )
-                    self.add_group(group)
-                    
-                    # 添加组内的开关桩
-                    for switch_config in group_config.get('switches', []):
-                        switch = Switch(
-                            name=switch_config['name'],
-                            switch_type=SwitchType(switch_config.get('type', 'enum')),
-                            description=switch_config.get('description', ''),
-                            group=group_name
-                        )
-                        self.add_switch(switch)
+                    # 处理组内定义的开关桩
+                    if 'switches' in group_config and isinstance(group_config['switches'], list):
+                        for switch_config in group_config['switches']:
+                            if isinstance(switch_config, dict) and 'name' in switch_config:
+                                try:
+                                    switch_type_str = switch_config.get('type', 'enum')
+                                    try:
+                                        switch_type = SwitchType(switch_type_str)
+                                    except ValueError:
+                                        switch_type = SwitchType.ENUM
+                                    
+                                    switch = Switch(
+                                        name=switch_config['name'],
+                                        switch_type=switch_type,
+                                        description=switch_config.get('description', ''),
+                                        group=group_name
+                                    )
+                                    self.add_switch(switch)
+                                    loaded_switch_count += 1
+                                    
+                                except Exception as e:
+                                    logger.error(f"加载组内开关桩失败: {e}")
+                                    continue
             
             # 加载默认状态
             if 'default_states' in config_data:
                 defaults = {}
                 for name, state_str in config_data['default_states'].items():
                     try:
-                        defaults[name] = SwitchState(state_str)
-                    except ValueError:
-                        logger.warning(f"无效的默认状态: {name}={state_str}")
+                        if isinstance(state_str, bool):
+                            defaults[name] = SwitchState.OPEN if state_str else SwitchState.CLOSED
+                        elif isinstance(state_str, str):
+                            if state_str.lower() in ['open', 'true', '1', 'on']:
+                                defaults[name] = SwitchState.OPEN
+                            else:
+                                defaults[name] = SwitchState.CLOSED
+                        else:
+                            defaults[name] = SwitchState.CLOSED
+                    except Exception as e:
+                        logger.warning(f"无效的默认状态: {name}={state_str}, 错误: {e}")
                         defaults[name] = SwitchState.CLOSED
                 
-                self.set_default_states(defaults)
+                if defaults:
+                    self.set_default_states(defaults)
+                    logger.info(f"已设置 {len(defaults)} 个默认状态")
             
-            logger.info("开关桩配置加载完成")
+            logger.info(f"开关桩配置加载完成: {loaded_switch_count} 个开关桩, {loaded_group_count} 个组")
             return True
             
         except Exception as e:
-            logger.error(f"加载开关桩配置失败: {e}")
+            logger.error(f"加载开关桩配置失败: {e}", exc_info=True)
             return False
 
 
