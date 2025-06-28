@@ -57,11 +57,89 @@ class VCUControllerApp:
         # 显示配置加载状态
         self._show_config_status()
         
-        self.load_default_configuration()
+        # 强制加载默认配置
+        self._force_load_default_configuration()
+        
         self.setup_callbacks()
         self.setup_keyboard_shortcuts()
         
         logger.info("主窗口已初始化")
+    
+    def _force_load_default_configuration(self):
+        """强制加载默认设备配置，确保设备能够正确加载"""
+        # 为了避免重复加载，先检查是否已有设备
+        existing_devices = vcu_controller.get_all_devices()
+        if len(existing_devices) > 0:
+            logger.info(f"检测到已有 {len(existing_devices)} 个设备，跳过强制加载")
+            self.add_log_entry(f"ℹ️ 检测到已有 {len(existing_devices)} 个设备，跳过重复加载", "INFO")
+            # 直接刷新界面
+            self.refresh_device_list()
+            self.update_statistics()
+            return
+        
+        try:
+            self.add_log_entry("🔧 正在强制加载设备配置...", "INFO")
+            
+            # 从配置管理器获取设备配置
+            device_config = config.get_device_config()
+            
+            if device_config and 'devices' in device_config:
+                self.add_log_entry(f"✅ 发现设备配置: {len(device_config['devices'])} 个设备", "INFO")
+                
+                loaded_count = 0
+                
+                # 强制加载每个设备
+                for device_id, device_cfg in device_config['devices'].items():
+                    try:
+                        self.add_log_entry(f"📱 正在加载设备: {device_id}", "INFO")
+                        
+                        device = VCUDevice(
+                            slot_id=device_cfg["slot_id"],
+                            name=device_cfg["name"],
+                            ip=device_cfg["ip"],
+                            local_ip=device_cfg.get("local_ip", device_cfg["ip"]),
+                            port=device_cfg.get("port", 18125),
+                            enabled=device_cfg.get("enabled", True),
+                            description=device_cfg.get("description", "")
+                        )
+                        
+                        # 添加到VCU控制器
+                        success = vcu_controller.add_device(device)
+                        if success:
+                            loaded_count += 1
+                            self.add_log_entry(f"✅ 设备加载成功: {device.name} (槽位{device.slot_id})", "SUCCESS")
+                        else:
+                            self.add_log_entry(f"❌ 设备添加失败: {device_id}", "ERROR")
+                        
+                    except Exception as e:
+                        self.add_log_entry(f"❌ 设备加载失败 {device_id}: {e}", "ERROR")
+                        logger.error(f"设备加载失败 {device_id}: {e}", exc_info=True)
+                
+                # 验证加载结果
+                actual_devices = vcu_controller.get_all_devices()
+                self.add_log_entry(f"✅ 配置加载完成: {loaded_count} 个设备已加载", "SUCCESS")
+                self.add_log_entry(f"🔍 VCU控制器验证: {len(actual_devices)} 个设备", "INFO")
+                
+                # 刷新界面
+                self.refresh_device_list()
+                self.update_statistics()
+                
+                if len(actual_devices) != loaded_count:
+                    self.add_log_entry(f"⚠️ 警告: 加载设备数({loaded_count})与实际设备数({len(actual_devices)})不匹配", "WARNING")
+                
+            else:
+                self.add_log_entry("⚠️ 未找到有效的设备配置", "WARNING")
+                # 尝试传统的加载方式
+                self.load_default_configuration()
+            
+        except Exception as e:
+            self.add_log_entry(f"❌ 强制加载配置失败: {e}", "ERROR")
+            logger.error(f"强制加载配置失败: {e}", exc_info=True)
+            # 回退到传统加载方式
+            try:
+                self.load_default_configuration()
+            except:
+                pass
     
     def _show_config_status(self):
         """显示配置加载状态"""
@@ -892,12 +970,17 @@ class VCUControllerApp:
             messagebox.showerror("错误", f"YAML设备列表加载失败：\n{e}")
             return False
     
-    def _load_devices_from_yaml(self, yaml_config: dict):
+    def _load_devices_from_yaml(self, yaml_config: dict, clear_existing=True):
         """从YAML配置中加载设备"""
         devices = yaml_config.get("devices", {})
         loaded_count = 0
         
-        vcu_controller._devices.clear()
+        # 只在明确需要时才清空现有设备
+        if clear_existing:
+            vcu_controller._devices.clear()
+            logger.info("清空现有设备列表")
+        
+        logger.info(f"开始加载YAML设备配置: {len(devices)} 个设备")
         
         for device_id, device_config in devices.items():
             try:
@@ -910,14 +993,29 @@ class VCUControllerApp:
                     enabled=device_config.get("enabled", True),
                     description=device_config.get("description", "")
                 )
-                vcu_controller.add_device(device)
-                loaded_count += 1
-                self.add_log_entry(f"  ✅ 设备 {device.name} (Slot: {device.slot_id})", "INFO")
+                
+                success = vcu_controller.add_device(device)
+                if success:
+                    loaded_count += 1
+                    self.add_log_entry(f"  ✅ 设备 {device.name} (Slot: {device.slot_id}, IP: {device.ip})", "INFO")
+                    logger.info(f"成功添加设备: {device_id} -> {device.name} (Slot {device.slot_id})")
+                else:
+                    self.add_log_entry(f"  ❌ 设备 {device_id} 添加失败", "ERROR")
+                    logger.error(f"设备添加失败: {device_id}")
+                    
             except Exception as e:
                 logger.warning(f"加载设备失败: {device_id} - {e}")
                 self.add_log_entry(f"  ⚠️ 设备 {device_id} 加载失败: {e}", "WARNING")
         
-        self.add_log_entry(f"📱 共加载 {loaded_count} 个设备", "INFO")
+        # 验证加载结果
+        actual_devices = vcu_controller.get_all_devices()
+        self.add_log_entry(f"📱 设备加载完成: {loaded_count} 个加载, {len(actual_devices)} 个已存储", "INFO")
+        
+        # 显示设备详情
+        for slot_id, device in actual_devices.items():
+            logger.info(f"已存储设备: Slot {slot_id} -> {device.name} ({device.ip})")
+        
+        return loaded_count
     
     def _load_switches_from_yaml(self, yaml_config: dict):
         """从YAML配置中加载开关桩"""
@@ -995,43 +1093,65 @@ class VCUControllerApp:
         # 获取搜索条件
         search_term = self.device_search_var.get().lower()
         
-        # 添加设备
+        # 获取设备列表
         devices = vcu_controller.get_all_devices()
         online_count = 0
         offline_count = 0
         connecting_count = 0
         
-        for slot_id, device in devices.items():
-            # 搜索过滤
-            if search_term and search_term not in device.name.lower() and search_term not in device.ip.lower() and search_term not in slot_id.lower():
-                continue
-            
-            last_seen = ""
-            if device.last_seen:
-                last_seen = time.strftime("%H:%M:%S", time.localtime(device.last_seen))
-            
-            # 模拟ping延迟
-            ping = getattr(device, 'ping', 0) if device.state == VCUState.ONLINE else 0
-            
-            item_id = self.device_tree.insert("", tk.END, values=(
-                device.slot_id,
-                device.name,
-                device.ip,
-                device.state.value,
-                last_seen,
-                f"{ping}" if ping > 0 else ""
+        logger.debug(f"刷新设备列表: 找到 {len(devices)} 个设备")
+        
+        # 如果没有设备，显示提示信息
+        if not devices:
+            placeholder_item = self.device_tree.insert("", tk.END, values=(
+                "📋",
+                "暂无设备",
+                "请加载配置文件",
+                "🔴 未配置",
+                "",
+                ""
             ))
+            self.add_log_entry("ℹ️ 设备列表为空，请检查配置", "INFO")
+        else:
+            # 添加设备 - 修复缩进问题
+            filtered_count = 0
+            for slot_id, device in devices.items():
+                # 搜索过滤
+                if search_term and search_term not in device.name.lower() and search_term not in device.ip.lower() and search_term not in slot_id.lower():
+                    continue
+                
+                filtered_count += 1
+                
+                last_seen = ""
+                if device.last_seen:
+                    last_seen = time.strftime("%H:%M:%S", time.localtime(device.last_seen))
+                
+                # 模拟ping延迟
+                ping = getattr(device, 'ping', 0) if device.state == VCUState.ONLINE else 0
+                
+                item_id = self.device_tree.insert("", tk.END, values=(
+                    device.slot_id,
+                    device.name,
+                    device.ip,
+                    device.state.value,
+                    last_seen,
+                    f"{ping}" if ping > 0 else ""
+                ))
+                
+                # 设置行颜色
+                if device.state == VCUState.ONLINE:
+                    self.device_tree.set(item_id, "state", "🟢 在线")
+                    online_count += 1
+                elif device.state == VCUState.OFFLINE:
+                    self.device_tree.set(item_id, "state", "🔴 离线")
+                    offline_count += 1
+                else:
+                    self.device_tree.set(item_id, "state", "🟡 连接中")
+                    connecting_count += 1
+                
+                logger.debug(f"添加设备到列表: {device.name} (Slot {device.slot_id}) - {device.state.value}")
             
-            # 设置行颜色
-            if device.state == VCUState.ONLINE:
-                self.device_tree.set(item_id, "state", "🟢 在线")
-                online_count += 1
-            elif device.state == VCUState.OFFLINE:
-                self.device_tree.set(item_id, "state", "🔴 离线")
-                offline_count += 1
-            else:
-                self.device_tree.set(item_id, "state", "🟡 连接中")
-                connecting_count += 1
+            logger.info(f"设备列表刷新完成: 显示 {filtered_count}/{len(devices)} 个设备")
         
         # 更新状态指示器
         self.online_indicator.config(text=f"🟢 在线: {online_count}")

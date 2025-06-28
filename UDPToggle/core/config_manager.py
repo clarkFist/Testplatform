@@ -440,7 +440,10 @@ class ConfigManager:
         """检测是否是首次运行"""
         # 检查是否存在运行标记文件
         run_marker = self.config_dir / ".first_run_completed"
-        return not run_marker.exists()
+        first_run_config = self.get("app.first_run", True)
+        
+        # 只有当配置中标记为首次运行且没有完成标记文件时才认为是首次运行
+        return first_run_config and not run_marker.exists()
     
     def mark_first_run_completed(self) -> None:
         """标记首次运行已完成"""
@@ -448,6 +451,16 @@ class ConfigManager:
         try:
             with open(run_marker, 'w', encoding='utf-8') as f:
                 f.write(f"首次运行完成时间: {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
+            
+            # 同时更新配置文件中的首次运行标记
+            self.set("app.first_run", False)
+            try:
+                default_yaml_path = self.config_dir / "default.yaml"
+                if default_yaml_path.exists():
+                    self.save_to_file(str(default_yaml_path), "system")
+            except Exception as save_e:
+                logger.warning(f"更新配置文件中的首次运行标记失败: {save_e}")
+            
             logger.info("首次运行已标记为完成")
         except Exception as e:
             logger.error(f"标记首次运行完成失败: {e}")
@@ -469,7 +482,108 @@ class ConfigManager:
         Returns:
             设备配置字典
         """
-        return self._device_config.copy()
+        # 如果有独立的设备配置文件，优先使用
+        if self._device_config:
+            return self._device_config.copy()
+        
+        # 否则从主配置文件中构建设备配置
+        return self.build_device_config_from_main()
+    
+    def build_device_config_from_main(self) -> Dict[str, Any]:
+        """
+        从主配置文件构建设备配置
+        
+        Returns:
+            设备配置字典
+        """
+        devices_config = {"devices": {}}
+        
+        # 获取设备定义
+        device_definitions = self.get('device_definitions', {})
+        default_device_list = self.get('devices.default_device_list', [])
+        
+        logger.info(f"开始从主配置构建设备配置，设备列表: {default_device_list}")
+        logger.info(f"可用设备定义: {list(device_definitions.keys())}")
+        
+        # 为默认设备列表中的每个设备创建配置
+        for device_name in default_device_list:
+            if device_name in device_definitions:
+                # 如果有完整定义，直接使用
+                devices_config["devices"][device_name] = device_definitions[device_name].copy()
+                logger.info(f"✅ 使用设备定义: {device_name}")
+            else:
+                # 否则尝试从旧格式构建
+                slot_id = self._extract_slot_id_from_name(device_name)
+                if slot_id:
+                    slot_ip = self.get(f'devices.slot_ip.{slot_id}')
+                    local_ip = self.get(f'devices.local_ip.{slot_id}')
+                    
+                    if slot_ip:
+                        devices_config["devices"][device_name] = {
+                            "slot_id": slot_id,
+                            "name": self._generate_device_name(device_name, slot_id),
+                            "ip": slot_ip,
+                            "local_ip": local_ip or slot_ip,
+                            "port": 18125,
+                            "enabled": True,
+                            "description": f"VCU设备，槽位{slot_id}"
+                        }
+                        logger.info(f"✅ 从槽位配置构建设备: {device_name} (槽位{slot_id})")
+                    else:
+                        logger.warning(f"⚠️ 设备 {device_name} 找不到槽位{slot_id}的IP配置")
+                else:
+                    logger.warning(f"⚠️ 无法从设备名称 {device_name} 提取槽位ID")
+        
+        logger.info(f"从主配置构建了 {len(devices_config['devices'])} 个设备配置")
+        return devices_config
+    
+    def _extract_slot_id_from_name(self, device_name: str) -> Optional[str]:
+        """
+        从设备名称中提取槽位ID
+        
+        Args:
+            device_name: 设备名称，如 "MVCU1_2"
+            
+        Returns:
+            槽位ID或None
+        """
+        # 支持多种命名格式
+        import re
+        
+        # 匹配 MVCU1_2, SVCU1_3 等格式
+        match = re.search(r'[MS]VCU\d+_(\d+)', device_name)
+        if match:
+            return match.group(1)
+        
+        # 匹配 VCU_2, VCU2 等格式  
+        match = re.search(r'VCU[_]?(\d+)', device_name)
+        if match:
+            return match.group(1)
+        
+        # 匹配末尾的数字
+        match = re.search(r'_(\d+)$', device_name)
+        if match:
+            return match.group(1)
+        
+        return None
+    
+    def _generate_device_name(self, device_id: str, slot_id: str) -> str:
+        """
+        生成设备显示名称
+        
+        Args:
+            device_id: 设备ID
+            slot_id: 槽位ID
+            
+        Returns:
+            设备显示名称
+        """
+        if device_id.startswith('MVCU'):
+            return f"主系VCU-槽位{slot_id}"
+        elif device_id.startswith('SVCU'):
+            return f"安全VCU-槽位{slot_id}"
+        else:
+            return f"VCU设备-槽位{slot_id}"
     
     def set_device_config(self, config: Dict[str, Any]) -> None:
         """
@@ -520,6 +634,16 @@ class ConfigManager:
         
         if not sample_files:
             logger.warning("未找到示例YAML配置文件")
+            # 如果没有找到示例文件，尝试使用内置的设备配置
+            logger.info("尝试使用内置设备配置创建示例")
+            try:
+                device_config = self.build_device_config_from_main()
+                if device_config and device_config.get('devices'):
+                    self._device_config = device_config
+                    logger.info(f"✅ 使用内置配置创建了 {len(device_config['devices'])} 个设备")
+                    return True
+            except Exception as e:
+                logger.error(f"创建内置设备配置失败: {e}")
             return False
         
         # 优先加载devices_example.yaml或devices_sample.yaml
@@ -546,9 +670,19 @@ class ConfigManager:
         try:
             logger.info(f"正在加载示例YAML配置: {target_file}")
             self.load_from_file(str(target_file))
+            logger.info(f"✅ 示例YAML配置加载成功: {target_file}")
             return True
         except Exception as e:
             logger.error(f"加载示例YAML配置失败: {e}")
+            # 如果YAML文件加载失败，回退到内置配置
+            try:
+                device_config = self.build_device_config_from_main()
+                if device_config and device_config.get('devices'):
+                    self._device_config = device_config
+                    logger.info(f"⚠️ 回退到内置配置: {len(device_config['devices'])} 个设备")
+                    return True
+            except Exception as fallback_e:
+                logger.error(f"回退到内置配置也失败: {fallback_e}")
             return False
 
 

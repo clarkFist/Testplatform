@@ -1,0 +1,33 @@
+# VCU测试开关桩管理工具 - 示例设备配置文件
+version: "2.0.0"
+
+# 设备配置
+devices:
+  MVCU1_2:
+    slot_id: "2"
+    name: "主系VCU-槽位2"
+    ip: "20.2.1.10"
+    local_ip: "20.2.1.100"
+    port: 18125
+    enabled: true
+    description: "主系统VCU设备，槽位2"
+    
+  MVCU1_16:
+    slot_id: "16"
+    name: "主系VCU-槽位16"
+    ip: "20.1.1.10"
+    local_ip: "20.1.1.100"
+    port: 18125
+    enabled: true
+    description: "主系统VCU设备，槽位16"
+    
+  SVCU1_3:
+    slot_id: "3"
+    name: "安全VCU-槽位3"
+    ip: "20.3.1.10"
+    local_ip: "20.3.1.100"
+    port: 18125
+    enabled: true
+    description: "安全系统VCU设备，槽位3 (通过主系VCU转发通信，无直接以太网连接)"
+    communication_type: "forwarded"
+    gateway_device: "MVCU1_2" 

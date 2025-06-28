@@ -29,6 +29,7 @@ sys.path.insert(0, str(project_root))
 
 from gui.main_window import VCUControllerApp
 from core.config_manager import config
+from core.vcu_controller import vcu_controller
 
 
 def setup_logging():
@@ -163,12 +164,18 @@ def auto_load_devices(app):
                             group_count = len(switch_groups)
                             app.add_log_entry(f"📂 已加载 {group_count} 个开关桩分组", "INFO")
                         
-                        # 调用应用程序的配置加载方法，将设备实际添加到VCU控制器
-                        app.add_log_entry("🔄 正在将设备添加到VCU控制器...", "INFO")
-                        if hasattr(app, 'load_default_configuration'):
-                            app.load_default_configuration()
-                        elif hasattr(app, 'load_devices_from_config'):
-                            app.load_devices_from_config()
+                        # 检查设备是否已经加载
+                        existing_devices = vcu_controller.get_all_devices()
+                        
+                        if len(existing_devices) == 0:
+                            # 只有在没有设备时才加载
+                            app.add_log_entry("🔄 正在将设备添加到VCU控制器...", "INFO")
+                            if hasattr(app, 'load_default_configuration'):
+                                app.load_default_configuration()
+                            elif hasattr(app, 'load_devices_from_config'):
+                                app.load_devices_from_config()
+                        else:
+                            app.add_log_entry(f"ℹ️ 设备已存在，跳过重复加载 ({len(existing_devices)} 个设备)", "INFO")
                         
                         # 如果启用了自动连接，则尝试连接设备
                         if config.get("devices.auto_connect", False):
